@@ -74,7 +74,7 @@ export function MkfsBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<MkfsSpec>
                     presets={PRESETS}
                     spec={spec}

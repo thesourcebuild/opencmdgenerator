@@ -79,7 +79,7 @@ export function RpmBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<RpmSpec>
                     presets={PRESETS}
                     spec={spec}

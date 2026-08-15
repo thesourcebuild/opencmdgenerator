@@ -50,7 +50,7 @@ export function RsyslogdBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<RsyslogdSpec>
                     presets={PRESETS}
                     spec={spec}

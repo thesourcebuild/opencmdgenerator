@@ -67,7 +67,7 @@ export function HistoryBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<HistorySpec>
                     presets={PRESETS}
                     spec={spec}

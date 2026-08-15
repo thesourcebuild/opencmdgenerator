@@ -74,7 +74,7 @@ export function CrontabBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<CrontabSpec>
                     presets={PRESETS}
                     spec={spec}

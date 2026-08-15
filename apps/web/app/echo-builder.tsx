@@ -78,7 +78,7 @@ export function EchoBuilder({ platform, onPlatformChange }: EchoBuilderProps) {
               <>
                 <EchoTargetSelector value={platform} onChange={onPlatformChange} />
 
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<EchoSpec>
                     presets={PRESETS}
                     spec={spec}

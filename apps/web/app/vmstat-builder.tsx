@@ -84,7 +84,7 @@ export function VmstatBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<VmstatSpec>
                     presets={PRESETS}
                     spec={spec}

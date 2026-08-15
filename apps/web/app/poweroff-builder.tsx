@@ -50,7 +50,7 @@ export function PoweroffBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<PoweroffSpec>
                     presets={PRESETS}
                     spec={spec}

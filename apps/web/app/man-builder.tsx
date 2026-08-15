@@ -62,7 +62,7 @@ export function ManBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<ManSpec>
                     presets={PRESETS}
                     spec={spec}

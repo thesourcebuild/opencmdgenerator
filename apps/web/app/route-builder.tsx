@@ -87,7 +87,7 @@ export function RouteBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<RouteSpec>
                     presets={PRESETS}
                     spec={spec}

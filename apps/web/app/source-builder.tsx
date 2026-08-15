@@ -63,7 +63,7 @@ export function SourceBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<SourceSpec>
                     presets={PRESETS}
                     spec={spec}

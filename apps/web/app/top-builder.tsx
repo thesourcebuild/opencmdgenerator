@@ -50,7 +50,7 @@ export function TopBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<TopSpec>
                     presets={PRESETS}
                     spec={spec}

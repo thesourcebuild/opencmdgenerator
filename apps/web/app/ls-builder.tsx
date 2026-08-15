@@ -69,7 +69,7 @@ export function LsBuilder({ initialPlatform }: LsBuilderProps) {
               <>
                 <LsTargetSelector value={spec.platform} onChange={(platform) => setSpec((s) => ({ ...s, platform }))} />
 
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<LsSpec>
                     presets={PRESETS}
                     spec={spec}

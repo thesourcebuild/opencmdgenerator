@@ -172,7 +172,7 @@ export function TarBuilder({ variant, onVariantChange, initialShell }: TarBuilde
                 <TarTargetSelector value={variant} onChange={onVariantChange} />
                 <ShellDialectTargetSelector value={current.shell} onChange={onShellChange} />
 
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<TarSpec>
                     presets={PRESETS}
                     spec={current}

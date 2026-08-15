@@ -50,7 +50,7 @@ export function UnameBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<UnameSpec>
                     presets={PRESETS}
                     spec={spec}

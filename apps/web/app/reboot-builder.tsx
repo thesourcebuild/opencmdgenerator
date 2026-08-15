@@ -50,7 +50,7 @@ export function RebootBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<RebootSpec>
                     presets={PRESETS}
                     spec={spec}

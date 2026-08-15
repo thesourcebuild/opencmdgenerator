@@ -107,7 +107,7 @@ export function SedBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<SedSpec>
                     presets={PRESETS}
                     spec={spec}

@@ -73,7 +73,7 @@ export function NslookupBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<NslookupSpec>
                     presets={PRESETS}
                     spec={spec}

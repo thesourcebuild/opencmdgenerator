@@ -62,7 +62,7 @@ export function WhoisBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<WhoisSpec>
                     presets={PRESETS}
                     spec={spec}

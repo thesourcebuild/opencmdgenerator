@@ -63,7 +63,7 @@ export function FdiskBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<FdiskSpec>
                     presets={PRESETS}
                     spec={spec}

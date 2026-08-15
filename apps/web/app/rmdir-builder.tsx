@@ -61,7 +61,7 @@ export function RmdirBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<RmdirSpec>
                     presets={PRESETS}
                     spec={spec}

@@ -516,7 +516,7 @@ const OpensslBuilder = dynamic(() => import("./openssl-builder").then((m) => m.O
 });
 
 export function AppShell() {
-  const [selectedId, setSelectedId] = useState(MANIFESTS[0]!.id);
+  const [selectedId, setSelectedId] = useState("apt");
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [env, setEnv] = useState<PlatformEnvironment | undefined>(undefined);
   const [settingsOpen, setSettingsOpen] = useState(false);

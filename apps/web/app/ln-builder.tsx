@@ -138,7 +138,7 @@ export function LnBuilder({ platform, onPlatformChange }: LnBuilderProps) {
               <>
                 <LnTargetSelector value={platform} onChange={onPlatformChange} />
 
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<LnSpec>
                     presets={PRESETS}
                     spec={spec}

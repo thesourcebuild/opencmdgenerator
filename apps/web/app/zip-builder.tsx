@@ -73,7 +73,7 @@ export function ZipBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<ZipSpec>
                     presets={PRESETS}
                     spec={spec}

@@ -59,7 +59,7 @@ export function LocateBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<LocateSpec>
                     presets={PRESETS}
                     spec={spec}

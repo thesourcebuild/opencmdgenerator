@@ -61,7 +61,7 @@ export function TouchBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<TouchSpec>
                     presets={PRESETS}
                     spec={spec}

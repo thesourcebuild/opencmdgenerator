@@ -73,7 +73,7 @@ export function CommBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<CommSpec>
                     presets={PRESETS}
                     spec={spec}

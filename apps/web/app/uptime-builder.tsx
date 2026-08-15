@@ -50,7 +50,7 @@ export function UptimeBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<UptimeSpec>
                     presets={PRESETS}
                     spec={spec}

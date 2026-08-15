@@ -62,7 +62,7 @@ export function WhereisBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<WhereisSpec>
                     presets={PRESETS}
                     spec={spec}

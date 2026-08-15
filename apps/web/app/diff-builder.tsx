@@ -81,7 +81,7 @@ export function DiffBuilder({ initialPlatform }: DiffBuilderProps) {
               <>
                 <DiffTargetSelector value={spec.platform} onChange={(platform) => setSpec((s) => ({ ...s, platform }))} />
 
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<DiffSpec>
                     presets={PRESETS}
                     spec={spec}

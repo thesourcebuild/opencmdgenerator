@@ -62,7 +62,7 @@ export function WgetBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<WgetSpec>
                     presets={PRESETS}
                     spec={spec}

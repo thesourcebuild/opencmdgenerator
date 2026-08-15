@@ -50,7 +50,7 @@ export function LsblkBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<LsblkSpec>
                     presets={PRESETS}
                     spec={spec}

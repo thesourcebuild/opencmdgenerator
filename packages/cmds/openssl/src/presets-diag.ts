@@ -3,7 +3,7 @@ import type { OpensslCiphersSpec, OpensslErrstrSpec, OpensslListSpec, OpensslSpe
 import { createSpec } from "./presets";
 
 /**
- * Presets for the "Diagnostics & Info" category — new file, kept separate
+ * Examples for the "Diagnostics & Info" category — new file, kept separate
  * from `presets.ts` per this batch's instructions. Same shape and the same
  * required `as OpensslXSpec` cast on `createSpec(...)` before spreading, as
  * every other preset in this package uses.

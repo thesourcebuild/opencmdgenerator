@@ -87,7 +87,7 @@ export function TracerouteBuilder({ platform, onPlatformChange }: TracerouteBuil
               <>
                 <TracerouteTargetSelector value={platform} onChange={onPlatformChange} />
 
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<TracerouteSpec>
                     presets={PRESETS}
                     spec={spec}

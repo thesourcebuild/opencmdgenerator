@@ -62,7 +62,7 @@ export function InfoBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<InfoSpec>
                     presets={PRESETS}
                     spec={spec}

@@ -3,7 +3,7 @@ import type { OpensslSmimeSpec, OpensslSpec, OpensslStoreutlSpec } from "./spec"
 import { createSpec } from "./presets";
 
 /**
- * Presets for the "Secure Messaging & Legacy" and "Store & Key Utilities"
+ * Examples for the "Secure Messaging & Legacy" and "Store & Key Utilities"
  * categories — a separate file from `presets.ts` (which a concurrently
  * running batch owns) but the same shape: every `apply` replaces the ENTIRE
  * spec with a fresh object of its own subcommand's shape, via the shared

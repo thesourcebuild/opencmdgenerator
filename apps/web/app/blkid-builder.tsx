@@ -63,7 +63,7 @@ export function BlkidBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<BlkidSpec>
                     presets={PRESETS}
                     spec={spec}

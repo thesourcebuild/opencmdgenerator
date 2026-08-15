@@ -70,7 +70,7 @@ export function FindBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<FindSpec>
                     presets={PRESETS}
                     spec={spec}

@@ -61,7 +61,7 @@ export function GunzipBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<GunzipSpec>
                     presets={PRESETS}
                     spec={spec}

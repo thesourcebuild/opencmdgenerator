@@ -100,7 +100,7 @@ export function OpensslBuilder({ initialShell }: OpensslBuilderProps) {
               <>
                 <ShellDialectTargetSelector value={spec.shell} onChange={(shell) => setSpec({ ...spec, shell })} />
 
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <CategorizedPresetsDropdown<OpensslSpec>
                     presets={PRESETS}
                     spec={spec}

@@ -108,7 +108,7 @@ export function SshBuilder({ initialShell }: SshBuilderProps) {
               <>
                 <ShellDialectTargetSelector value={spec.shell} onChange={onShellChange} />
 
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<SshSpec>
                     presets={PRESETS}
                     spec={spec}

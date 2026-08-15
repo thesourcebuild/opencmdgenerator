@@ -50,7 +50,7 @@ export function PsBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<PsSpec>
                     presets={PRESETS}
                     spec={spec}

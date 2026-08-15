@@ -58,7 +58,7 @@ export function SetenforceBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<SetenforceSpec>
                     presets={PRESETS}
                     spec={spec}

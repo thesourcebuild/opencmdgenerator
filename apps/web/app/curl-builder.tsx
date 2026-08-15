@@ -117,7 +117,7 @@ export function CurlBuilder({ initialShell }: CurlBuilderProps) {
               <>
                 <ShellDialectTargetSelector value={spec.shell} onChange={onShellChange} />
 
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <CategorizedPresetsDropdown<CurlSpec>
                     presets={PRESETS}
                     spec={spec}

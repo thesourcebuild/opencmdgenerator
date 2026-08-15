@@ -62,7 +62,7 @@ export function UsermodBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<UsermodSpec>
                     presets={PRESETS}
                     spec={spec}

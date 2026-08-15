@@ -61,7 +61,7 @@ export function LessBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<LessSpec>
                     presets={PRESETS}
                     spec={spec}

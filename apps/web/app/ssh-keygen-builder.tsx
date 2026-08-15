@@ -112,7 +112,7 @@ export function SshKeygenBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<SshKeygenSpec>
                     presets={PRESETS}
                     spec={spec}

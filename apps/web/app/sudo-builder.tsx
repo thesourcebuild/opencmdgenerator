@@ -62,7 +62,7 @@ export function SudoBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<SudoSpec>
                     presets={PRESETS}
                     spec={spec}

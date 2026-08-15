@@ -69,7 +69,7 @@ export function ClearBuilder({ platform, onPlatformChange }: ClearBuilderProps) 
               <>
                 <ClearTargetSelector value={platform} onChange={onPlatformChange} />
 
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<ClearSpec>
                     presets={PRESETS}
                     spec={spec}

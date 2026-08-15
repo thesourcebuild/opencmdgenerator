@@ -62,7 +62,7 @@ export function JournalctlBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<JournalctlSpec>
                     presets={PRESETS}
                     spec={spec}

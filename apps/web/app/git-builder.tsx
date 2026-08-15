@@ -95,7 +95,7 @@ export function GitBuilder({ initialShell }: GitBuilderProps) {
               <>
                 <ShellDialectTargetSelector value={spec.shell} onChange={(shell) => setSpec({ ...spec, shell })} />
 
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <CategorizedPresetsDropdown<GitSpec>
                     presets={PRESETS}
                     spec={spec}

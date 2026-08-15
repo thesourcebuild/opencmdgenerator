@@ -62,7 +62,7 @@ export function UseraddBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<UseraddSpec>
                     presets={PRESETS}
                     spec={spec}

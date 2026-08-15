@@ -50,7 +50,7 @@ export function UpdatedbBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<UpdatedbSpec>
                     presets={PRESETS}
                     spec={spec}

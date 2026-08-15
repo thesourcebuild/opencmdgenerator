@@ -94,7 +94,7 @@ export function UfwBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<UfwSpec>
                     presets={PRESETS}
                     spec={spec}

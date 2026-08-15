@@ -130,7 +130,7 @@ export function IptablesBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<IptablesSpec>
                     presets={PRESETS}
                     spec={spec}

@@ -62,7 +62,7 @@ export function GroupmodBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<GroupmodSpec>
                     presets={PRESETS}
                     spec={spec}

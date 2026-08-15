@@ -64,7 +64,7 @@ export function WhereBuilder() {
               <>
                 <WhereTargetSelector value={spec.platform} onChange={(platform) => setSpec((s) => ({ ...s, platform }))} />
 
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<WhereSpec>
                     presets={PRESETS}
                     spec={spec}

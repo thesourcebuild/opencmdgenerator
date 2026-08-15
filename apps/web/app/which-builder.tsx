@@ -61,7 +61,7 @@ export function WhichBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<WhichSpec>
                     presets={PRESETS}
                     spec={spec}

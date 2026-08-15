@@ -69,7 +69,7 @@ export function WhoamiBuilder({ platform, onPlatformChange }: WhoamiBuilderProps
               <>
                 <WhoamiTargetSelector value={platform} onChange={onPlatformChange} />
 
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<WhoamiSpec>
                     presets={PRESETS}
                     spec={spec}

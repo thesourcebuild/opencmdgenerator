@@ -70,7 +70,7 @@ export function ChownBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<ChownSpec>
                     presets={PRESETS}
                     spec={spec}

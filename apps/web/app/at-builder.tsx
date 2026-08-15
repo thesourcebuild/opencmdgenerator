@@ -95,7 +95,7 @@ export function AtBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<AtSpec>
                     presets={PRESETS}
                     spec={spec}

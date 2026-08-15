@@ -89,7 +89,7 @@ export function DigBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<DigSpec>
                     presets={PRESETS}
                     spec={spec}

@@ -61,7 +61,7 @@ export function WcBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<WcSpec>
                     presets={PRESETS}
                     spec={spec}

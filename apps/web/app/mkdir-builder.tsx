@@ -80,7 +80,7 @@ export function MkdirBuilder({ platform, onPlatformChange }: MkdirBuilderProps) 
               <>
                 <MkdirTargetSelector value={platform} onChange={onPlatformChange} />
 
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<MkdirSpec>
                     presets={PRESETS}
                     spec={spec}

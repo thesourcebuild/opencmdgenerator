@@ -61,7 +61,7 @@ export function TeeBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<TeeSpec>
                     presets={PRESETS}
                     spec={spec}

@@ -171,7 +171,7 @@ export function ScpBuilder({ canPick, onPickDirectory, initialShell, pathFlavor,
               <>
                 <ScpTargetSelector value={platform} onChange={onPlatformChange} />
 
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<ScpSpec>
                     presets={PRESETS}
                     spec={spec}

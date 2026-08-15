@@ -62,7 +62,7 @@ export function AdduserBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<AdduserSpec>
                     presets={PRESETS}
                     spec={spec}

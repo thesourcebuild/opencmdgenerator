@@ -75,7 +75,7 @@ export function MoreBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<MoreSpec>
                     presets={PRESETS}
                     spec={spec}

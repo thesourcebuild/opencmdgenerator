@@ -77,7 +77,7 @@ export function SystemctlBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<SystemctlSpec>
                     presets={PRESETS}
                     spec={spec}

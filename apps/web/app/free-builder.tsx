@@ -50,7 +50,7 @@ export function FreeBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<FreeSpec>
                     presets={PRESETS}
                     spec={spec}

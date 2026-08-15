@@ -95,7 +95,7 @@ export function ShutdownBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<ShutdownSpec>
                     presets={PRESETS}
                     spec={spec}

@@ -70,7 +70,7 @@ export function ChgrpBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<ChgrpSpec>
                     presets={PRESETS}
                     spec={spec}

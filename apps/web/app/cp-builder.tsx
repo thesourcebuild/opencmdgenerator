@@ -89,7 +89,7 @@ export function CpBuilder({ platform, onPlatformChange }: CpBuilderProps) {
               <>
                 <CpTargetSelector value={platform} onChange={onPlatformChange} />
 
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<CpSpec>
                     presets={PRESETS}
                     spec={spec}

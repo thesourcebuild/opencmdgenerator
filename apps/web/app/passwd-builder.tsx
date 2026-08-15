@@ -62,7 +62,7 @@ export function PasswdBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<PasswdSpec>
                     presets={PRESETS}
                     spec={spec}

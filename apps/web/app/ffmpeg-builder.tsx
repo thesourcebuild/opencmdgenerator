@@ -78,7 +78,7 @@ export function FfmpegBuilder({ initialShell }: FfmpegBuilderProps) {
               <>
                 <ShellDialectTargetSelector value={spec.shell} onChange={onShellChange} />
 
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<FfmpegSpec>
                     presets={PRESETS}
                     spec={spec}

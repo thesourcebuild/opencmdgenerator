@@ -93,7 +93,7 @@ export function AliasBuilder({ platform, onPlatformChange }: AliasBuilderProps) 
               <>
                 <AliasTargetSelector value={platform} onChange={onPlatformChange} />
 
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<AliasSpec>
                     presets={PRESETS}
                     spec={spec}

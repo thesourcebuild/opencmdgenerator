@@ -74,7 +74,7 @@ export function ServiceBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<ServiceSpec>
                     presets={PRESETS}
                     spec={spec}

@@ -61,7 +61,7 @@ export function DfBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<DfSpec>
                     presets={PRESETS}
                     spec={spec}

@@ -9,7 +9,7 @@ export interface Preset<TSpec> {
   label: string;
   summary: string;
   /**
-   * Groups this preset under an `<optgroup>` in the Presets dropdown. Presets
+   * Groups this preset under an `<optgroup>` in the Examples dropdown. Examples
    * with no `category` render as a flat list at the top, unchanged from
    * before this field existed — every command's existing presets keep
    * working with no changes needed. Only worth setting once a command's

@@ -61,7 +61,7 @@ export function NanoBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<NanoSpec>
                     presets={PRESETS}
                     spec={spec}

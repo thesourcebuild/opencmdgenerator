@@ -19,7 +19,7 @@ const UNCATEGORIZED = "Common requests";
  * presets (curl's httpbingo.org endpoints, git's 10 subcommand categories)
  * that a single flat list stops being scannable — commands with only a
  * handful of presets still use the plain `PresetsDropdown`.
- * Presets with no `category` fall into "Common requests" so presets
+ * Examples with no `category` fall into "Common requests" so presets
  * predating this component need no changes to keep working.
  */
 export function CategorizedPresetsDropdown<TSpec>({ presets, spec, onApply, onSelectPreset }: CategorizedPresetsDropdownProps<TSpec>) {

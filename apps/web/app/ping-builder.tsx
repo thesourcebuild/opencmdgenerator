@@ -59,7 +59,7 @@ export function PingBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<PingSpec>
                     presets={PRESETS}
                     spec={spec}

@@ -3,7 +3,7 @@ import type { OpensslPrimeSpec, OpensslRandSpec, OpensslSClientSpec, OpensslSTim
 import { createSpec } from "./presets";
 
 /**
- * Presets for the "Random & Primes" and "TLS/Network Testing" categories —
+ * Examples for the "Random & Primes" and "TLS/Network Testing" categories —
  * kept in their own file (rather than appended to `presets.ts`) since Phase 1
  * built these two categories in parallel with several others; every batch's
  * presets get merged together during integration, same as `@cmdgen/git`'s

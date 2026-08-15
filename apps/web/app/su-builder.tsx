@@ -62,7 +62,7 @@ export function SuBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<SuSpec>
                     presets={PRESETS}
                     spec={spec}

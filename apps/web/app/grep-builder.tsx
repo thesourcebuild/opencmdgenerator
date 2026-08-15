@@ -89,7 +89,7 @@ export function GrepBuilder({ platform, onPlatformChange }: GrepBuilderProps) {
               <>
                 <GrepTargetSelector value={platform} onChange={onPlatformChange} />
 
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<GrepSpec>
                     presets={PRESETS}
                     spec={spec}

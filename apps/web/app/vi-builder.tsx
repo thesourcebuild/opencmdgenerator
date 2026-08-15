@@ -75,7 +75,7 @@ export function ViBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<ViSpec>
                     presets={PRESETS}
                     spec={spec}

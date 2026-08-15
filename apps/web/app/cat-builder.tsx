@@ -80,7 +80,7 @@ export function CatBuilder({ platform, onPlatformChange }: CatBuilderProps) {
               <>
                 <CatTargetSelector value={platform} onChange={onPlatformChange} />
 
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<CatSpec>
                     presets={PRESETS}
                     spec={spec}

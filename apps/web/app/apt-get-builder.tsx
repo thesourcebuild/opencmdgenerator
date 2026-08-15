@@ -79,7 +79,7 @@ export function AptGetBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<AptGetSpec>
                     presets={PRESETS}
                     spec={spec}

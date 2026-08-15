@@ -62,7 +62,7 @@ export function GroupaddBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<GroupaddSpec>
                     presets={PRESETS}
                     spec={spec}

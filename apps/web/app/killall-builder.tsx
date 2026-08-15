@@ -62,7 +62,7 @@ export function KillallBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<KillallSpec>
                     presets={PRESETS}
                     spec={spec}

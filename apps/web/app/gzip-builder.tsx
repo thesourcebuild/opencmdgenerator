@@ -86,7 +86,7 @@ export function GzipBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<GzipSpec>
                     presets={PRESETS}
                     spec={spec}

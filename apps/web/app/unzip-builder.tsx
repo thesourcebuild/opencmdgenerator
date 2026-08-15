@@ -76,7 +76,7 @@ export function UnzipBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<UnzipSpec>
                     presets={PRESETS}
                     spec={spec}

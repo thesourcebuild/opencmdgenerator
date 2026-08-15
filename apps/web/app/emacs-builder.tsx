@@ -61,7 +61,7 @@ export function EmacsBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<EmacsSpec>
                     presets={PRESETS}
                     spec={spec}

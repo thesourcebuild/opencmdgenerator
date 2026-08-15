@@ -77,7 +77,7 @@ export function YumBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<YumSpec>
                     presets={PRESETS}
                     spec={spec}

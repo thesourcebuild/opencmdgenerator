@@ -102,7 +102,7 @@ export function SemanageBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<SemanageSpec>
                     presets={PRESETS}
                     spec={spec}

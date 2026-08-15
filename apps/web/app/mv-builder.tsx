@@ -89,7 +89,7 @@ export function MvBuilder({ platform, onPlatformChange }: MvBuilderProps) {
               <>
                 <MvTargetSelector value={platform} onChange={onPlatformChange} />
 
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<MvSpec>
                     presets={PRESETS}
                     spec={spec}

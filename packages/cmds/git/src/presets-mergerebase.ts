@@ -3,7 +3,7 @@ import type { GitSpec } from "./spec";
 import { createSpec } from "./presets";
 
 /**
- * Presets for the "Merging & Rebasing" category — kept in their own file
+ * Examples for the "Merging & Rebasing" category — kept in their own file
  * rather than folded into `presets.ts`'s `PRESETS` array (that file is
  * off-limits for this batch; someone else merges the two arrays together
  * when integrating every category's batch). Every `apply` builds a FRESH

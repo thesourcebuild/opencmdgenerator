@@ -91,7 +91,7 @@ export function PacmanBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<PacmanSpec>
                     presets={PRESETS}
                     spec={spec}

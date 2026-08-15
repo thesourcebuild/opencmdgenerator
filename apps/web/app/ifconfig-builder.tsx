@@ -125,7 +125,7 @@ export function IfconfigBuilder({ platform, onPlatformChange }: IfconfigBuilderP
               <>
                 <IfconfigTargetSelector value={platform} onChange={onPlatformChange} />
 
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<IfconfigSpec>
                     presets={PRESETS}
                     spec={spec}

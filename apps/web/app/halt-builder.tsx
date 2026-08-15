@@ -50,7 +50,7 @@ export function HaltBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<HaltSpec>
                     presets={PRESETS}
                     spec={spec}

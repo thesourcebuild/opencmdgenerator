@@ -3,7 +3,7 @@ import type { OpensslCmsSpec, OpensslOcspSpec, OpensslSpec, OpensslTsSpec } from
 import { createSpec } from "./presets";
 
 /**
- * Presets for the "PKI Protocols" category (ocsp/ts/cms) — new file, kept
+ * Examples for the "PKI Protocols" category (ocsp/ts/cms) — new file, kept
  * separate from `presets.ts`'s `PRESETS` per the integration split for this
  * batch. Same shape and the same REQUIRED `as OpensslXSpec` cast on
  * `createSpec(...)` before spreading+overriding fields as every entry in

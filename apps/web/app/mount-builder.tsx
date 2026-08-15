@@ -74,7 +74,7 @@ export function MountBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<MountSpec>
                     presets={PRESETS}
                     spec={spec}

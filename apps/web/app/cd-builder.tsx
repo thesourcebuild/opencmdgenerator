@@ -104,7 +104,7 @@ export function CdBuilder({ canPick, onPickDirectory, platform, onPlatformChange
               <>
                 <CdTargetSelector value={platform} onChange={onPlatformChange} />
 
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<CdSpec>
                     presets={PRESETS}
                     spec={spec}

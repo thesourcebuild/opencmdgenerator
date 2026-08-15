@@ -69,7 +69,7 @@ export function TailBuilder({ initialPlatform }: TailBuilderProps) {
               <>
                 <TailTargetSelector value={spec.platform} onChange={(platform) => setSpec((s) => ({ ...s, platform }))} />
 
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<TailSpec>
                     presets={PRESETS}
                     spec={spec}

@@ -185,7 +185,7 @@ export function KillBuilder({ initialPlatform }: KillBuilderProps) {
               <>
                 <KillTargetSelector value={spec.platform} onChange={(platform) => setSpec((s) => ({ ...s, platform }))} />
 
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<KillSpec>
                     presets={PRESETS}
                     spec={spec}

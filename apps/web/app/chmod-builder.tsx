@@ -69,7 +69,7 @@ export function ChmodBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<ChmodSpec>
                     presets={PRESETS}
                     spec={spec}

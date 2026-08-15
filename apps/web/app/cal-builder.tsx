@@ -93,7 +93,7 @@ export function CalBuilder({ platform, onPlatformChange }: CalBuilderProps) {
               <>
                 <CalTargetSelector value={platform} onChange={onPlatformChange} />
 
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<CalSpec>
                     presets={PRESETS}
                     spec={spec}

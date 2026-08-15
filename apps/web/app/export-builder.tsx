@@ -93,7 +93,7 @@ export function ExportBuilder({ platform, onPlatformChange }: ExportBuilderProps
               <>
                 <ExportTargetSelector value={platform} onChange={onPlatformChange} />
 
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<ExportSpec>
                     presets={PRESETS}
                     spec={spec}

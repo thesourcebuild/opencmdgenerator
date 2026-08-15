@@ -128,7 +128,7 @@ export function FirewallCmdBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<FirewallCmdSpec>
                     presets={PRESETS}
                     spec={spec}

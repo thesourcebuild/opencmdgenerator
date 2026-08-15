@@ -62,7 +62,7 @@ export function WhatisBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<WhatisSpec>
                     presets={PRESETS}
                     spec={spec}

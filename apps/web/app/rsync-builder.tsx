@@ -138,7 +138,7 @@ export function RsyncBuilder({ canPick, onPickDirectory, initialShell, pathFlavo
               <>
                 <RsyncTargetSelector value={platform} onChange={onPlatformChange} />
 
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<RsyncSpec>
                     presets={PRESETS}
                     spec={spec}

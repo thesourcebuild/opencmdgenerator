@@ -127,7 +127,7 @@ export function DdBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<DdSpec>
                     presets={PRESETS}
                     spec={spec}

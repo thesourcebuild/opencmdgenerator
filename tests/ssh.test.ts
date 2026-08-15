@@ -131,7 +131,7 @@ describe("presets", () => {
   });
 
   it("picking Local, then Remote, then SOCKS in turn leaves only the last one active — they don't accumulate", () => {
-    // Reproduces trying out each option in the Presets dropdown one after
+    // Reproduces trying out each option in the Examples dropdown one after
     // another: each preset must clear the OTHER forwarding flags, or -L/-R/-D
     // all end up active simultaneously (a real, confusing bug this guards).
     let s = spec({ host: "h" });

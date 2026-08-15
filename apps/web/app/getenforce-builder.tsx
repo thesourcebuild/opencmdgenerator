@@ -44,7 +44,7 @@ export function GetenforceBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<GetenforceSpec>
                     presets={PRESETS}
                     spec={spec}

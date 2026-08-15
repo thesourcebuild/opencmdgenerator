@@ -61,7 +61,7 @@ export function DuBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<DuSpec>
                     presets={PRESETS}
                     spec={spec}

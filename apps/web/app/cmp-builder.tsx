@@ -73,7 +73,7 @@ export function CmpBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<CmpSpec>
                     presets={PRESETS}
                     spec={spec}

@@ -61,7 +61,7 @@ export function CutBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<CutSpec>
                     presets={PRESETS}
                     spec={spec}

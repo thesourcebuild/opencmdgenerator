@@ -59,7 +59,7 @@ export function UmountBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<UmountSpec>
                     presets={PRESETS}
                     spec={spec}

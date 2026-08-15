@@ -52,7 +52,7 @@ export function NetstatBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<NetstatSpec>
                     presets={PRESETS}
                     spec={spec}

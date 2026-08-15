@@ -61,7 +61,7 @@ export function UniqBuilder() {
             label: "Options",
             content: (
               <>
-                <Panel title="Presets">
+                <Panel title="Examples">
                   <PresetsDropdown<UniqSpec>
                     presets={PRESETS}
                     spec={spec}
