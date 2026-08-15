@@ -22,8 +22,10 @@ import type { AliasPlatform } from "@cmdgen/alias";
 import type { ClearPlatform } from "@cmdgen/clear";
 import type { WhoamiPlatform } from "@cmdgen/whoami";
 import { MANIFESTS } from "@cmdgen/registry";
-import { platform } from "@cmdgen/platform";
+import { getDesktopBridge, platform } from "@cmdgen/platform";
+import { AboutOverlay } from "./about-overlay";
 import { CommandHeader } from "./command-header";
+import { Footer } from "./footer";
 import { ScrollToTop } from "./scroll-to-top";
 import { SettingsOverlay } from "./settings-overlay";
 import { Sidebar } from "./sidebar";
@@ -517,7 +519,9 @@ export function AppShell() {
   const [selectedId, setSelectedId] = useState(MANIFESTS[0]!.id);
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [env, setEnv] = useState<PlatformEnvironment | undefined>(undefined);
-  const appVersion = env?.appVersion ?? process.env.NEXT_PUBLIC_APP_VERSION ?? "dev";
+  const [settingsOpen, setSettingsOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
+  const appVersion = process.env.NEXT_PUBLIC_APP_VERSION ?? env?.appVersion ?? "dev";
 
   // The "which build am I targeting" choice lives here, not inside each
   // builder — the left sidebar needs to show and control it too.
@@ -545,6 +549,15 @@ export function AppShell() {
     void platform()
       .environment()
       .then((resolved) => setEnv(resolved));
+  }, []);
+
+  useEffect(() => {
+    const bridge = getDesktopBridge();
+    if (!bridge) return;
+    return bridge.onMenuAction((action) => {
+      if (action === "menu:settings") setSettingsOpen(true);
+      if (action === "menu:about") setAboutOpen(true);
+    });
   }, []);
 
   // Runs once, exactly when `env` first resolves as a Windows host — these
@@ -585,7 +598,6 @@ export function AppShell() {
   const canPick = env?.canPickDirectories ?? false;
   const manifest = MANIFESTS.find((m) => m.id === selectedId);
   const mainRef = useRef<HTMLElement>(null);
-  const [settingsOpen, setSettingsOpen] = useState(false);
 
   return (
     <div className="flex h-screen min-h-0 flex-col overflow-hidden bg-slate-50 dark:bg-slate-950">
@@ -606,8 +618,9 @@ export function AppShell() {
       </header>
 
       <SettingsOverlay open={settingsOpen} onClose={() => setSettingsOpen(false)} />
+      <AboutOverlay open={aboutOpen} version={appVersion} onClose={() => setAboutOpen(false)} />
 
-      <div className="flex flex-1 overflow-hidden">
+      <div className="flex flex-1 min-h-0 overflow-hidden">
         <aside
           className={`shrink-0 overflow-hidden border-r border-slate-200 bg-white transition-[width] duration-150 dark:border-slate-800 dark:bg-slate-900 ${sidebarOpen ? "w-64" : "w-11"
             }`}
@@ -787,6 +800,8 @@ export function AppShell() {
           {selectedId === "openssl" && <OpensslBuilder initialShell={isWindowsHost ? "powershell" : "posix"} />}
         </main>
       </div>
+
+      <Footer version={appVersion} />
 
       <ScrollToTop containerRef={mainRef} />
     </div>

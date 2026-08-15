@@ -1,10 +1,10 @@
 {
   "name": "@cmdgen/web",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "license": "GPL-3.0-only",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --webpack",
     "build": "next build",
     "typecheck": "tsc --noEmit"
   },

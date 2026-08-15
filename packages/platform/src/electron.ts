@@ -38,7 +38,7 @@ export const electronPlatform: PlatformApi = {
     return {
       isDesktop: true,
       platform: b.platform,
-      appVersion: await b.getVersion(),
+      appVersion: process.env.NEXT_PUBLIC_APP_VERSION ?? (await b.getVersion()),
       defaultShell: isWindows ? "powershell" : "posix",
       defaultPathFlavor: isWindows ? "cygwin" : "unix",
       canPickDirectories: true,

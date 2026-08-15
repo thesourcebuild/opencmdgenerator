@@ -6,6 +6,7 @@ export type MenuAction =
   | "menu:copyCommand"
   | "menu:importProfiles"
   | "menu:exportProfiles"
+  | "menu:settings"
   | "menu:about";
 
 /**

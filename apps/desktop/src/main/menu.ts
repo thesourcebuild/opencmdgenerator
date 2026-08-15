@@ -1,6 +1,4 @@
-import { Menu, app, shell, type BrowserWindow, type MenuItemConstructorOptions } from "electron";
-
-const RSYNC_DOCS = "https://rsync.samba.org/documentation.html";
+import { Menu, app, type BrowserWindow, type MenuItemConstructorOptions } from "electron";
 
 export interface MenuOptions {
   /** Shows the Developer submenu. Set when running against the dev server. */
@@ -65,6 +63,10 @@ export function buildMenu(window: BrowserWindow, options: MenuOptions): void {
         },
       ],
     },
+    {
+      label: "&Settings",
+      submenu: [{ label: "Settings…", accelerator: "CmdOrCtrl+,", click: send("menu:settings") }],
+    },
     ...(options.isDev
       ? ([
           {
@@ -83,11 +85,7 @@ export function buildMenu(window: BrowserWindow, options: MenuOptions): void {
       : []),
     {
       label: "&Help",
-      submenu: [
-        { label: "rsync documentation", click: () => void shell.openExternal(RSYNC_DOCS) },
-        { type: "separator" },
-        { label: `About ${app.getName()}`, click: send("menu:about") },
-      ],
+      submenu: [{ label: `About ${app.getName()}`, click: send("menu:about") }],
     },
   ];
 

@@ -12,6 +12,7 @@ const MENU_CHANNELS = [
   "menu:copyCommand",
   "menu:importProfiles",
   "menu:exportProfiles",
+  "menu:settings",
   "menu:about",
 ] as const;
 

@@ -267,7 +267,7 @@ export function Sidebar({ manifests, selectedId, onSelect, onCollapse }: Sidebar
         )}
       </div>
 
-      <div className="border-t border-slate-200 px-3 py-2 text-center text-[11px] text-slate-400 dark:border-slate-800">
+      <div className="relative mt-auto shrink-0 px-3 pt-3 pb-3 text-center text-[11px] leading-none text-slate-400 before:absolute before:left-3 before:right-3 before:top-0 before:h-px before:rounded-full before:bg-slate-300 dark:before:bg-slate-700">
         {filtered.length === manifests.length
           ? `${manifests.length} commands`
           : `${filtered.length} of ${manifests.length} commands`}
