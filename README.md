@@ -36,6 +36,21 @@ For the Windows `scripts\*\*.bat` launchers and the full command table, see
 [docs/scripts.md](docs/scripts.md) and
 [docs/development.md](docs/development.md).
 
+## Packaging
+
+Use the packaging scripts when you want release artifacts instead of a dev run:
+
+- `pnpm build` - build the web export and the desktop bundle
+- `pnpm package` - create the Windows installer release flow
+- `scripts\build-helpers\build_all.bat -Verify -Package` - full checked build plus installer
+- `scripts\package\create-package.bat -Binary` - web zip + desktop installer
+- `scripts\package\create-package.bat -Release -Zip` - full release folder plus archive
+
+The package version comes from the root `version` file, and the release output is
+written under `dist/<version>/`.
+
+See [docs/scripts.md](docs/scripts.md) for the full build/package/launch matrix.
+
 ## Security
 
 This app generates commands. It does not execute them, and it has no backend or
