@@ -61,6 +61,7 @@ export function HistoryBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "history", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

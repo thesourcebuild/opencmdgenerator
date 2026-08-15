@@ -44,6 +44,7 @@ export function TopBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "top", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

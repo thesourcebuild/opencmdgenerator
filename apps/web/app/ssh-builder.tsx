@@ -100,6 +100,7 @@ export function SshBuilder({ initialShell }: SshBuilderProps) {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "ssh", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

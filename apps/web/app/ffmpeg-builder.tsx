@@ -70,6 +70,7 @@ export function FfmpegBuilder({ initialShell }: FfmpegBuilderProps) {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "ffmpeg", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

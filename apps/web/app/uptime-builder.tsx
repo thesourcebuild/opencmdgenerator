@@ -44,6 +44,7 @@ export function UptimeBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "uptime", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

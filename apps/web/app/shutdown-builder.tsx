@@ -89,6 +89,7 @@ export function ShutdownBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "shutdown", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

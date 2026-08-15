@@ -68,6 +68,7 @@ export function MkfsBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "mkfs", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

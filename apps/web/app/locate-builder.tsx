@@ -53,6 +53,7 @@ export function LocateBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "locate", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

@@ -56,6 +56,7 @@ export function InfoBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "info", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

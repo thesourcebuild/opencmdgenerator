@@ -69,6 +69,7 @@ export function ViBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "vi", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

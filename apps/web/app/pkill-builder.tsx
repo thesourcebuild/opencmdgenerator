@@ -56,6 +56,7 @@ export function PkillBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "pkill", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

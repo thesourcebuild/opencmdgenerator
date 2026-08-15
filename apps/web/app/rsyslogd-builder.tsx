@@ -44,6 +44,7 @@ export function RsyslogdBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "rsyslogd", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

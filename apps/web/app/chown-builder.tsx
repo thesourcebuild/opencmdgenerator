@@ -64,6 +64,7 @@ export function ChownBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "chown", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

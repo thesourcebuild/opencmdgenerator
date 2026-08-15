@@ -56,6 +56,7 @@ export function WhereBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "where", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

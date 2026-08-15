@@ -96,6 +96,7 @@ export function CdBuilder({ canPick, onPickDirectory, platform, onPlatformChange
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "cd", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

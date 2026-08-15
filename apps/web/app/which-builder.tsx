@@ -55,6 +55,7 @@ export function WhichBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "which", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

@@ -163,6 +163,7 @@ export function TarBuilder({ variant, onVariantChange, initialShell }: TarBuilde
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "tar", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

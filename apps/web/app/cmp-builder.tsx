@@ -67,6 +67,7 @@ export function CmpBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "cmp", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

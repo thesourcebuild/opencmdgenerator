@@ -56,6 +56,7 @@ export function UsermodBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "usermod", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

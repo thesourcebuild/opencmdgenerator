@@ -44,6 +44,7 @@ export function UpdatedbBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "updatedb", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

@@ -57,6 +57,7 @@ export function SourceBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "source", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

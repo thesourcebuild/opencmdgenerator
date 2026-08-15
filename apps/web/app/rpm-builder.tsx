@@ -73,6 +73,7 @@ export function RpmBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "rpm", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

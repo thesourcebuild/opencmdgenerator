@@ -106,6 +106,7 @@ export function SshKeygenBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "ssh-keygen", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

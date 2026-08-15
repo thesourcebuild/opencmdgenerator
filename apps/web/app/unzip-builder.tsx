@@ -70,6 +70,7 @@ export function UnzipBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "unzip", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

@@ -50,6 +50,7 @@ export function PwdBuilder({ initialPlatform }: PwdBuilderProps) {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "pwd", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

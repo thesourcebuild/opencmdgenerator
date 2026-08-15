@@ -56,6 +56,7 @@ export function KillallBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "killall", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

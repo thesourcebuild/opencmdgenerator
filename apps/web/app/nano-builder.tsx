@@ -55,6 +55,7 @@ export function NanoBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "nano", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

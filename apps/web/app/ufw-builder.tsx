@@ -88,6 +88,7 @@ export function UfwBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "ufw", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

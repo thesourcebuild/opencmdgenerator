@@ -71,6 +71,7 @@ export function SystemctlBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "systemctl", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

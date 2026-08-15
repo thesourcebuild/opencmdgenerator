@@ -64,6 +64,7 @@ export function FindBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "find", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

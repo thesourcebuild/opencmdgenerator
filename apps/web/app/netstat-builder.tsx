@@ -46,6 +46,7 @@ export function NetstatBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "netstat", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

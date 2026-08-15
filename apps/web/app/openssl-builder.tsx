@@ -92,6 +92,7 @@ export function OpensslBuilder({ initialShell }: OpensslBuilderProps) {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "openssl", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

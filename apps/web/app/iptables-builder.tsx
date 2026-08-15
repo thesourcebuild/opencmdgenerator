@@ -124,6 +124,7 @@ export function IptablesBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "iptables", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

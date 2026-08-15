@@ -130,6 +130,7 @@ export function LnBuilder({ platform, onPlatformChange }: LnBuilderProps) {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "ln", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

@@ -61,6 +61,7 @@ export function HeadBuilder({ initialPlatform }: HeadBuilderProps) {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "head", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

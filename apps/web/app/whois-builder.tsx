@@ -56,6 +56,7 @@ export function WhoisBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "whois", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

@@ -121,6 +121,7 @@ export function DdBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "dd", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

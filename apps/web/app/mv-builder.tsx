@@ -81,6 +81,7 @@ export function MvBuilder({ platform, onPlatformChange }: MvBuilderProps) {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "mv", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

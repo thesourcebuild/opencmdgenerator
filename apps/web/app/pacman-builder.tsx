@@ -85,6 +85,7 @@ export function PacmanBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "pacman", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

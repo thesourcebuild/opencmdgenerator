@@ -44,6 +44,7 @@ export function LsblkBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "lsblk", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

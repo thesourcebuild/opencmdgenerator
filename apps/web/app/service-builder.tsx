@@ -68,6 +68,7 @@ export function ServiceBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "service", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

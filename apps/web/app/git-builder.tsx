@@ -87,6 +87,7 @@ export function GitBuilder({ initialShell }: GitBuilderProps) {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "git", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

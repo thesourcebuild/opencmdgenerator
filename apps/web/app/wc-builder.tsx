@@ -55,6 +55,7 @@ export function WcBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "wc", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

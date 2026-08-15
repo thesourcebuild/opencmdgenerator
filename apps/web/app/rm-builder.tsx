@@ -61,6 +61,7 @@ export function RmBuilder({ initialPlatform }: RmBuilderProps) {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "rm", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

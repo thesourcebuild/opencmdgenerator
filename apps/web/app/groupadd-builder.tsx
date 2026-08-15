@@ -56,6 +56,7 @@ export function GroupaddBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "groupadd", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

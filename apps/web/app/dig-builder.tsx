@@ -83,6 +83,7 @@ export function DigBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "dig", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

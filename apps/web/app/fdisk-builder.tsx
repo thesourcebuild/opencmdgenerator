@@ -57,6 +57,7 @@ export function FdiskBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "fdisk", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

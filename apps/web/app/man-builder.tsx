@@ -56,6 +56,7 @@ export function ManBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "man", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

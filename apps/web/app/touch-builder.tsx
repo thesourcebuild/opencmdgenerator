@@ -55,6 +55,7 @@ export function TouchBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "touch", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

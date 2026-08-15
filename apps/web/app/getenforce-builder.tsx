@@ -38,6 +38,7 @@ export function GetenforceBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "getenforce", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

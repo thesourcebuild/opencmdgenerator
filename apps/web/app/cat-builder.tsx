@@ -72,6 +72,7 @@ export function CatBuilder({ platform, onPlatformChange }: CatBuilderProps) {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "cat", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

@@ -163,6 +163,7 @@ export function ScpBuilder({ canPick, onPickDirectory, initialShell, pathFlavor,
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "scp", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

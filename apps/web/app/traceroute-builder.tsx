@@ -79,6 +79,7 @@ export function TracerouteBuilder({ platform, onPlatformChange }: TracerouteBuil
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "traceroute", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

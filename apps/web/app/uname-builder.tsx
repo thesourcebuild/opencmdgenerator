@@ -44,6 +44,7 @@ export function UnameBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "uname", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

@@ -55,6 +55,7 @@ export function DfBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "df", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

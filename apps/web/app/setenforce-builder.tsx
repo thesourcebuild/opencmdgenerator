@@ -52,6 +52,7 @@ export function SetenforceBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "setenforce", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

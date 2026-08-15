@@ -55,6 +55,7 @@ export function CutBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "cut", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

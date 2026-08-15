@@ -56,6 +56,7 @@ export function PasswdBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "passwd", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

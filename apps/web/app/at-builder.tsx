@@ -89,6 +89,7 @@ export function AtBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "at", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

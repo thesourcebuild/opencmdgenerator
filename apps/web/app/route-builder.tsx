@@ -81,6 +81,7 @@ export function RouteBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "route", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

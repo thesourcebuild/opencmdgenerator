@@ -55,6 +55,7 @@ export function DuBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "du", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

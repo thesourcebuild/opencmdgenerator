@@ -61,6 +61,7 @@ export function TailBuilder({ initialPlatform }: TailBuilderProps) {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "tail", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

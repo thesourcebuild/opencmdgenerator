@@ -53,6 +53,7 @@ export function PingBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "ping", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

@@ -62,6 +62,7 @@ export function PatchBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "patch", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

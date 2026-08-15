@@ -44,6 +44,7 @@ export function RebootBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "reboot", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

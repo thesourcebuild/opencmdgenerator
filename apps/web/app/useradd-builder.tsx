@@ -56,6 +56,7 @@ export function UseraddBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "useradd", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

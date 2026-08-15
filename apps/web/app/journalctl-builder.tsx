@@ -56,6 +56,7 @@ export function JournalctlBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "journalctl", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

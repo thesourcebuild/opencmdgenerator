@@ -117,6 +117,7 @@ export function IfconfigBuilder({ platform, onPlatformChange }: IfconfigBuilderP
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "ifconfig", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

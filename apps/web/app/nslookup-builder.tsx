@@ -67,6 +67,7 @@ export function NslookupBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "nslookup", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

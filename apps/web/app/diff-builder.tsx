@@ -73,6 +73,7 @@ export function DiffBuilder({ initialPlatform }: DiffBuilderProps) {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "diff", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

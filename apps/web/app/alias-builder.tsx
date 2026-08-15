@@ -85,6 +85,7 @@ export function AliasBuilder({ platform, onPlatformChange }: AliasBuilderProps) 
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "alias", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

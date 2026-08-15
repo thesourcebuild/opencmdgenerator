@@ -44,6 +44,7 @@ export function FreeBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "free", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

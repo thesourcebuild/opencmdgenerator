@@ -61,6 +61,7 @@ export function SortBuilder({ initialPlatform }: SortBuilderProps) {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "sort", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

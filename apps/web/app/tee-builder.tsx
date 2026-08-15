@@ -55,6 +55,7 @@ export function TeeBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "tee", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

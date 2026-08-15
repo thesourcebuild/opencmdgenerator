@@ -74,6 +74,7 @@ export function AwkBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "awk", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

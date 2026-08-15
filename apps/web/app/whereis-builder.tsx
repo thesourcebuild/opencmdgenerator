@@ -56,6 +56,7 @@ export function WhereisBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "whereis", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

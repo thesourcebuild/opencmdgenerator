@@ -81,6 +81,7 @@ export function GrepBuilder({ platform, onPlatformChange }: GrepBuilderProps) {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "grep", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

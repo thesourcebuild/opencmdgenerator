@@ -57,6 +57,7 @@ export function BlkidBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "blkid", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

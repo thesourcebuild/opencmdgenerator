@@ -56,6 +56,7 @@ export function SuBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "su", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

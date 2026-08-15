@@ -64,6 +64,7 @@ export function ChgrpBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "chgrp", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

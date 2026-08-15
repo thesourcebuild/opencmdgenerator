@@ -56,6 +56,7 @@ export function WgetBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "wget", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

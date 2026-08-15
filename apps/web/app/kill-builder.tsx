@@ -177,6 +177,7 @@ export function KillBuilder({ initialPlatform }: KillBuilderProps) {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "kill", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

@@ -80,6 +80,7 @@ export function GzipBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "gzip", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

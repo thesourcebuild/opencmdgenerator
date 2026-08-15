@@ -73,6 +73,7 @@ export function AptBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "apt", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

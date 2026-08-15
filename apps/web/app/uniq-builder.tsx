@@ -55,6 +55,7 @@ export function UniqBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "uniq", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

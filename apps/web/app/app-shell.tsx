@@ -515,6 +515,8 @@ const OpensslBuilder = dynamic(() => import("./openssl-builder").then((m) => m.O
   loading: () => <BuilderSkeleton />,
 });
 
+const SELECT_COMMAND_EVENT = "OpenCmdGenerator:selectCommand";
+
 export function AppShell() {
   const [selectedId, setSelectedId] = useState("apt");
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -558,6 +560,15 @@ export function AppShell() {
       if (action === "menu:settings") setSettingsOpen(true);
       if (action === "menu:about") setAboutOpen(true);
     });
+  }, []);
+
+  useEffect(() => {
+    const onSelectCommand = (event: Event) => {
+      const commandId = (event as CustomEvent<{ commandId?: string }>).detail?.commandId;
+      if (commandId && MANIFESTS.some((manifest) => manifest.id === commandId)) setSelectedId(commandId);
+    };
+    window.addEventListener(SELECT_COMMAND_EVENT, onSelectCommand);
+    return () => window.removeEventListener(SELECT_COMMAND_EVENT, onSelectCommand);
   }, []);
 
   // Runs once, exactly when `env` first resolves as a Windows host — these

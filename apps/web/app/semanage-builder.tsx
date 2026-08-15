@@ -96,6 +96,7 @@ export function SemanageBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "semanage", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

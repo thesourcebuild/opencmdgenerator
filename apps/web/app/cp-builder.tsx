@@ -81,6 +81,7 @@ export function CpBuilder({ platform, onPlatformChange }: CpBuilderProps) {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "cp", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

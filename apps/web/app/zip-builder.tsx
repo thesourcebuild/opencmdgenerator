@@ -67,6 +67,7 @@ export function ZipBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "zip", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

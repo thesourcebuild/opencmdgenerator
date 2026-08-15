@@ -61,6 +61,7 @@ export function LsBuilder({ initialPlatform }: LsBuilderProps) {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "ls", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

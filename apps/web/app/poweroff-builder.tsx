@@ -44,6 +44,7 @@ export function PoweroffBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "poweroff", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

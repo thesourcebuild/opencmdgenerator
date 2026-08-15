@@ -44,6 +44,7 @@ export function HaltBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "halt", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

@@ -55,6 +55,7 @@ export function GunzipBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "gunzip", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

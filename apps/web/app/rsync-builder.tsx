@@ -130,6 +130,7 @@ export function RsyncBuilder({ canPick, onPickDirectory, initialShell, pathFlavo
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "rsync", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

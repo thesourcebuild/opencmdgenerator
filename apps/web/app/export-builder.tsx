@@ -85,6 +85,7 @@ export function ExportBuilder({ platform, onPlatformChange }: ExportBuilderProps
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "export", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

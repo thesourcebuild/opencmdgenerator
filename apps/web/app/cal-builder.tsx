@@ -85,6 +85,7 @@ export function CalBuilder({ platform, onPlatformChange }: CalBuilderProps) {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "cal", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

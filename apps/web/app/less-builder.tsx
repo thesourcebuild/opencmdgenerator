@@ -55,6 +55,7 @@ export function LessBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "less", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

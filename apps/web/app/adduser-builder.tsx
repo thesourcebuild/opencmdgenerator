@@ -56,6 +56,7 @@ export function AdduserBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "adduser", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

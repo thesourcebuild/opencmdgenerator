@@ -56,6 +56,7 @@ export function SudoBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "sudo", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

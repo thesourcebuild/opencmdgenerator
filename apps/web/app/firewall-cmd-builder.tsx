@@ -122,6 +122,7 @@ export function FirewallCmdBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "firewall-cmd", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

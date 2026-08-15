@@ -109,6 +109,7 @@ export function CurlBuilder({ initialShell }: CurlBuilderProps) {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "curl", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

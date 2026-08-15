@@ -78,6 +78,7 @@ export function VmstatBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "vmstat", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

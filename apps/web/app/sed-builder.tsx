@@ -101,6 +101,7 @@ export function SedBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "sed", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

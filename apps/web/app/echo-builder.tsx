@@ -70,6 +70,7 @@ export function EchoBuilder({ platform, onPlatformChange }: EchoBuilderProps) {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "echo", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

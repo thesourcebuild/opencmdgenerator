@@ -68,6 +68,7 @@ export function CrontabBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "crontab", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

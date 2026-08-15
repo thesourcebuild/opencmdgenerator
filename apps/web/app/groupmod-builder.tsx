@@ -56,6 +56,7 @@ export function GroupmodBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "groupmod", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

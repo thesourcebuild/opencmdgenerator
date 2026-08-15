@@ -68,6 +68,7 @@ export function MountBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "mount", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

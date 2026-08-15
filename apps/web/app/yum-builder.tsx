@@ -71,6 +71,7 @@ export function YumBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "yum", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

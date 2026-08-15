@@ -44,6 +44,7 @@ export function PsBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "ps", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

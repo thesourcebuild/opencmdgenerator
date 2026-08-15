@@ -72,6 +72,7 @@ export function MkdirBuilder({ platform, onPlatformChange }: MkdirBuilderProps) 
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "mkdir", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

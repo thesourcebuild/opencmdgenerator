@@ -55,6 +55,7 @@ export function EmacsBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "emacs", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

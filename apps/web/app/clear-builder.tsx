@@ -61,6 +61,7 @@ export function ClearBuilder({ platform, onPlatformChange }: ClearBuilderProps) 
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "clear", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

@@ -63,6 +63,7 @@ export function ChmodBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "chmod", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

@@ -67,6 +67,7 @@ export function CommBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "comm", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

@@ -69,6 +69,7 @@ export function MoreBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "more", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

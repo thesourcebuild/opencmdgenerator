@@ -61,6 +61,7 @@ export function WhoamiBuilder({ platform, onPlatformChange }: WhoamiBuilderProps
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "whoami", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

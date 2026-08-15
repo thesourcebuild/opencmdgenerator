@@ -56,6 +56,7 @@ export function WhatisBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "whatis", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

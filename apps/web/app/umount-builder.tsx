@@ -53,6 +53,7 @@ export function UmountBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "umount", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",

@@ -55,6 +55,7 @@ export function RmdirBuilder() {
       </div>
 
       <RightSidebar
+        bookmark={{ commandId: "rmdir", spec, onApply: setSpec }}
         tabs={[
           {
             id: "options",
