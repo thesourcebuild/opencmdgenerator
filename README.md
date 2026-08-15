@@ -6,7 +6,7 @@ command you need.
 
  It covers **100+** commands across Windows, Linux, and macOS, with platform-aware
  rendering for POSIX(bash/zsh), PowerShell, Command Prompt, MSYS2, and Cygwin - plus presets
- and live previews across web and desktop.
+ and live previews across **web** and **desktop**.
 
 See [Security](#security) for the execution policy and the desktop Run exception.
 
