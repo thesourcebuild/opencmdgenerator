@@ -517,6 +517,7 @@ export function AppShell() {
   const [selectedId, setSelectedId] = useState(MANIFESTS[0]!.id);
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [env, setEnv] = useState<PlatformEnvironment | undefined>(undefined);
+  const appVersion = env?.appVersion ?? process.env.NEXT_PUBLIC_APP_VERSION ?? "dev";
 
   // The "which build am I targeting" choice lives here, not inside each
   // builder — the left sidebar needs to show and control it too.
@@ -589,7 +590,9 @@ export function AppShell() {
   return (
     <div className="flex h-screen min-h-0 flex-col overflow-hidden bg-slate-50 dark:bg-slate-950">
       <header className="flex shrink-0 items-center gap-3 border-b border-slate-200 bg-white px-4 py-3 dark:border-slate-800 dark:bg-slate-900">
-        <h1 className="text-sm font-semibold">OpenCmdGenerator</h1>
+        <h1 className="text-sm font-semibold">
+          OpenCmdGenerator <span className="font-normal text-slate-400">v{appVersion}</span>
+        </h1>
         <div className="ml-auto text-xs text-slate-400">{MANIFESTS.length} commands</div>
         <button
           type="button"
