@@ -35,7 +35,7 @@ export function createMainWindow({ devUrl, preloadPath }: CreateWindowOptions): 
     minHeight: 620,
     show: false,
     backgroundColor: "#0f172a",
-    title: "Command Builder",
+    title: "OpenCmdGenerator",
     // Without this Windows shows Electron's atom logo in the title bar, taskbar and
     // Alt-Tab, which is the single loudest "this is not a real application" signal.
     // electron-builder picks the icon up from resources/ for the installer; the

@@ -140,7 +140,7 @@ export function runSmokeTest(window: BrowserWindow): void {
         if (!result.hasCommand) return fail("no command preview rendered");
         if (!shell.iconResolved) return fail("no application icon found — Windows would show the Electron logo");
         if (shell.devToolsOpen) return fail("DevTools opened by default — this is not a browser");
-        if (shell.appName !== "Command Builder") {
+        if (shell.appName !== "OpenCmdGenerator") {
           return fail(`app name is "${shell.appName}", expected the product name`);
         }
 
@@ -160,7 +160,7 @@ export function runSmokeTest(window: BrowserWindow): void {
               const csp = consoleErrors.some((m) => /Content Security Policy/i.test(m));
               return fail(
                 "clicking a flag changed nothing — React did not hydrate" +
-                  (csp ? " (CSP blocked the inline hydration scripts)" : ""),
+                (csp ? " (CSP blocked the inline hydration scripts)" : ""),
               );
             }
 

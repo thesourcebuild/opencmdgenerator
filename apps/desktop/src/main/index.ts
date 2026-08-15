@@ -27,7 +27,7 @@ registerScheme();
 
 // package.json's name is "@cmdgen/desktop", which would surface in the About box and
 // in native dialogs. Set the real product name instead.
-app.setName("Command Builder");
+app.setName("OpenCmdGenerator");
 
 // Windows groups taskbar buttons, pins and notifications by AppUserModelId. Without
 // it, an unpackaged run shows up as "Electron" and pinning misbehaves. Matches the

@@ -4,7 +4,7 @@ import "./globals.css";
 import { THEME_STORAGE_KEY } from "./theme-constants";
 
 export const metadata: Metadata = {
-  title: "Command Builder",
+  title: "OpenCmdGenerator",
   description:
     "Build, validate and export CLI commands — rsync, cd, and more. Generates commands for you to run — it never executes anything itself.",
 };

@@ -589,7 +589,7 @@ export function AppShell() {
   return (
     <div className="flex h-screen min-h-0 flex-col overflow-hidden bg-slate-50 dark:bg-slate-950">
       <header className="flex shrink-0 items-center gap-3 border-b border-slate-200 bg-white px-4 py-3 dark:border-slate-800 dark:bg-slate-900">
-        <h1 className="text-sm font-semibold">Command Builder</h1>
+        <h1 className="text-sm font-semibold">OpenCmdGenerator</h1>
         <div className="ml-auto text-xs text-slate-400">{MANIFESTS.length} commands</div>
         <button
           type="button"
@@ -606,9 +606,8 @@ export function AppShell() {
 
       <div className="flex flex-1 overflow-hidden">
         <aside
-          className={`shrink-0 overflow-hidden border-r border-slate-200 bg-white transition-[width] duration-150 dark:border-slate-800 dark:bg-slate-900 ${
-            sidebarOpen ? "w-64" : "w-11"
-          }`}
+          className={`shrink-0 overflow-hidden border-r border-slate-200 bg-white transition-[width] duration-150 dark:border-slate-800 dark:bg-slate-900 ${sidebarOpen ? "w-64" : "w-11"
+            }`}
         >
           {sidebarOpen ? (
             <Sidebar

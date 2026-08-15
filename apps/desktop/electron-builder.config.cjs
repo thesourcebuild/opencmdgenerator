@@ -21,7 +21,7 @@ const projectVersion = fs
 
 module.exports = {
   appId: "com.example.cmdgenerator",
-  productName: "Command Builder",
+  productName: "OpenCmdGenerator",
   copyright: "Copyright © 2026",
   extraMetadata: { version: projectVersion },
 
