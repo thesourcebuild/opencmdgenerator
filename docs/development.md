@@ -59,16 +59,15 @@ ever delete `node_modules/electron` mid-session.
 source (no build step). Turbopack does not resolve `./foo.js` to `foo.ts`, so
 relative imports omit the extension and rely on `moduleResolution: "bundler"`.
 
-**`pnpm approve-builds`.** pnpm 10+ blocks postinstall scripts unless a package is
-in the `allowBuilds` map in `pnpm-workspace.yaml` (pnpm 10 used the old
-`onlyBuiltDependencies` list; pnpm 11 consolidated everything into
-`allowBuilds`, and reads non-auth settings only from `pnpm-workspace.yaml`, not
-`.npmrc`). `electron`, `esbuild`, `node-pty`, `@tailwindcss/oxide` and
-`unrs-resolver` are allowed; `sharp` is deliberately `false` — the export sets
-`images: { unoptimized: true }`, so it is never needed. Note pnpm 11 defaults
-`strictDepBuilds` to `true`, so an unapproved build is a hard install error, and
-a failed install appends `allowBuilds` placeholder entries to the workspace file
-that you must clean up before retrying.
+**`pnpm approve-builds`.** pnpm 11 blocks postinstall scripts unless a package is
+listed in the `allowBuilds` map in `pnpm-workspace.yaml`; this repo keeps the
+approved native build set there and relies on pnpm 11 reading non-auth settings
+from that file, not `.npmrc`. `electron`, `esbuild`, `node-pty`,
+`@tailwindcss/oxide` and `unrs-resolver` are allowed; `sharp` is deliberately
+`false` — the export sets `images: { unoptimized: true }`, so it is never
+needed. pnpm 11 defaults `strictDepBuilds` to `true`, so an unapproved build is
+a hard install error, and a failed install appends `allowBuilds` placeholder
+entries to the workspace file that you must clean up before retrying.
 
 **Antivirus vs. electron-builder.** On managed Windows machines, real-time scanning
 can hold a lock on the Electron binaries electron-builder extracts inside the
