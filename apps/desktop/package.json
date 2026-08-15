@@ -1,0 +1,37 @@
+{
+  "name": "@cmdgen/desktop",
+  "version": "0.1.0",
+  "license": "GPL-3.0-only",
+  "private": true,
+  "description": "OpenCmdGenerator — desktop shell",
+  "author": "OpenCmdGenerator contributors",
+  "main": "dist/main/index.cjs",
+  "scripts": {
+    "build:renderer": "rimraf renderer && cpy \"../web/out/**\" renderer",
+    "build:main": "rimraf dist && tsup",
+    "build": "pnpm build:renderer && pnpm build:main",
+    "dev": "node scripts/ensure-electron.mjs && tsup --watch --onSuccess \"node scripts/run-electron.mjs --dev\"",
+    "start": "node scripts/run-electron.mjs",
+    "smoke": "cross-env CMD_GENERATOR_SMOKE=1 node scripts/run-electron.mjs",
+    "package": "electron-builder --config electron-builder.config.cjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "//": "The one deliberate exception to 'no runtime dependencies': node-pty backs the Run feature's real interactive shell and ships a native binary tsup cannot bundle, so it stays a real dependency (see electron-builder.config.cjs's files/asarUnpack and pnpm-workspace.yaml's onlyBuiltDependencies). Everything else is still fully bundled by tsup. @cmdgen/web is a devDependency that is never imported — it exists so Turborepo orders the web build before build:renderer copies its output. The electron version is pinned exactly because electron-builder downloads binaries for one specific release and refuses a range.",
+  "dependencies": {
+    "node-pty": "^1.1.0-beta27"
+  },
+  "devDependencies": {
+    "@cmdgen/config": "workspace:*",
+    "@cmdgen/contracts": "workspace:*",
+    "@cmdgen/web": "workspace:*",
+    "zod": "^4.4.3",
+    "@types/node": "^22.20.1",
+    "cpy-cli": "^7.0.0",
+    "cross-env": "^10.1.0",
+    "electron": "43.2.0",
+    "electron-builder": "^26.15.3",
+    "rimraf": "^6.1.3",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  }
+}

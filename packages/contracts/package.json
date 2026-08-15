@@ -1,0 +1,24 @@
+{
+  "name": "@cmdgen/contracts",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "//": "sideEffects:false lets bundlers drop unused modules. Everything here is pure declarations — importing a type must not drag zod schema construction into the client bundle. Command-agnostic only: no command's own spec/catalogue data lives here, that's packages/cmds/<name>.",
+  "sideEffects": false,
+  "exports": {
+    ".": "./src/index.ts",
+    "./pure": "./src/pure.ts",
+    "./diagnostic": "./src/diagnostic.ts",
+    "./flags": "./src/flags.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@cmdgen/config": "workspace:*",
+    "typescript": "^5.9.3"
+  }
+}

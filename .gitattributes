@@ -1,0 +1,42 @@
+# Normalize everything to LF in the repository; Git checks out using the
+# platform's native line endings unless overridden below.
+* text=auto eol=lf
+
+# Windows-native scripts — kept CRLF. cmd.exe and double-clicking from
+# Explorer are unreliable with bare LF here.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# POSIX shell scripts — must stay LF. A CRLF shebang line (`#!/bin/sh\r`)
+# fails to execute under Git Bash/WSL/Linux — relevant here since
+# apps/web/public/start.sh ships alongside start.bat for the same app.
+*.sh text eol=lf
+
+# Source and config — explicit, not just relying on `text=auto`'s detection.
+*.ts text eol=lf
+*.tsx text eol=lf
+*.js text eol=lf
+*.jsx text eol=lf
+*.mjs text eol=lf
+*.cjs text eol=lf
+*.json text eol=lf
+*.css text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# Generated/vendored — collapsed in GitHub PR diffs and excluded from
+# language statistics.
+pnpm-lock.yaml linguist-generated=true
+apps/web/next-env.d.ts linguist-generated=true
+
+# Binary — never diffed, merged, or line-ending-normalized.
+*.png binary
+*.ico binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.woff binary
+*.woff2 binary
+*.docx binary

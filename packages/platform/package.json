@@ -1,0 +1,22 @@
+{
+  "name": "@cmdgen/platform",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": "./src/index.ts",
+    "./web": "./src/web.ts",
+    "./electron": "./src/electron.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@cmdgen/contracts": "workspace:*"
+  },
+  "devDependencies": {
+    "@cmdgen/config": "workspace:*",
+    "typescript": "^5.9.3"
+  }
+}

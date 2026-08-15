@@ -1,0 +1,46 @@
+// spec — types only from this barrel, same reasoning as @cmdgen/touch's index.ts.
+export type * from "./spec";
+export * from "./pure";
+
+// catalogue (empty — see catalogue/groups.ts and catalogue/flags.ts)
+export * from "./catalogue/groups";
+export * from "./catalogue/flags";
+
+// build
+export * from "./argv";
+
+// render (generic — owned by @cmdgen/engine, re-exported here by name for
+// convenience. Unlike @cmdgen/dd, ufw needs no command-owned render.ts: its
+// port/protocol combination is joined into one plain string, `portToken`,
+// before ever becoming an `Arg` — see argv/index.ts — so nothing here needs
+// `attached`/`quoteAttached` treatment.)
+export {
+  quotePosix,
+  quotePowerShell,
+  quoteCmd,
+  quoteFor,
+  quoteAttached,
+  needsQuoting,
+  renderTokens,
+  renderOneLine,
+  renderMultiLine,
+  continuationFor,
+  type RenderOptions,
+  type RenderedToken,
+} from "@cmdgen/engine";
+
+// lint
+export * from "./lint/rules";
+export * from "./lint/run";
+
+// explain
+export * from "./explain/describe";
+
+// presets and factory
+export * from "./presets";
+
+// manifest — cheap, zero-cost data, safe in the default barrel.
+export * from "./manifest";
+
+// The full CommandDefinition (./definition) is NOT re-exported here — see the
+// identical note in @cmdgen/mount's index.ts. Reach it via "@cmdgen/ufw/definition".

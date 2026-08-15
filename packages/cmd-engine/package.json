@@ -1,0 +1,23 @@
+{
+  "name": "@cmdgen/engine",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "//sideEffects": "Pure functions and generic data only. Without this, the barrel index forces every module into any bundle that imports one function.",
+  "sideEffects": false,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "//": "Command-agnostic catalogue/build/render/lint engine. Every packages/cmds/<name> package depends on this instead of reimplementing it.",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@cmdgen/contracts": "workspace:*",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@cmdgen/config": "workspace:*",
+    "typescript": "^5.9.3"
+  }
+}

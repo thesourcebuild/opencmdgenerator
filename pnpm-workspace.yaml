@@ -1,0 +1,23 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+  - "packages/cmds/*"
+
+# pnpm 11 blocks postinstall scripts unless a package is allowed here.
+# electron needs its postinstall to download the platform binary.
+# node-pty needs its install script to compile its native PTY binding.
+allowBuilds:
+  electron: true
+  esbuild: true
+  node-pty: true
+  "@tailwindcss/oxide": true
+  unrs-resolver: true
+  electron-winstaller: false
+  sharp: false
+
+# pnpm 11 reads non-auth settings from this file, not from .npmrc.
+nodeLinker: hoisted
+publicHoistPattern:
+  - "*electron*"
+  - "*types*"
+strictPeerDependencies: false

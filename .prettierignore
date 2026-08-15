@@ -1,0 +1,8 @@
+node_modules
+dist
+out
+.next
+renderer
+release
+pnpm-lock.yaml
+*.md

@@ -1,0 +1,21 @@
+export type * from "./spec";
+export * from "./pure";
+
+export * from "./catalogue/groups";
+export * from "./catalogue/flags";
+
+export * from "./argv";
+
+// render (traceroute's own platform-aware quoting, not @cmdgen/engine's posix/powershell-only renderer)
+export * from "./render";
+
+export * from "./lint/rules";
+export * from "./lint/run";
+
+export * from "./explain/describe";
+
+export * from "./presets";
+
+export * from "./manifest";
+
+// Full CommandDefinition lives at "@cmdgen/traceroute/definition" — see @cmdgen/cd's index.ts for why.

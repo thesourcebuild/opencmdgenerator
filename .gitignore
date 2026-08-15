@@ -1,0 +1,63 @@
+# dependencies
+node_modules/
+.pnpm-store/
+*.tgz
+
+# package manager crash logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# build output — shared across every package/app in the workspace
+dist/
+build/
+out/
+.next/
+*.tsbuildinfo
+
+# turborepo
+.turbo/
+
+# apps/desktop — electron
+apps/desktop/renderer/
+apps/desktop/release/
+*.blockmap
+
+# tooling caches
+.eslintcache
+.prettiercache
+
+# test / coverage
+coverage/
+test-results/
+playwright-report/
+blob-report/
+
+# env
+.env
+.env.local
+.env*.local
+
+# editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Office temp/lock files (e.g. ~$QnA.docx)
+~$QnA.docx
+QnA.docx
+
+# logs and scratch
+*.log
+*.tmp
+
+graphify-out
+CLAUDE.md
+.claude

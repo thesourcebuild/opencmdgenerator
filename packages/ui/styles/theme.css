@@ -1,0 +1,43 @@
+/*
+ * Shared design tokens. Imported once by the app's globals.css, after
+ * `@import "tailwindcss"`.
+ *
+ * Both light and dark are defined: the desktop window follows the OS theme and
+ * the web page follows the browser, so neither can be assumed.
+ */
+
+/*
+ * `dark:` utilities activate from a `.dark` class on `<html>` rather than
+ * `prefers-color-scheme` directly, so the Settings overlay's Light/Dark/System
+ * picker can override the OS preference — see apps/web/app/use-theme.ts, which
+ * sets that class (and, in "system" mode, keeps it following the OS setting).
+ */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-mono:
+    ui-monospace, "SF Mono", "Cascadia Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+
+  /* Diagnostic severity — used by the lint panel and the command preview. */
+  --color-severity-error: oklch(0.58 0.21 25);
+  --color-severity-destructive: oklch(0.62 0.19 40);
+  --color-severity-warning: oklch(0.72 0.15 85);
+  --color-severity-info: oklch(0.62 0.12 240);
+
+  /* Command syntax highlighting. */
+  --color-token-binary: oklch(0.55 0.14 265);
+  --color-token-flag: oklch(0.58 0.13 200);
+  --color-token-value: oklch(0.58 0.13 145);
+  --color-token-path: oklch(0.45 0.02 260);
+  --color-token-pattern: oklch(0.62 0.16 320);
+}
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+  }
+
+  body {
+    @apply bg-white text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100;
+  }
+}

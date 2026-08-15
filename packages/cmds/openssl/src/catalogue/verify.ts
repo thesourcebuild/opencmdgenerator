@@ -1,0 +1,95 @@
+import { createFlagCatalogue, type FlagDef as FlagDefGeneric } from "@cmdgen/engine";
+import type { FlagGroup } from "./groups";
+
+export type VerifyFlagDef = FlagDefGeneric<FlagGroup>;
+
+/** Modeled from the real `openssl verify -help` output (Certificate chain / Validation option groups). */
+export const VERIFY_FLAGS: readonly VerifyFlagDef[] = [
+  {
+    id: "capath",
+    long: "-CApath",
+    group: "options",
+    kind: "path",
+    arg: { placeholder: "/etc/ssl/certs", separator: " " },
+    summary: "A directory of trusted CA certificates.",
+    detail: "Alternative to a single -CAfile — the directory must be prepared with c_rehash-style hashed symlinks.",
+    order: 10,
+  },
+  {
+    id: "untrusted",
+    long: "-untrusted",
+    group: "options",
+    kind: "path",
+    arg: { placeholder: "chain.pem", separator: " " },
+    summary: "A file of untrusted intermediate certificates to help build the chain.",
+    detail: "These are used to complete the chain but are not themselves trusted as a root.",
+    order: 20,
+  },
+  {
+    id: "purpose",
+    long: "-purpose",
+    group: "options",
+    kind: "text",
+    arg: { placeholder: "sslserver", separator: " " },
+    summary: "Restrict verification to a specific certificate chain purpose.",
+    detail: "E.g. sslserver, sslclient, smimesign — real openssl rejects a chain that doesn't satisfy the stated purpose.",
+    order: 30,
+  },
+  {
+    id: "verifyHostname",
+    long: "-verify_hostname",
+    group: "options",
+    kind: "text",
+    arg: { placeholder: "example.com", separator: " " },
+    summary: "Check the certificate's hostname against this value.",
+    detail: "Matches against Subject Alternative Names / CN the same way TLS clients do.",
+    order: 40,
+  },
+  {
+    id: "crlCheck",
+    long: "-crl_check",
+    group: "options",
+    kind: "boolean",
+    summary: "Check the leaf certificate against a CRL.",
+    detail: "Requires a CRL to be supplied via -CRLfile or a CA/CApath that provides one; otherwise verification fails.",
+    order: 50,
+  },
+  {
+    id: "x509Strict",
+    long: "-x509_strict",
+    group: "options",
+    kind: "boolean",
+    summary: "Disable non-compliant workarounds for common certificate issues.",
+    detail: "Stricter, more RFC 5280-compliant checking — can reject certificates that verify fine without this flag.",
+    order: 60,
+  },
+  {
+    id: "showChain",
+    long: "-show_chain",
+    group: "options",
+    kind: "boolean",
+    summary: "Print the certificate chain used for verification.",
+    detail: "Purely informational — helps diagnose why a chain did or didn't verify.",
+    order: 70,
+  },
+  {
+    id: "noCheckTime",
+    long: "-no_check_time",
+    group: "options",
+    kind: "boolean",
+    danger: "caution",
+    summary: "Ignore certificate validity dates entirely.",
+    detail: "Real, common footgun: a genuinely expired or not-yet-valid certificate will still verify successfully.",
+    order: 80,
+  },
+  {
+    id: "verbose",
+    long: "-verbose",
+    group: "options",
+    kind: "boolean",
+    summary: "Print extra information about each verification step.",
+    detail: "Purely informational — doesn't change whether verification succeeds or fails.",
+    order: 90,
+  },
+] as const;
+export const VERIFY_CATALOGUE = createFlagCatalogue<FlagGroup>(VERIFY_FLAGS);

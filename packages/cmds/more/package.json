@@ -1,0 +1,25 @@
+{
+  "name": "@cmdgen/more",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "//sideEffects": "Pure functions and data only. Without this, the barrel index forces every module into any bundle that imports one function.",
+  "sideEffects": false,
+  "exports": {
+    ".": "./src/index.ts",
+    "./pure": "./src/pure.ts",
+    "./definition": "./src/definition.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@cmdgen/contracts": "workspace:*",
+    "@cmdgen/engine": "workspace:*",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@cmdgen/config": "workspace:*",
+    "typescript": "^5.9.3"
+  }
+}

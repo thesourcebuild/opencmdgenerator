@@ -1,0 +1,7 @@
+{
+  "extends": "@cmdgen/config/tsconfig/library.json",
+  "compilerOptions": {
+    "types": ["node", "vitest/globals"]
+  },
+  "include": ["**/*.ts", "../vitest.config.ts"]
+}
