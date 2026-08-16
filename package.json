@@ -1,9 +1,9 @@
 {
   "name": "OpenCmdGenerator",
-  "version": "0.1.2",
+  "version": "0.1.9",
   "license": "GPL-3.0-only",
   "private": true,
-  "description": "OpenCmdGenerator — cross-platform shell command generator",
+  "description": "OpenCmdGenerator Ã¢â‚¬â€ cross-platform shell command generator",
   "packageManager": "pnpm@11.20.0",
   "engines": {
     "node": ">=22.13"

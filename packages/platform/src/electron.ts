@@ -38,7 +38,9 @@ export const electronPlatform: PlatformApi = {
     return {
       isDesktop: true,
       platform: b.platform,
-      appVersion: process.env.NEXT_PUBLIC_APP_VERSION ?? (await b.getVersion()),
+      // The bridge is the authoritative source in Electron; renderer env values
+      // can lag behind when dev servers are reused.
+      appVersion: await b.getVersion(),
       defaultShell: isWindows ? "powershell" : "posix",
       defaultPathFlavor: isWindows ? "cygwin" : "unix",
       canPickDirectories: true,

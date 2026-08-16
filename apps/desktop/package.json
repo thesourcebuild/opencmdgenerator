@@ -1,9 +1,9 @@
 {
   "name": "@cmdgen/desktop",
-  "version": "0.1.2",
+  "version": "0.1.9",
   "license": "GPL-3.0-only",
   "private": true,
-  "description": "OpenCmdGenerator — desktop shell",
+  "description": "OpenCmdGenerator Ã¢â‚¬â€ desktop shell",
   "author": "OpenCmdGenerator contributors",
   "main": "dist/main/index.cjs",
   "scripts": {
@@ -16,7 +16,7 @@
     "package": "electron-builder --config electron-builder.config.cjs",
     "typecheck": "tsc --noEmit"
   },
-  "//": "The one deliberate exception to 'no runtime dependencies': node-pty backs the Run feature's real interactive shell and ships a native binary tsup cannot bundle, so it stays a real dependency (see electron-builder.config.cjs's files/asarUnpack and pnpm-workspace.yaml's onlyBuiltDependencies). Everything else is still fully bundled by tsup. @cmdgen/web is a devDependency that is never imported — it exists so Turborepo orders the web build before build:renderer copies its output. The electron version is pinned exactly because electron-builder downloads binaries for one specific release and refuses a range.",
+  "//": "The one deliberate exception to 'no runtime dependencies': node-pty backs the Run feature's real interactive shell and ships a native binary tsup cannot bundle, so it stays a real dependency (see electron-builder.config.cjs's files/asarUnpack and pnpm-workspace.yaml's onlyBuiltDependencies). Everything else is still fully bundled by tsup. @cmdgen/web is a devDependency that is never imported Ã¢â‚¬â€ it exists so Turborepo orders the web build before build:renderer copies its output. The electron version is pinned exactly because electron-builder downloads binaries for one specific release and refuses a range.",
   "dependencies": {
     "node-pty": "^1.1.0-beta27"
   },
