@@ -42,9 +42,9 @@ export function CommandHeader({ manifest }: { manifest: CommandManifest | undefi
 
   return (
     <div className="mb-4">
-      <p className="text-xs text-slate-500 dark:text-slate-400">
+      <h2 className="text-xs text-slate-500 dark:text-slate-400">
         <span className="font-semibold text-slate-700 dark:text-slate-200">{manifest.label}</span> — {manifest.summary}
-      </p>
+      </h2>
       <div className="mt-1.5 flex flex-wrap items-center gap-1">
         {manifest.platforms.map((p) => (
           <Badge key={p} tone="platform" title={manifest.platformNotes?.[p]}>
