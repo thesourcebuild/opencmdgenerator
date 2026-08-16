@@ -45,8 +45,32 @@ describe("presets", () => {
     expect(line(getPreset("show-everything")!.apply(spec()))).toBe("uname -a");
   });
 
+  it("'Show kernel name explicitly' is -s", () => {
+    expect(line(getPreset("show-kernel-name")!.apply(spec()))).toBe("uname -s");
+  });
+
+  it("'Show network node hostname' is -n", () => {
+    expect(line(getPreset("show-nodename")!.apply(spec()))).toBe("uname -n");
+  });
+
+  it("'Show kernel release' is -r", () => {
+    expect(line(getPreset("show-kernel-release")!.apply(spec()))).toBe("uname -r");
+  });
+
+  it("'Show kernel version' is -v", () => {
+    expect(line(getPreset("show-kernel-version")!.apply(spec()))).toBe("uname -v");
+  });
+
   it("'Show architecture' is -m", () => {
     expect(line(getPreset("show-architecture")!.apply(spec()))).toBe("uname -m");
+  });
+
+  it("'Show processor type' is -p", () => {
+    expect(line(getPreset("show-processor")!.apply(spec()))).toBe("uname -p");
+  });
+
+  it("'Show operating system' is -o", () => {
+    expect(line(getPreset("show-operating-system")!.apply(spec()))).toBe("uname -o");
   });
 });
 

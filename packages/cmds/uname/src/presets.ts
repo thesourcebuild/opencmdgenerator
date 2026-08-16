@@ -41,11 +41,53 @@ export const PRESETS: readonly Preset<UnameSpec>[] = [
     apply: (spec) => ({ ...spec, flags: { all: true } }),
   },
   {
+    id: "show-kernel-name",
+    label: "Show kernel name explicitly",
+    summary: "-s — the kernel name, e.g. \"Linux\" or \"Darwin\" (same as a bare uname).",
+    commandExample: "uname -s",
+    apply: (spec) => ({ ...spec, flags: { kernelName: true } }),
+  },
+  {
+    id: "show-nodename",
+    label: "Show network node hostname",
+    summary: "-n — the network node hostname, the same name hostname would print.",
+    commandExample: "uname -n",
+    apply: (spec) => ({ ...spec, flags: { nodename: true } }),
+  },
+  {
+    id: "show-kernel-release",
+    label: "Show kernel release",
+    summary: "-r — the kernel release, e.g. \"6.8.0-45-generic\".",
+    commandExample: "uname -r",
+    apply: (spec) => ({ ...spec, flags: { kernelRelease: true } }),
+  },
+  {
+    id: "show-kernel-version",
+    label: "Show kernel version",
+    summary: "-v — the kernel build/version detail string, often longer than the release.",
+    commandExample: "uname -v",
+    apply: (spec) => ({ ...spec, flags: { kernelVersion: true } }),
+  },
+  {
     id: "show-architecture",
     label: "Show architecture",
     summary: "-m — just the hardware architecture, e.g. x86_64 or arm64.",
     commandExample: "uname -m",
     apply: (spec) => ({ ...spec, flags: { machine: true } }),
+  },
+  {
+    id: "show-processor",
+    label: "Show processor type",
+    summary: "-p — the processor type, or \"unknown\" if it can't be determined.",
+    commandExample: "uname -p",
+    apply: (spec) => ({ ...spec, flags: { processor: true } }),
+  },
+  {
+    id: "show-operating-system",
+    label: "Show operating system",
+    summary: "-o — the operating system name, e.g. \"GNU/Linux\".",
+    commandExample: "uname -o",
+    apply: (spec) => ({ ...spec, flags: { operatingSystem: true } }),
   },
 ];
 
