@@ -170,10 +170,13 @@ const TopBuilder = dynamic(() => import("./top-builder").then((m) => m.TopBuilde
   ssr: false,
   loading: () => <BuilderSkeleton />,
 });
-const KillallBuilder = dynamic(() => import("./killall-builder").then((m) => m.KillallBuilder), {
-  ssr: false,
-  loading: () => <BuilderSkeleton />,
-});
+const KillallBuilder = dynamic(
+  () => import("./killall-builder").then((m) => m.KillallBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
 const DfBuilder = dynamic(() => import("./df-builder").then((m) => m.DfBuilder), {
   ssr: false,
   loading: () => <BuilderSkeleton />,
@@ -190,10 +193,13 @@ const WhatisBuilder = dynamic(() => import("./whatis-builder").then((m) => m.Wha
   ssr: false,
   loading: () => <BuilderSkeleton />,
 });
-const WhereisBuilder = dynamic(() => import("./whereis-builder").then((m) => m.WhereisBuilder), {
-  ssr: false,
-  loading: () => <BuilderSkeleton />,
-});
+const WhereisBuilder = dynamic(
+  () => import("./whereis-builder").then((m) => m.WhereisBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
 const CalBuilder = dynamic(() => import("./cal-builder").then((m) => m.CalBuilder), {
   ssr: false,
   loading: () => <BuilderSkeleton />,
@@ -214,14 +220,20 @@ const WgetBuilder = dynamic(() => import("./wget-builder").then((m) => m.WgetBui
   ssr: false,
   loading: () => <BuilderSkeleton />,
 });
-const IfconfigBuilder = dynamic(() => import("./ifconfig-builder").then((m) => m.IfconfigBuilder), {
-  ssr: false,
-  loading: () => <BuilderSkeleton />,
-});
-const TracerouteBuilder = dynamic(() => import("./traceroute-builder").then((m) => m.TracerouteBuilder), {
-  ssr: false,
-  loading: () => <BuilderSkeleton />,
-});
+const IfconfigBuilder = dynamic(
+  () => import("./ifconfig-builder").then((m) => m.IfconfigBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const TracerouteBuilder = dynamic(
+  () => import("./traceroute-builder").then((m) => m.TracerouteBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
 const AptBuilder = dynamic(() => import("./apt-builder").then((m) => m.AptBuilder), {
   ssr: false,
   loading: () => <BuilderSkeleton />,
@@ -246,22 +258,31 @@ const PasswdBuilder = dynamic(() => import("./passwd-builder").then((m) => m.Pas
   ssr: false,
   loading: () => <BuilderSkeleton />,
 });
-const UseraddBuilder = dynamic(() => import("./useradd-builder").then((m) => m.UseraddBuilder), {
-  ssr: false,
-  loading: () => <BuilderSkeleton />,
-});
-const ServiceBuilder = dynamic(() => import("./service-builder").then((m) => m.ServiceBuilder), {
-  ssr: false,
-  loading: () => <BuilderSkeleton />,
-});
+const UseraddBuilder = dynamic(
+  () => import("./useradd-builder").then((m) => m.UseraddBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const ServiceBuilder = dynamic(
+  () => import("./service-builder").then((m) => m.ServiceBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
 const UfwBuilder = dynamic(() => import("./ufw-builder").then((m) => m.UfwBuilder), {
   ssr: false,
   loading: () => <BuilderSkeleton />,
 });
-const IptablesBuilder = dynamic(() => import("./iptables-builder").then((m) => m.IptablesBuilder), {
-  ssr: false,
-  loading: () => <BuilderSkeleton />,
-});
+const IptablesBuilder = dynamic(
+  () => import("./iptables-builder").then((m) => m.IptablesBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
 const CurlBuilder = dynamic(() => import("./curl-builder").then((m) => m.CurlBuilder), {
   ssr: false,
   loading: () => <BuilderSkeleton />,
@@ -270,22 +291,34 @@ const GitBuilder = dynamic(() => import("./git-builder").then((m) => m.GitBuilde
   ssr: false,
   loading: () => <BuilderSkeleton />,
 });
-const AdduserBuilder = dynamic(() => import("./adduser-builder").then((m) => m.AdduserBuilder), {
-  ssr: false,
-  loading: () => <BuilderSkeleton />,
-});
-const GroupaddBuilder = dynamic(() => import("./groupadd-builder").then((m) => m.GroupaddBuilder), {
-  ssr: false,
-  loading: () => <BuilderSkeleton />,
-});
-const GroupmodBuilder = dynamic(() => import("./groupmod-builder").then((m) => m.GroupmodBuilder), {
-  ssr: false,
-  loading: () => <BuilderSkeleton />,
-});
-const UsermodBuilder = dynamic(() => import("./usermod-builder").then((m) => m.UsermodBuilder), {
-  ssr: false,
-  loading: () => <BuilderSkeleton />,
-});
+const AdduserBuilder = dynamic(
+  () => import("./adduser-builder").then((m) => m.AdduserBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const GroupaddBuilder = dynamic(
+  () => import("./groupadd-builder").then((m) => m.GroupaddBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const GroupmodBuilder = dynamic(
+  () => import("./groupmod-builder").then((m) => m.GroupmodBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const UsermodBuilder = dynamic(
+  () => import("./usermod-builder").then((m) => m.UsermodBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
 const SuBuilder = dynamic(() => import("./su-builder").then((m) => m.SuBuilder), {
   ssr: false,
   loading: () => <BuilderSkeleton />,
@@ -302,18 +335,27 @@ const WhereBuilder = dynamic(() => import("./where-builder").then((m) => m.Where
   ssr: false,
   loading: () => <BuilderSkeleton />,
 });
-const SystemctlBuilder = dynamic(() => import("./systemctl-builder").then((m) => m.SystemctlBuilder), {
-  ssr: false,
-  loading: () => <BuilderSkeleton />,
-});
-const JournalctlBuilder = dynamic(() => import("./journalctl-builder").then((m) => m.JournalctlBuilder), {
-  ssr: false,
-  loading: () => <BuilderSkeleton />,
-});
-const CrontabBuilder = dynamic(() => import("./crontab-builder").then((m) => m.CrontabBuilder), {
-  ssr: false,
-  loading: () => <BuilderSkeleton />,
-});
+const SystemctlBuilder = dynamic(
+  () => import("./systemctl-builder").then((m) => m.SystemctlBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const JournalctlBuilder = dynamic(
+  () => import("./journalctl-builder").then((m) => m.JournalctlBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const CrontabBuilder = dynamic(
+  () => import("./crontab-builder").then((m) => m.CrontabBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
 const AtBuilder = dynamic(() => import("./at-builder").then((m) => m.AtBuilder), {
   ssr: false,
   loading: () => <BuilderSkeleton />,
@@ -322,26 +364,35 @@ const HaltBuilder = dynamic(() => import("./halt-builder").then((m) => m.HaltBui
   ssr: false,
   loading: () => <BuilderSkeleton />,
 });
-const PoweroffBuilder = dynamic(() => import("./poweroff-builder").then((m) => m.PoweroffBuilder), {
-  ssr: false,
-  loading: () => <BuilderSkeleton />,
-});
+const PoweroffBuilder = dynamic(
+  () => import("./poweroff-builder").then((m) => m.PoweroffBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
 const RebootBuilder = dynamic(() => import("./reboot-builder").then((m) => m.RebootBuilder), {
   ssr: false,
   loading: () => <BuilderSkeleton />,
 });
-const ShutdownBuilder = dynamic(() => import("./shutdown-builder").then((m) => m.ShutdownBuilder), {
-  ssr: false,
-  loading: () => <BuilderSkeleton />,
-});
+const ShutdownBuilder = dynamic(
+  () => import("./shutdown-builder").then((m) => m.ShutdownBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
 const DigBuilder = dynamic(() => import("./dig-builder").then((m) => m.DigBuilder), {
   ssr: false,
   loading: () => <BuilderSkeleton />,
 });
-const NslookupBuilder = dynamic(() => import("./nslookup-builder").then((m) => m.NslookupBuilder), {
-  ssr: false,
-  loading: () => <BuilderSkeleton />,
-});
+const NslookupBuilder = dynamic(
+  () => import("./nslookup-builder").then((m) => m.NslookupBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
 const WhoisBuilder = dynamic(() => import("./whois-builder").then((m) => m.WhoisBuilder), {
   ssr: false,
   loading: () => <BuilderSkeleton />,
@@ -354,14 +405,20 @@ const PingBuilder = dynamic(() => import("./ping-builder").then((m) => m.PingBui
   ssr: false,
   loading: () => <BuilderSkeleton />,
 });
-const NetstatBuilder = dynamic(() => import("./netstat-builder").then((m) => m.NetstatBuilder), {
-  ssr: false,
-  loading: () => <BuilderSkeleton />,
-});
-const FirewallCmdBuilder = dynamic(() => import("./firewall-cmd-builder").then((m) => m.FirewallCmdBuilder), {
-  ssr: false,
-  loading: () => <BuilderSkeleton />,
-});
+const NetstatBuilder = dynamic(
+  () => import("./netstat-builder").then((m) => m.NetstatBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const FirewallCmdBuilder = dynamic(
+  () => import("./firewall-cmd-builder").then((m) => m.FirewallCmdBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
 const BlkidBuilder = dynamic(() => import("./blkid-builder").then((m) => m.BlkidBuilder), {
   ssr: false,
   loading: () => <BuilderSkeleton />,
@@ -386,10 +443,13 @@ const UmountBuilder = dynamic(() => import("./umount-builder").then((m) => m.Umo
   ssr: false,
   loading: () => <BuilderSkeleton />,
 });
-const UpdatedbBuilder = dynamic(() => import("./updatedb-builder").then((m) => m.UpdatedbBuilder), {
-  ssr: false,
-  loading: () => <BuilderSkeleton />,
-});
+const UpdatedbBuilder = dynamic(
+  () => import("./updatedb-builder").then((m) => m.UpdatedbBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
 const LocateBuilder = dynamic(() => import("./locate-builder").then((m) => m.LocateBuilder), {
   ssr: false,
   loading: () => <BuilderSkeleton />,
@@ -454,26 +514,41 @@ const FreeBuilder = dynamic(() => import("./free-builder").then((m) => m.FreeBui
   ssr: false,
   loading: () => <BuilderSkeleton />,
 });
-const SemanageBuilder = dynamic(() => import("./semanage-builder").then((m) => m.SemanageBuilder), {
-  ssr: false,
-  loading: () => <BuilderSkeleton />,
-});
-const GetenforceBuilder = dynamic(() => import("./getenforce-builder").then((m) => m.GetenforceBuilder), {
-  ssr: false,
-  loading: () => <BuilderSkeleton />,
-});
-const SetenforceBuilder = dynamic(() => import("./setenforce-builder").then((m) => m.SetenforceBuilder), {
-  ssr: false,
-  loading: () => <BuilderSkeleton />,
-});
-const RsyslogdBuilder = dynamic(() => import("./rsyslogd-builder").then((m) => m.RsyslogdBuilder), {
-  ssr: false,
-  loading: () => <BuilderSkeleton />,
-});
-const HistoryBuilder = dynamic(() => import("./history-builder").then((m) => m.HistoryBuilder), {
-  ssr: false,
-  loading: () => <BuilderSkeleton />,
-});
+const SemanageBuilder = dynamic(
+  () => import("./semanage-builder").then((m) => m.SemanageBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const GetenforceBuilder = dynamic(
+  () => import("./getenforce-builder").then((m) => m.GetenforceBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const SetenforceBuilder = dynamic(
+  () => import("./setenforce-builder").then((m) => m.SetenforceBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const RsyslogdBuilder = dynamic(
+  () => import("./rsyslogd-builder").then((m) => m.RsyslogdBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const HistoryBuilder = dynamic(
+  () => import("./history-builder").then((m) => m.HistoryBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
 const InfoBuilder = dynamic(() => import("./info-builder").then((m) => m.InfoBuilder), {
   ssr: false,
   loading: () => <BuilderSkeleton />,
@@ -498,10 +573,13 @@ const SourceBuilder = dynamic(() => import("./source-builder").then((m) => m.Sou
   ssr: false,
   loading: () => <BuilderSkeleton />,
 });
-const SshKeygenBuilder = dynamic(() => import("./ssh-keygen-builder").then((m) => m.SshKeygenBuilder), {
-  ssr: false,
-  loading: () => <BuilderSkeleton />,
-});
+const SshKeygenBuilder = dynamic(
+  () => import("./ssh-keygen-builder").then((m) => m.SshKeygenBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
 const AptGetBuilder = dynamic(() => import("./apt-get-builder").then((m) => m.AptGetBuilder), {
   ssr: false,
   loading: () => <BuilderSkeleton />,
@@ -510,7 +588,158 @@ const FfmpegBuilder = dynamic(() => import("./ffmpeg-builder").then((m) => m.Ffm
   ssr: false,
   loading: () => <BuilderSkeleton />,
 });
-const OpensslBuilder = dynamic(() => import("./openssl-builder").then((m) => m.OpensslBuilder), {
+const OpensslBuilder = dynamic(
+  () => import("./openssl-builder").then((m) => m.OpensslBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const FileBuilder = dynamic(() => import("./file-builder").then((m) => m.FileBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const StatBuilder = dynamic(() => import("./stat-builder").then((m) => m.StatBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const TreeBuilder = dynamic(() => import("./tree-builder").then((m) => m.TreeBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const UmaskBuilder = dynamic(() => import("./umask-builder").then((m) => m.UmaskBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const TacBuilder = dynamic(() => import("./tac-builder").then((m) => m.TacBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const EgrepBuilder = dynamic(() => import("./egrep-builder").then((m) => m.EgrepBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const PasteBuilder = dynamic(() => import("./paste-builder").then((m) => m.PasteBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const TrBuilder = dynamic(() => import("./tr-builder").then((m) => m.TrBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const XargsBuilder = dynamic(() => import("./xargs-builder").then((m) => m.XargsBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const HostnameBuilder = dynamic(
+  () => import("./hostname-builder").then((m) => m.HostnameBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const DateBuilder = dynamic(() => import("./date-builder").then((m) => m.DateBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const LscpuBuilder = dynamic(() => import("./lscpu-builder").then((m) => m.LscpuBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const LspciBuilder = dynamic(() => import("./lspci-builder").then((m) => m.LspciBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const LsusbBuilder = dynamic(() => import("./lsusb-builder").then((m) => m.LsusbBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const DmesgBuilder = dynamic(() => import("./dmesg-builder").then((m) => m.DmesgBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const HtopBuilder = dynamic(() => import("./htop-builder").then((m) => m.HtopBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const PgrepBuilder = dynamic(() => import("./pgrep-builder").then((m) => m.PgrepBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const BgBuilder = dynamic(() => import("./bg-builder").then((m) => m.BgBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const FgBuilder = dynamic(() => import("./fg-builder").then((m) => m.FgBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const JobsBuilder = dynamic(() => import("./jobs-builder").then((m) => m.JobsBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const NohupBuilder = dynamic(() => import("./nohup-builder").then((m) => m.NohupBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const NiceBuilder = dynamic(() => import("./nice-builder").then((m) => m.NiceBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const ReniceBuilder = dynamic(() => import("./renice-builder").then((m) => m.ReniceBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const IpBuilder = dynamic(() => import("./ip-builder").then((m) => m.IpBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const SsBuilder = dynamic(() => import("./ss-builder").then((m) => m.SsBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const FtpBuilder = dynamic(() => import("./ftp-builder").then((m) => m.FtpBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const TelnetBuilder = dynamic(() => import("./telnet-builder").then((m) => m.TelnetBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const IdBuilder = dynamic(() => import("./id-builder").then((m) => m.IdBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const GroupsBuilder = dynamic(() => import("./groups-builder").then((m) => m.GroupsBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const UserdelBuilder = dynamic(
+  () => import("./userdel-builder").then((m) => m.UserdelBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const Bzip2Builder = dynamic(() => import("./bzip2-builder").then((m) => m.Bzip2Builder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const Bunzip2Builder = dynamic(
+  () => import("./bunzip2-builder").then((m) => m.Bunzip2Builder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const UnaliasBuilder = dynamic(
+  () => import("./unalias-builder").then((m) => m.UnaliasBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const ExitBuilder = dynamic(() => import("./exit-builder").then((m) => m.ExitBuilder), {
   ssr: false,
   loading: () => <BuilderSkeleton />,
 });
@@ -565,7 +794,8 @@ export function AppShell() {
   useEffect(() => {
     const onSelectCommand = (event: Event) => {
       const commandId = (event as CustomEvent<{ commandId?: string }>).detail?.commandId;
-      if (commandId && MANIFESTS.some((manifest) => manifest.id === commandId)) setSelectedId(commandId);
+      if (commandId && MANIFESTS.some((manifest) => manifest.id === commandId))
+        setSelectedId(commandId);
     };
     window.addEventListener(SELECT_COMMAND_EVENT, onSelectCommand);
     return () => window.removeEventListener(SELECT_COMMAND_EVENT, onSelectCommand);
@@ -633,8 +863,9 @@ export function AppShell() {
 
       <div className="flex flex-1 min-h-0 overflow-hidden">
         <aside
-          className={`shrink-0 overflow-hidden border-r border-slate-200 bg-white transition-[width] duration-150 dark:border-slate-800 dark:bg-slate-900 ${sidebarOpen ? "w-64" : "w-11"
-            }`}
+          className={`shrink-0 overflow-hidden border-r border-slate-200 bg-white transition-[width] duration-150 dark:border-slate-800 dark:bg-slate-900 ${
+            sidebarOpen ? "w-64" : "w-11"
+          }`}
         >
           {sidebarOpen ? (
             <Sidebar
@@ -678,10 +909,18 @@ export function AppShell() {
               onPlatformChange={setCdPlatform}
             />
           )}
-          {selectedId === "ssh" && <SshBuilder initialShell={isWindowsHost ? "powershell" : "posix"} />}
-          {selectedId === "ls" && <LsBuilder initialPlatform={isWindowsHost ? "windows-powershell" : "linux"} />}
-          {selectedId === "rm" && <RmBuilder initialPlatform={isWindowsHost ? "windows-powershell" : "linux"} />}
-          {selectedId === "kill" && <KillBuilder initialPlatform={isWindowsHost ? "windows-powershell" : "linux"} />}
+          {selectedId === "ssh" && (
+            <SshBuilder initialShell={isWindowsHost ? "powershell" : "posix"} />
+          )}
+          {selectedId === "ls" && (
+            <LsBuilder initialPlatform={isWindowsHost ? "windows-powershell" : "linux"} />
+          )}
+          {selectedId === "rm" && (
+            <RmBuilder initialPlatform={isWindowsHost ? "windows-powershell" : "linux"} />
+          )}
+          {selectedId === "kill" && (
+            <KillBuilder initialPlatform={isWindowsHost ? "windows-powershell" : "linux"} />
+          )}
           {selectedId === "tar" && (
             <TarBuilder
               variant={tarVariant}
@@ -699,27 +938,59 @@ export function AppShell() {
             />
           )}
           {selectedId === "chmod" && <ChmodBuilder />}
-          {selectedId === "pwd" && <PwdBuilder initialPlatform={isWindowsHost ? "windows-powershell" : "linux"} />}
-          {selectedId === "mkdir" && <MkdirBuilder platform={mkdirPlatform} onPlatformChange={setMkdirPlatform} />}
+          {selectedId === "pwd" && (
+            <PwdBuilder initialPlatform={isWindowsHost ? "windows-powershell" : "linux"} />
+          )}
+          {selectedId === "mkdir" && (
+            <MkdirBuilder platform={mkdirPlatform} onPlatformChange={setMkdirPlatform} />
+          )}
           {selectedId === "touch" && <TouchBuilder />}
-          {selectedId === "ln" && <LnBuilder platform={lnPlatform} onPlatformChange={setLnPlatform} />}
-          {selectedId === "mv" && <MvBuilder platform={mvPlatform} onPlatformChange={setMvPlatform} />}
-          {selectedId === "cp" && <CpBuilder platform={cpPlatform} onPlatformChange={setCpPlatform} />}
+          {selectedId === "ln" && (
+            <LnBuilder platform={lnPlatform} onPlatformChange={setLnPlatform} />
+          )}
+          {selectedId === "mv" && (
+            <MvBuilder platform={mvPlatform} onPlatformChange={setMvPlatform} />
+          )}
+          {selectedId === "cp" && (
+            <CpBuilder platform={cpPlatform} onPlatformChange={setCpPlatform} />
+          )}
           {selectedId === "chown" && <ChownBuilder />}
-          {selectedId === "cat" && <CatBuilder platform={catPlatform} onPlatformChange={setCatPlatform} />}
-          {selectedId === "echo" && <EchoBuilder platform={echoPlatform} onPlatformChange={setEchoPlatform} />}
-          {selectedId === "head" && <HeadBuilder initialPlatform={isWindowsHost ? "windows-powershell" : "linux"} />}
-          {selectedId === "tail" && <TailBuilder initialPlatform={isWindowsHost ? "windows-powershell" : "linux"} />}
+          {selectedId === "cat" && (
+            <CatBuilder platform={catPlatform} onPlatformChange={setCatPlatform} />
+          )}
+          {selectedId === "echo" && (
+            <EchoBuilder platform={echoPlatform} onPlatformChange={setEchoPlatform} />
+          )}
+          {selectedId === "head" && (
+            <HeadBuilder initialPlatform={isWindowsHost ? "windows-powershell" : "linux"} />
+          )}
+          {selectedId === "tail" && (
+            <TailBuilder initialPlatform={isWindowsHost ? "windows-powershell" : "linux"} />
+          )}
           {selectedId === "less" && <LessBuilder />}
-          {selectedId === "grep" && <GrepBuilder platform={grepPlatform} onPlatformChange={setGrepPlatform} />}
-          {selectedId === "sort" && <SortBuilder initialPlatform={isWindowsHost ? "windows-cmd" : "linux"} />}
-          {selectedId === "diff" && <DiffBuilder initialPlatform={isWindowsHost ? "windows-cmd" : "linux"} />}
+          {selectedId === "grep" && (
+            <GrepBuilder platform={grepPlatform} onPlatformChange={setGrepPlatform} />
+          )}
+          {selectedId === "sort" && (
+            <SortBuilder initialPlatform={isWindowsHost ? "windows-cmd" : "linux"} />
+          )}
+          {selectedId === "diff" && (
+            <DiffBuilder initialPlatform={isWindowsHost ? "windows-cmd" : "linux"} />
+          )}
           {selectedId === "cmp" && <CmpBuilder />}
           {selectedId === "comm" && <CommBuilder />}
-          {selectedId === "export" && <ExportBuilder platform={exportPlatform} onPlatformChange={setExportPlatform} />}
-          {selectedId === "alias" && <AliasBuilder platform={aliasPlatform} onPlatformChange={setAliasPlatform} />}
-          {selectedId === "clear" && <ClearBuilder platform={clearPlatform} onPlatformChange={setClearPlatform} />}
-          {selectedId === "whoami" && <WhoamiBuilder platform={whoamiPlatform} onPlatformChange={setWhoamiPlatform} />}
+          {selectedId === "export" && (
+            <ExportBuilder platform={exportPlatform} onPlatformChange={setExportPlatform} />
+          )}
+          {selectedId === "alias" && (
+            <AliasBuilder platform={aliasPlatform} onPlatformChange={setAliasPlatform} />
+          )}
+          {selectedId === "clear" && (
+            <ClearBuilder platform={clearPlatform} onPlatformChange={setClearPlatform} />
+          )}
+          {selectedId === "whoami" && (
+            <WhoamiBuilder platform={whoamiPlatform} onPlatformChange={setWhoamiPlatform} />
+          )}
           {selectedId === "uname" && <UnameBuilder />}
           {selectedId === "ps" && <PsBuilder />}
           {selectedId === "top" && <TopBuilder />}
@@ -729,13 +1000,25 @@ export function AppShell() {
           {selectedId === "man" && <ManBuilder />}
           {selectedId === "whatis" && <WhatisBuilder />}
           {selectedId === "whereis" && <WhereisBuilder />}
-          {selectedId === "cal" && <CalBuilder platform={calPlatform} onPlatformChange={setCalPlatform} />}
+          {selectedId === "cal" && (
+            <CalBuilder platform={calPlatform} onPlatformChange={setCalPlatform} />
+          )}
           {selectedId === "dd" && <DdBuilder />}
           {selectedId === "zip" && <ZipBuilder />}
           {selectedId === "unzip" && <UnzipBuilder />}
           {selectedId === "wget" && <WgetBuilder />}
-          {selectedId === "ifconfig" && <IfconfigBuilder platform={ifconfigPlatform} onPlatformChange={setIfconfigPlatform} />}
-          {selectedId === "traceroute" && <TracerouteBuilder platform={traceroutePlatform} onPlatformChange={setTraceroutePlatform} />}
+          {selectedId === "ifconfig" && (
+            <IfconfigBuilder
+              platform={ifconfigPlatform}
+              onPlatformChange={setIfconfigPlatform}
+            />
+          )}
+          {selectedId === "traceroute" && (
+            <TracerouteBuilder
+              platform={traceroutePlatform}
+              onPlatformChange={setTraceroutePlatform}
+            />
+          )}
           {selectedId === "apt" && <AptBuilder />}
           {selectedId === "pacman" && <PacmanBuilder />}
           {selectedId === "yum" && <YumBuilder />}
@@ -746,8 +1029,12 @@ export function AppShell() {
           {selectedId === "service" && <ServiceBuilder />}
           {selectedId === "ufw" && <UfwBuilder />}
           {selectedId === "iptables" && <IptablesBuilder />}
-          {selectedId === "curl" && <CurlBuilder initialShell={isWindowsHost ? "powershell" : "posix"} />}
-          {selectedId === "git" && <GitBuilder initialShell={isWindowsHost ? "powershell" : "posix"} />}
+          {selectedId === "curl" && (
+            <CurlBuilder initialShell={isWindowsHost ? "powershell" : "posix"} />
+          )}
+          {selectedId === "git" && (
+            <GitBuilder initialShell={isWindowsHost ? "powershell" : "posix"} />
+          )}
           {selectedId === "adduser" && <AdduserBuilder />}
           {selectedId === "groupadd" && <GroupaddBuilder />}
           {selectedId === "groupmod" && <GroupmodBuilder />}
@@ -807,8 +1094,46 @@ export function AppShell() {
           {selectedId === "source" && <SourceBuilder />}
           {selectedId === "ssh-keygen" && <SshKeygenBuilder />}
           {selectedId === "apt-get" && <AptGetBuilder />}
-          {selectedId === "ffmpeg" && <FfmpegBuilder initialShell={isWindowsHost ? "powershell" : "posix"} />}
-          {selectedId === "openssl" && <OpensslBuilder initialShell={isWindowsHost ? "powershell" : "posix"} />}
+          {selectedId === "ffmpeg" && (
+            <FfmpegBuilder initialShell={isWindowsHost ? "powershell" : "posix"} />
+          )}
+          {selectedId === "openssl" && (
+            <OpensslBuilder initialShell={isWindowsHost ? "powershell" : "posix"} />
+          )}
+          {selectedId === "file" && <FileBuilder />}
+          {selectedId === "stat" && <StatBuilder />}
+          {selectedId === "tree" && <TreeBuilder />}
+          {selectedId === "umask" && <UmaskBuilder />}
+          {selectedId === "tac" && <TacBuilder />}
+          {selectedId === "egrep" && <EgrepBuilder />}
+          {selectedId === "paste" && <PasteBuilder />}
+          {selectedId === "tr" && <TrBuilder />}
+          {selectedId === "xargs" && <XargsBuilder />}
+          {selectedId === "hostname" && <HostnameBuilder />}
+          {selectedId === "date" && <DateBuilder />}
+          {selectedId === "lscpu" && <LscpuBuilder />}
+          {selectedId === "lspci" && <LspciBuilder />}
+          {selectedId === "lsusb" && <LsusbBuilder />}
+          {selectedId === "dmesg" && <DmesgBuilder />}
+          {selectedId === "htop" && <HtopBuilder />}
+          {selectedId === "pgrep" && <PgrepBuilder />}
+          {selectedId === "bg" && <BgBuilder />}
+          {selectedId === "fg" && <FgBuilder />}
+          {selectedId === "jobs" && <JobsBuilder />}
+          {selectedId === "nohup" && <NohupBuilder />}
+          {selectedId === "nice" && <NiceBuilder />}
+          {selectedId === "renice" && <ReniceBuilder />}
+          {selectedId === "ip" && <IpBuilder />}
+          {selectedId === "ss" && <SsBuilder />}
+          {selectedId === "ftp" && <FtpBuilder />}
+          {selectedId === "telnet" && <TelnetBuilder />}
+          {selectedId === "id" && <IdBuilder />}
+          {selectedId === "groups" && <GroupsBuilder />}
+          {selectedId === "userdel" && <UserdelBuilder />}
+          {selectedId === "bzip2" && <Bzip2Builder />}
+          {selectedId === "bunzip2" && <Bunzip2Builder />}
+          {selectedId === "unalias" && <UnaliasBuilder />}
+          {selectedId === "exit" && <ExitBuilder />}
         </main>
       </div>
 
@@ -825,7 +1150,10 @@ function BuilderSkeleton() {
       {[0, 1].map((col) => (
         <div key={col} className="space-y-4">
           {[0, 1].map((row) => (
-            <div key={row} className="h-32 rounded-lg border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900" />
+            <div
+              key={row}
+              className="h-32 rounded-lg border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900"
+            />
           ))}
         </div>
       ))}
@@ -835,7 +1163,16 @@ function BuilderSkeleton() {
 
 function GearIcon() {
   return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <circle cx="12" cy="12" r="3" />
       <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
     </svg>
@@ -844,7 +1181,16 @@ function GearIcon() {
 
 function MenuIcon() {
   return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <line x1="3" y1="6" x2="21" y2="6" />
       <line x1="3" y1="12" x2="21" y2="12" />
       <line x1="3" y1="18" x2="21" y2="18" />

@@ -1,4 +1,11 @@
-import type { HostPlatform, OpenedTextFile, RunDataEvent, RunSession, RunShellKind, SaveResult } from "@cmdgen/contracts";
+import type {
+  HostPlatform,
+  OpenedTextFile,
+  RunDataEvent,
+  RunSession,
+  RunShellKind,
+  SaveResult,
+} from "@cmdgen/contracts";
 
 /** Native menu items the desktop shell can dispatch into the renderer. */
 export type MenuAction =
@@ -48,8 +55,10 @@ declare global {
 }
 
 export function getDesktopBridge(): DesktopBridge | undefined {
-  if (typeof window === "undefined") return undefined;
-  return window.cmdGenerator;
+  const globalWithWindow = globalThis as typeof globalThis & {
+    window?: { cmdGenerator?: DesktopBridge };
+  };
+  return globalWithWindow.window?.cmdGenerator;
 }
 
 export const isDesktopHost = (): boolean => getDesktopBridge() !== undefined;

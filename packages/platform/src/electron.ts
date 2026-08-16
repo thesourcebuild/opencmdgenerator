@@ -68,7 +68,12 @@ export const electronPlatform: PlatformApi = {
   async copyToClipboard(text: string): Promise<void> {
     // The renderer is a real Chromium context, so the async clipboard API works
     // without a privileged round-trip.
-    await navigator.clipboard.writeText(text);
+    const clipboard = (
+      globalThis.navigator as
+        { clipboard?: { writeText(text: string): Promise<void> } } | undefined
+    )?.clipboard;
+    if (!clipboard) throw new Error("Clipboard API unavailable in this renderer.");
+    await clipboard.writeText(text);
   },
 
   async openExternal(url: string): Promise<void> {
