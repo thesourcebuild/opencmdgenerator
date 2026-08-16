@@ -6,6 +6,7 @@ type FooterProps = {
 
 const GITHUB_URL = "https://github.com/thesourcebuild/OpenCmdGenerator";
 const DOCS_URL = "https://github.com/thesourcebuild/OpenCmdGenerator/blob/master/README.md#further-reading";
+const ISSUE_URL = "https://github.com/thesourcebuild/OpenCmdGenerator/issues/new";
 
 export function Footer({ version }: FooterProps) {
   return (
@@ -32,6 +33,14 @@ export function Footer({ version }: FooterProps) {
             className="transition-colors hover:text-slate-700 dark:hover:text-slate-200"
           >
             GitHub
+          </a>
+          <a
+            href={ISSUE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sky-600 transition-colors hover:text-sky-700 dark:text-sky-400 dark:hover:text-sky-300"
+          >
+            Report an issue
           </a>
         </nav>
       </div>

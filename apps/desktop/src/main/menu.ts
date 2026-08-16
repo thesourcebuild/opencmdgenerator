@@ -1,4 +1,6 @@
-import { Menu, app, type BrowserWindow, type MenuItemConstructorOptions } from "electron";
+import { Menu, app, shell, type BrowserWindow, type MenuItemConstructorOptions } from "electron";
+
+const ISSUE_URL = "https://github.com/thesourcebuild/OpenCmdGenerator/issues/new";
 
 export interface MenuOptions {
   /** Shows the Developer submenu. Set when running against the dev server. */
@@ -85,7 +87,13 @@ export function buildMenu(window: BrowserWindow, options: MenuOptions): void {
       : []),
     {
       label: "&Help",
-      submenu: [{ label: `About ${app.getName()}`, click: send("menu:about") }],
+      submenu: [
+        { label: `About ${app.getName()}`, click: send("menu:about") },
+        {
+          label: "Report an issue…",
+          click: () => void shell.openExternal(ISSUE_URL),
+        },
+      ],
     },
   ];
 
