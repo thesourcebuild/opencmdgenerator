@@ -48,12 +48,33 @@ describe("action/unit rendering — action comes first, unlike service", () => {
     expect(line(spec({ unit: "  nginx  ", action: "restart" }))).toBe("systemctl restart nginx");
     expect(line(spec())).toBe("systemctl status");
   });
+
+  it("renders global options before the action and multiple positional arguments after it", () => {
+    expect(
+      line(
+        spec({
+          action: "set-property",
+          targets: ["nginx.service", "CPUWeight=200", "MemoryMax=2G"],
+          flags: { runtime: true, noBlock: true },
+        }),
+      ),
+    ).toBe("systemctl --no-block --runtime set-property nginx.service CPUWeight=200 MemoryMax=2G");
+  });
+
+  it("supports list/show-style commands and advanced passthrough options", () => {
+    expect(line(spec({ action: "list-units", flags: { type: "service,timer", state: "failed", all: true } }))).toBe(
+      "systemctl -a --state=failed --type=service,timer list-units",
+    );
+    expect(line(spec({ action: "show", targets: ["nginx.service"], extraOptions: ["--timestamp=utc"] }))).toBe(
+      "systemctl --timestamp=utc show nginx.service",
+    );
+  });
 });
 
 describe("lint", () => {
-  it("SCT001 catches an empty or whitespace-only unit", () => {
-    expect(lint(spec()).diagnostics.map((d) => d.code)).toContain("SCT001");
-    expect(lint(spec({ unit: "   " })).diagnostics.map((d) => d.code)).toContain("SCT001");
+  it("SCT001 catches an empty or whitespace-only argument for actions that require one", () => {
+    expect(lint(spec({ action: "start" })).diagnostics.map((d) => d.code)).toContain("SCT001");
+    expect(lint(spec({ action: "start", unit: "   " })).diagnostics.map((d) => d.code)).toContain("SCT001");
   });
 
   it("SCT001 does not fire for daemon-reload, which needs no unit", () => {
@@ -65,10 +86,20 @@ describe("lint", () => {
     expect(lint(spec({ unit: "nginx", action: "disable" })).diagnostics.map((d) => d.code)).toContain("SCT002");
   });
 
-  it("SCT002 does not fire for start/restart/status/enable", () => {
-    for (const action of ["start", "restart", "status", "enable", "is-active"] as const) {
+  it("SCT002 does not fire for start/status/enable checks", () => {
+    for (const action of ["start", "status", "enable", "is-active"] as const) {
       expect(lint(spec({ unit: "nginx", action })).diagnostics.map((d) => d.code)).not.toContain("SCT002");
     }
+  });
+
+  it("SCT002 warns on restart-like operations", () => {
+    expect(lint(spec({ unit: "nginx", action: "restart" })).diagnostics.map((d) => d.code)).toContain("SCT002");
+  });
+
+  it("SCT003 warns on disruptive options", () => {
+    expect(lint(spec({ action: "clean", unit: "nginx", flags: { what: "all" } })).diagnostics.map((d) => d.code)).toContain(
+      "SCT003",
+    );
   });
 
   it("a plain status check has no diagnostics", () => {

@@ -11,10 +11,13 @@ import { JournalctlPreview } from "./journalctl-preview";
 import { PresetInfo } from "./preset-example";
 import { PresetsDropdown } from "./presets-dropdown";
 import { RightSidebar } from "./right-sidebar";
+import { StringListEditor } from "./string-list-editor";
 
 export function JournalctlBuilder() {
   const [spec, setSpec] = useState<JournalctlSpec>(() => createSpec({ id: "draft" }));
   const [activePreset, setActivePreset] = useState<Preset<JournalctlSpec> | null>(null);
+  const matches = spec.matches ?? [];
+  const extraOptions = spec.extraOptions ?? [];
 
   return (
     <div className="flex gap-4">
@@ -41,12 +44,32 @@ export function JournalctlBuilder() {
               </div>
             </Panel>
 
+            <Panel title="Matches and paths" description="Additional FIELD=VALUE matches, + disjunction separators, or absolute paths/executables/devices.">
+              <StringListEditor
+                items={matches}
+                onChange={(next) => setSpec((s) => ({ ...s, matches: next }))}
+                placeholder="_PID=1234"
+                addLabel="Add match"
+                emptyHint="Leave blank unless you need structured journal matches beyond unit/time/priority filters."
+              />
+            </Panel>
+
             <Panel title="Flags">
               <FlagsForm
                 catalogue={CATALOGUE}
                 groups={FLAG_GROUP_META}
                 flags={spec.flags}
                 onChange={(id, value) => setSpec((s) => setFlag(s, id, value))}
+              />
+            </Panel>
+
+            <Panel title="Advanced passthrough options" description="Raw journalctl options inserted before matches for very new or uncommon switches.">
+              <StringListEditor
+                items={extraOptions}
+                onChange={(next) => setSpec((s) => ({ ...s, extraOptions: next }))}
+                placeholder="--option or --option=value"
+                addLabel="Add option"
+                emptyHint="Most supported options are available above; use this only for newer journalctl flags."
               />
             </Panel>
           </div>

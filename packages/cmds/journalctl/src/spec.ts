@@ -12,6 +12,10 @@ export const JournalctlSpec = z.object({
 
   /** Restricts output to one systemd unit's logs, e.g. "nginx.service" or "nginx" — optional, unlike @cmdgen/systemctl's required `unit`. */
   unit: z.string().default(""),
+  /** Additional journal matches/paths, e.g. "_PID=123", "SYSLOG_IDENTIFIER=sshd", or "/usr/bin/sshd". */
+  matches: z.array(z.string()).default([]),
+  /** Raw, user-supplied journalctl options for uncommon/new switches not modeled in the catalogue yet. */
+  extraOptions: z.array(z.string()).default([]),
 
   flags: FlagValues.default({}),
   /**

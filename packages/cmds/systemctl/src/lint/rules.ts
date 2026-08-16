@@ -1,17 +1,38 @@
 import type { Diagnostic, LintRule } from "@cmdgen/contracts/diagnostic";
+import { flagBool, flagString } from "../pure";
 import type { SystemctlSpec } from "../spec";
+import { actionNeedsTarget, positionalArgs } from "../argv";
 
-const NO_UNIT_ACTIONS = new Set<SystemctlSpec["action"]>(["daemon-reload"]);
-const RISKY_ACTIONS = new Set<SystemctlSpec["action"]>(["stop", "disable"]);
+const RISKY_ACTIONS = new Set<SystemctlSpec["action"]>([
+  "stop",
+  "disable",
+  "restart",
+  "try-restart",
+  "reload-or-restart",
+  "try-reload-or-restart",
+  "isolate",
+  "kill",
+  "clean",
+  "freeze",
+  "mask",
+  "poweroff",
+  "reboot",
+  "halt",
+  "kexec",
+  "suspend",
+  "hibernate",
+  "hybrid-sleep",
+  "suspend-then-hibernate",
+]);
 
 const noUnit: LintRule<SystemctlSpec> = {
   code: "SCT001",
   check(spec) {
-    if (NO_UNIT_ACTIONS.has(spec.action) || spec.unit.trim() !== "") return [];
+    if (!actionNeedsTarget(spec.action) || positionalArgs(spec).length > 0) return [];
     const diagnostic: Diagnostic<SystemctlSpec> = {
       code: "SCT001",
       level: "error",
-      message: `systemctl ${spec.action} needs a unit to act on.`,
+      message: `systemctl ${spec.action} needs at least one argument.`,
       field: "unit",
     };
     return [diagnostic];
@@ -29,12 +50,12 @@ const stopOrDisableCaution: LintRule<SystemctlSpec> = {
   code: "SCT002",
   check(spec) {
     if (!RISKY_ACTIONS.has(spec.action)) return [];
-    const unit = spec.unit.trim() || "this unit";
+    const unit = positionalArgs(spec)[0] ?? "this target";
     return [
       {
         code: "SCT002",
         level: "warning",
-        message: `${spec.action === "stop" ? "Stopping" : "Disabling"} ${unit} can affect anything that depends on it.`,
+        message: `systemctl ${spec.action} ${unit} can affect running services or system state.`,
         detail:
           "This app has no way to know whether a given unit is safe to stop or disable — verify it isn't a critical system service before running this.",
         field: "unit",
@@ -43,6 +64,25 @@ const stopOrDisableCaution: LintRule<SystemctlSpec> = {
   },
 };
 
-export const RULES: readonly LintRule<SystemctlSpec>[] = [noUnit, stopOrDisableCaution];
+const dangerousOptions: LintRule<SystemctlSpec> = {
+  code: "SCT003",
+  check(spec) {
+    const details: string[] = [];
+    if (flagString(spec, "what") === "all") details.push("--what=all removes every cleanable resource type for the selected units.");
+    if (flagBool(spec, "force")) details.push("--force changes normal safety semantics for the selected operation.");
+    if (flagBool(spec, "firmwareSetup")) details.push("--firmware-setup changes the next reboot target.");
+    if (details.length === 0) return [];
+    return [
+      {
+        code: "SCT003",
+        level: "warning",
+        message: "One or more selected systemctl options are potentially disruptive.",
+        detail: details.join(" "),
+      },
+    ];
+  },
+};
+
+export const RULES: readonly LintRule<SystemctlSpec>[] = [noUnit, stopOrDisableCaution, dangerousOptions];
 
 export const RULE_CODES: readonly string[] = RULES.map((r) => r.code);

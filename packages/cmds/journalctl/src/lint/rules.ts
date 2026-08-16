@@ -1,11 +1,11 @@
 import type { LintRule } from "@cmdgen/contracts/diagnostic";
 import type { JournalctlSpec } from "../spec";
-import { flagBool, flagString } from "../pure";
+import { flagBool, flagNumber, flagString } from "../pure";
 
 /**
- * journalctl is read-only, so there is no destructive/caution footgun here —
- * only genuine mistakes worth a nudge, matching the "no danger" scope this
- * command was given.
+ * Most journalctl queries are read-only; maintenance switches such as vacuum,
+ * rotate, flush and FSS key setup are modeled now, so lint keeps the old query
+ * mistakes and adds explicit warnings for operations that mutate journal state.
  */
 const followWithBoundedRange: LintRule<JournalctlSpec> = {
   code: "JCT001",
@@ -48,6 +48,24 @@ const sinceAfterUntil: LintRule<JournalctlSpec> = {
   },
 };
 
-export const RULES: readonly LintRule<JournalctlSpec>[] = [followWithBoundedRange, sinceAfterUntil];
+const maintenanceMutation: LintRule<JournalctlSpec> = {
+  code: "JCT003",
+  check(spec) {
+    const risky = ["vacuumSize", "vacuumTime", "vacuumFiles", "rotate", "flush", "relinquishVar", "smartRelinquishVar", "updateCatalog", "setupKeys", "force"]
+      .filter((id) => flagBool(spec, id) || flagString(spec, id) || flagNumber(spec, id) !== undefined);
+    if (risky.length === 0) return [];
+    return [
+      {
+        code: "JCT003",
+        level: "warning",
+        message: "Selected journalctl maintenance options can modify journal files or catalog/key state.",
+        detail: `Review before running: ${risky.join(", ")}. Regular log-reading options are read-only; these are not.`,
+        flagIds: risky,
+      },
+    ];
+  },
+};
+
+export const RULES: readonly LintRule<JournalctlSpec>[] = [followWithBoundedRange, sinceAfterUntil, maintenanceMutation];
 
 export const RULE_CODES: readonly string[] = RULES.map((r) => r.code);

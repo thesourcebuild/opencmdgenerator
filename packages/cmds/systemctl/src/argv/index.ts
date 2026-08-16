@@ -1,10 +1,91 @@
-import type { Arg, Argv } from "@cmdgen/engine";
+import { buildFlagArgs, enabledFlagIds as enabledFlagIdsGeneric, type Arg, type Argv } from "@cmdgen/engine";
+import { CATALOGUE } from "../catalogue/flags";
 import type { SystemctlSpec } from "../spec";
 
 export type { Arg, Argv };
 
-/** The one action real systemctl runs with no unit argument at all. */
-const NO_UNIT_ACTIONS = new Set<SystemctlSpec["action"]>(["daemon-reload"]);
+/** Actions that run without required positional operands. Many still accept optional patterns/arguments. */
+const NO_REQUIRED_TARGET_ACTIONS = new Set<SystemctlSpec["action"]>([
+  "list-units",
+  "list-automounts",
+  "list-paths",
+  "list-sockets",
+  "list-timers",
+  "status",
+  "show",
+  "is-failed",
+  "list-dependencies",
+  "reset-failed",
+  "whoami",
+  "list-unit-files",
+  "preset-all",
+  "get-default",
+  "list-jobs",
+  "cancel",
+  "is-system-running",
+  "default",
+  "rescue",
+  "emergency",
+  "halt",
+  "poweroff",
+  "reboot",
+  "kexec",
+  "suspend",
+  "hibernate",
+  "hybrid-sleep",
+  "suspend-then-hibernate",
+  "exit",
+  "daemon-reload",
+  "daemon-reexec",
+  "log-level",
+  "log-target",
+  "service-watchdogs",
+  "show-environment",
+  "import-environment",
+  "help-command",
+  "version",
+]);
+
+const NO_POSITIONAL_ACTIONS = new Set<SystemctlSpec["action"]>([
+  "preset-all",
+  "get-default",
+  "list-jobs",
+  "is-system-running",
+  "default",
+  "rescue",
+  "emergency",
+  "halt",
+  "poweroff",
+  "reboot",
+  "kexec",
+  "suspend",
+  "hibernate",
+  "hybrid-sleep",
+  "suspend-then-hibernate",
+  "daemon-reload",
+  "daemon-reexec",
+  "show-environment",
+  "version",
+]);
+
+export function enabledFlagIds(spec: SystemctlSpec): string[] {
+  return enabledFlagIdsGeneric(spec.flags, CATALOGUE);
+}
+
+export function positionalArgs(spec: SystemctlSpec): string[] {
+  const targets = (spec.targets ?? []).map((target) => target.trim()).filter(Boolean);
+  const legacyUnit = spec.unit.trim();
+  if (targets.length > 0) return targets;
+  return !NO_POSITIONAL_ACTIONS.has(spec.action) && legacyUnit !== "" ? [legacyUnit] : [];
+}
+
+export function actionNeedsTarget(action: SystemctlSpec["action"]): boolean {
+  return !NO_REQUIRED_TARGET_ACTIONS.has(action);
+}
+
+export function actionAcceptsTarget(action: SystemctlSpec["action"]): boolean {
+  return !NO_POSITIONAL_ACTIONS.has(action);
+}
 
 /**
  * Build the systemctl invocation. Real syntax is `systemctl COMMAND [UNIT]`
@@ -16,12 +97,16 @@ const NO_UNIT_ACTIONS = new Set<SystemctlSpec["action"]>(["daemon-reload"]);
  * real systemctl would reject it as an unexpected extra argument.
  */
 export function buildArgv(spec: SystemctlSpec): Argv {
-  const args: Arg[] = [{ text: spec.action, role: "value" }];
+  const args: Arg[] = [
+    ...buildFlagArgs(spec.flags, CATALOGUE),
+    ...(spec.extraOptions ?? [])
+      .map((option) => option.trim())
+      .filter(Boolean)
+      .map((text) => ({ text, role: "flag" as const })),
+    { text: spec.action === "help-command" ? "help" : spec.action, role: "value" },
+  ];
 
-  if (!NO_UNIT_ACTIONS.has(spec.action)) {
-    const unit = spec.unit.trim();
-    if (unit !== "") args.push({ text: unit, role: "value" });
-  }
+  args.push(...positionalArgs(spec).map((text) => ({ text, role: "value" as const })));
 
   return { binary: "systemctl", args };
 }

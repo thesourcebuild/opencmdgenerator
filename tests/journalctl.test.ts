@@ -48,6 +48,34 @@ describe("unit and flags", () => {
     expect(line(spec({ unit: "  nginx  " }))).toBe("journalctl -u nginx");
     expect(line(spec({ unit: "   " }))).toBe("journalctl");
   });
+
+  it("renders source, grep, output and pager options", () => {
+    expect(
+      line(
+        spec({
+          flags: {
+            user: true,
+            identifier: "sshd",
+            grep: "failed",
+            output: "json-pretty",
+            noPager: true,
+          },
+        }),
+      ),
+    ).toBe("journalctl --user --identifier=sshd --grep=failed -o json-pretty --no-pager");
+  });
+
+  it("renders optional boot selectors, matches, paths, and passthrough options", () => {
+    expect(
+      line(
+        spec({
+          flags: { bootSelect: "-1", priority: "3..5" },
+          matches: ["_PID=1234", "/usr/bin/sshd"],
+          extraOptions: ["--utc"],
+        }),
+      ),
+    ).toBe("journalctl -p 3..5 --boot=-1 --utc _PID=1234 /usr/bin/sshd");
+  });
 });
 
 describe("lint — read-only, so only genuine mistakes get flagged", () => {
@@ -79,6 +107,10 @@ describe("lint — read-only, so only genuine mistakes get flagged", () => {
     for (const d of lint(s).diagnostics) {
       expect(d.level).toBe("warning");
     }
+  });
+
+  it("JCT003 warns for maintenance options that modify journal state", () => {
+    expect(lint(spec({ flags: { vacuumSize: "1G", rotate: true } })).diagnostics.map((d) => d.code)).toContain("JCT003");
   });
 });
 

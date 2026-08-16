@@ -17,13 +17,26 @@ export function enabledFlagIds(spec: JournalctlSpec): string[] {
  * arguments come after its flags.
  */
 export function buildArgv(spec: JournalctlSpec): Argv {
-  const args: Arg[] = buildFlagArgs(spec.flags, CATALOGUE);
+  const args: Arg[] = [
+    ...buildFlagArgs(spec.flags, CATALOGUE),
+    ...(spec.extraOptions ?? [])
+      .map((option) => option.trim())
+      .filter(Boolean)
+      .map((text) => ({ text, role: "flag" as const })),
+  ];
 
   const unit = spec.unit.trim();
   if (unit !== "") {
     args.push({ text: "-u", role: "flag" });
     args.push({ text: unit, role: "value" });
   }
+
+  args.push(
+    ...(spec.matches ?? [])
+      .map((match) => match.trim())
+      .filter(Boolean)
+      .map((text) => ({ text, role: text.includes("=") ? "pattern" as const : "path" as const })),
+  );
 
   return { binary: "journalctl", args };
 }
