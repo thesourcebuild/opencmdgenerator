@@ -165,7 +165,19 @@
     "@cmdgen/bzip2": "workspace:*",
     "@cmdgen/bunzip2": "workspace:*",
     "@cmdgen/unalias": "workspace:*",
-    "@cmdgen/exit": "workspace:*"
+    "@cmdgen/exit": "workspace:*",
+    "@cmdgen/sftp": "workspace:*",
+    "@cmdgen/timedatectl": "workspace:*",
+    "@cmdgen/groupdel": "workspace:*",
+    "@cmdgen/finger": "workspace:*",
+    "@cmdgen/last": "workspace:*",
+    "@cmdgen/printf": "workspace:*",
+    "@cmdgen/lshw": "workspace:*",
+    "@cmdgen/hwinfo": "workspace:*",
+    "@cmdgen/iostat": "workspace:*",
+    "@cmdgen/chroot": "workspace:*",
+    "@cmdgen/realpath": "workspace:*",
+    "@cmdgen/watch": "workspace:*"
   },
   "devDependencies": {
     "@cmdgen/config": "workspace:*",

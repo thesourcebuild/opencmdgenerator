@@ -744,6 +744,64 @@ const ExitBuilder = dynamic(() => import("./exit-builder").then((m) => m.ExitBui
   loading: () => <BuilderSkeleton />,
 });
 
+const SftpBuilder = dynamic(() => import("./sftp-builder").then((m) => m.SftpBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const TimedatectlBuilder = dynamic(
+  () => import("./timedatectl-builder").then((m) => m.TimedatectlBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const GroupdelBuilder = dynamic(
+  () => import("./groupdel-builder").then((m) => m.GroupdelBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const FingerBuilder = dynamic(() => import("./finger-builder").then((m) => m.FingerBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const LastBuilder = dynamic(() => import("./last-builder").then((m) => m.LastBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const PrintfBuilder = dynamic(() => import("./printf-builder").then((m) => m.PrintfBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const LshwBuilder = dynamic(() => import("./lshw-builder").then((m) => m.LshwBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const HwinfoBuilder = dynamic(() => import("./hwinfo-builder").then((m) => m.HwinfoBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const IostatBuilder = dynamic(() => import("./iostat-builder").then((m) => m.IostatBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const ChrootBuilder = dynamic(() => import("./chroot-builder").then((m) => m.ChrootBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const RealpathBuilder = dynamic(
+  () => import("./realpath-builder").then((m) => m.RealpathBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const WatchBuilder = dynamic(() => import("./watch-builder").then((m) => m.WatchBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+
 const SELECT_COMMAND_EVENT = "OpenCmdGenerator:selectCommand";
 
 export function AppShell() {
@@ -1134,6 +1192,18 @@ export function AppShell() {
           {selectedId === "bunzip2" && <Bunzip2Builder />}
           {selectedId === "unalias" && <UnaliasBuilder />}
           {selectedId === "exit" && <ExitBuilder />}
+          {selectedId === "sftp" && <SftpBuilder />}
+          {selectedId === "timedatectl" && <TimedatectlBuilder />}
+          {selectedId === "groupdel" && <GroupdelBuilder />}
+          {selectedId === "finger" && <FingerBuilder />}
+          {selectedId === "last" && <LastBuilder />}
+          {selectedId === "printf" && <PrintfBuilder />}
+          {selectedId === "lshw" && <LshwBuilder />}
+          {selectedId === "hwinfo" && <HwinfoBuilder />}
+          {selectedId === "iostat" && <IostatBuilder />}
+          {selectedId === "chroot" && <ChrootBuilder />}
+          {selectedId === "realpath" && <RealpathBuilder />}
+          {selectedId === "watch" && <WatchBuilder />}
         </main>
       </div>
 

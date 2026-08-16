@@ -152,6 +152,18 @@ import { BZIP2_MANIFEST } from "@cmdgen/bzip2";
 import { BUNZIP2_MANIFEST } from "@cmdgen/bunzip2";
 import { UNALIAS_MANIFEST } from "@cmdgen/unalias";
 import { EXIT_MANIFEST } from "@cmdgen/exit";
+import { SFTP_MANIFEST } from "@cmdgen/sftp";
+import { TIMEDATECTL_MANIFEST } from "@cmdgen/timedatectl";
+import { GROUPDEL_MANIFEST } from "@cmdgen/groupdel";
+import { FINGER_MANIFEST } from "@cmdgen/finger";
+import { LAST_MANIFEST } from "@cmdgen/last";
+import { PRINTF_MANIFEST } from "@cmdgen/printf";
+import { LSHW_MANIFEST } from "@cmdgen/lshw";
+import { HWINFO_MANIFEST } from "@cmdgen/hwinfo";
+import { IOSTAT_MANIFEST } from "@cmdgen/iostat";
+import { CHROOT_MANIFEST } from "@cmdgen/chroot";
+import { REALPATH_MANIFEST } from "@cmdgen/realpath";
+import { WATCH_MANIFEST } from "@cmdgen/watch";
 
 /**
  * Cheap, eagerly-bundled metadata for every installed command — what a
@@ -312,6 +324,18 @@ export const MANIFESTS: readonly CommandManifest[] = [
   BUNZIP2_MANIFEST,
   UNALIAS_MANIFEST,
   EXIT_MANIFEST,
+  SFTP_MANIFEST,
+  TIMEDATECTL_MANIFEST,
+  GROUPDEL_MANIFEST,
+  FINGER_MANIFEST,
+  LAST_MANIFEST,
+  PRINTF_MANIFEST,
+  LSHW_MANIFEST,
+  HWINFO_MANIFEST,
+  IOSTAT_MANIFEST,
+  CHROOT_MANIFEST,
+  REALPATH_MANIFEST,
+  WATCH_MANIFEST,
 ];
 
 export function getManifest(id: string): CommandManifest | undefined {
@@ -742,6 +766,42 @@ export async function loadCommand(id: string): Promise<CommandDefinition<unknown
     case "exit":
       return (await import("@cmdgen/exit/definition"))
         .EXIT_COMMAND as CommandDefinition<unknown>;
+    case "sftp":
+      return (await import("@cmdgen/sftp/definition"))
+        .SFTP_COMMAND as CommandDefinition<unknown>;
+    case "timedatectl":
+      return (await import("@cmdgen/timedatectl/definition"))
+        .TIMEDATECTL_COMMAND as CommandDefinition<unknown>;
+    case "groupdel":
+      return (await import("@cmdgen/groupdel/definition"))
+        .GROUPDEL_COMMAND as CommandDefinition<unknown>;
+    case "finger":
+      return (await import("@cmdgen/finger/definition"))
+        .FINGER_COMMAND as CommandDefinition<unknown>;
+    case "last":
+      return (await import("@cmdgen/last/definition"))
+        .LAST_COMMAND as CommandDefinition<unknown>;
+    case "printf":
+      return (await import("@cmdgen/printf/definition"))
+        .PRINTF_COMMAND as CommandDefinition<unknown>;
+    case "lshw":
+      return (await import("@cmdgen/lshw/definition"))
+        .LSHW_COMMAND as CommandDefinition<unknown>;
+    case "hwinfo":
+      return (await import("@cmdgen/hwinfo/definition"))
+        .HWINFO_COMMAND as CommandDefinition<unknown>;
+    case "iostat":
+      return (await import("@cmdgen/iostat/definition"))
+        .IOSTAT_COMMAND as CommandDefinition<unknown>;
+    case "chroot":
+      return (await import("@cmdgen/chroot/definition"))
+        .CHROOT_COMMAND as CommandDefinition<unknown>;
+    case "realpath":
+      return (await import("@cmdgen/realpath/definition"))
+        .REALPATH_COMMAND as CommandDefinition<unknown>;
+    case "watch":
+      return (await import("@cmdgen/watch/definition"))
+        .WATCH_COMMAND as CommandDefinition<unknown>;
     default:
       throw new Error(`Unknown command id: "${id}"`);
   }

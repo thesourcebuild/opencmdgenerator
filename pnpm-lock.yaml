@@ -56,6 +56,9 @@ importers:
       '@cmdgen/chown':
         specifier: workspace:*
         version: link:packages/cmds/chown
+      '@cmdgen/chroot':
+        specifier: workspace:*
+        version: link:packages/cmds/chroot
       '@cmdgen/clear':
         specifier: workspace:*
         version: link:packages/cmds/clear
@@ -137,6 +140,9 @@ importers:
       '@cmdgen/find':
         specifier: workspace:*
         version: link:packages/cmds/find
+      '@cmdgen/finger':
+        specifier: workspace:*
+        version: link:packages/cmds/finger
       '@cmdgen/firewall-cmd':
         specifier: workspace:*
         version: link:packages/cmds/firewall-cmd
@@ -158,6 +164,9 @@ importers:
       '@cmdgen/groupadd':
         specifier: workspace:*
         version: link:packages/cmds/groupadd
+      '@cmdgen/groupdel':
+        specifier: workspace:*
+        version: link:packages/cmds/groupdel
       '@cmdgen/groupmod':
         specifier: workspace:*
         version: link:packages/cmds/groupmod
@@ -185,6 +194,9 @@ importers:
       '@cmdgen/htop':
         specifier: workspace:*
         version: link:packages/cmds/htop
+      '@cmdgen/hwinfo':
+        specifier: workspace:*
+        version: link:packages/cmds/hwinfo
       '@cmdgen/id':
         specifier: workspace:*
         version: link:packages/cmds/id
@@ -194,6 +206,9 @@ importers:
       '@cmdgen/info':
         specifier: workspace:*
         version: link:packages/cmds/info
+      '@cmdgen/iostat':
+        specifier: workspace:*
+        version: link:packages/cmds/iostat
       '@cmdgen/ip':
         specifier: workspace:*
         version: link:packages/cmds/ip
@@ -212,6 +227,9 @@ importers:
       '@cmdgen/killall':
         specifier: workspace:*
         version: link:packages/cmds/killall
+      '@cmdgen/last':
+        specifier: workspace:*
+        version: link:packages/cmds/last
       '@cmdgen/less':
         specifier: workspace:*
         version: link:packages/cmds/less
@@ -230,6 +248,9 @@ importers:
       '@cmdgen/lscpu':
         specifier: workspace:*
         version: link:packages/cmds/lscpu
+      '@cmdgen/lshw':
+        specifier: workspace:*
+        version: link:packages/cmds/lshw
       '@cmdgen/lspci':
         specifier: workspace:*
         version: link:packages/cmds/lspci
@@ -296,12 +317,18 @@ importers:
       '@cmdgen/poweroff':
         specifier: workspace:*
         version: link:packages/cmds/poweroff
+      '@cmdgen/printf':
+        specifier: workspace:*
+        version: link:packages/cmds/printf
       '@cmdgen/ps':
         specifier: workspace:*
         version: link:packages/cmds/ps
       '@cmdgen/pwd':
         specifier: workspace:*
         version: link:packages/cmds/pwd
+      '@cmdgen/realpath':
+        specifier: workspace:*
+        version: link:packages/cmds/realpath
       '@cmdgen/reboot':
         specifier: workspace:*
         version: link:packages/cmds/reboot
@@ -344,6 +371,9 @@ importers:
       '@cmdgen/setenforce':
         specifier: workspace:*
         version: link:packages/cmds/setenforce
+      '@cmdgen/sftp':
+        specifier: workspace:*
+        version: link:packages/cmds/sftp
       '@cmdgen/shutdown':
         specifier: workspace:*
         version: link:packages/cmds/shutdown
@@ -389,6 +419,9 @@ importers:
       '@cmdgen/telnet':
         specifier: workspace:*
         version: link:packages/cmds/telnet
+      '@cmdgen/timedatectl':
+        specifier: workspace:*
+        version: link:packages/cmds/timedatectl
       '@cmdgen/top':
         specifier: workspace:*
         version: link:packages/cmds/top
@@ -446,6 +479,9 @@ importers:
       '@cmdgen/vmstat':
         specifier: workspace:*
         version: link:packages/cmds/vmstat
+      '@cmdgen/watch':
+        specifier: workspace:*
+        version: link:packages/cmds/watch
       '@cmdgen/wc':
         specifier: workspace:*
         version: link:packages/cmds/wc
@@ -594,6 +630,9 @@ importers:
       '@cmdgen/chown':
         specifier: workspace:*
         version: link:../../packages/cmds/chown
+      '@cmdgen/chroot':
+        specifier: workspace:*
+        version: link:../../packages/cmds/chroot
       '@cmdgen/clear':
         specifier: workspace:*
         version: link:../../packages/cmds/clear
@@ -672,6 +711,9 @@ importers:
       '@cmdgen/find':
         specifier: workspace:*
         version: link:../../packages/cmds/find
+      '@cmdgen/finger':
+        specifier: workspace:*
+        version: link:../../packages/cmds/finger
       '@cmdgen/firewall-cmd':
         specifier: workspace:*
         version: link:../../packages/cmds/firewall-cmd
@@ -693,6 +735,9 @@ importers:
       '@cmdgen/groupadd':
         specifier: workspace:*
         version: link:../../packages/cmds/groupadd
+      '@cmdgen/groupdel':
+        specifier: workspace:*
+        version: link:../../packages/cmds/groupdel
       '@cmdgen/groupmod':
         specifier: workspace:*
         version: link:../../packages/cmds/groupmod
@@ -720,6 +765,9 @@ importers:
       '@cmdgen/htop':
         specifier: workspace:*
         version: link:../../packages/cmds/htop
+      '@cmdgen/hwinfo':
+        specifier: workspace:*
+        version: link:../../packages/cmds/hwinfo
       '@cmdgen/id':
         specifier: workspace:*
         version: link:../../packages/cmds/id
@@ -729,6 +777,9 @@ importers:
       '@cmdgen/info':
         specifier: workspace:*
         version: link:../../packages/cmds/info
+      '@cmdgen/iostat':
+        specifier: workspace:*
+        version: link:../../packages/cmds/iostat
       '@cmdgen/ip':
         specifier: workspace:*
         version: link:../../packages/cmds/ip
@@ -747,6 +798,9 @@ importers:
       '@cmdgen/killall':
         specifier: workspace:*
         version: link:../../packages/cmds/killall
+      '@cmdgen/last':
+        specifier: workspace:*
+        version: link:../../packages/cmds/last
       '@cmdgen/less':
         specifier: workspace:*
         version: link:../../packages/cmds/less
@@ -765,6 +819,9 @@ importers:
       '@cmdgen/lscpu':
         specifier: workspace:*
         version: link:../../packages/cmds/lscpu
+      '@cmdgen/lshw':
+        specifier: workspace:*
+        version: link:../../packages/cmds/lshw
       '@cmdgen/lspci':
         specifier: workspace:*
         version: link:../../packages/cmds/lspci
@@ -834,12 +891,18 @@ importers:
       '@cmdgen/poweroff':
         specifier: workspace:*
         version: link:../../packages/cmds/poweroff
+      '@cmdgen/printf':
+        specifier: workspace:*
+        version: link:../../packages/cmds/printf
       '@cmdgen/ps':
         specifier: workspace:*
         version: link:../../packages/cmds/ps
       '@cmdgen/pwd':
         specifier: workspace:*
         version: link:../../packages/cmds/pwd
+      '@cmdgen/realpath':
+        specifier: workspace:*
+        version: link:../../packages/cmds/realpath
       '@cmdgen/reboot':
         specifier: workspace:*
         version: link:../../packages/cmds/reboot
@@ -882,6 +945,9 @@ importers:
       '@cmdgen/setenforce':
         specifier: workspace:*
         version: link:../../packages/cmds/setenforce
+      '@cmdgen/sftp':
+        specifier: workspace:*
+        version: link:../../packages/cmds/sftp
       '@cmdgen/shutdown':
         specifier: workspace:*
         version: link:../../packages/cmds/shutdown
@@ -927,6 +993,9 @@ importers:
       '@cmdgen/telnet':
         specifier: workspace:*
         version: link:../../packages/cmds/telnet
+      '@cmdgen/timedatectl':
+        specifier: workspace:*
+        version: link:../../packages/cmds/timedatectl
       '@cmdgen/top':
         specifier: workspace:*
         version: link:../../packages/cmds/top
@@ -987,6 +1056,9 @@ importers:
       '@cmdgen/vmstat':
         specifier: workspace:*
         version: link:../../packages/cmds/vmstat
+      '@cmdgen/watch':
+        specifier: workspace:*
+        version: link:../../packages/cmds/watch
       '@cmdgen/wc':
         specifier: workspace:*
         version: link:../../packages/cmds/wc
@@ -1121,6 +1193,9 @@ importers:
       '@cmdgen/chown':
         specifier: workspace:*
         version: link:../cmds/chown
+      '@cmdgen/chroot':
+        specifier: workspace:*
+        version: link:../cmds/chroot
       '@cmdgen/clear':
         specifier: workspace:*
         version: link:../cmds/clear
@@ -1196,6 +1271,9 @@ importers:
       '@cmdgen/find':
         specifier: workspace:*
         version: link:../cmds/find
+      '@cmdgen/finger':
+        specifier: workspace:*
+        version: link:../cmds/finger
       '@cmdgen/firewall-cmd':
         specifier: workspace:*
         version: link:../cmds/firewall-cmd
@@ -1217,6 +1295,9 @@ importers:
       '@cmdgen/groupadd':
         specifier: workspace:*
         version: link:../cmds/groupadd
+      '@cmdgen/groupdel':
+        specifier: workspace:*
+        version: link:../cmds/groupdel
       '@cmdgen/groupmod':
         specifier: workspace:*
         version: link:../cmds/groupmod
@@ -1244,6 +1325,9 @@ importers:
       '@cmdgen/htop':
         specifier: workspace:*
         version: link:../cmds/htop
+      '@cmdgen/hwinfo':
+        specifier: workspace:*
+        version: link:../cmds/hwinfo
       '@cmdgen/id':
         specifier: workspace:*
         version: link:../cmds/id
@@ -1253,6 +1337,9 @@ importers:
       '@cmdgen/info':
         specifier: workspace:*
         version: link:../cmds/info
+      '@cmdgen/iostat':
+        specifier: workspace:*
+        version: link:../cmds/iostat
       '@cmdgen/ip':
         specifier: workspace:*
         version: link:../cmds/ip
@@ -1271,6 +1358,9 @@ importers:
       '@cmdgen/killall':
         specifier: workspace:*
         version: link:../cmds/killall
+      '@cmdgen/last':
+        specifier: workspace:*
+        version: link:../cmds/last
       '@cmdgen/less':
         specifier: workspace:*
         version: link:../cmds/less
@@ -1289,6 +1379,9 @@ importers:
       '@cmdgen/lscpu':
         specifier: workspace:*
         version: link:../cmds/lscpu
+      '@cmdgen/lshw':
+        specifier: workspace:*
+        version: link:../cmds/lshw
       '@cmdgen/lspci':
         specifier: workspace:*
         version: link:../cmds/lspci
@@ -1355,12 +1448,18 @@ importers:
       '@cmdgen/poweroff':
         specifier: workspace:*
         version: link:../cmds/poweroff
+      '@cmdgen/printf':
+        specifier: workspace:*
+        version: link:../cmds/printf
       '@cmdgen/ps':
         specifier: workspace:*
         version: link:../cmds/ps
       '@cmdgen/pwd':
         specifier: workspace:*
         version: link:../cmds/pwd
+      '@cmdgen/realpath':
+        specifier: workspace:*
+        version: link:../cmds/realpath
       '@cmdgen/reboot':
         specifier: workspace:*
         version: link:../cmds/reboot
@@ -1400,6 +1499,9 @@ importers:
       '@cmdgen/setenforce':
         specifier: workspace:*
         version: link:../cmds/setenforce
+      '@cmdgen/sftp':
+        specifier: workspace:*
+        version: link:../cmds/sftp
       '@cmdgen/shutdown':
         specifier: workspace:*
         version: link:../cmds/shutdown
@@ -1445,6 +1547,9 @@ importers:
       '@cmdgen/telnet':
         specifier: workspace:*
         version: link:../cmds/telnet
+      '@cmdgen/timedatectl':
+        specifier: workspace:*
+        version: link:../cmds/timedatectl
       '@cmdgen/top':
         specifier: workspace:*
         version: link:../cmds/top
@@ -1502,6 +1607,9 @@ importers:
       '@cmdgen/vmstat':
         specifier: workspace:*
         version: link:../cmds/vmstat
+      '@cmdgen/watch':
+        specifier: workspace:*
+        version: link:../cmds/watch
       '@cmdgen/wc':
         specifier: workspace:*
         version: link:../cmds/wc
@@ -1829,6 +1937,25 @@ importers:
         version: 5.9.3
 
   packages/cmds/chown:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/chroot:
     dependencies:
       '@cmdgen/contracts':
         specifier: workspace:*
@@ -2303,6 +2430,25 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/cmds/finger:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/cmds/firewall-cmd:
     dependencies:
       '@cmdgen/contracts':
@@ -2418,6 +2564,25 @@ importers:
         version: 5.9.3
 
   packages/cmds/groupadd:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/groupdel:
     dependencies:
       '@cmdgen/contracts':
         specifier: workspace:*
@@ -2607,6 +2772,25 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/cmds/hwinfo:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/cmds/id:
     dependencies:
       '@cmdgen/contracts':
@@ -2646,6 +2830,25 @@ importers:
         version: 5.9.3
 
   packages/cmds/info:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/iostat:
     dependencies:
       '@cmdgen/contracts':
         specifier: workspace:*
@@ -2778,6 +2981,25 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/cmds/last:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/cmds/less:
     dependencies:
       '@cmdgen/contracts':
@@ -2874,6 +3096,25 @@ importers:
         version: 5.9.3
 
   packages/cmds/lscpu:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/lshw:
     dependencies:
       '@cmdgen/contracts':
         specifier: workspace:*
@@ -3310,6 +3551,25 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/cmds/printf:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/cmds/ps:
     dependencies:
       '@cmdgen/contracts':
@@ -3330,6 +3590,25 @@ importers:
         version: 5.9.3
 
   packages/cmds/pwd:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/realpath:
     dependencies:
       '@cmdgen/contracts':
         specifier: workspace:*
@@ -3577,6 +3856,25 @@ importers:
         version: 5.9.3
 
   packages/cmds/setenforce:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/sftp:
     dependencies:
       '@cmdgen/contracts':
         specifier: workspace:*
@@ -3862,6 +4160,25 @@ importers:
         version: 5.9.3
 
   packages/cmds/telnet:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/timedatectl:
     dependencies:
       '@cmdgen/contracts':
         specifier: workspace:*
@@ -4223,6 +4540,25 @@ importers:
         version: 5.9.3
 
   packages/cmds/vmstat:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/watch:
     dependencies:
       '@cmdgen/contracts':
         specifier: workspace:*
