@@ -4,7 +4,7 @@ Build shell commands with confidence. OpenCmdGenerator turns command-line refere
 into a fast visual workspace for composing, validating, and explaining the exact
 command you need.
 
- It covers **100+** commands across Windows, Linux, and macOS, with platform-aware
+ It covers **200+** commands across Windows, Linux, and macOS, with platform-aware
  rendering for POSIX(bash/zsh), PowerShell, Command Prompt, MSYS2, and Cygwin - plus presets
  and live previews across **web** and **desktop**.
 
