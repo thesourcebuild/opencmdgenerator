@@ -8,6 +8,9 @@ importers:
 
   .:
     devDependencies:
+      '@cmdgen/7z':
+        specifier: workspace:*
+        version: link:packages/cmds/7z
       '@cmdgen/adduser':
         specifier: workspace:*
         version: link:packages/cmds/adduser
@@ -17,15 +20,24 @@ importers:
       '@cmdgen/apt':
         specifier: workspace:*
         version: link:packages/cmds/apt
+      '@cmdgen/apt-cache':
+        specifier: workspace:*
+        version: link:packages/cmds/apt-cache
       '@cmdgen/apt-get':
         specifier: workspace:*
         version: link:packages/cmds/apt-get
+      '@cmdgen/arch':
+        specifier: workspace:*
+        version: link:packages/cmds/arch
       '@cmdgen/at':
         specifier: workspace:*
         version: link:packages/cmds/at
       '@cmdgen/awk':
         specifier: workspace:*
         version: link:packages/cmds/awk
+      '@cmdgen/basename':
+        specifier: workspace:*
+        version: link:packages/cmds/basename
       '@cmdgen/bg':
         specifier: workspace:*
         version: link:packages/cmds/bg
@@ -47,9 +59,15 @@ importers:
       '@cmdgen/cd':
         specifier: workspace:*
         version: link:packages/cmds/cd
+      '@cmdgen/chattr':
+        specifier: workspace:*
+        version: link:packages/cmds/chattr
       '@cmdgen/chgrp':
         specifier: workspace:*
         version: link:packages/cmds/chgrp
+      '@cmdgen/chkconfig':
+        specifier: workspace:*
+        version: link:packages/cmds/chkconfig
       '@cmdgen/chmod':
         specifier: workspace:*
         version: link:packages/cmds/chmod
@@ -59,6 +77,9 @@ importers:
       '@cmdgen/chroot':
         specifier: workspace:*
         version: link:packages/cmds/chroot
+      '@cmdgen/chsh':
+        specifier: workspace:*
+        version: link:packages/cmds/chsh
       '@cmdgen/clear':
         specifier: workspace:*
         version: link:packages/cmds/clear
@@ -101,12 +122,30 @@ importers:
       '@cmdgen/dig':
         specifier: workspace:*
         version: link:packages/cmds/dig
+      '@cmdgen/dirname':
+        specifier: workspace:*
+        version: link:packages/cmds/dirname
+      '@cmdgen/disown':
+        specifier: workspace:*
+        version: link:packages/cmds/disown
       '@cmdgen/dmesg':
         specifier: workspace:*
         version: link:packages/cmds/dmesg
+      '@cmdgen/dmidecode':
+        specifier: workspace:*
+        version: link:packages/cmds/dmidecode
+      '@cmdgen/dnf':
+        specifier: workspace:*
+        version: link:packages/cmds/dnf
+      '@cmdgen/dpkg':
+        specifier: workspace:*
+        version: link:packages/cmds/dpkg
       '@cmdgen/du':
         specifier: workspace:*
         version: link:packages/cmds/du
+      '@cmdgen/e2fsck':
+        specifier: workspace:*
+        version: link:packages/cmds/e2fsck
       '@cmdgen/echo':
         specifier: workspace:*
         version: link:packages/cmds/echo
@@ -119,12 +158,18 @@ importers:
       '@cmdgen/engine':
         specifier: workspace:*
         version: link:packages/cmd-engine
+      '@cmdgen/env':
+        specifier: workspace:*
+        version: link:packages/cmds/env
       '@cmdgen/exit':
         specifier: workspace:*
         version: link:packages/cmds/exit
       '@cmdgen/export':
         specifier: workspace:*
         version: link:packages/cmds/export
+      '@cmdgen/fail2ban-client':
+        specifier: workspace:*
+        version: link:packages/cmds/fail2ban-client
       '@cmdgen/fdisk':
         specifier: workspace:*
         version: link:packages/cmds/fdisk
@@ -134,6 +179,9 @@ importers:
       '@cmdgen/fg':
         specifier: workspace:*
         version: link:packages/cmds/fg
+      '@cmdgen/fgrep':
+        specifier: workspace:*
+        version: link:packages/cmds/fgrep
       '@cmdgen/file':
         specifier: workspace:*
         version: link:packages/cmds/file
@@ -146,12 +194,30 @@ importers:
       '@cmdgen/firewall-cmd':
         specifier: workspace:*
         version: link:packages/cmds/firewall-cmd
+      '@cmdgen/firewalld':
+        specifier: workspace:*
+        version: link:packages/cmds/firewalld
+      '@cmdgen/flatpak':
+        specifier: workspace:*
+        version: link:packages/cmds/flatpak
+      '@cmdgen/fmt':
+        specifier: workspace:*
+        version: link:packages/cmds/fmt
       '@cmdgen/free':
         specifier: workspace:*
         version: link:packages/cmds/free
+      '@cmdgen/fsck':
+        specifier: workspace:*
+        version: link:packages/cmds/fsck
       '@cmdgen/ftp':
         specifier: workspace:*
         version: link:packages/cmds/ftp
+      '@cmdgen/fuser':
+        specifier: workspace:*
+        version: link:packages/cmds/fuser
+      '@cmdgen/gdisk':
+        specifier: workspace:*
+        version: link:packages/cmds/gdisk
       '@cmdgen/getenforce':
         specifier: workspace:*
         version: link:packages/cmds/getenforce
@@ -185,12 +251,21 @@ importers:
       '@cmdgen/head':
         specifier: workspace:*
         version: link:packages/cmds/head
+      '@cmdgen/hexdump':
+        specifier: workspace:*
+        version: link:packages/cmds/hexdump
       '@cmdgen/history':
         specifier: workspace:*
         version: link:packages/cmds/history
+      '@cmdgen/host':
+        specifier: workspace:*
+        version: link:packages/cmds/host
       '@cmdgen/hostname':
         specifier: workspace:*
         version: link:packages/cmds/hostname
+      '@cmdgen/hostnamectl':
+        specifier: workspace:*
+        version: link:packages/cmds/hostnamectl
       '@cmdgen/htop':
         specifier: workspace:*
         version: link:packages/cmds/htop
@@ -206,6 +281,9 @@ importers:
       '@cmdgen/info':
         specifier: workspace:*
         version: link:packages/cmds/info
+      '@cmdgen/insmod':
+        specifier: workspace:*
+        version: link:packages/cmds/insmod
       '@cmdgen/iostat':
         specifier: workspace:*
         version: link:packages/cmds/iostat
@@ -215,9 +293,15 @@ importers:
       '@cmdgen/iptables':
         specifier: workspace:*
         version: link:packages/cmds/iptables
+      '@cmdgen/iwconfig':
+        specifier: workspace:*
+        version: link:packages/cmds/iwconfig
       '@cmdgen/jobs':
         specifier: workspace:*
         version: link:packages/cmds/jobs
+      '@cmdgen/join':
+        specifier: workspace:*
+        version: link:packages/cmds/join
       '@cmdgen/journalctl':
         specifier: workspace:*
         version: link:packages/cmds/journalctl
@@ -230,6 +314,9 @@ importers:
       '@cmdgen/last':
         specifier: workspace:*
         version: link:packages/cmds/last
+      '@cmdgen/lastlog':
+        specifier: workspace:*
+        version: link:packages/cmds/lastlog
       '@cmdgen/less':
         specifier: workspace:*
         version: link:packages/cmds/less
@@ -242,6 +329,9 @@ importers:
       '@cmdgen/ls':
         specifier: workspace:*
         version: link:packages/cmds/ls
+      '@cmdgen/lsattr':
+        specifier: workspace:*
+        version: link:packages/cmds/lsattr
       '@cmdgen/lsblk':
         specifier: workspace:*
         version: link:packages/cmds/lsblk
@@ -251,12 +341,21 @@ importers:
       '@cmdgen/lshw':
         specifier: workspace:*
         version: link:packages/cmds/lshw
+      '@cmdgen/lsmod':
+        specifier: workspace:*
+        version: link:packages/cmds/lsmod
+      '@cmdgen/lsof':
+        specifier: workspace:*
+        version: link:packages/cmds/lsof
       '@cmdgen/lspci':
         specifier: workspace:*
         version: link:packages/cmds/lspci
       '@cmdgen/lsusb':
         specifier: workspace:*
         version: link:packages/cmds/lsusb
+      '@cmdgen/ltrace':
+        specifier: workspace:*
+        version: link:packages/cmds/ltrace
       '@cmdgen/man':
         specifier: workspace:*
         version: link:packages/cmds/man
@@ -266,36 +365,63 @@ importers:
       '@cmdgen/mkfs':
         specifier: workspace:*
         version: link:packages/cmds/mkfs
+      '@cmdgen/mkswap':
+        specifier: workspace:*
+        version: link:packages/cmds/mkswap
+      '@cmdgen/modprobe':
+        specifier: workspace:*
+        version: link:packages/cmds/modprobe
       '@cmdgen/more':
         specifier: workspace:*
         version: link:packages/cmds/more
       '@cmdgen/mount':
         specifier: workspace:*
         version: link:packages/cmds/mount
+      '@cmdgen/mtr':
+        specifier: workspace:*
+        version: link:packages/cmds/mtr
       '@cmdgen/mv':
         specifier: workspace:*
         version: link:packages/cmds/mv
       '@cmdgen/nano':
         specifier: workspace:*
         version: link:packages/cmds/nano
+      '@cmdgen/nc':
+        specifier: workspace:*
+        version: link:packages/cmds/nc
       '@cmdgen/netstat':
         specifier: workspace:*
         version: link:packages/cmds/netstat
       '@cmdgen/nice':
         specifier: workspace:*
         version: link:packages/cmds/nice
+      '@cmdgen/nl':
+        specifier: workspace:*
+        version: link:packages/cmds/nl
+      '@cmdgen/nmap':
+        specifier: workspace:*
+        version: link:packages/cmds/nmap
+      '@cmdgen/nmcli':
+        specifier: workspace:*
+        version: link:packages/cmds/nmcli
       '@cmdgen/nohup':
         specifier: workspace:*
         version: link:packages/cmds/nohup
       '@cmdgen/nslookup':
         specifier: workspace:*
         version: link:packages/cmds/nslookup
+      '@cmdgen/od':
+        specifier: workspace:*
+        version: link:packages/cmds/od
       '@cmdgen/openssl':
         specifier: workspace:*
         version: link:packages/cmds/openssl
       '@cmdgen/pacman':
         specifier: workspace:*
         version: link:packages/cmds/pacman
+      '@cmdgen/parted':
+        specifier: workspace:*
+        version: link:packages/cmds/parted
       '@cmdgen/passwd':
         specifier: workspace:*
         version: link:packages/cmds/passwd
@@ -308,6 +434,9 @@ importers:
       '@cmdgen/pgrep':
         specifier: workspace:*
         version: link:packages/cmds/pgrep
+      '@cmdgen/pidof':
+        specifier: workspace:*
+        version: link:packages/cmds/pidof
       '@cmdgen/ping':
         specifier: workspace:*
         version: link:packages/cmds/ping
@@ -323,6 +452,9 @@ importers:
       '@cmdgen/ps':
         specifier: workspace:*
         version: link:packages/cmds/ps
+      '@cmdgen/pstree':
+        specifier: workspace:*
+        version: link:packages/cmds/pstree
       '@cmdgen/pwd':
         specifier: workspace:*
         version: link:packages/cmds/pwd
@@ -344,6 +476,9 @@ importers:
       '@cmdgen/rmdir':
         specifier: workspace:*
         version: link:packages/cmds/rmdir
+      '@cmdgen/rmmod':
+        specifier: workspace:*
+        version: link:packages/cmds/rmmod
       '@cmdgen/route':
         specifier: workspace:*
         version: link:packages/cmds/route
@@ -359,6 +494,9 @@ importers:
       '@cmdgen/scp':
         specifier: workspace:*
         version: link:packages/cmds/scp
+      '@cmdgen/sdiff':
+        specifier: workspace:*
+        version: link:packages/cmds/sdiff
       '@cmdgen/sed':
         specifier: workspace:*
         version: link:packages/cmds/sed
@@ -377,6 +515,9 @@ importers:
       '@cmdgen/shutdown':
         specifier: workspace:*
         version: link:packages/cmds/shutdown
+      '@cmdgen/snap':
+        specifier: workspace:*
+        version: link:packages/cmds/snap
       '@cmdgen/sort':
         specifier: workspace:*
         version: link:packages/cmds/sort
@@ -395,12 +536,27 @@ importers:
       '@cmdgen/stat':
         specifier: workspace:*
         version: link:packages/cmds/stat
+      '@cmdgen/strace':
+        specifier: workspace:*
+        version: link:packages/cmds/strace
+      '@cmdgen/strings':
+        specifier: workspace:*
+        version: link:packages/cmds/strings
       '@cmdgen/su':
         specifier: workspace:*
         version: link:packages/cmds/su
       '@cmdgen/sudo':
         specifier: workspace:*
         version: link:packages/cmds/sudo
+      '@cmdgen/swapoff':
+        specifier: workspace:*
+        version: link:packages/cmds/swapoff
+      '@cmdgen/swapon':
+        specifier: workspace:*
+        version: link:packages/cmds/swapon
+      '@cmdgen/sync':
+        specifier: workspace:*
+        version: link:packages/cmds/sync
       '@cmdgen/systemctl':
         specifier: workspace:*
         version: link:packages/cmds/systemctl
@@ -413,6 +569,9 @@ importers:
       '@cmdgen/tar':
         specifier: workspace:*
         version: link:packages/cmds/tar
+      '@cmdgen/tcpdump':
+        specifier: workspace:*
+        version: link:packages/cmds/tcpdump
       '@cmdgen/tee':
         specifier: workspace:*
         version: link:packages/cmds/tee
@@ -422,6 +581,9 @@ importers:
       '@cmdgen/timedatectl':
         specifier: workspace:*
         version: link:packages/cmds/timedatectl
+      '@cmdgen/timeout':
+        specifier: workspace:*
+        version: link:packages/cmds/timeout
       '@cmdgen/top':
         specifier: workspace:*
         version: link:packages/cmds/top
@@ -437,6 +599,9 @@ importers:
       '@cmdgen/tree':
         specifier: workspace:*
         version: link:packages/cmds/tree
+      '@cmdgen/tune2fs':
+        specifier: workspace:*
+        version: link:packages/cmds/tune2fs
       '@cmdgen/ufw':
         specifier: workspace:*
         version: link:packages/cmds/ufw
@@ -455,6 +620,9 @@ importers:
       '@cmdgen/uniq':
         specifier: workspace:*
         version: link:packages/cmds/uniq
+      '@cmdgen/unxz':
+        specifier: workspace:*
+        version: link:packages/cmds/unxz
       '@cmdgen/unzip':
         specifier: workspace:*
         version: link:packages/cmds/unzip
@@ -476,9 +644,15 @@ importers:
       '@cmdgen/vi':
         specifier: workspace:*
         version: link:packages/cmds/vi
+      '@cmdgen/visudo':
+        specifier: workspace:*
+        version: link:packages/cmds/visudo
       '@cmdgen/vmstat':
         specifier: workspace:*
         version: link:packages/cmds/vmstat
+      '@cmdgen/w':
+        specifier: workspace:*
+        version: link:packages/cmds/w
       '@cmdgen/watch':
         specifier: workspace:*
         version: link:packages/cmds/watch
@@ -500,6 +674,9 @@ importers:
       '@cmdgen/which':
         specifier: workspace:*
         version: link:packages/cmds/which
+      '@cmdgen/who':
+        specifier: workspace:*
+        version: link:packages/cmds/who
       '@cmdgen/whoami':
         specifier: workspace:*
         version: link:packages/cmds/whoami
@@ -509,6 +686,9 @@ importers:
       '@cmdgen/xargs':
         specifier: workspace:*
         version: link:packages/cmds/xargs
+      '@cmdgen/xz':
+        specifier: workspace:*
+        version: link:packages/cmds/xz
       '@cmdgen/yum':
         specifier: workspace:*
         version: link:packages/cmds/yum
@@ -582,6 +762,9 @@ importers:
 
   apps/web:
     dependencies:
+      '@cmdgen/7z':
+        specifier: workspace:*
+        version: link:../../packages/cmds/7z
       '@cmdgen/adduser':
         specifier: workspace:*
         version: link:../../packages/cmds/adduser
@@ -591,15 +774,24 @@ importers:
       '@cmdgen/apt':
         specifier: workspace:*
         version: link:../../packages/cmds/apt
+      '@cmdgen/apt-cache':
+        specifier: workspace:*
+        version: link:../../packages/cmds/apt-cache
       '@cmdgen/apt-get':
         specifier: workspace:*
         version: link:../../packages/cmds/apt-get
+      '@cmdgen/arch':
+        specifier: workspace:*
+        version: link:../../packages/cmds/arch
       '@cmdgen/at':
         specifier: workspace:*
         version: link:../../packages/cmds/at
       '@cmdgen/awk':
         specifier: workspace:*
         version: link:../../packages/cmds/awk
+      '@cmdgen/basename':
+        specifier: workspace:*
+        version: link:../../packages/cmds/basename
       '@cmdgen/bg':
         specifier: workspace:*
         version: link:../../packages/cmds/bg
@@ -621,9 +813,15 @@ importers:
       '@cmdgen/cd':
         specifier: workspace:*
         version: link:../../packages/cmds/cd
+      '@cmdgen/chattr':
+        specifier: workspace:*
+        version: link:../../packages/cmds/chattr
       '@cmdgen/chgrp':
         specifier: workspace:*
         version: link:../../packages/cmds/chgrp
+      '@cmdgen/chkconfig':
+        specifier: workspace:*
+        version: link:../../packages/cmds/chkconfig
       '@cmdgen/chmod':
         specifier: workspace:*
         version: link:../../packages/cmds/chmod
@@ -633,6 +831,9 @@ importers:
       '@cmdgen/chroot':
         specifier: workspace:*
         version: link:../../packages/cmds/chroot
+      '@cmdgen/chsh':
+        specifier: workspace:*
+        version: link:../../packages/cmds/chsh
       '@cmdgen/clear':
         specifier: workspace:*
         version: link:../../packages/cmds/clear
@@ -672,12 +873,30 @@ importers:
       '@cmdgen/dig':
         specifier: workspace:*
         version: link:../../packages/cmds/dig
+      '@cmdgen/dirname':
+        specifier: workspace:*
+        version: link:../../packages/cmds/dirname
+      '@cmdgen/disown':
+        specifier: workspace:*
+        version: link:../../packages/cmds/disown
       '@cmdgen/dmesg':
         specifier: workspace:*
         version: link:../../packages/cmds/dmesg
+      '@cmdgen/dmidecode':
+        specifier: workspace:*
+        version: link:../../packages/cmds/dmidecode
+      '@cmdgen/dnf':
+        specifier: workspace:*
+        version: link:../../packages/cmds/dnf
+      '@cmdgen/dpkg':
+        specifier: workspace:*
+        version: link:../../packages/cmds/dpkg
       '@cmdgen/du':
         specifier: workspace:*
         version: link:../../packages/cmds/du
+      '@cmdgen/e2fsck':
+        specifier: workspace:*
+        version: link:../../packages/cmds/e2fsck
       '@cmdgen/echo':
         specifier: workspace:*
         version: link:../../packages/cmds/echo
@@ -690,12 +909,18 @@ importers:
       '@cmdgen/engine':
         specifier: workspace:*
         version: link:../../packages/cmd-engine
+      '@cmdgen/env':
+        specifier: workspace:*
+        version: link:../../packages/cmds/env
       '@cmdgen/exit':
         specifier: workspace:*
         version: link:../../packages/cmds/exit
       '@cmdgen/export':
         specifier: workspace:*
         version: link:../../packages/cmds/export
+      '@cmdgen/fail2ban-client':
+        specifier: workspace:*
+        version: link:../../packages/cmds/fail2ban-client
       '@cmdgen/fdisk':
         specifier: workspace:*
         version: link:../../packages/cmds/fdisk
@@ -705,6 +930,9 @@ importers:
       '@cmdgen/fg':
         specifier: workspace:*
         version: link:../../packages/cmds/fg
+      '@cmdgen/fgrep':
+        specifier: workspace:*
+        version: link:../../packages/cmds/fgrep
       '@cmdgen/file':
         specifier: workspace:*
         version: link:../../packages/cmds/file
@@ -717,12 +945,30 @@ importers:
       '@cmdgen/firewall-cmd':
         specifier: workspace:*
         version: link:../../packages/cmds/firewall-cmd
+      '@cmdgen/firewalld':
+        specifier: workspace:*
+        version: link:../../packages/cmds/firewalld
+      '@cmdgen/flatpak':
+        specifier: workspace:*
+        version: link:../../packages/cmds/flatpak
+      '@cmdgen/fmt':
+        specifier: workspace:*
+        version: link:../../packages/cmds/fmt
       '@cmdgen/free':
         specifier: workspace:*
         version: link:../../packages/cmds/free
+      '@cmdgen/fsck':
+        specifier: workspace:*
+        version: link:../../packages/cmds/fsck
       '@cmdgen/ftp':
         specifier: workspace:*
         version: link:../../packages/cmds/ftp
+      '@cmdgen/fuser':
+        specifier: workspace:*
+        version: link:../../packages/cmds/fuser
+      '@cmdgen/gdisk':
+        specifier: workspace:*
+        version: link:../../packages/cmds/gdisk
       '@cmdgen/getenforce':
         specifier: workspace:*
         version: link:../../packages/cmds/getenforce
@@ -756,12 +1002,21 @@ importers:
       '@cmdgen/head':
         specifier: workspace:*
         version: link:../../packages/cmds/head
+      '@cmdgen/hexdump':
+        specifier: workspace:*
+        version: link:../../packages/cmds/hexdump
       '@cmdgen/history':
         specifier: workspace:*
         version: link:../../packages/cmds/history
+      '@cmdgen/host':
+        specifier: workspace:*
+        version: link:../../packages/cmds/host
       '@cmdgen/hostname':
         specifier: workspace:*
         version: link:../../packages/cmds/hostname
+      '@cmdgen/hostnamectl':
+        specifier: workspace:*
+        version: link:../../packages/cmds/hostnamectl
       '@cmdgen/htop':
         specifier: workspace:*
         version: link:../../packages/cmds/htop
@@ -777,6 +1032,9 @@ importers:
       '@cmdgen/info':
         specifier: workspace:*
         version: link:../../packages/cmds/info
+      '@cmdgen/insmod':
+        specifier: workspace:*
+        version: link:../../packages/cmds/insmod
       '@cmdgen/iostat':
         specifier: workspace:*
         version: link:../../packages/cmds/iostat
@@ -786,9 +1044,15 @@ importers:
       '@cmdgen/iptables':
         specifier: workspace:*
         version: link:../../packages/cmds/iptables
+      '@cmdgen/iwconfig':
+        specifier: workspace:*
+        version: link:../../packages/cmds/iwconfig
       '@cmdgen/jobs':
         specifier: workspace:*
         version: link:../../packages/cmds/jobs
+      '@cmdgen/join':
+        specifier: workspace:*
+        version: link:../../packages/cmds/join
       '@cmdgen/journalctl':
         specifier: workspace:*
         version: link:../../packages/cmds/journalctl
@@ -801,6 +1065,9 @@ importers:
       '@cmdgen/last':
         specifier: workspace:*
         version: link:../../packages/cmds/last
+      '@cmdgen/lastlog':
+        specifier: workspace:*
+        version: link:../../packages/cmds/lastlog
       '@cmdgen/less':
         specifier: workspace:*
         version: link:../../packages/cmds/less
@@ -813,6 +1080,9 @@ importers:
       '@cmdgen/ls':
         specifier: workspace:*
         version: link:../../packages/cmds/ls
+      '@cmdgen/lsattr':
+        specifier: workspace:*
+        version: link:../../packages/cmds/lsattr
       '@cmdgen/lsblk':
         specifier: workspace:*
         version: link:../../packages/cmds/lsblk
@@ -822,12 +1092,21 @@ importers:
       '@cmdgen/lshw':
         specifier: workspace:*
         version: link:../../packages/cmds/lshw
+      '@cmdgen/lsmod':
+        specifier: workspace:*
+        version: link:../../packages/cmds/lsmod
+      '@cmdgen/lsof':
+        specifier: workspace:*
+        version: link:../../packages/cmds/lsof
       '@cmdgen/lspci':
         specifier: workspace:*
         version: link:../../packages/cmds/lspci
       '@cmdgen/lsusb':
         specifier: workspace:*
         version: link:../../packages/cmds/lsusb
+      '@cmdgen/ltrace':
+        specifier: workspace:*
+        version: link:../../packages/cmds/ltrace
       '@cmdgen/man':
         specifier: workspace:*
         version: link:../../packages/cmds/man
@@ -837,36 +1116,63 @@ importers:
       '@cmdgen/mkfs':
         specifier: workspace:*
         version: link:../../packages/cmds/mkfs
+      '@cmdgen/mkswap':
+        specifier: workspace:*
+        version: link:../../packages/cmds/mkswap
+      '@cmdgen/modprobe':
+        specifier: workspace:*
+        version: link:../../packages/cmds/modprobe
       '@cmdgen/more':
         specifier: workspace:*
         version: link:../../packages/cmds/more
       '@cmdgen/mount':
         specifier: workspace:*
         version: link:../../packages/cmds/mount
+      '@cmdgen/mtr':
+        specifier: workspace:*
+        version: link:../../packages/cmds/mtr
       '@cmdgen/mv':
         specifier: workspace:*
         version: link:../../packages/cmds/mv
       '@cmdgen/nano':
         specifier: workspace:*
         version: link:../../packages/cmds/nano
+      '@cmdgen/nc':
+        specifier: workspace:*
+        version: link:../../packages/cmds/nc
       '@cmdgen/netstat':
         specifier: workspace:*
         version: link:../../packages/cmds/netstat
       '@cmdgen/nice':
         specifier: workspace:*
         version: link:../../packages/cmds/nice
+      '@cmdgen/nl':
+        specifier: workspace:*
+        version: link:../../packages/cmds/nl
+      '@cmdgen/nmap':
+        specifier: workspace:*
+        version: link:../../packages/cmds/nmap
+      '@cmdgen/nmcli':
+        specifier: workspace:*
+        version: link:../../packages/cmds/nmcli
       '@cmdgen/nohup':
         specifier: workspace:*
         version: link:../../packages/cmds/nohup
       '@cmdgen/nslookup':
         specifier: workspace:*
         version: link:../../packages/cmds/nslookup
+      '@cmdgen/od':
+        specifier: workspace:*
+        version: link:../../packages/cmds/od
       '@cmdgen/openssl':
         specifier: workspace:*
         version: link:../../packages/cmds/openssl
       '@cmdgen/pacman':
         specifier: workspace:*
         version: link:../../packages/cmds/pacman
+      '@cmdgen/parted':
+        specifier: workspace:*
+        version: link:../../packages/cmds/parted
       '@cmdgen/passwd':
         specifier: workspace:*
         version: link:../../packages/cmds/passwd
@@ -879,6 +1185,9 @@ importers:
       '@cmdgen/pgrep':
         specifier: workspace:*
         version: link:../../packages/cmds/pgrep
+      '@cmdgen/pidof':
+        specifier: workspace:*
+        version: link:../../packages/cmds/pidof
       '@cmdgen/ping':
         specifier: workspace:*
         version: link:../../packages/cmds/ping
@@ -897,6 +1206,9 @@ importers:
       '@cmdgen/ps':
         specifier: workspace:*
         version: link:../../packages/cmds/ps
+      '@cmdgen/pstree':
+        specifier: workspace:*
+        version: link:../../packages/cmds/pstree
       '@cmdgen/pwd':
         specifier: workspace:*
         version: link:../../packages/cmds/pwd
@@ -918,6 +1230,9 @@ importers:
       '@cmdgen/rmdir':
         specifier: workspace:*
         version: link:../../packages/cmds/rmdir
+      '@cmdgen/rmmod':
+        specifier: workspace:*
+        version: link:../../packages/cmds/rmmod
       '@cmdgen/route':
         specifier: workspace:*
         version: link:../../packages/cmds/route
@@ -933,6 +1248,9 @@ importers:
       '@cmdgen/scp':
         specifier: workspace:*
         version: link:../../packages/cmds/scp
+      '@cmdgen/sdiff':
+        specifier: workspace:*
+        version: link:../../packages/cmds/sdiff
       '@cmdgen/sed':
         specifier: workspace:*
         version: link:../../packages/cmds/sed
@@ -951,6 +1269,9 @@ importers:
       '@cmdgen/shutdown':
         specifier: workspace:*
         version: link:../../packages/cmds/shutdown
+      '@cmdgen/snap':
+        specifier: workspace:*
+        version: link:../../packages/cmds/snap
       '@cmdgen/sort':
         specifier: workspace:*
         version: link:../../packages/cmds/sort
@@ -969,12 +1290,27 @@ importers:
       '@cmdgen/stat':
         specifier: workspace:*
         version: link:../../packages/cmds/stat
+      '@cmdgen/strace':
+        specifier: workspace:*
+        version: link:../../packages/cmds/strace
+      '@cmdgen/strings':
+        specifier: workspace:*
+        version: link:../../packages/cmds/strings
       '@cmdgen/su':
         specifier: workspace:*
         version: link:../../packages/cmds/su
       '@cmdgen/sudo':
         specifier: workspace:*
         version: link:../../packages/cmds/sudo
+      '@cmdgen/swapoff':
+        specifier: workspace:*
+        version: link:../../packages/cmds/swapoff
+      '@cmdgen/swapon':
+        specifier: workspace:*
+        version: link:../../packages/cmds/swapon
+      '@cmdgen/sync':
+        specifier: workspace:*
+        version: link:../../packages/cmds/sync
       '@cmdgen/systemctl':
         specifier: workspace:*
         version: link:../../packages/cmds/systemctl
@@ -987,6 +1323,9 @@ importers:
       '@cmdgen/tar':
         specifier: workspace:*
         version: link:../../packages/cmds/tar
+      '@cmdgen/tcpdump':
+        specifier: workspace:*
+        version: link:../../packages/cmds/tcpdump
       '@cmdgen/tee':
         specifier: workspace:*
         version: link:../../packages/cmds/tee
@@ -996,6 +1335,9 @@ importers:
       '@cmdgen/timedatectl':
         specifier: workspace:*
         version: link:../../packages/cmds/timedatectl
+      '@cmdgen/timeout':
+        specifier: workspace:*
+        version: link:../../packages/cmds/timeout
       '@cmdgen/top':
         specifier: workspace:*
         version: link:../../packages/cmds/top
@@ -1011,6 +1353,9 @@ importers:
       '@cmdgen/tree':
         specifier: workspace:*
         version: link:../../packages/cmds/tree
+      '@cmdgen/tune2fs':
+        specifier: workspace:*
+        version: link:../../packages/cmds/tune2fs
       '@cmdgen/ufw':
         specifier: workspace:*
         version: link:../../packages/cmds/ufw
@@ -1032,6 +1377,9 @@ importers:
       '@cmdgen/uniq':
         specifier: workspace:*
         version: link:../../packages/cmds/uniq
+      '@cmdgen/unxz':
+        specifier: workspace:*
+        version: link:../../packages/cmds/unxz
       '@cmdgen/unzip':
         specifier: workspace:*
         version: link:../../packages/cmds/unzip
@@ -1053,9 +1401,15 @@ importers:
       '@cmdgen/vi':
         specifier: workspace:*
         version: link:../../packages/cmds/vi
+      '@cmdgen/visudo':
+        specifier: workspace:*
+        version: link:../../packages/cmds/visudo
       '@cmdgen/vmstat':
         specifier: workspace:*
         version: link:../../packages/cmds/vmstat
+      '@cmdgen/w':
+        specifier: workspace:*
+        version: link:../../packages/cmds/w
       '@cmdgen/watch':
         specifier: workspace:*
         version: link:../../packages/cmds/watch
@@ -1077,6 +1431,9 @@ importers:
       '@cmdgen/which':
         specifier: workspace:*
         version: link:../../packages/cmds/which
+      '@cmdgen/who':
+        specifier: workspace:*
+        version: link:../../packages/cmds/who
       '@cmdgen/whoami':
         specifier: workspace:*
         version: link:../../packages/cmds/whoami
@@ -1086,6 +1443,9 @@ importers:
       '@cmdgen/xargs':
         specifier: workspace:*
         version: link:../../packages/cmds/xargs
+      '@cmdgen/xz':
+        specifier: workspace:*
+        version: link:../../packages/cmds/xz
       '@cmdgen/yum':
         specifier: workspace:*
         version: link:../../packages/cmds/yum
@@ -1145,6 +1505,9 @@ importers:
 
   packages/cmd-registry:
     dependencies:
+      '@cmdgen/7z':
+        specifier: workspace:*
+        version: link:../cmds/7z
       '@cmdgen/adduser':
         specifier: workspace:*
         version: link:../cmds/adduser
@@ -1154,15 +1517,24 @@ importers:
       '@cmdgen/apt':
         specifier: workspace:*
         version: link:../cmds/apt
+      '@cmdgen/apt-cache':
+        specifier: workspace:*
+        version: link:../cmds/apt-cache
       '@cmdgen/apt-get':
         specifier: workspace:*
         version: link:../cmds/apt-get
+      '@cmdgen/arch':
+        specifier: workspace:*
+        version: link:../cmds/arch
       '@cmdgen/at':
         specifier: workspace:*
         version: link:../cmds/at
       '@cmdgen/awk':
         specifier: workspace:*
         version: link:../cmds/awk
+      '@cmdgen/basename':
+        specifier: workspace:*
+        version: link:../cmds/basename
       '@cmdgen/bg':
         specifier: workspace:*
         version: link:../cmds/bg
@@ -1184,9 +1556,15 @@ importers:
       '@cmdgen/cd':
         specifier: workspace:*
         version: link:../cmds/cd
+      '@cmdgen/chattr':
+        specifier: workspace:*
+        version: link:../cmds/chattr
       '@cmdgen/chgrp':
         specifier: workspace:*
         version: link:../cmds/chgrp
+      '@cmdgen/chkconfig':
+        specifier: workspace:*
+        version: link:../cmds/chkconfig
       '@cmdgen/chmod':
         specifier: workspace:*
         version: link:../cmds/chmod
@@ -1196,6 +1574,9 @@ importers:
       '@cmdgen/chroot':
         specifier: workspace:*
         version: link:../cmds/chroot
+      '@cmdgen/chsh':
+        specifier: workspace:*
+        version: link:../cmds/chsh
       '@cmdgen/clear':
         specifier: workspace:*
         version: link:../cmds/clear
@@ -1232,12 +1613,30 @@ importers:
       '@cmdgen/dig':
         specifier: workspace:*
         version: link:../cmds/dig
+      '@cmdgen/dirname':
+        specifier: workspace:*
+        version: link:../cmds/dirname
+      '@cmdgen/disown':
+        specifier: workspace:*
+        version: link:../cmds/disown
       '@cmdgen/dmesg':
         specifier: workspace:*
         version: link:../cmds/dmesg
+      '@cmdgen/dmidecode':
+        specifier: workspace:*
+        version: link:../cmds/dmidecode
+      '@cmdgen/dnf':
+        specifier: workspace:*
+        version: link:../cmds/dnf
+      '@cmdgen/dpkg':
+        specifier: workspace:*
+        version: link:../cmds/dpkg
       '@cmdgen/du':
         specifier: workspace:*
         version: link:../cmds/du
+      '@cmdgen/e2fsck':
+        specifier: workspace:*
+        version: link:../cmds/e2fsck
       '@cmdgen/echo':
         specifier: workspace:*
         version: link:../cmds/echo
@@ -1250,12 +1649,18 @@ importers:
       '@cmdgen/engine':
         specifier: workspace:*
         version: link:../cmd-engine
+      '@cmdgen/env':
+        specifier: workspace:*
+        version: link:../cmds/env
       '@cmdgen/exit':
         specifier: workspace:*
         version: link:../cmds/exit
       '@cmdgen/export':
         specifier: workspace:*
         version: link:../cmds/export
+      '@cmdgen/fail2ban-client':
+        specifier: workspace:*
+        version: link:../cmds/fail2ban-client
       '@cmdgen/fdisk':
         specifier: workspace:*
         version: link:../cmds/fdisk
@@ -1265,6 +1670,9 @@ importers:
       '@cmdgen/fg':
         specifier: workspace:*
         version: link:../cmds/fg
+      '@cmdgen/fgrep':
+        specifier: workspace:*
+        version: link:../cmds/fgrep
       '@cmdgen/file':
         specifier: workspace:*
         version: link:../cmds/file
@@ -1277,12 +1685,30 @@ importers:
       '@cmdgen/firewall-cmd':
         specifier: workspace:*
         version: link:../cmds/firewall-cmd
+      '@cmdgen/firewalld':
+        specifier: workspace:*
+        version: link:../cmds/firewalld
+      '@cmdgen/flatpak':
+        specifier: workspace:*
+        version: link:../cmds/flatpak
+      '@cmdgen/fmt':
+        specifier: workspace:*
+        version: link:../cmds/fmt
       '@cmdgen/free':
         specifier: workspace:*
         version: link:../cmds/free
+      '@cmdgen/fsck':
+        specifier: workspace:*
+        version: link:../cmds/fsck
       '@cmdgen/ftp':
         specifier: workspace:*
         version: link:../cmds/ftp
+      '@cmdgen/fuser':
+        specifier: workspace:*
+        version: link:../cmds/fuser
+      '@cmdgen/gdisk':
+        specifier: workspace:*
+        version: link:../cmds/gdisk
       '@cmdgen/getenforce':
         specifier: workspace:*
         version: link:../cmds/getenforce
@@ -1316,12 +1742,21 @@ importers:
       '@cmdgen/head':
         specifier: workspace:*
         version: link:../cmds/head
+      '@cmdgen/hexdump':
+        specifier: workspace:*
+        version: link:../cmds/hexdump
       '@cmdgen/history':
         specifier: workspace:*
         version: link:../cmds/history
+      '@cmdgen/host':
+        specifier: workspace:*
+        version: link:../cmds/host
       '@cmdgen/hostname':
         specifier: workspace:*
         version: link:../cmds/hostname
+      '@cmdgen/hostnamectl':
+        specifier: workspace:*
+        version: link:../cmds/hostnamectl
       '@cmdgen/htop':
         specifier: workspace:*
         version: link:../cmds/htop
@@ -1337,6 +1772,9 @@ importers:
       '@cmdgen/info':
         specifier: workspace:*
         version: link:../cmds/info
+      '@cmdgen/insmod':
+        specifier: workspace:*
+        version: link:../cmds/insmod
       '@cmdgen/iostat':
         specifier: workspace:*
         version: link:../cmds/iostat
@@ -1346,9 +1784,15 @@ importers:
       '@cmdgen/iptables':
         specifier: workspace:*
         version: link:../cmds/iptables
+      '@cmdgen/iwconfig':
+        specifier: workspace:*
+        version: link:../cmds/iwconfig
       '@cmdgen/jobs':
         specifier: workspace:*
         version: link:../cmds/jobs
+      '@cmdgen/join':
+        specifier: workspace:*
+        version: link:../cmds/join
       '@cmdgen/journalctl':
         specifier: workspace:*
         version: link:../cmds/journalctl
@@ -1361,6 +1805,9 @@ importers:
       '@cmdgen/last':
         specifier: workspace:*
         version: link:../cmds/last
+      '@cmdgen/lastlog':
+        specifier: workspace:*
+        version: link:../cmds/lastlog
       '@cmdgen/less':
         specifier: workspace:*
         version: link:../cmds/less
@@ -1373,6 +1820,9 @@ importers:
       '@cmdgen/ls':
         specifier: workspace:*
         version: link:../cmds/ls
+      '@cmdgen/lsattr':
+        specifier: workspace:*
+        version: link:../cmds/lsattr
       '@cmdgen/lsblk':
         specifier: workspace:*
         version: link:../cmds/lsblk
@@ -1382,12 +1832,21 @@ importers:
       '@cmdgen/lshw':
         specifier: workspace:*
         version: link:../cmds/lshw
+      '@cmdgen/lsmod':
+        specifier: workspace:*
+        version: link:../cmds/lsmod
+      '@cmdgen/lsof':
+        specifier: workspace:*
+        version: link:../cmds/lsof
       '@cmdgen/lspci':
         specifier: workspace:*
         version: link:../cmds/lspci
       '@cmdgen/lsusb':
         specifier: workspace:*
         version: link:../cmds/lsusb
+      '@cmdgen/ltrace':
+        specifier: workspace:*
+        version: link:../cmds/ltrace
       '@cmdgen/man':
         specifier: workspace:*
         version: link:../cmds/man
@@ -1397,36 +1856,63 @@ importers:
       '@cmdgen/mkfs':
         specifier: workspace:*
         version: link:../cmds/mkfs
+      '@cmdgen/mkswap':
+        specifier: workspace:*
+        version: link:../cmds/mkswap
+      '@cmdgen/modprobe':
+        specifier: workspace:*
+        version: link:../cmds/modprobe
       '@cmdgen/more':
         specifier: workspace:*
         version: link:../cmds/more
       '@cmdgen/mount':
         specifier: workspace:*
         version: link:../cmds/mount
+      '@cmdgen/mtr':
+        specifier: workspace:*
+        version: link:../cmds/mtr
       '@cmdgen/mv':
         specifier: workspace:*
         version: link:../cmds/mv
       '@cmdgen/nano':
         specifier: workspace:*
         version: link:../cmds/nano
+      '@cmdgen/nc':
+        specifier: workspace:*
+        version: link:../cmds/nc
       '@cmdgen/netstat':
         specifier: workspace:*
         version: link:../cmds/netstat
       '@cmdgen/nice':
         specifier: workspace:*
         version: link:../cmds/nice
+      '@cmdgen/nl':
+        specifier: workspace:*
+        version: link:../cmds/nl
+      '@cmdgen/nmap':
+        specifier: workspace:*
+        version: link:../cmds/nmap
+      '@cmdgen/nmcli':
+        specifier: workspace:*
+        version: link:../cmds/nmcli
       '@cmdgen/nohup':
         specifier: workspace:*
         version: link:../cmds/nohup
       '@cmdgen/nslookup':
         specifier: workspace:*
         version: link:../cmds/nslookup
+      '@cmdgen/od':
+        specifier: workspace:*
+        version: link:../cmds/od
       '@cmdgen/openssl':
         specifier: workspace:*
         version: link:../cmds/openssl
       '@cmdgen/pacman':
         specifier: workspace:*
         version: link:../cmds/pacman
+      '@cmdgen/parted':
+        specifier: workspace:*
+        version: link:../cmds/parted
       '@cmdgen/passwd':
         specifier: workspace:*
         version: link:../cmds/passwd
@@ -1439,6 +1925,9 @@ importers:
       '@cmdgen/pgrep':
         specifier: workspace:*
         version: link:../cmds/pgrep
+      '@cmdgen/pidof':
+        specifier: workspace:*
+        version: link:../cmds/pidof
       '@cmdgen/ping':
         specifier: workspace:*
         version: link:../cmds/ping
@@ -1454,6 +1943,9 @@ importers:
       '@cmdgen/ps':
         specifier: workspace:*
         version: link:../cmds/ps
+      '@cmdgen/pstree':
+        specifier: workspace:*
+        version: link:../cmds/pstree
       '@cmdgen/pwd':
         specifier: workspace:*
         version: link:../cmds/pwd
@@ -1472,6 +1964,9 @@ importers:
       '@cmdgen/rmdir':
         specifier: workspace:*
         version: link:../cmds/rmdir
+      '@cmdgen/rmmod':
+        specifier: workspace:*
+        version: link:../cmds/rmmod
       '@cmdgen/route':
         specifier: workspace:*
         version: link:../cmds/route
@@ -1487,6 +1982,9 @@ importers:
       '@cmdgen/scp':
         specifier: workspace:*
         version: link:../cmds/scp
+      '@cmdgen/sdiff':
+        specifier: workspace:*
+        version: link:../cmds/sdiff
       '@cmdgen/sed':
         specifier: workspace:*
         version: link:../cmds/sed
@@ -1505,6 +2003,9 @@ importers:
       '@cmdgen/shutdown':
         specifier: workspace:*
         version: link:../cmds/shutdown
+      '@cmdgen/snap':
+        specifier: workspace:*
+        version: link:../cmds/snap
       '@cmdgen/sort':
         specifier: workspace:*
         version: link:../cmds/sort
@@ -1523,12 +2024,27 @@ importers:
       '@cmdgen/stat':
         specifier: workspace:*
         version: link:../cmds/stat
+      '@cmdgen/strace':
+        specifier: workspace:*
+        version: link:../cmds/strace
+      '@cmdgen/strings':
+        specifier: workspace:*
+        version: link:../cmds/strings
       '@cmdgen/su':
         specifier: workspace:*
         version: link:../cmds/su
       '@cmdgen/sudo':
         specifier: workspace:*
         version: link:../cmds/sudo
+      '@cmdgen/swapoff':
+        specifier: workspace:*
+        version: link:../cmds/swapoff
+      '@cmdgen/swapon':
+        specifier: workspace:*
+        version: link:../cmds/swapon
+      '@cmdgen/sync':
+        specifier: workspace:*
+        version: link:../cmds/sync
       '@cmdgen/systemctl':
         specifier: workspace:*
         version: link:../cmds/systemctl
@@ -1541,6 +2057,9 @@ importers:
       '@cmdgen/tar':
         specifier: workspace:*
         version: link:../cmds/tar
+      '@cmdgen/tcpdump':
+        specifier: workspace:*
+        version: link:../cmds/tcpdump
       '@cmdgen/tee':
         specifier: workspace:*
         version: link:../cmds/tee
@@ -1550,6 +2069,9 @@ importers:
       '@cmdgen/timedatectl':
         specifier: workspace:*
         version: link:../cmds/timedatectl
+      '@cmdgen/timeout':
+        specifier: workspace:*
+        version: link:../cmds/timeout
       '@cmdgen/top':
         specifier: workspace:*
         version: link:../cmds/top
@@ -1565,6 +2087,9 @@ importers:
       '@cmdgen/tree':
         specifier: workspace:*
         version: link:../cmds/tree
+      '@cmdgen/tune2fs':
+        specifier: workspace:*
+        version: link:../cmds/tune2fs
       '@cmdgen/ufw':
         specifier: workspace:*
         version: link:../cmds/ufw
@@ -1583,6 +2108,9 @@ importers:
       '@cmdgen/uniq':
         specifier: workspace:*
         version: link:../cmds/uniq
+      '@cmdgen/unxz':
+        specifier: workspace:*
+        version: link:../cmds/unxz
       '@cmdgen/unzip':
         specifier: workspace:*
         version: link:../cmds/unzip
@@ -1604,9 +2132,15 @@ importers:
       '@cmdgen/vi':
         specifier: workspace:*
         version: link:../cmds/vi
+      '@cmdgen/visudo':
+        specifier: workspace:*
+        version: link:../cmds/visudo
       '@cmdgen/vmstat':
         specifier: workspace:*
         version: link:../cmds/vmstat
+      '@cmdgen/w':
+        specifier: workspace:*
+        version: link:../cmds/w
       '@cmdgen/watch':
         specifier: workspace:*
         version: link:../cmds/watch
@@ -1628,6 +2162,9 @@ importers:
       '@cmdgen/which':
         specifier: workspace:*
         version: link:../cmds/which
+      '@cmdgen/who':
+        specifier: workspace:*
+        version: link:../cmds/who
       '@cmdgen/whoami':
         specifier: workspace:*
         version: link:../cmds/whoami
@@ -1637,6 +2174,9 @@ importers:
       '@cmdgen/xargs':
         specifier: workspace:*
         version: link:../cmds/xargs
+      '@cmdgen/xz':
+        specifier: workspace:*
+        version: link:../cmds/xz
       '@cmdgen/yum':
         specifier: workspace:*
         version: link:../cmds/yum
@@ -1647,6 +2187,25 @@ importers:
       '@cmdgen/config':
         specifier: workspace:*
         version: link:../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/7z:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -1708,7 +2267,45 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/cmds/apt-cache:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/cmds/apt-get:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/arch:
     dependencies:
       '@cmdgen/contracts':
         specifier: workspace:*
@@ -1747,6 +2344,25 @@ importers:
         version: 5.9.3
 
   packages/cmds/awk:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/basename:
     dependencies:
       '@cmdgen/contracts':
         specifier: workspace:*
@@ -1898,7 +2514,45 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/cmds/chattr:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/cmds/chgrp:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/chkconfig:
     dependencies:
       '@cmdgen/contracts':
         specifier: workspace:*
@@ -1956,6 +2610,25 @@ importers:
         version: 5.9.3
 
   packages/cmds/chroot:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/chsh:
     dependencies:
       '@cmdgen/contracts':
         specifier: workspace:*
@@ -2202,6 +2875,44 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/cmds/dirname:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/disown:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/cmds/dmesg:
     dependencies:
       '@cmdgen/contracts':
@@ -2221,7 +2932,83 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/cmds/dmidecode:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/dnf:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/dpkg:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/cmds/du:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/e2fsck:
     dependencies:
       '@cmdgen/contracts':
         specifier: workspace:*
@@ -2297,6 +3084,25 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/cmds/env:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/cmds/exit:
     dependencies:
       '@cmdgen/contracts':
@@ -2317,6 +3123,25 @@ importers:
         version: 5.9.3
 
   packages/cmds/export:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/fail2ban-client:
     dependencies:
       '@cmdgen/contracts':
         specifier: workspace:*
@@ -2374,6 +3199,25 @@ importers:
         version: 5.9.3
 
   packages/cmds/fg:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/fgrep:
     dependencies:
       '@cmdgen/contracts':
         specifier: workspace:*
@@ -2468,6 +3312,63 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/cmds/firewalld:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/flatpak:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/fmt:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/cmds/free:
     dependencies:
       '@cmdgen/contracts':
@@ -2487,7 +3388,64 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/cmds/fsck:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/cmds/ftp:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/fuser:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/gdisk:
     dependencies:
       '@cmdgen/contracts':
         specifier: workspace:*
@@ -2715,6 +3673,25 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/cmds/hexdump:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/cmds/history:
     dependencies:
       '@cmdgen/contracts':
@@ -2734,7 +3711,45 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/cmds/host:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/cmds/hostname:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/hostnamectl:
     dependencies:
       '@cmdgen/contracts':
         specifier: workspace:*
@@ -2848,6 +3863,25 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/cmds/insmod:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/cmds/iostat:
     dependencies:
       '@cmdgen/contracts':
@@ -2905,7 +3939,45 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/cmds/iwconfig:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/cmds/jobs:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/join:
     dependencies:
       '@cmdgen/contracts':
         specifier: workspace:*
@@ -3000,6 +4072,25 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/cmds/lastlog:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/cmds/less:
     dependencies:
       '@cmdgen/contracts':
@@ -3076,6 +4167,25 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/cmds/lsattr:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/cmds/lsblk:
     dependencies:
       '@cmdgen/contracts':
@@ -3133,6 +4243,44 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/cmds/lsmod:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/lsof:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/cmds/lspci:
     dependencies:
       '@cmdgen/contracts':
@@ -3153,6 +4301,25 @@ importers:
         version: 5.9.3
 
   packages/cmds/lsusb:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/ltrace:
     dependencies:
       '@cmdgen/contracts':
         specifier: workspace:*
@@ -3228,6 +4395,44 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/cmds/mkswap:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/modprobe:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/cmds/more:
     dependencies:
       '@cmdgen/contracts':
@@ -3248,6 +4453,25 @@ importers:
         version: 5.9.3
 
   packages/cmds/mount:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/mtr:
     dependencies:
       '@cmdgen/contracts':
         specifier: workspace:*
@@ -3304,6 +4528,25 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/cmds/nc:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/cmds/netstat:
     dependencies:
       '@cmdgen/contracts':
@@ -3324,6 +4567,63 @@ importers:
         version: 5.9.3
 
   packages/cmds/nice:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/nl:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/nmap:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/nmcli:
     dependencies:
       '@cmdgen/contracts':
         specifier: workspace:*
@@ -3380,6 +4680,25 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/cmds/od:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/cmds/openssl:
     dependencies:
       '@cmdgen/contracts':
@@ -3400,6 +4719,25 @@ importers:
         version: 5.9.3
 
   packages/cmds/pacman:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/parted:
     dependencies:
       '@cmdgen/contracts':
         specifier: workspace:*
@@ -3476,6 +4814,25 @@ importers:
         version: 5.9.3
 
   packages/cmds/pgrep:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/pidof:
     dependencies:
       '@cmdgen/contracts':
         specifier: workspace:*
@@ -3571,6 +4928,25 @@ importers:
         version: 5.9.3
 
   packages/cmds/ps:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/pstree:
     dependencies:
       '@cmdgen/contracts':
         specifier: workspace:*
@@ -3703,6 +5079,25 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/cmds/rmmod:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/cmds/route:
     dependencies:
       '@cmdgen/contracts':
@@ -3780,6 +5175,25 @@ importers:
         version: 5.9.3
 
   packages/cmds/scp:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/sdiff:
     dependencies:
       '@cmdgen/contracts':
         specifier: workspace:*
@@ -3912,6 +5326,25 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/cmds/snap:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/cmds/sort:
     dependencies:
       '@cmdgen/contracts':
@@ -4026,6 +5459,44 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/cmds/strace:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/strings:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/cmds/su:
     dependencies:
       '@cmdgen/contracts':
@@ -4046,6 +5517,63 @@ importers:
         version: 5.9.3
 
   packages/cmds/sudo:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/swapoff:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/swapon:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/sync:
     dependencies:
       '@cmdgen/contracts':
         specifier: workspace:*
@@ -4140,6 +5668,25 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/cmds/tcpdump:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/cmds/tee:
     dependencies:
       '@cmdgen/contracts':
@@ -4179,6 +5726,25 @@ importers:
         version: 5.9.3
 
   packages/cmds/timedatectl:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/timeout:
     dependencies:
       '@cmdgen/contracts':
         specifier: workspace:*
@@ -4274,6 +5840,25 @@ importers:
         version: 5.9.3
 
   packages/cmds/tree:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/tune2fs:
     dependencies:
       '@cmdgen/contracts':
         specifier: workspace:*
@@ -4388,6 +5973,25 @@ importers:
         version: 5.9.3
 
   packages/cmds/uniq:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/unxz:
     dependencies:
       '@cmdgen/contracts':
         specifier: workspace:*
@@ -4539,7 +6143,45 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/cmds/visudo:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/cmds/vmstat:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/w:
     dependencies:
       '@cmdgen/contracts':
         specifier: workspace:*
@@ -4691,6 +6333,25 @@ importers:
         specifier: ^5.9.3
         version: 5.9.3
 
+  packages/cmds/who:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
   packages/cmds/whoami:
     dependencies:
       '@cmdgen/contracts':
@@ -4730,6 +6391,25 @@ importers:
         version: 5.9.3
 
   packages/cmds/xargs:
+    dependencies:
+      '@cmdgen/contracts':
+        specifier: workspace:*
+        version: link:../../contracts
+      '@cmdgen/engine':
+        specifier: workspace:*
+        version: link:../../cmd-engine
+      zod:
+        specifier: ^4.4.3
+        version: 4.4.3
+    devDependencies:
+      '@cmdgen/config':
+        specifier: workspace:*
+        version: link:../../config
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+  packages/cmds/xz:
     dependencies:
       '@cmdgen/contracts':
         specifier: workspace:*

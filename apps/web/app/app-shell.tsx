@@ -802,6 +802,301 @@ const WatchBuilder = dynamic(() => import("./watch-builder").then((m) => m.Watch
   loading: () => <BuilderSkeleton />,
 });
 
+const BasenameBuilder = dynamic(
+  () => import("./basename-builder").then((m) => m.BasenameBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const DirnameBuilder = dynamic(
+  () => import("./dirname-builder").then((m) => m.DirnameBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const FgrepBuilder = dynamic(() => import("./fgrep-builder").then((m) => m.FgrepBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const JoinBuilder = dynamic(() => import("./join-builder").then((m) => m.JoinBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const SdiffBuilder = dynamic(() => import("./sdiff-builder").then((m) => m.SdiffBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const NlBuilder = dynamic(() => import("./nl-builder").then((m) => m.NlBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const OdBuilder = dynamic(() => import("./od-builder").then((m) => m.OdBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const HexdumpBuilder = dynamic(
+  () => import("./hexdump-builder").then((m) => m.HexdumpBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const StringsBuilder = dynamic(
+  () => import("./strings-builder").then((m) => m.StringsBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const FmtBuilder = dynamic(() => import("./fmt-builder").then((m) => m.FmtBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const VisudoBuilder = dynamic(() => import("./visudo-builder").then((m) => m.VisudoBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const ChattrBuilder = dynamic(() => import("./chattr-builder").then((m) => m.ChattrBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const LsattrBuilder = dynamic(() => import("./lsattr-builder").then((m) => m.LsattrBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const HostnamectlBuilder = dynamic(
+  () => import("./hostnamectl-builder").then((m) => m.HostnamectlBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const DmidecodeBuilder = dynamic(
+  () => import("./dmidecode-builder").then((m) => m.DmidecodeBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const ArchBuilder = dynamic(() => import("./arch-builder").then((m) => m.ArchBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const LsmodBuilder = dynamic(() => import("./lsmod-builder").then((m) => m.LsmodBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const ModprobeBuilder = dynamic(
+  () => import("./modprobe-builder").then((m) => m.ModprobeBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const InsmodBuilder = dynamic(() => import("./insmod-builder").then((m) => m.InsmodBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const RmmodBuilder = dynamic(() => import("./rmmod-builder").then((m) => m.RmmodBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const PidofBuilder = dynamic(() => import("./pidof-builder").then((m) => m.PidofBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const DisownBuilder = dynamic(() => import("./disown-builder").then((m) => m.DisownBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const LsofBuilder = dynamic(() => import("./lsof-builder").then((m) => m.LsofBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const StraceBuilder = dynamic(() => import("./strace-builder").then((m) => m.StraceBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const LtraceBuilder = dynamic(() => import("./ltrace-builder").then((m) => m.LtraceBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const PstreeBuilder = dynamic(() => import("./pstree-builder").then((m) => m.PstreeBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const TimeoutBuilder = dynamic(
+  () => import("./timeout-builder").then((m) => m.TimeoutBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const FuserBuilder = dynamic(() => import("./fuser-builder").then((m) => m.FuserBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const MtrBuilder = dynamic(() => import("./mtr-builder").then((m) => m.MtrBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const HostBuilder = dynamic(() => import("./host-builder").then((m) => m.HostBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const NcBuilder = dynamic(() => import("./nc-builder").then((m) => m.NcBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const TcpdumpBuilder = dynamic(
+  () => import("./tcpdump-builder").then((m) => m.TcpdumpBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const NmapBuilder = dynamic(() => import("./nmap-builder").then((m) => m.NmapBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const IwconfigBuilder = dynamic(
+  () => import("./iwconfig-builder").then((m) => m.IwconfigBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const NmcliBuilder = dynamic(() => import("./nmcli-builder").then((m) => m.NmcliBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const WhoBuilder = dynamic(() => import("./who-builder").then((m) => m.WhoBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const WBuilder = dynamic(() => import("./w-builder").then((m) => m.WBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const LastlogBuilder = dynamic(
+  () => import("./lastlog-builder").then((m) => m.LastlogBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const ChshBuilder = dynamic(() => import("./chsh-builder").then((m) => m.ChshBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const AptCacheBuilder = dynamic(
+  () => import("./apt-cache-builder").then((m) => m.AptCacheBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const DpkgBuilder = dynamic(() => import("./dpkg-builder").then((m) => m.DpkgBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const DnfBuilder = dynamic(() => import("./dnf-builder").then((m) => m.DnfBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const SnapBuilder = dynamic(() => import("./snap-builder").then((m) => m.SnapBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const FlatpakBuilder = dynamic(
+  () => import("./flatpak-builder").then((m) => m.FlatpakBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const ChkconfigBuilder = dynamic(
+  () => import("./chkconfig-builder").then((m) => m.ChkconfigBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const XzBuilder = dynamic(() => import("./xz-builder").then((m) => m.XzBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const UnxzBuilder = dynamic(() => import("./unxz-builder").then((m) => m.UnxzBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const SevenzBuilder = dynamic(() => import("./7z-builder").then((m) => m.SevenzBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const GdiskBuilder = dynamic(() => import("./gdisk-builder").then((m) => m.GdiskBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const PartedBuilder = dynamic(() => import("./parted-builder").then((m) => m.PartedBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const FsckBuilder = dynamic(() => import("./fsck-builder").then((m) => m.FsckBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const E2fsckBuilder = dynamic(() => import("./e2fsck-builder").then((m) => m.E2fsckBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const Tune2fsBuilder = dynamic(
+  () => import("./tune2fs-builder").then((m) => m.Tune2fsBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const MkswapBuilder = dynamic(() => import("./mkswap-builder").then((m) => m.MkswapBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const SwaponBuilder = dynamic(() => import("./swapon-builder").then((m) => m.SwaponBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const SwapoffBuilder = dynamic(
+  () => import("./swapoff-builder").then((m) => m.SwapoffBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const SyncBuilder = dynamic(() => import("./sync-builder").then((m) => m.SyncBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+const FirewalldBuilder = dynamic(
+  () => import("./firewalld-builder").then((m) => m.FirewalldBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const Fail2banClientBuilder = dynamic(
+  () => import("./fail2ban-client-builder").then((m) => m.Fail2banClientBuilder),
+  {
+    ssr: false,
+    loading: () => <BuilderSkeleton />,
+  },
+);
+const EnvBuilder = dynamic(() => import("./env-builder").then((m) => m.EnvBuilder), {
+  ssr: false,
+  loading: () => <BuilderSkeleton />,
+});
+
 const SELECT_COMMAND_EVENT = "OpenCmdGenerator:selectCommand";
 
 export function AppShell() {
@@ -1204,6 +1499,66 @@ export function AppShell() {
           {selectedId === "chroot" && <ChrootBuilder />}
           {selectedId === "realpath" && <RealpathBuilder />}
           {selectedId === "watch" && <WatchBuilder />}
+          {selectedId === "basename" && <BasenameBuilder />}
+          {selectedId === "dirname" && <DirnameBuilder />}
+          {selectedId === "fgrep" && <FgrepBuilder />}
+          {selectedId === "join" && <JoinBuilder />}
+          {selectedId === "sdiff" && <SdiffBuilder />}
+          {selectedId === "nl" && <NlBuilder />}
+          {selectedId === "od" && <OdBuilder />}
+          {selectedId === "hexdump" && <HexdumpBuilder />}
+          {selectedId === "strings" && <StringsBuilder />}
+          {selectedId === "fmt" && <FmtBuilder />}
+          {selectedId === "visudo" && <VisudoBuilder />}
+          {selectedId === "chattr" && <ChattrBuilder />}
+          {selectedId === "lsattr" && <LsattrBuilder />}
+          {selectedId === "hostnamectl" && <HostnamectlBuilder />}
+          {selectedId === "dmidecode" && <DmidecodeBuilder />}
+          {selectedId === "arch" && <ArchBuilder />}
+          {selectedId === "lsmod" && <LsmodBuilder />}
+          {selectedId === "modprobe" && <ModprobeBuilder />}
+          {selectedId === "insmod" && <InsmodBuilder />}
+          {selectedId === "rmmod" && <RmmodBuilder />}
+          {selectedId === "pidof" && <PidofBuilder />}
+          {selectedId === "disown" && <DisownBuilder />}
+          {selectedId === "lsof" && <LsofBuilder />}
+          {selectedId === "strace" && <StraceBuilder />}
+          {selectedId === "ltrace" && <LtraceBuilder />}
+          {selectedId === "pstree" && <PstreeBuilder />}
+          {selectedId === "timeout" && <TimeoutBuilder />}
+          {selectedId === "fuser" && <FuserBuilder />}
+          {selectedId === "mtr" && <MtrBuilder />}
+          {selectedId === "host" && <HostBuilder />}
+          {selectedId === "nc" && <NcBuilder />}
+          {selectedId === "tcpdump" && <TcpdumpBuilder />}
+          {selectedId === "nmap" && <NmapBuilder />}
+          {selectedId === "iwconfig" && <IwconfigBuilder />}
+          {selectedId === "nmcli" && <NmcliBuilder />}
+          {selectedId === "who" && <WhoBuilder />}
+          {selectedId === "w" && <WBuilder />}
+          {selectedId === "lastlog" && <LastlogBuilder />}
+          {selectedId === "chsh" && <ChshBuilder />}
+          {selectedId === "apt-cache" && <AptCacheBuilder />}
+          {selectedId === "dpkg" && <DpkgBuilder />}
+          {selectedId === "dnf" && <DnfBuilder />}
+          {selectedId === "snap" && <SnapBuilder />}
+          {selectedId === "flatpak" && <FlatpakBuilder />}
+          {selectedId === "chkconfig" && <ChkconfigBuilder />}
+          {selectedId === "xz" && <XzBuilder />}
+          {selectedId === "unxz" && <UnxzBuilder />}
+          {selectedId === "7z" && <SevenzBuilder />}
+          {selectedId === "gdisk" && <GdiskBuilder />}
+          {selectedId === "parted" && <PartedBuilder />}
+          {selectedId === "fsck" && <FsckBuilder />}
+          {selectedId === "e2fsck" && <E2fsckBuilder />}
+          {selectedId === "tune2fs" && <Tune2fsBuilder />}
+          {selectedId === "mkswap" && <MkswapBuilder />}
+          {selectedId === "swapon" && <SwaponBuilder />}
+          {selectedId === "swapoff" && <SwapoffBuilder />}
+          {selectedId === "sync" && <SyncBuilder />}
+          {selectedId === "firewalld" && <FirewalldBuilder />}
+          {selectedId === "fail2ban-client" && <Fail2banClientBuilder />}
+          {selectedId === "env" && <EnvBuilder />}
         </main>
       </div>
 

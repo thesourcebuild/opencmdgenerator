@@ -164,6 +164,66 @@ import { IOSTAT_MANIFEST } from "@cmdgen/iostat";
 import { CHROOT_MANIFEST } from "@cmdgen/chroot";
 import { REALPATH_MANIFEST } from "@cmdgen/realpath";
 import { WATCH_MANIFEST } from "@cmdgen/watch";
+import { BASENAME_MANIFEST } from "@cmdgen/basename";
+import { DIRNAME_MANIFEST } from "@cmdgen/dirname";
+import { FGREP_MANIFEST } from "@cmdgen/fgrep";
+import { JOIN_MANIFEST } from "@cmdgen/join";
+import { SDIFF_MANIFEST } from "@cmdgen/sdiff";
+import { NL_MANIFEST } from "@cmdgen/nl";
+import { OD_MANIFEST } from "@cmdgen/od";
+import { HEXDUMP_MANIFEST } from "@cmdgen/hexdump";
+import { STRINGS_MANIFEST } from "@cmdgen/strings";
+import { FMT_MANIFEST } from "@cmdgen/fmt";
+import { VISUDO_MANIFEST } from "@cmdgen/visudo";
+import { CHATTR_MANIFEST } from "@cmdgen/chattr";
+import { LSATTR_MANIFEST } from "@cmdgen/lsattr";
+import { HOSTNAMECTL_MANIFEST } from "@cmdgen/hostnamectl";
+import { DMIDECODE_MANIFEST } from "@cmdgen/dmidecode";
+import { ARCH_MANIFEST } from "@cmdgen/arch";
+import { LSMOD_MANIFEST } from "@cmdgen/lsmod";
+import { MODPROBE_MANIFEST } from "@cmdgen/modprobe";
+import { INSMOD_MANIFEST } from "@cmdgen/insmod";
+import { RMMOD_MANIFEST } from "@cmdgen/rmmod";
+import { PIDOF_MANIFEST } from "@cmdgen/pidof";
+import { DISOWN_MANIFEST } from "@cmdgen/disown";
+import { LSOF_MANIFEST } from "@cmdgen/lsof";
+import { STRACE_MANIFEST } from "@cmdgen/strace";
+import { LTRACE_MANIFEST } from "@cmdgen/ltrace";
+import { PSTREE_MANIFEST } from "@cmdgen/pstree";
+import { TIMEOUT_MANIFEST } from "@cmdgen/timeout";
+import { FUSER_MANIFEST } from "@cmdgen/fuser";
+import { MTR_MANIFEST } from "@cmdgen/mtr";
+import { HOST_MANIFEST } from "@cmdgen/host";
+import { NC_MANIFEST } from "@cmdgen/nc";
+import { TCPDUMP_MANIFEST } from "@cmdgen/tcpdump";
+import { NMAP_MANIFEST } from "@cmdgen/nmap";
+import { IWCONFIG_MANIFEST } from "@cmdgen/iwconfig";
+import { NMCLI_MANIFEST } from "@cmdgen/nmcli";
+import { WHO_MANIFEST } from "@cmdgen/who";
+import { W_MANIFEST } from "@cmdgen/w";
+import { LASTLOG_MANIFEST } from "@cmdgen/lastlog";
+import { CHSH_MANIFEST } from "@cmdgen/chsh";
+import { APT_CACHE_MANIFEST } from "@cmdgen/apt-cache";
+import { DPKG_MANIFEST } from "@cmdgen/dpkg";
+import { DNF_MANIFEST } from "@cmdgen/dnf";
+import { SNAP_MANIFEST } from "@cmdgen/snap";
+import { FLATPAK_MANIFEST } from "@cmdgen/flatpak";
+import { CHKCONFIG_MANIFEST } from "@cmdgen/chkconfig";
+import { XZ_MANIFEST } from "@cmdgen/xz";
+import { UNXZ_MANIFEST } from "@cmdgen/unxz";
+import { SEVENZ_MANIFEST } from "@cmdgen/7z";
+import { GDISK_MANIFEST } from "@cmdgen/gdisk";
+import { PARTED_MANIFEST } from "@cmdgen/parted";
+import { FSCK_MANIFEST } from "@cmdgen/fsck";
+import { E2FSCK_MANIFEST } from "@cmdgen/e2fsck";
+import { TUNE2FS_MANIFEST } from "@cmdgen/tune2fs";
+import { MKSWAP_MANIFEST } from "@cmdgen/mkswap";
+import { SWAPON_MANIFEST } from "@cmdgen/swapon";
+import { SWAPOFF_MANIFEST } from "@cmdgen/swapoff";
+import { SYNC_MANIFEST } from "@cmdgen/sync";
+import { FIREWALLD_MANIFEST } from "@cmdgen/firewalld";
+import { FAIL2BAN_CLIENT_MANIFEST } from "@cmdgen/fail2ban-client";
+import { ENV_MANIFEST } from "@cmdgen/env";
 
 /**
  * Cheap, eagerly-bundled metadata for every installed command — what a
@@ -336,6 +396,66 @@ export const MANIFESTS: readonly CommandManifest[] = [
   CHROOT_MANIFEST,
   REALPATH_MANIFEST,
   WATCH_MANIFEST,
+  BASENAME_MANIFEST,
+  DIRNAME_MANIFEST,
+  FGREP_MANIFEST,
+  JOIN_MANIFEST,
+  SDIFF_MANIFEST,
+  NL_MANIFEST,
+  OD_MANIFEST,
+  HEXDUMP_MANIFEST,
+  STRINGS_MANIFEST,
+  FMT_MANIFEST,
+  VISUDO_MANIFEST,
+  CHATTR_MANIFEST,
+  LSATTR_MANIFEST,
+  HOSTNAMECTL_MANIFEST,
+  DMIDECODE_MANIFEST,
+  ARCH_MANIFEST,
+  LSMOD_MANIFEST,
+  MODPROBE_MANIFEST,
+  INSMOD_MANIFEST,
+  RMMOD_MANIFEST,
+  PIDOF_MANIFEST,
+  DISOWN_MANIFEST,
+  LSOF_MANIFEST,
+  STRACE_MANIFEST,
+  LTRACE_MANIFEST,
+  PSTREE_MANIFEST,
+  TIMEOUT_MANIFEST,
+  FUSER_MANIFEST,
+  MTR_MANIFEST,
+  HOST_MANIFEST,
+  NC_MANIFEST,
+  TCPDUMP_MANIFEST,
+  NMAP_MANIFEST,
+  IWCONFIG_MANIFEST,
+  NMCLI_MANIFEST,
+  WHO_MANIFEST,
+  W_MANIFEST,
+  LASTLOG_MANIFEST,
+  CHSH_MANIFEST,
+  APT_CACHE_MANIFEST,
+  DPKG_MANIFEST,
+  DNF_MANIFEST,
+  SNAP_MANIFEST,
+  FLATPAK_MANIFEST,
+  CHKCONFIG_MANIFEST,
+  XZ_MANIFEST,
+  UNXZ_MANIFEST,
+  SEVENZ_MANIFEST,
+  GDISK_MANIFEST,
+  PARTED_MANIFEST,
+  FSCK_MANIFEST,
+  E2FSCK_MANIFEST,
+  TUNE2FS_MANIFEST,
+  MKSWAP_MANIFEST,
+  SWAPON_MANIFEST,
+  SWAPOFF_MANIFEST,
+  SYNC_MANIFEST,
+  FIREWALLD_MANIFEST,
+  FAIL2BAN_CLIENT_MANIFEST,
+  ENV_MANIFEST,
 ];
 
 export function getManifest(id: string): CommandManifest | undefined {
@@ -802,6 +922,176 @@ export async function loadCommand(id: string): Promise<CommandDefinition<unknown
     case "watch":
       return (await import("@cmdgen/watch/definition"))
         .WATCH_COMMAND as CommandDefinition<unknown>;
+    case "basename":
+      return (await import("@cmdgen/basename/definition"))
+        .BASENAME_COMMAND as CommandDefinition<unknown>;
+    case "dirname":
+      return (await import("@cmdgen/dirname/definition"))
+        .DIRNAME_COMMAND as CommandDefinition<unknown>;
+    case "fgrep":
+      return (await import("@cmdgen/fgrep/definition"))
+        .FGREP_COMMAND as CommandDefinition<unknown>;
+    case "join":
+      return (await import("@cmdgen/join/definition"))
+        .JOIN_COMMAND as CommandDefinition<unknown>;
+    case "sdiff":
+      return (await import("@cmdgen/sdiff/definition"))
+        .SDIFF_COMMAND as CommandDefinition<unknown>;
+    case "nl":
+      return (await import("@cmdgen/nl/definition")).NL_COMMAND as CommandDefinition<unknown>;
+    case "od":
+      return (await import("@cmdgen/od/definition")).OD_COMMAND as CommandDefinition<unknown>;
+    case "hexdump":
+      return (await import("@cmdgen/hexdump/definition"))
+        .HEXDUMP_COMMAND as CommandDefinition<unknown>;
+    case "strings":
+      return (await import("@cmdgen/strings/definition"))
+        .STRINGS_COMMAND as CommandDefinition<unknown>;
+    case "fmt":
+      return (await import("@cmdgen/fmt/definition")).FMT_COMMAND as CommandDefinition<unknown>;
+    case "visudo":
+      return (await import("@cmdgen/visudo/definition"))
+        .VISUDO_COMMAND as CommandDefinition<unknown>;
+    case "chattr":
+      return (await import("@cmdgen/chattr/definition"))
+        .CHATTR_COMMAND as CommandDefinition<unknown>;
+    case "lsattr":
+      return (await import("@cmdgen/lsattr/definition"))
+        .LSATTR_COMMAND as CommandDefinition<unknown>;
+    case "hostnamectl":
+      return (await import("@cmdgen/hostnamectl/definition"))
+        .HOSTNAMECTL_COMMAND as CommandDefinition<unknown>;
+    case "dmidecode":
+      return (await import("@cmdgen/dmidecode/definition"))
+        .DMIDECODE_COMMAND as CommandDefinition<unknown>;
+    case "arch":
+      return (await import("@cmdgen/arch/definition"))
+        .ARCH_COMMAND as CommandDefinition<unknown>;
+    case "lsmod":
+      return (await import("@cmdgen/lsmod/definition"))
+        .LSMOD_COMMAND as CommandDefinition<unknown>;
+    case "modprobe":
+      return (await import("@cmdgen/modprobe/definition"))
+        .MODPROBE_COMMAND as CommandDefinition<unknown>;
+    case "insmod":
+      return (await import("@cmdgen/insmod/definition"))
+        .INSMOD_COMMAND as CommandDefinition<unknown>;
+    case "rmmod":
+      return (await import("@cmdgen/rmmod/definition"))
+        .RMMOD_COMMAND as CommandDefinition<unknown>;
+    case "pidof":
+      return (await import("@cmdgen/pidof/definition"))
+        .PIDOF_COMMAND as CommandDefinition<unknown>;
+    case "disown":
+      return (await import("@cmdgen/disown/definition"))
+        .DISOWN_COMMAND as CommandDefinition<unknown>;
+    case "lsof":
+      return (await import("@cmdgen/lsof/definition"))
+        .LSOF_COMMAND as CommandDefinition<unknown>;
+    case "strace":
+      return (await import("@cmdgen/strace/definition"))
+        .STRACE_COMMAND as CommandDefinition<unknown>;
+    case "ltrace":
+      return (await import("@cmdgen/ltrace/definition"))
+        .LTRACE_COMMAND as CommandDefinition<unknown>;
+    case "pstree":
+      return (await import("@cmdgen/pstree/definition"))
+        .PSTREE_COMMAND as CommandDefinition<unknown>;
+    case "timeout":
+      return (await import("@cmdgen/timeout/definition"))
+        .TIMEOUT_COMMAND as CommandDefinition<unknown>;
+    case "fuser":
+      return (await import("@cmdgen/fuser/definition"))
+        .FUSER_COMMAND as CommandDefinition<unknown>;
+    case "mtr":
+      return (await import("@cmdgen/mtr/definition")).MTR_COMMAND as CommandDefinition<unknown>;
+    case "host":
+      return (await import("@cmdgen/host/definition"))
+        .HOST_COMMAND as CommandDefinition<unknown>;
+    case "nc":
+      return (await import("@cmdgen/nc/definition")).NC_COMMAND as CommandDefinition<unknown>;
+    case "tcpdump":
+      return (await import("@cmdgen/tcpdump/definition"))
+        .TCPDUMP_COMMAND as CommandDefinition<unknown>;
+    case "nmap":
+      return (await import("@cmdgen/nmap/definition"))
+        .NMAP_COMMAND as CommandDefinition<unknown>;
+    case "iwconfig":
+      return (await import("@cmdgen/iwconfig/definition"))
+        .IWCONFIG_COMMAND as CommandDefinition<unknown>;
+    case "nmcli":
+      return (await import("@cmdgen/nmcli/definition"))
+        .NMCLI_COMMAND as CommandDefinition<unknown>;
+    case "who":
+      return (await import("@cmdgen/who/definition")).WHO_COMMAND as CommandDefinition<unknown>;
+    case "w":
+      return (await import("@cmdgen/w/definition")).W_COMMAND as CommandDefinition<unknown>;
+    case "lastlog":
+      return (await import("@cmdgen/lastlog/definition"))
+        .LASTLOG_COMMAND as CommandDefinition<unknown>;
+    case "chsh":
+      return (await import("@cmdgen/chsh/definition"))
+        .CHSH_COMMAND as CommandDefinition<unknown>;
+    case "apt-cache":
+      return (await import("@cmdgen/apt-cache/definition"))
+        .APT_CACHE_COMMAND as CommandDefinition<unknown>;
+    case "dpkg":
+      return (await import("@cmdgen/dpkg/definition"))
+        .DPKG_COMMAND as CommandDefinition<unknown>;
+    case "dnf":
+      return (await import("@cmdgen/dnf/definition")).DNF_COMMAND as CommandDefinition<unknown>;
+    case "snap":
+      return (await import("@cmdgen/snap/definition"))
+        .SNAP_COMMAND as CommandDefinition<unknown>;
+    case "flatpak":
+      return (await import("@cmdgen/flatpak/definition"))
+        .FLATPAK_COMMAND as CommandDefinition<unknown>;
+    case "chkconfig":
+      return (await import("@cmdgen/chkconfig/definition"))
+        .CHKCONFIG_COMMAND as CommandDefinition<unknown>;
+    case "xz":
+      return (await import("@cmdgen/xz/definition")).XZ_COMMAND as CommandDefinition<unknown>;
+    case "unxz":
+      return (await import("@cmdgen/unxz/definition"))
+        .UNXZ_COMMAND as CommandDefinition<unknown>;
+    case "7z":
+      return (await import("@cmdgen/7z/definition"))
+        .SEVENZ_COMMAND as CommandDefinition<unknown>;
+    case "gdisk":
+      return (await import("@cmdgen/gdisk/definition"))
+        .GDISK_COMMAND as CommandDefinition<unknown>;
+    case "parted":
+      return (await import("@cmdgen/parted/definition"))
+        .PARTED_COMMAND as CommandDefinition<unknown>;
+    case "fsck":
+      return (await import("@cmdgen/fsck/definition"))
+        .FSCK_COMMAND as CommandDefinition<unknown>;
+    case "e2fsck":
+      return (await import("@cmdgen/e2fsck/definition"))
+        .E2FSCK_COMMAND as CommandDefinition<unknown>;
+    case "tune2fs":
+      return (await import("@cmdgen/tune2fs/definition"))
+        .TUNE2FS_COMMAND as CommandDefinition<unknown>;
+    case "mkswap":
+      return (await import("@cmdgen/mkswap/definition"))
+        .MKSWAP_COMMAND as CommandDefinition<unknown>;
+    case "swapon":
+      return (await import("@cmdgen/swapon/definition"))
+        .SWAPON_COMMAND as CommandDefinition<unknown>;
+    case "swapoff":
+      return (await import("@cmdgen/swapoff/definition"))
+        .SWAPOFF_COMMAND as CommandDefinition<unknown>;
+    case "sync":
+      return (await import("@cmdgen/sync/definition"))
+        .SYNC_COMMAND as CommandDefinition<unknown>;
+    case "firewalld":
+      return (await import("@cmdgen/firewalld/definition"))
+        .FIREWALLD_COMMAND as CommandDefinition<unknown>;
+    case "fail2ban-client":
+      return (await import("@cmdgen/fail2ban-client/definition"))
+        .FAIL2BAN_CLIENT_COMMAND as CommandDefinition<unknown>;
+    case "env":
+      return (await import("@cmdgen/env/definition")).ENV_COMMAND as CommandDefinition<unknown>;
     default:
       throw new Error(`Unknown command id: "${id}"`);
   }

@@ -1,0 +1,24 @@
+{
+  "name": "@cmdgen/visudo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": "./src/index.ts",
+    "./pure": "./src/pure.ts",
+    "./definition": "./src/definition.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@cmdgen/contracts": "workspace:*",
+    "@cmdgen/engine": "workspace:*",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@cmdgen/config": "workspace:*",
+    "typescript": "^5.9.3"
+  }
+}
