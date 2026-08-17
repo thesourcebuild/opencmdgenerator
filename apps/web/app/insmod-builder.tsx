@@ -40,8 +40,8 @@ export function InsmodBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="module.ko"
-                addLabel="Add argument"
-                emptyHint="No arguments added - command will run without operands."
+                addLabel="Add module file"
+                emptyHint="No module files added yet."
               />
             </Panel>
             <Panel title="Flags">

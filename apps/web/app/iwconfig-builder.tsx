@@ -40,8 +40,8 @@ export function IwconfigBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="wlan0"
-                addLabel="Add argument"
-                emptyHint="No arguments added - command will run without operands."
+                addLabel="Add interface/setting"
+                emptyHint="No interfaces or settings added yet."
               />
             </Panel>
             <Panel title="Flags">

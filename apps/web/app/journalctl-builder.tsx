@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { JournalctlSpec } from "@cmdgen/journalctl";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/journalctl";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/journalctl";
 import { Panel } from "@cmdgen/ui";
 import { DiagnosticsPanel } from "./diagnostics-panel";
 import { FlagsForm } from "./flags-form";
@@ -44,7 +52,10 @@ export function JournalctlBuilder() {
               </div>
             </Panel>
 
-            <Panel title="Matches and paths" description="Additional FIELD=VALUE matches, + disjunction separators, or absolute paths/executables/devices.">
+            <Panel
+              title="Matches and paths"
+              description="Additional FIELD=VALUE matches, + disjunction separators, or absolute paths/executables/devices."
+            >
               <StringListEditor
                 items={matches}
                 onChange={(next) => setSpec((s) => ({ ...s, matches: next }))}
@@ -63,7 +74,10 @@ export function JournalctlBuilder() {
               />
             </Panel>
 
-            <Panel title="Advanced passthrough options" description="Raw journalctl options inserted before matches for very new or uncommon switches.">
+            <Panel
+              title="Advanced passthrough options"
+              description="Raw journalctl options inserted before matches for very new or uncommon switches."
+            >
               <StringListEditor
                 items={extraOptions}
                 onChange={(next) => setSpec((s) => ({ ...s, extraOptions: next }))}

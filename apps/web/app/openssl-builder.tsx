@@ -2,8 +2,21 @@
 
 import { useState, type ReactElement } from "react";
 import type { Preset } from "@cmdgen/engine";
-import type { OpensslCategoryId, OpensslSpec, OpensslSubcommand, ShellDialect } from "@cmdgen/openssl";
-import { OPENSSL_CATEGORIES, OPENSSL_SUBCOMMAND_META, PRESETS, createSpec, describeSpec, lint, subcommandsInCategory } from "@cmdgen/openssl";
+import type {
+  OpensslCategoryId,
+  OpensslSpec,
+  OpensslSubcommand,
+  ShellDialect,
+} from "@cmdgen/openssl";
+import {
+  OPENSSL_CATEGORIES,
+  OPENSSL_SUBCOMMAND_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  subcommandsInCategory,
+} from "@cmdgen/openssl";
 import { Panel } from "@cmdgen/ui";
 import { CategorizedPresetsDropdown } from "./categorized-presets-dropdown";
 import { DiagnosticsPanel } from "./diagnostics-panel";
@@ -22,7 +35,10 @@ import { PresetInfo } from "./preset-example";
 import { RightSidebar } from "./right-sidebar";
 import { ShellDialectTargetSelector } from "./shell-dialect-selector";
 
-const CATEGORY_FIELDS: Record<OpensslCategoryId, (props: { spec: OpensslSpec; onChange: (next: OpensslSpec) => void }) => ReactElement | null> = {
+const CATEGORY_FIELDS: Record<
+  OpensslCategoryId,
+  (props: { spec: OpensslSpec; onChange: (next: OpensslSpec) => void }) => ReactElement | null
+> = {
   keygen: OpensslKeygenFields,
   csr: OpensslCertFields,
   cert: OpensslCertFields,
@@ -45,13 +61,16 @@ export interface OpensslBuilderProps {
 }
 
 export function OpensslBuilder({ initialShell }: OpensslBuilderProps) {
-  const [spec, setSpec] = useState<OpensslSpec>(() => createSpec({ id: "draft", shell: initialShell }));
+  const [spec, setSpec] = useState<OpensslSpec>(() =>
+    createSpec({ id: "draft", shell: initialShell }),
+  );
   const [activePreset, setActivePreset] = useState<Preset<OpensslSpec> | null>(null);
 
   const category = OPENSSL_SUBCOMMAND_META[spec.subcommand].category;
   const CategoryFields = CATEGORY_FIELDS[category];
 
-  const changeSubcommand = (next: OpensslSubcommand) => setSpec(createSpec({ id: spec.id, subcommand: next, shell: spec.shell }));
+  const changeSubcommand = (next: OpensslSubcommand) =>
+    setSpec(createSpec({ id: spec.id, subcommand: next, shell: spec.shell }));
 
   return (
     <div className="flex gap-4">
@@ -99,7 +118,10 @@ export function OpensslBuilder({ initialShell }: OpensslBuilderProps) {
             label: "Options",
             content: (
               <>
-                <ShellDialectTargetSelector value={spec.shell} onChange={(shell) => setSpec({ ...spec, shell })} />
+                <ShellDialectTargetSelector
+                  value={spec.shell}
+                  onChange={(shell) => setSpec({ ...spec, shell })}
+                />
 
                 <Panel title="Examples">
                   <CategorizedPresetsDropdown<OpensslSpec>

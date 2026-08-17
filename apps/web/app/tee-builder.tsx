@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { TeeSpec } from "@cmdgen/tee";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/tee";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/tee";
 import { Panel } from "@cmdgen/ui";
 import { DiagnosticsPanel } from "./diagnostics-panel";
 import { FlagsForm } from "./flags-form";
@@ -30,7 +38,10 @@ export function TeeBuilder() {
               <p className="text-xs leading-relaxed">{describeSpec(spec)}</p>
             </Panel>
 
-            <Panel title="Output files" description="tee writes to each of these AND still prints to standard output.">
+            <Panel
+              title="Output files"
+              description="tee writes to each of these AND still prints to standard output."
+            >
               <StringListEditor
                 items={spec.files}
                 onChange={(files) => setSpec((s) => ({ ...s, files }))}

@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { PacmanOperation, PacmanSpec } from "@cmdgen/pacman";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/pacman";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/pacman";
 import { Panel } from "@cmdgen/ui";
 import { DiagnosticsPanel } from "./diagnostics-panel";
 import { FlagsForm } from "./flags-form";
@@ -20,7 +28,12 @@ const OPERATION_LABEL: Record<PacmanOperation, string> = {
   refreshUpgrade: "Refresh and upgrade everything",
 };
 
-const OPERATIONS: readonly PacmanOperation[] = ["sync", "remove", "searchSync", "refreshUpgrade"];
+const OPERATIONS: readonly PacmanOperation[] = [
+  "sync",
+  "remove",
+  "searchSync",
+  "refreshUpgrade",
+];
 
 export function PacmanBuilder() {
   const [spec, setSpec] = useState<PacmanSpec>(() => createSpec({ id: "draft" }));
@@ -45,7 +58,9 @@ export function PacmanBuilder() {
                   <label className="mb-1 block text-xs font-medium">Operation</label>
                   <select
                     value={spec.operation}
-                    onChange={(e) => setSpec((s) => ({ ...s, operation: e.target.value as PacmanOperation }))}
+                    onChange={(e) =>
+                      setSpec((s) => ({ ...s, operation: e.target.value as PacmanOperation }))
+                    }
                     className="h-9 w-full rounded-md border border-slate-300 bg-white px-2 text-xs dark:border-slate-700 dark:bg-slate-950"
                   >
                     {OPERATIONS.map((op) => (

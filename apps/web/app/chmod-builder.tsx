@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { ChmodSpec } from "@cmdgen/chmod";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/chmod";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/chmod";
 import { Panel } from "@cmdgen/ui";
 import { ChmodPreview } from "./chmod-preview";
 import { DiagnosticsPanel } from "./diagnostics-panel";

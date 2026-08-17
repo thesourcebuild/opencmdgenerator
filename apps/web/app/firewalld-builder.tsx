@@ -40,8 +40,8 @@ export function FirewalldBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="--nofork"
-                addLabel="Add argument"
-                emptyHint="No arguments added - command will run without operands."
+                addLabel="Add option"
+                emptyHint="No options added yet."
               />
             </Panel>
             <Panel title="Flags">

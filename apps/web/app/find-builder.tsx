@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { FindSpec } from "@cmdgen/find";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/find";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/find";
 import { Panel } from "@cmdgen/ui";
 import { DiagnosticsPanel } from "./diagnostics-panel";
 import { FindPreview } from "./find-preview";
@@ -49,7 +57,10 @@ export function FindBuilder() {
               />
             </Panel>
 
-            <Panel title="Run a command on each match (-exec)" description="Without its trailing {} ; — that part is added automatically.">
+            <Panel
+              title="Run a command on each match (-exec)"
+              description="Without its trailing {} ; — that part is added automatically."
+            >
               <input
                 value={spec.exec}
                 onChange={(e) => setSpec((s) => ({ ...s, exec: e.target.value }))}

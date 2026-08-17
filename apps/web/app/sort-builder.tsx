@@ -3,7 +3,16 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { SortPlatform, SortSpec } from "@cmdgen/sort";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, flagTag, lint, setFlag } from "@cmdgen/sort";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  flagTag,
+  lint,
+  setFlag,
+} from "@cmdgen/sort";
 import { Panel } from "@cmdgen/ui";
 import { DiagnosticsPanel } from "./diagnostics-panel";
 import { FlagsForm } from "./flags-form";
@@ -19,14 +28,19 @@ export interface SortBuilderProps {
 }
 
 export function SortBuilder({ initialPlatform }: SortBuilderProps) {
-  const [spec, setSpec] = useState<SortSpec>(() => createSpec({ id: "draft", platform: initialPlatform }));
+  const [spec, setSpec] = useState<SortSpec>(() =>
+    createSpec({ id: "draft", platform: initialPlatform }),
+  );
   const [activePreset, setActivePreset] = useState<Preset<SortSpec> | null>(null);
 
   return (
     <div className="flex gap-4">
       <div className="min-w-0 flex-1 space-y-4">
         <div className="sticky top-0 z-10 bg-slate-50 pb-4 dark:bg-slate-950">
-          <SortPreview spec={spec} onPlatformChange={(platform) => setSpec((s) => ({ ...s, platform, flags: {} }))} />
+          <SortPreview
+            spec={spec}
+            onPlatformChange={(platform) => setSpec((s) => ({ ...s, platform, flags: {} }))}
+          />
         </div>
 
         <Panel title="Commands" collapsible defaultOpen>
@@ -68,7 +82,10 @@ export function SortBuilder({ initialPlatform }: SortBuilderProps) {
             label: "Options",
             content: (
               <>
-                <SortTargetSelector value={spec.platform} onChange={(platform) => setSpec((s) => ({ ...s, platform }))} />
+                <SortTargetSelector
+                  value={spec.platform}
+                  onChange={(platform) => setSpec((s) => ({ ...s, platform }))}
+                />
 
                 <Panel title="Examples">
                   <PresetsDropdown<SortSpec>

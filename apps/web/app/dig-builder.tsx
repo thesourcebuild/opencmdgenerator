@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { DigSpec } from "@cmdgen/dig";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/dig";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/dig";
 import { Panel } from "@cmdgen/ui";
 import { DiagnosticsPanel } from "./diagnostics-panel";
 import { FlagsForm } from "./flags-form";
@@ -34,7 +42,9 @@ export function DigBuilder() {
             <Panel title="Query">
               <div className="space-y-3">
                 <div>
-                  <label className="mb-1 block text-xs font-medium">Name (or address, with -x)</label>
+                  <label className="mb-1 block text-xs font-medium">
+                    Name (or address, with -x)
+                  </label>
                   <input
                     value={spec.lookupName}
                     onChange={(e) => setSpec((s) => ({ ...s, lookupName: e.target.value }))}
@@ -46,7 +56,9 @@ export function DigBuilder() {
                   <label className="mb-1 block text-xs font-medium">Record type</label>
                   <select
                     value={spec.type}
-                    onChange={(e) => setSpec((s) => ({ ...s, type: e.target.value as DigSpec["type"] }))}
+                    onChange={(e) =>
+                      setSpec((s) => ({ ...s, type: e.target.value as DigSpec["type"] }))
+                    }
                     className="h-9 w-full rounded-md border border-slate-300 px-2 font-mono text-xs dark:border-slate-700 dark:bg-slate-950"
                   >
                     {RECORD_TYPES.map((type) => (

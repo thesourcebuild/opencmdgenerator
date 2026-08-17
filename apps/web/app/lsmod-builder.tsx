@@ -40,8 +40,8 @@ export function LsmodBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder=""
-                addLabel="Add argument"
-                emptyHint="No arguments added - command will run without operands."
+                addLabel="Add module filter"
+                emptyHint="No module filters added yet."
               />
             </Panel>
             <Panel title="Flags">

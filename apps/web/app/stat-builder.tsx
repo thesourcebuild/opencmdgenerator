@@ -40,7 +40,7 @@ export function StatBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="notes.txt"
-                addLabel="Add argument"
+                addLabel="Add file"
                 emptyHint="No files added yet."
               />
             </Panel>

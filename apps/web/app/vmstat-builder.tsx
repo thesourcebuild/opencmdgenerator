@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { VmstatSpec } from "@cmdgen/vmstat";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/vmstat";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/vmstat";
 import { Panel } from "@cmdgen/ui";
 import { DiagnosticsPanel } from "./diagnostics-panel";
 import { FlagsForm } from "./flags-form";
@@ -44,7 +52,9 @@ export function VmstatBuilder() {
                     type="number"
                     min={1}
                     value={spec.interval ?? ""}
-                    onChange={(e) => setSpec((s) => ({ ...s, interval: toOptionalNumber(e.target.value) }))}
+                    onChange={(e) =>
+                      setSpec((s) => ({ ...s, interval: toOptionalNumber(e.target.value) }))
+                    }
                     placeholder="2"
                     className="h-9 w-full rounded-md border border-slate-300 px-2 font-mono text-xs dark:border-slate-700 dark:bg-slate-950"
                   />
@@ -55,7 +65,9 @@ export function VmstatBuilder() {
                     type="number"
                     min={1}
                     value={spec.count ?? ""}
-                    onChange={(e) => setSpec((s) => ({ ...s, count: toOptionalNumber(e.target.value) }))}
+                    onChange={(e) =>
+                      setSpec((s) => ({ ...s, count: toOptionalNumber(e.target.value) }))
+                    }
                     placeholder="5"
                     className="h-9 w-full rounded-md border border-slate-300 px-2 font-mono text-xs dark:border-slate-700 dark:bg-slate-950"
                   />

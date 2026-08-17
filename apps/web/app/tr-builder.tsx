@@ -40,7 +40,7 @@ export function TrBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="a-z A-Z"
-                addLabel="Add argument"
+                addLabel="Add sets"
                 emptyHint="Add SET1 and optionally SET2."
               />
             </Panel>

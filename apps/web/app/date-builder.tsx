@@ -40,7 +40,7 @@ export function DateBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="+%F"
-                addLabel="Add argument"
+                addLabel="Add format or date operands"
                 emptyHint="No operands - date prints the current local time."
               />
             </Panel>

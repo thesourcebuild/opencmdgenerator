@@ -40,8 +40,8 @@ export function LtraceBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="./app"
-                addLabel="Add argument"
-                emptyHint="No arguments added - command will run without operands."
+                addLabel="Add command part"
+                emptyHint="No command parts added yet."
               />
             </Panel>
             <Panel title="Flags">

@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { PatchSpec } from "@cmdgen/patch";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/patch";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/patch";
 import { Panel } from "@cmdgen/ui";
 import { DiagnosticsPanel } from "./diagnostics-panel";
 import { FlagsForm } from "./flags-form";
@@ -29,7 +37,10 @@ export function PatchBuilder() {
               <p className="text-xs leading-relaxed">{describeSpec(spec)}</p>
             </Panel>
 
-            <Panel title="Target file" description="Leave blank to let patch guess it from the diff headers.">
+            <Panel
+              title="Target file"
+              description="Leave blank to let patch guess it from the diff headers."
+            >
               <input
                 value={spec.targetFile}
                 onChange={(e) => setSpec((s) => ({ ...s, targetFile: e.target.value }))}
@@ -38,7 +49,10 @@ export function PatchBuilder() {
               />
             </Panel>
 
-            <Panel title="Patch file" description="Leave blank to read from stdin (or use -i in Flags below).">
+            <Panel
+              title="Patch file"
+              description="Leave blank to read from stdin (or use -i in Flags below)."
+            >
               <input
                 value={spec.patchFile}
                 onChange={(e) => setSpec((s) => ({ ...s, patchFile: e.target.value }))}

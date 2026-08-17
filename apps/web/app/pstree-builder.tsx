@@ -40,8 +40,8 @@ export function PstreeBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="1234"
-                addLabel="Add argument"
-                emptyHint="No arguments added - command will run without operands."
+                addLabel="Add user/PID"
+                emptyHint="No users or PIDs added yet."
               />
             </Panel>
             <Panel title="Flags">

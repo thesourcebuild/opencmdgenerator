@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { AwkSpec } from "@cmdgen/awk";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/awk";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/awk";
 import { Panel } from "@cmdgen/ui";
 import { AwkPreview } from "./awk-preview";
 import { DiagnosticsPanel } from "./diagnostics-panel";
@@ -49,7 +57,10 @@ export function AwkBuilder() {
               />
             </Panel>
 
-            <Panel title="Variable assignments (-v)" description="Each entry renders as its own -v var=value.">
+            <Panel
+              title="Variable assignments (-v)"
+              description="Each entry renders as its own -v var=value."
+            >
               <StringListEditor
                 items={spec.assignments}
                 onChange={(assignments) => setSpec((s) => ({ ...s, assignments }))}

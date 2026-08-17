@@ -40,8 +40,8 @@ export function LastBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="alice"
-                addLabel="Add argument"
-                emptyHint="No arguments added - command will run without operands."
+                addLabel="Add user/TTY"
+                emptyHint="No users or TTYs added yet."
               />
             </Panel>
             <Panel title="Flags">

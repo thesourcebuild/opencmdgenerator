@@ -40,7 +40,7 @@ export function ExitBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="0"
-                addLabel="Add argument"
+                addLabel="Add status code"
                 emptyHint="No status - exit uses the last command status."
               />
             </Panel>

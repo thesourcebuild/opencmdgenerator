@@ -40,8 +40,8 @@ export function HostBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="example.com"
-                addLabel="Add argument"
-                emptyHint="No arguments added - command will run without operands."
+                addLabel="Add name"
+                emptyHint="No names added yet."
               />
             </Panel>
             <Panel title="Flags">

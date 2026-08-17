@@ -3,7 +3,16 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { WhoamiPlatform, WhoamiSpec } from "@cmdgen/whoami";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag, windowsFlagTag } from "@cmdgen/whoami";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+  windowsFlagTag,
+} from "@cmdgen/whoami";
 import { Panel } from "@cmdgen/ui";
 import { DiagnosticsPanel } from "./diagnostics-panel";
 import { FlagsForm } from "./flags-form";
@@ -45,7 +54,10 @@ export function WhoamiBuilder({ platform, onPlatformChange }: WhoamiBuilderProps
               <p className="text-xs leading-relaxed">{describeSpec(spec)}</p>
             </Panel>
 
-            <Panel title="Flags" description="Windows' whoami.exe has several detail flags; POSIX has none beyond the bare name.">
+            <Panel
+              title="Flags"
+              description="Windows' whoami.exe has several detail flags; POSIX has none beyond the bare name."
+            >
               <FlagsForm
                 catalogue={CATALOGUE}
                 groups={FLAG_GROUP_META}

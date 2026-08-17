@@ -40,8 +40,8 @@ export function PrintfBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="%s\\n"
-                addLabel="Add argument"
-                emptyHint="No arguments added - command will run without operands."
+                addLabel="Add format/value"
+                emptyHint="No format strings or values added yet."
               />
             </Panel>
             <Panel title="Flags">

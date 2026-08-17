@@ -40,7 +40,7 @@ export function LscpuBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder=""
-                addLabel="Add argument"
+                addLabel="Add extra operands"
                 emptyHint="lscpu normally takes no operands."
               />
             </Panel>

@@ -40,7 +40,7 @@ export function Bunzip2Builder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="data.log.bz2"
-                addLabel="Add argument"
+                addLabel="Add file"
                 emptyHint="No files - bunzip2 reads from stdin."
               />
             </Panel>

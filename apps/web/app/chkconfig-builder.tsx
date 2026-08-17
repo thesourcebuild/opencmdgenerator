@@ -40,8 +40,8 @@ export function ChkconfigBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="httpd on"
-                addLabel="Add argument"
-                emptyHint="No arguments added - command will run without operands."
+                addLabel="Add service/action"
+                emptyHint="No services or actions added yet."
               />
             </Panel>
             <Panel title="Flags">

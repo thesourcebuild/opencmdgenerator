@@ -40,8 +40,8 @@ export function RmmodBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="br_netfilter"
-                addLabel="Add argument"
-                emptyHint="No arguments added - command will run without operands."
+                addLabel="Add module"
+                emptyHint="No modules added yet."
               />
             </Panel>
             <Panel title="Flags">

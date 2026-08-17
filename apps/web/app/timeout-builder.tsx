@@ -40,8 +40,8 @@ export function TimeoutBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="10s sleep 30"
-                addLabel="Add argument"
-                emptyHint="No arguments added - command will run without operands."
+                addLabel="Add duration/command"
+                emptyHint="No durations or command parts added yet."
               />
             </Panel>
             <Panel title="Flags">

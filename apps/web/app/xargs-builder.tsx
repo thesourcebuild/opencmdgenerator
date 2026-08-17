@@ -40,7 +40,7 @@ export function XargsBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="rm -f"
-                addLabel="Add argument"
+                addLabel="Add command and initial arguments"
                 emptyHint="No command added - xargs uses echo by default."
               />
             </Panel>

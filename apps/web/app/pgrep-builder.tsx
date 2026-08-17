@@ -40,7 +40,7 @@ export function PgrepBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="ssh"
-                addLabel="Add argument"
+                addLabel="Add pattern"
                 emptyHint="Add a process name or pattern."
               />
             </Panel>

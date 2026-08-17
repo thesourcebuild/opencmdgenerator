@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { CpPlatform, CpSpec } from "@cmdgen/cp";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/cp";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/cp";
 import { Panel } from "@cmdgen/ui";
 import { CpPreview } from "./cp-preview";
 import { CpTargetSelector } from "./cp-target-selector";
@@ -56,7 +64,10 @@ export function CpBuilder({ platform, onPlatformChange }: CpBuilderProps) {
               />
             </Panel>
 
-            <Panel title="Destination" description="A directory when copying multiple sources, or a new name/location for one.">
+            <Panel
+              title="Destination"
+              description="A directory when copying multiple sources, or a new name/location for one."
+            >
               <input
                 value={spec.destination}
                 onChange={(e) => setSpec((s) => ({ ...s, destination: e.target.value }))}

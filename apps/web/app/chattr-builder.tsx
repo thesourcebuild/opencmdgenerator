@@ -40,8 +40,8 @@ export function ChattrBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="+i file.txt"
-                addLabel="Add argument"
-                emptyHint="No arguments added - command will run without operands."
+                addLabel="Add attribute/path"
+                emptyHint="No attributes or paths added yet."
               />
             </Panel>
             <Panel title="Flags">

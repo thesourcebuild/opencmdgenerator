@@ -40,7 +40,7 @@ export function FtpBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="ftp.example.com"
-                addLabel="Add argument"
+                addLabel="Add host/port"
                 emptyHint="No host - ftp starts interactive mode."
               />
             </Panel>

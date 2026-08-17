@@ -3,7 +3,16 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { IfconfigPlatform, IfconfigSpec } from "@cmdgen/ifconfig";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, platformFlagTag, setFlag } from "@cmdgen/ifconfig";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  platformFlagTag,
+  setFlag,
+} from "@cmdgen/ifconfig";
 import { Panel } from "@cmdgen/ui";
 import { DiagnosticsPanel } from "./diagnostics-panel";
 import { FlagsForm } from "./flags-form";
@@ -22,7 +31,10 @@ export interface IfconfigBuilderProps {
 // Cygwin/MSYS2 invoke the real `ifconfig` with the real POSIX bare-keyword
 // operands below — same "posix" side of the axis as linux/mac.
 const isPosix = (platform: IfconfigPlatform) =>
-  platform === "linux" || platform === "mac" || platform === "windows-cygwin" || platform === "windows-msys";
+  platform === "linux" ||
+  platform === "mac" ||
+  platform === "windows-cygwin" ||
+  platform === "windows-msys";
 
 export function IfconfigBuilder({ platform, onPlatformChange }: IfconfigBuilderProps) {
   const [draft, setDraft] = useState<IfconfigSpec>(() => createSpec({ id: "draft", platform }));
@@ -66,10 +78,17 @@ export function IfconfigBuilder({ platform, onPlatformChange }: IfconfigBuilderP
               >
                 <div className="space-y-3">
                   <div>
-                    <label className="mb-1 block text-xs text-slate-500 dark:text-slate-400">State</label>
+                    <label className="mb-1 block text-xs text-slate-500 dark:text-slate-400">
+                      State
+                    </label>
                     <select
                       value={spec.state}
-                      onChange={(e) => setSpec((s) => ({ ...s, state: e.target.value as IfconfigSpec["state"] }))}
+                      onChange={(e) =>
+                        setSpec((s) => ({
+                          ...s,
+                          state: e.target.value as IfconfigSpec["state"],
+                        }))
+                      }
                       className="h-9 w-full rounded-md border border-slate-300 bg-white px-2 text-xs dark:border-slate-700 dark:bg-slate-950"
                     >
                       <option value="">(unchanged)</option>
@@ -79,7 +98,9 @@ export function IfconfigBuilder({ platform, onPlatformChange }: IfconfigBuilderP
                   </div>
 
                   <div>
-                    <label className="mb-1 block text-xs text-slate-500 dark:text-slate-400">Netmask</label>
+                    <label className="mb-1 block text-xs text-slate-500 dark:text-slate-400">
+                      Netmask
+                    </label>
                     <input
                       value={spec.netmask}
                       onChange={(e) => setSpec((s) => ({ ...s, netmask: e.target.value }))}
@@ -89,7 +110,9 @@ export function IfconfigBuilder({ platform, onPlatformChange }: IfconfigBuilderP
                   </div>
 
                   <div>
-                    <label className="mb-1 block text-xs text-slate-500 dark:text-slate-400">MTU</label>
+                    <label className="mb-1 block text-xs text-slate-500 dark:text-slate-400">
+                      MTU
+                    </label>
                     <input
                       value={spec.mtu}
                       onChange={(e) => setSpec((s) => ({ ...s, mtu: e.target.value }))}
@@ -101,7 +124,10 @@ export function IfconfigBuilder({ platform, onPlatformChange }: IfconfigBuilderP
               </Panel>
             )}
 
-            <Panel title="Flags" description="Windows only — ipconfig.exe's DHCP and adapter-detail options.">
+            <Panel
+              title="Flags"
+              description="Windows only — ipconfig.exe's DHCP and adapter-detail options."
+            >
               <FlagsForm
                 catalogue={CATALOGUE}
                 groups={FLAG_GROUP_META}

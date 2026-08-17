@@ -40,7 +40,7 @@ export function FileBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="archive.tar.gz"
-                addLabel="Add argument"
+                addLabel="Add file"
                 emptyHint="No files added - file will read from stdin where supported."
               />
             </Panel>

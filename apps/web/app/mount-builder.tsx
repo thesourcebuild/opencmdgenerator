@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { MountSpec } from "@cmdgen/mount";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/mount";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/mount";
 import { Panel } from "@cmdgen/ui";
 import { DiagnosticsPanel } from "./diagnostics-panel";
 import { FlagsForm } from "./flags-form";
@@ -48,7 +56,9 @@ export function MountBuilder() {
                     placeholder="/mnt/data"
                     className="h-9 w-full rounded-md border border-slate-300 px-2 font-mono text-xs dark:border-slate-700 dark:bg-slate-950"
                   />
-                  <p className="mt-1 text-[11px] text-slate-400">Leave both blank to list currently mounted filesystems instead.</p>
+                  <p className="mt-1 text-[11px] text-slate-400">
+                    Leave both blank to list currently mounted filesystems instead.
+                  </p>
                 </div>
               </div>
             </Panel>

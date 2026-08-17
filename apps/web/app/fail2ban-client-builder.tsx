@@ -40,8 +40,8 @@ export function Fail2banClientBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="status sshd"
-                addLabel="Add argument"
-                emptyHint="No arguments added - command will run without operands."
+                addLabel="Add command part"
+                emptyHint="No command parts added yet."
               />
             </Panel>
             <Panel title="Flags">

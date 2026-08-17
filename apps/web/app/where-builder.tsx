@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { WhereSpec } from "@cmdgen/where";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/where";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/where";
 import { Panel } from "@cmdgen/ui";
 import { DiagnosticsPanel } from "./diagnostics-panel";
 import { FlagsForm } from "./flags-form";
@@ -31,7 +39,10 @@ export function WhereBuilder() {
               <p className="text-xs leading-relaxed">{describeSpec(spec)}</p>
             </Panel>
 
-            <Panel title="Search patterns" description="One or more names to locate on PATH. Wildcards (* and ?) are accepted.">
+            <Panel
+              title="Search patterns"
+              description="One or more names to locate on PATH. Wildcards (* and ?) are accepted."
+            >
               <StringListEditor
                 items={spec.patterns}
                 onChange={(patterns) => setSpec((s) => ({ ...s, patterns }))}
@@ -63,7 +74,10 @@ export function WhereBuilder() {
             label: "Options",
             content: (
               <>
-                <WhereTargetSelector value={spec.platform} onChange={(platform) => setSpec((s) => ({ ...s, platform }))} />
+                <WhereTargetSelector
+                  value={spec.platform}
+                  onChange={(platform) => setSpec((s) => ({ ...s, platform }))}
+                />
 
                 <Panel title="Examples">
                   <PresetsDropdown<WhereSpec>

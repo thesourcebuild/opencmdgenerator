@@ -3,7 +3,16 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { RmPlatform, RmSpec } from "@cmdgen/rm";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, flagTag, lint, setFlag } from "@cmdgen/rm";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  flagTag,
+  lint,
+  setFlag,
+} from "@cmdgen/rm";
 import { Panel } from "@cmdgen/ui";
 import { DiagnosticsPanel } from "./diagnostics-panel";
 import { FlagsForm } from "./flags-form";
@@ -19,14 +28,19 @@ export interface RmBuilderProps {
 }
 
 export function RmBuilder({ initialPlatform }: RmBuilderProps) {
-  const [spec, setSpec] = useState<RmSpec>(() => createSpec({ id: "draft", platform: initialPlatform }));
+  const [spec, setSpec] = useState<RmSpec>(() =>
+    createSpec({ id: "draft", platform: initialPlatform }),
+  );
   const [activePreset, setActivePreset] = useState<Preset<RmSpec> | null>(null);
 
   return (
     <div className="flex gap-4">
       <div className="min-w-0 flex-1 space-y-4">
         <div className="sticky top-0 z-10 bg-slate-50 pb-4 dark:bg-slate-950">
-          <RmPreview spec={spec} onPlatformChange={(platform) => setSpec((s) => ({ ...s, platform }))} />
+          <RmPreview
+            spec={spec}
+            onPlatformChange={(platform) => setSpec((s) => ({ ...s, platform }))}
+          />
         </div>
 
         <Panel title="Commands" collapsible defaultOpen>
@@ -35,7 +49,10 @@ export function RmBuilder({ initialPlatform }: RmBuilderProps) {
               <p className="text-xs leading-relaxed">{describeSpec(spec)}</p>
             </Panel>
 
-            <Panel title="Targets" description="Files or directories to remove. There is no undo.">
+            <Panel
+              title="Targets"
+              description="Files or directories to remove. There is no undo."
+            >
               <StringListEditor
                 items={spec.paths}
                 onChange={(paths) => setSpec((s) => ({ ...s, paths }))}
@@ -68,7 +85,10 @@ export function RmBuilder({ initialPlatform }: RmBuilderProps) {
             label: "Options",
             content: (
               <>
-                <RmTargetSelector value={spec.platform} onChange={(platform) => setSpec((s) => ({ ...s, platform }))} />
+                <RmTargetSelector
+                  value={spec.platform}
+                  onChange={(platform) => setSpec((s) => ({ ...s, platform }))}
+                />
 
                 <Panel title="Examples">
                   <PresetsDropdown<RmSpec>

@@ -40,8 +40,8 @@ export function FgrepBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="needle file.txt"
-                addLabel="Add argument"
-                emptyHint="No arguments added - command will run without operands."
+                addLabel="Add pattern/file"
+                emptyHint="No patterns or files added yet."
               />
             </Panel>
             <Panel title="Flags">

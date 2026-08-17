@@ -40,7 +40,7 @@ export function NohupBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="long-task --all"
-                addLabel="Add argument"
+                addLabel="Add command part"
                 emptyHint="Add the command to run under nohup."
               />
             </Panel>

@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { BlkidSpec } from "@cmdgen/blkid";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/blkid";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/blkid";
 import { Panel } from "@cmdgen/ui";
 import { BlkidPreview } from "./blkid-preview";
 import { DiagnosticsPanel } from "./diagnostics-panel";
@@ -38,7 +46,9 @@ export function BlkidBuilder() {
                   placeholder="/dev/sda1"
                   className="h-9 w-full rounded-md border border-slate-300 px-2 font-mono text-xs dark:border-slate-700 dark:bg-slate-950"
                 />
-                <p className="mt-1 text-[11px] text-slate-400">Leave blank to scan every block device.</p>
+                <p className="mt-1 text-[11px] text-slate-400">
+                  Leave blank to scan every block device.
+                </p>
               </div>
             </Panel>
 

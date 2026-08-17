@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { CmpSpec } from "@cmdgen/cmp";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/cmp";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/cmp";
 import { Panel } from "@cmdgen/ui";
 import { CmpPreview } from "./cmp-preview";
 import { DiagnosticsPanel } from "./diagnostics-panel";

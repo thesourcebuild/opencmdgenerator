@@ -45,7 +45,9 @@ export interface TarBuilderProps {
 }
 
 export function TarBuilder({ variant, onVariantChange, initialShell }: TarBuilderProps) {
-  const [spec, setSpec] = useState<TarSpec>(() => createSpec({ id: "draft", variant, shell: initialShell }));
+  const [spec, setSpec] = useState<TarSpec>(() =>
+    createSpec({ id: "draft", variant, shell: initialShell }),
+  );
   const [activePreset, setActivePreset] = useState<Preset<TarSpec> | null>(null);
 
   // The variant lives in this builder's own right sidebar (it gates which
@@ -69,10 +71,14 @@ export function TarBuilder({ variant, onVariantChange, initialShell }: TarBuilde
               <p className="text-xs leading-relaxed">{describeSpec(current)}</p>
             </Panel>
 
-            <Panel title="Operation" description="tar does exactly one of these per invocation.">
+            <Panel
+              title="Operation"
+              description="tar does exactly one of these per invocation."
+            >
               <div className="flex flex-wrap gap-1">
                 {MODES.map(([mode, label, token]) => {
-                  const unsupported = current.variant === "bsd" && BSD_UNSUPPORTED_MODES.includes(mode);
+                  const unsupported =
+                    current.variant === "bsd" && BSD_UNSUPPORTED_MODES.includes(mode);
                   return (
                     <button
                       key={mode}
@@ -95,7 +101,10 @@ export function TarBuilder({ variant, onVariantChange, initialShell }: TarBuilde
               </div>
             </Panel>
 
-            <Panel title="Archive" description="The .tar file itself (-f). Leave empty to use standard input/output.">
+            <Panel
+              title="Archive"
+              description="The .tar file itself (-f). Leave empty to use standard input/output."
+            >
               <div className="grid gap-3 sm:grid-cols-2">
                 <div>
                   <label className="mb-1 block text-xs font-medium">Archive file</label>
@@ -107,7 +116,9 @@ export function TarBuilder({ variant, onVariantChange, initialShell }: TarBuilde
                   />
                 </div>
                 <div>
-                  <label className="mb-1 block text-xs font-medium">Change to directory (-C)</label>
+                  <label className="mb-1 block text-xs font-medium">
+                    Change to directory (-C)
+                  </label>
                   <input
                     value={current.changeDir}
                     onChange={(e) => setSpec({ ...current, changeDir: e.target.value })}
@@ -133,7 +144,11 @@ export function TarBuilder({ variant, onVariantChange, initialShell }: TarBuilde
                 onChange={(files) => setSpec({ ...current, files })}
                 placeholder={isReading ? "docs/README.md" : "src"}
                 addLabel="Add path"
-                emptyHint={isReading ? "No members listed — the whole archive is used." : "No inputs yet — the archive would be empty."}
+                emptyHint={
+                  isReading
+                    ? "No members listed — the whole archive is used."
+                    : "No inputs yet — the archive would be empty."
+                }
               />
             </Panel>
 

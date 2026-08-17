@@ -40,7 +40,7 @@ export function EgrepBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="error app.log"
-                addLabel="Add argument"
+                addLabel="Add pattern and files"
                 emptyHint="Add a pattern, then optional files."
               />
             </Panel>

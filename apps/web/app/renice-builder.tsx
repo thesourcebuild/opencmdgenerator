@@ -40,7 +40,7 @@ export function ReniceBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="10 1234"
-                addLabel="Add argument"
+                addLabel="Add priority and targets"
                 emptyHint="Add a priority and process/user/group targets."
               />
             </Panel>

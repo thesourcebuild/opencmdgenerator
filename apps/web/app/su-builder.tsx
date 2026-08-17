@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { SuSpec } from "@cmdgen/su";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/su";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/su";
 import { Panel } from "@cmdgen/ui";
 import { DiagnosticsPanel } from "./diagnostics-panel";
 import { FlagsForm } from "./flags-form";
@@ -31,7 +39,9 @@ export function SuBuilder() {
 
             <Panel title="Username">
               <div>
-                <label className="mb-1 block text-xs font-medium">Username (blank = root)</label>
+                <label className="mb-1 block text-xs font-medium">
+                  Username (blank = root)
+                </label>
                 <input
                   value={spec.username}
                   onChange={(e) => setSpec((s) => ({ ...s, username: e.target.value }))}

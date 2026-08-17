@@ -49,7 +49,12 @@ export function ServiceBuilder() {
                   <label className="mb-1 block text-xs font-medium">Action</label>
                   <select
                     value={spec.action}
-                    onChange={(e) => setSpec((s) => ({ ...s, action: e.target.value as ServiceSpec["action"] }))}
+                    onChange={(e) =>
+                      setSpec((s) => ({
+                        ...s,
+                        action: e.target.value as ServiceSpec["action"],
+                      }))
+                    }
                     className="h-9 w-full rounded-md border border-slate-300 px-2 font-mono text-xs dark:border-slate-700 dark:bg-slate-950"
                   >
                     {ACTIONS.map((action) => (

@@ -40,7 +40,7 @@ export function HtopBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder=""
-                addLabel="Add argument"
+                addLabel="Add extra operands"
                 emptyHint="htop usually takes no operands."
               />
             </Panel>

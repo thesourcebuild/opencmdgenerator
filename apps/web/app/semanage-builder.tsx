@@ -37,7 +37,12 @@ export function SemanageBuilder() {
                   <label className="mb-1 block text-xs font-medium">Object type</label>
                   <select
                     value={spec.objectType}
-                    onChange={(e) => setSpec((s) => ({ ...s, objectType: e.target.value as SemanageSpec["objectType"] }))}
+                    onChange={(e) =>
+                      setSpec((s) => ({
+                        ...s,
+                        objectType: e.target.value as SemanageSpec["objectType"],
+                      }))
+                    }
                     className="h-9 w-full rounded-md border border-slate-300 bg-white px-2 text-xs dark:border-slate-700 dark:bg-slate-950"
                   >
                     <option value="fcontext">fcontext (file context)</option>
@@ -48,7 +53,12 @@ export function SemanageBuilder() {
                   <label className="mb-1 block text-xs font-medium">Action</label>
                   <select
                     value={spec.action}
-                    onChange={(e) => setSpec((s) => ({ ...s, action: e.target.value as SemanageSpec["action"] }))}
+                    onChange={(e) =>
+                      setSpec((s) => ({
+                        ...s,
+                        action: e.target.value as SemanageSpec["action"],
+                      }))
+                    }
                     className="h-9 w-full rounded-md border border-slate-300 bg-white px-2 text-xs dark:border-slate-700 dark:bg-slate-950"
                   >
                     <option value="add">add (-a)</option>
@@ -63,7 +73,9 @@ export function SemanageBuilder() {
             <Panel
               title="Target"
               description={
-                spec.objectType === "port" ? "A PORT/PROTO pair, e.g. 8080/tcp." : "A path pattern, e.g. /web(/.*)?"
+                spec.objectType === "port"
+                  ? "A PORT/PROTO pair, e.g. 8080/tcp."
+                  : "A path pattern, e.g. /web(/.*)?"
               }
             >
               <div className="space-y-3">
@@ -83,7 +95,9 @@ export function SemanageBuilder() {
                   <input
                     value={spec.type}
                     onChange={(e) => setSpec((s) => ({ ...s, type: e.target.value }))}
-                    placeholder={spec.objectType === "port" ? "http_port_t" : "httpd_sys_content_t"}
+                    placeholder={
+                      spec.objectType === "port" ? "http_port_t" : "httpd_sys_content_t"
+                    }
                     className="h-9 w-full rounded-md border border-slate-300 px-2 font-mono text-xs dark:border-slate-700 dark:bg-slate-950"
                   />
                 </div>

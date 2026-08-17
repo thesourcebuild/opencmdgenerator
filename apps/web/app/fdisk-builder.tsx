@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { FdiskSpec } from "@cmdgen/fdisk";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/fdisk";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/fdisk";
 import { Panel } from "@cmdgen/ui";
 import { DiagnosticsPanel } from "./diagnostics-panel";
 import { FdiskPreview } from "./fdisk-preview";
@@ -38,7 +46,9 @@ export function FdiskBuilder() {
                   placeholder="/dev/sda"
                   className="h-9 w-full rounded-md border border-slate-300 px-2 font-mono text-xs dark:border-slate-700 dark:bg-slate-950"
                 />
-                <p className="mt-1 text-[11px] text-slate-400">Leave blank to list every device fdisk can find.</p>
+                <p className="mt-1 text-[11px] text-slate-400">
+                  Leave blank to list every device fdisk can find.
+                </p>
               </div>
             </Panel>
 

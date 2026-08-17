@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { SedSpec } from "@cmdgen/sed";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/sed";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/sed";
 import { Panel } from "@cmdgen/ui";
 import { DiagnosticsPanel } from "./diagnostics-panel";
 import { FlagsForm } from "./flags-form";
@@ -39,7 +47,10 @@ export function SedBuilder() {
               />
             </Panel>
 
-            <Panel title="Additional expressions (-e)" description="Each renders as its own -e, applied in order after the script above.">
+            <Panel
+              title="Additional expressions (-e)"
+              description="Each renders as its own -e, applied in order after the script above."
+            >
               <StringListEditor
                 items={spec.extraExpressions}
                 onChange={(extraExpressions) => setSpec((s) => ({ ...s, extraExpressions }))}
@@ -69,12 +80,15 @@ export function SedBuilder() {
                     className="mt-0.5"
                   />
                   <span>
-                    <span className="font-mono">-i</span> — edit each file in place instead of printing to standard output.
+                    <span className="font-mono">-i</span> — edit each file in place instead of
+                    printing to standard output.
                   </span>
                 </label>
                 {spec.inPlace && (
                   <label className="flex flex-col gap-1 text-xs">
-                    <span className="font-medium">Backup suffix — empty means no backup file is kept.</span>
+                    <span className="font-medium">
+                      Backup suffix — empty means no backup file is kept.
+                    </span>
                     <input
                       value={spec.backupSuffix}
                       onChange={(e) => setSpec((s) => ({ ...s, backupSuffix: e.target.value }))}

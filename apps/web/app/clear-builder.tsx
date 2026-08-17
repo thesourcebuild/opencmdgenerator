@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { ClearPlatform, ClearSpec } from "@cmdgen/clear";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/clear";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/clear";
 import { Panel } from "@cmdgen/ui";
 import { ClearPreview } from "./clear-preview";
 import { ClearTargetSelector } from "./clear-target-selector";

@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { YumSpec } from "@cmdgen/yum";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/yum";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/yum";
 import { Panel } from "@cmdgen/ui";
 import { DiagnosticsPanel } from "./diagnostics-panel";
 import { FlagsForm } from "./flags-form";
@@ -35,7 +43,9 @@ export function YumBuilder() {
                 <label className="mb-1 block text-xs font-medium">Action</label>
                 <select
                   value={spec.action}
-                  onChange={(e) => setSpec((s) => ({ ...s, action: e.target.value as YumSpec["action"] }))}
+                  onChange={(e) =>
+                    setSpec((s) => ({ ...s, action: e.target.value as YumSpec["action"] }))
+                  }
                   className="h-9 w-full rounded-md border border-slate-300 bg-white px-2 text-xs dark:border-slate-700 dark:bg-slate-950"
                 >
                   <option value="install">install</option>

@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { FirewallCmdSpec } from "@cmdgen/firewall-cmd";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/firewall-cmd";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/firewall-cmd";
 import { Panel } from "@cmdgen/ui";
 import { DiagnosticsPanel } from "./diagnostics-panel";
 import { FirewallCmdPreview } from "./firewall-cmd-preview";
@@ -48,7 +56,12 @@ export function FirewallCmdBuilder() {
                 <label className="mb-1 block text-xs font-medium">Action</label>
                 <select
                   value={spec.action}
-                  onChange={(e) => setSpec((s) => ({ ...s, action: e.target.value as FirewallCmdSpec["action"] }))}
+                  onChange={(e) =>
+                    setSpec((s) => ({
+                      ...s,
+                      action: e.target.value as FirewallCmdSpec["action"],
+                    }))
+                  }
                   className="h-9 w-full rounded-md border border-slate-300 bg-white px-2 text-xs dark:border-slate-700 dark:bg-slate-950"
                 >
                   <option value="state">state</option>

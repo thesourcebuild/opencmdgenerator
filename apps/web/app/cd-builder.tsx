@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { CdPlatform, CdSpec } from "@cmdgen/cd";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/cd";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/cd";
 import { Button, Panel } from "@cmdgen/ui";
 import { CdPreview } from "./cd-preview";
 import { CdTargetSelector } from "./cd-target-selector";
@@ -25,7 +33,12 @@ export interface CdBuilderProps {
   onPlatformChange: (next: CdPlatform) => void;
 }
 
-export function CdBuilder({ canPick, onPickDirectory, platform, onPlatformChange }: CdBuilderProps) {
+export function CdBuilder({
+  canPick,
+  onPickDirectory,
+  platform,
+  onPlatformChange,
+}: CdBuilderProps) {
   const [draft, setDraft] = useState<CdSpec>(() => createSpec({ id: "draft", platform }));
   const [activePreset, setActivePreset] = useState<Preset<CdSpec> | null>(null);
 
@@ -66,7 +79,11 @@ export function CdBuilder({ canPick, onPickDirectory, platform, onPlatformChange
                     <input
                       value={spec.path}
                       onChange={(e) => setSpec((s) => ({ ...s, path: e.target.value }))}
-                      placeholder={spec.platform === "linux" || spec.platform === "mac" ? "~/projects" : "C:\\Projects"}
+                      placeholder={
+                        spec.platform === "linux" || spec.platform === "mac"
+                          ? "~/projects"
+                          : "C:\\Projects"
+                      }
                       className="h-9 flex-1 rounded-md border border-slate-300 px-2 font-mono text-xs dark:border-slate-700 dark:bg-slate-950"
                     />
                     {canPick && (
@@ -75,7 +92,9 @@ export function CdBuilder({ canPick, onPickDirectory, platform, onPlatformChange
                       </Button>
                     )}
                   </div>
-                  <p className="mt-1 text-[11px] text-slate-400">Leave blank for the home directory (POSIX shells).</p>
+                  <p className="mt-1 text-[11px] text-slate-400">
+                    Leave blank for the home directory (POSIX shells).
+                  </p>
                 </div>
               </div>
             </Panel>

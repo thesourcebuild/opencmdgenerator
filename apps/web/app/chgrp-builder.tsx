@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { ChgrpSpec } from "@cmdgen/chgrp";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/chgrp";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/chgrp";
 import { Panel } from "@cmdgen/ui";
 import { ChgrpPreview } from "./chgrp-preview";
 import { DiagnosticsPanel } from "./diagnostics-panel";

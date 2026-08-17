@@ -41,12 +41,15 @@ export function SourceBuilder() {
               </div>
             </Panel>
 
-            <Panel title="Arguments" description="Passed to the script — exposed inside it as $1, $2, ...">
+            <Panel
+              title="Arguments"
+              description="Passed to the script — exposed inside it as $1, $2, ..."
+            >
               <StringListEditor
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="production"
-                addLabel="Add argument"
+                addLabel="Add script argument"
                 emptyHint="No arguments added."
               />
             </Panel>

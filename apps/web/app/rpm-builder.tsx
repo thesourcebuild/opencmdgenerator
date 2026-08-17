@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { RpmSpec } from "@cmdgen/rpm";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/rpm";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/rpm";
 import { Panel } from "@cmdgen/ui";
 import { DiagnosticsPanel } from "./diagnostics-panel";
 import { FlagsForm } from "./flags-form";
@@ -34,7 +42,12 @@ export function RpmBuilder() {
                 <label className="mb-1 block text-xs font-medium">Operation</label>
                 <select
                   value={spec.operation}
-                  onChange={(e) => setSpec((s) => ({ ...s, operation: e.target.value as RpmSpec["operation"] }))}
+                  onChange={(e) =>
+                    setSpec((s) => ({
+                      ...s,
+                      operation: e.target.value as RpmSpec["operation"],
+                    }))
+                  }
                   className="h-9 w-full rounded-md border border-slate-300 bg-white px-2 text-xs dark:border-slate-700 dark:bg-slate-950"
                 >
                   <option value="install">Install (-i)</option>

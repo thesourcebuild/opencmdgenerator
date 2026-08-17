@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { CurlDataMode, CurlFormMode, CurlSpec, ShellDialect } from "@cmdgen/curl";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/curl";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/curl";
 import { Button, Panel } from "@cmdgen/ui";
 import { CategorizedPresetsDropdown } from "./categorized-presets-dropdown";
 import { CurlPreview } from "./curl-preview";
@@ -33,7 +41,9 @@ export interface CurlBuilderProps {
 }
 
 export function CurlBuilder({ initialShell }: CurlBuilderProps) {
-  const [spec, setSpec] = useState<CurlSpec>(() => createSpec({ id: "draft", shell: initialShell }));
+  const [spec, setSpec] = useState<CurlSpec>(() =>
+    createSpec({ id: "draft", shell: initialShell }),
+  );
   const [activePreset, setActivePreset] = useState<Preset<CurlSpec> | null>(null);
   const onShellChange = (shell: CurlSpec["shell"]) => setSpec((s) => ({ ...s, shell }));
 
@@ -60,7 +70,10 @@ export function CurlBuilder({ initialShell }: CurlBuilderProps) {
               />
             </Panel>
 
-            <Panel title="Headers (-H)" description="Raw 'Name: value' strings, sent in this order.">
+            <Panel
+              title="Headers (-H)"
+              description="Raw 'Name: value' strings, sent in this order."
+            >
               <StringListEditor
                 items={spec.headers}
                 onChange={(headers) => setSpec((s) => ({ ...s, headers }))}
@@ -70,7 +83,10 @@ export function CurlBuilder({ initialShell }: CurlBuilderProps) {
               />
             </Panel>
 
-            <Panel title="Body (-d / --data-* / --json)" description="Each entry is its own repeated flag — real curl concatenates multiple -d chunks with &.">
+            <Panel
+              title="Body (-d / --data-* / --json)"
+              description="Each entry is its own repeated flag — real curl concatenates multiple -d chunks with &."
+            >
               <EntryListEditor
                 entries={spec.dataEntries}
                 onChange={(dataEntries) => setSpec((s) => ({ ...s, dataEntries }))}
@@ -82,7 +98,10 @@ export function CurlBuilder({ initialShell }: CurlBuilderProps) {
               />
             </Panel>
 
-            <Panel title="Multipart form (-F / --form-string)" description="Each entry is its own repeated flag.">
+            <Panel
+              title="Multipart form (-F / --form-string)"
+              description="Each entry is its own repeated flag."
+            >
               <EntryListEditor
                 entries={spec.formEntries}
                 onChange={(formEntries) => setSpec((s) => ({ ...s, formEntries }))}
@@ -94,7 +113,10 @@ export function CurlBuilder({ initialShell }: CurlBuilderProps) {
               />
             </Panel>
 
-            <Panel title="Flags" description="Driven entirely by the catalogue in @cmdgen/curl.">
+            <Panel
+              title="Flags"
+              description="Driven entirely by the catalogue in @cmdgen/curl."
+            >
               <FlagsForm
                 catalogue={CATALOGUE}
                 groups={FLAG_GROUP_META}

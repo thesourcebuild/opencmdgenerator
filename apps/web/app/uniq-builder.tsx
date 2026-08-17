@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { UniqSpec } from "@cmdgen/uniq";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/uniq";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/uniq";
 import { Panel } from "@cmdgen/ui";
 import { DiagnosticsPanel } from "./diagnostics-panel";
 import { FlagsForm } from "./flags-form";
@@ -30,7 +38,10 @@ export function UniqBuilder() {
               <p className="text-xs leading-relaxed">{describeSpec(spec)}</p>
             </Panel>
 
-            <Panel title="Files" description="Up to two: an input file, then an optional output file. Leave empty to read/write standard input/output.">
+            <Panel
+              title="Files"
+              description="Up to two: an input file, then an optional output file. Leave empty to read/write standard input/output."
+            >
               <StringListEditor
                 items={spec.files}
                 onChange={(files) => setSpec((s) => ({ ...s, files }))}

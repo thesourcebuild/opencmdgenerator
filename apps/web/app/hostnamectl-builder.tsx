@@ -40,8 +40,8 @@ export function HostnamectlBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="status"
-                addLabel="Add argument"
-                emptyHint="No arguments added - command will run without operands."
+                addLabel="Add hostnamectl action"
+                emptyHint="No hostnamectl actions added yet."
               />
             </Panel>
             <Panel title="Flags">

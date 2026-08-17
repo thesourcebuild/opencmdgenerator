@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { MkfsSpec } from "@cmdgen/mkfs";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/mkfs";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/mkfs";
 import { Panel } from "@cmdgen/ui";
 import { DiagnosticsPanel } from "./diagnostics-panel";
 import { FlagsForm } from "./flags-form";
@@ -29,7 +37,10 @@ export function MkfsBuilder() {
               <p className="text-xs leading-relaxed">{describeSpec(spec)}</p>
             </Panel>
 
-            <Panel title="Device and filesystem type" description="mkfs always erases whatever is currently on the device — there is no non-destructive way to run it.">
+            <Panel
+              title="Device and filesystem type"
+              description="mkfs always erases whatever is currently on the device — there is no non-destructive way to run it."
+            >
               <div className="space-y-3">
                 <div>
                   <label className="mb-1 block text-xs font-medium">Device</label>
@@ -48,7 +59,9 @@ export function MkfsBuilder() {
                     placeholder="ext4"
                     className="h-9 w-full rounded-md border border-slate-300 px-2 font-mono text-xs dark:border-slate-700 dark:bg-slate-950"
                   />
-                  <p className="mt-1 text-[11px] text-slate-400">Leave blank to use mkfs's own default type.</p>
+                  <p className="mt-1 text-[11px] text-slate-400">
+                    Leave blank to use mkfs's own default type.
+                  </p>
                 </div>
               </div>
             </Panel>

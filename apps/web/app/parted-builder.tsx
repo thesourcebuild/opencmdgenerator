@@ -40,8 +40,8 @@ export function PartedBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="/dev/sda print"
-                addLabel="Add argument"
-                emptyHint="No arguments added - command will run without operands."
+                addLabel="Add device/command"
+                emptyHint="No devices or command parts added yet."
               />
             </Panel>
             <Panel title="Flags">

@@ -40,8 +40,8 @@ export function JoinBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="left.txt right.txt"
-                addLabel="Add argument"
-                emptyHint="No arguments added - command will run without operands."
+                addLabel="Add file"
+                emptyHint="No files added yet."
               />
             </Panel>
             <Panel title="Flags">

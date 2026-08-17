@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { UmountSpec } from "@cmdgen/umount";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/umount";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/umount";
 import { Panel } from "@cmdgen/ui";
 import { DiagnosticsPanel } from "./diagnostics-panel";
 import { FlagsForm } from "./flags-form";
@@ -29,7 +37,10 @@ export function UmountBuilder() {
               <p className="text-xs leading-relaxed">{describeSpec(spec)}</p>
             </Panel>
 
-            <Panel title="Target" description="A device or a mount point — either spelling works.">
+            <Panel
+              title="Target"
+              description="A device or a mount point — either spelling works."
+            >
               <input
                 value={spec.target}
                 onChange={(e) => setSpec((s) => ({ ...s, target: e.target.value }))}

@@ -38,7 +38,9 @@ export function IptablesBuilder() {
                   <label className="mb-1 block text-xs font-medium">Chain</label>
                   <select
                     value={spec.chain}
-                    onChange={(e) => setSpec((s) => ({ ...s, chain: e.target.value as IptablesSpec["chain"] }))}
+                    onChange={(e) =>
+                      setSpec((s) => ({ ...s, chain: e.target.value as IptablesSpec["chain"] }))
+                    }
                     className="h-9 w-full rounded-md border border-slate-300 bg-white px-2 text-xs dark:border-slate-700 dark:bg-slate-950"
                   >
                     <option value="INPUT">INPUT</option>
@@ -50,7 +52,12 @@ export function IptablesBuilder() {
                   <label className="mb-1 block text-xs font-medium">Action</label>
                   <select
                     value={spec.action}
-                    onChange={(e) => setSpec((s) => ({ ...s, action: e.target.value as IptablesSpec["action"] }))}
+                    onChange={(e) =>
+                      setSpec((s) => ({
+                        ...s,
+                        action: e.target.value as IptablesSpec["action"],
+                      }))
+                    }
                     className="h-9 w-full rounded-md border border-slate-300 bg-white px-2 text-xs dark:border-slate-700 dark:bg-slate-950"
                   >
                     <option value="append">append (-A)</option>
@@ -71,7 +78,10 @@ export function IptablesBuilder() {
                   <select
                     value={spec.protocol}
                     onChange={(e) =>
-                      setSpec((s) => ({ ...s, protocol: e.target.value as IptablesSpec["protocol"] }))
+                      setSpec((s) => ({
+                        ...s,
+                        protocol: e.target.value as IptablesSpec["protocol"],
+                      }))
                     }
                     className="h-9 w-full rounded-md border border-slate-300 bg-white px-2 text-xs dark:border-slate-700 dark:bg-slate-950"
                   >
@@ -81,7 +91,9 @@ export function IptablesBuilder() {
                   </select>
                 </div>
                 <div>
-                  <label className="mb-1 block text-xs font-medium">Destination port (--dport)</label>
+                  <label className="mb-1 block text-xs font-medium">
+                    Destination port (--dport)
+                  </label>
                   <input
                     value={spec.port}
                     onChange={(e) => setSpec((s) => ({ ...s, port: e.target.value }))}
@@ -107,7 +119,10 @@ export function IptablesBuilder() {
                 <select
                   value={spec.jumpTarget}
                   onChange={(e) =>
-                    setSpec((s) => ({ ...s, jumpTarget: e.target.value as IptablesSpec["jumpTarget"] }))
+                    setSpec((s) => ({
+                      ...s,
+                      jumpTarget: e.target.value as IptablesSpec["jumpTarget"],
+                    }))
                   }
                   className="h-9 w-full rounded-md border border-slate-300 bg-white px-2 text-xs dark:border-slate-700 dark:bg-slate-950"
                 >

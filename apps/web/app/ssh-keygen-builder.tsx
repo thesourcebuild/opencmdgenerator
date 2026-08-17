@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { SshKeygenSpec } from "@cmdgen/ssh-keygen";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/ssh-keygen";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/ssh-keygen";
 import { Panel } from "@cmdgen/ui";
 import { DiagnosticsPanel } from "./diagnostics-panel";
 import { FlagsForm } from "./flags-form";
@@ -35,7 +43,12 @@ export function SshKeygenBuilder() {
                   <label className="mb-1 block text-xs font-medium">Key type</label>
                   <select
                     value={spec.keyType}
-                    onChange={(e) => setSpec((s) => ({ ...s, keyType: e.target.value as SshKeygenSpec["keyType"] }))}
+                    onChange={(e) =>
+                      setSpec((s) => ({
+                        ...s,
+                        keyType: e.target.value as SshKeygenSpec["keyType"],
+                      }))
+                    }
                     className="h-9 w-full rounded-md border border-slate-300 bg-white px-2 text-xs dark:border-slate-700 dark:bg-slate-950"
                   >
                     <option value="ed25519">ed25519 (recommended)</option>
@@ -44,7 +57,9 @@ export function SshKeygenBuilder() {
                   </select>
                 </div>
                 <div>
-                  <label className="mb-1 block text-xs font-medium">Bits (rsa/ecdsa only)</label>
+                  <label className="mb-1 block text-xs font-medium">
+                    Bits (rsa/ecdsa only)
+                  </label>
                   <input
                     value={spec.bits}
                     onChange={(e) => setSpec((s) => ({ ...s, bits: e.target.value }))}
@@ -76,7 +91,9 @@ export function SshKeygenBuilder() {
                     <input
                       type="checkbox"
                       checked={spec.setPassphrase}
-                      onChange={(e) => setSpec((s) => ({ ...s, setPassphrase: e.target.checked }))}
+                      onChange={(e) =>
+                        setSpec((s) => ({ ...s, setPassphrase: e.target.checked }))
+                      }
                     />
                     Set a passphrase explicitly (-N)
                   </label>

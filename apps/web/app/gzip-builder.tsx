@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { GzipSpec } from "@cmdgen/gzip";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/gzip";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/gzip";
 import { Panel } from "@cmdgen/ui";
 import { DiagnosticsPanel } from "./diagnostics-panel";
 import { FlagsForm } from "./flags-form";
@@ -44,13 +52,16 @@ export function GzipBuilder() {
 
             <Panel title="Compression level">
               <div>
-                <label className="mb-1 block text-xs font-medium">Compression level (-1 fastest … -9 best)</label>
+                <label className="mb-1 block text-xs font-medium">
+                  Compression level (-1 fastest … -9 best)
+                </label>
                 <select
                   value={spec.compressionLevel ?? ""}
                   onChange={(e) =>
                     setSpec((s) => ({
                       ...s,
-                      compressionLevel: e.target.value === "" ? undefined : Number(e.target.value),
+                      compressionLevel:
+                        e.target.value === "" ? undefined : Number(e.target.value),
                     }))
                   }
                   className="h-9 w-full rounded-md border border-slate-300 px-2 font-mono text-xs dark:border-slate-700 dark:bg-slate-950"

@@ -40,8 +40,8 @@ export function RealpathBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="./src/../README.md"
-                addLabel="Add argument"
-                emptyHint="No arguments added - command will run without operands."
+                addLabel="Add path"
+                emptyHint="No paths added yet."
               />
             </Panel>
             <Panel title="Flags">

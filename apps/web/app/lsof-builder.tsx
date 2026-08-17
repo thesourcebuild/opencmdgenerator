@@ -40,8 +40,8 @@ export function LsofBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder=":80"
-                addLabel="Add argument"
-                emptyHint="No arguments added - command will run without operands."
+                addLabel="Add file/filter"
+                emptyHint="No files or filters added yet."
               />
             </Panel>
             <Panel title="Flags">

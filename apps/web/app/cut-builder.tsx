@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { CutSpec } from "@cmdgen/cut";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/cut";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/cut";
 import { Panel } from "@cmdgen/ui";
 import { CutPreview } from "./cut-preview";
 import { DiagnosticsPanel } from "./diagnostics-panel";

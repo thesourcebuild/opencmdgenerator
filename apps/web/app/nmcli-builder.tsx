@@ -40,8 +40,8 @@ export function NmcliBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="device status"
-                addLabel="Add argument"
-                emptyHint="No arguments added - command will run without operands."
+                addLabel="Add object/command"
+                emptyHint="No objects or command parts added yet."
               />
             </Panel>
             <Panel title="Flags">

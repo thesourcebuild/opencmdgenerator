@@ -40,8 +40,8 @@ export function IostatBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="1 5"
-                addLabel="Add argument"
-                emptyHint="No arguments added - command will run without operands."
+                addLabel="Add device/interval"
+                emptyHint="No devices or intervals added yet."
               />
             </Panel>
             <Panel title="Flags">

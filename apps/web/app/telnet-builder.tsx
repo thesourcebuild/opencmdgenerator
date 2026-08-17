@@ -40,7 +40,7 @@ export function TelnetBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="example.com 23"
-                addLabel="Add argument"
+                addLabel="Add host/port"
                 emptyHint="No host - telnet starts interactive mode."
               />
             </Panel>

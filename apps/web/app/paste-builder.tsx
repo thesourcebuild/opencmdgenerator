@@ -40,7 +40,7 @@ export function PasteBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="names.txt"
-                addLabel="Add argument"
+                addLabel="Add file"
                 emptyHint="No files added - paste reads from stdin."
               />
             </Panel>

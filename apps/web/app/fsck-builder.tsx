@@ -40,8 +40,8 @@ export function FsckBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="/dev/sda1"
-                addLabel="Add argument"
-                emptyHint="No arguments added - command will run without operands."
+                addLabel="Add device"
+                emptyHint="No devices added yet."
               />
             </Panel>
             <Panel title="Flags">

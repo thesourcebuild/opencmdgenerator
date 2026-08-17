@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { Endpoint, PathFlavor, ScpSpec, ShellDialect } from "@cmdgen/scp";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/scp";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/scp";
 import { Button, Panel, cn } from "@cmdgen/ui";
 import { DiagnosticsPanel } from "./diagnostics-panel";
 import { FlagsForm } from "./flags-form";
@@ -11,7 +19,12 @@ import { PresetInfo } from "./preset-example";
 import { PresetsDropdown } from "./presets-dropdown";
 import { RightSidebar } from "./right-sidebar";
 import { ScpPreview } from "./scp-preview";
-import { scpPlatformOf, scpPlatformToShellAndFlavor, ScpTargetSelector, type ScpPlatform } from "./scp-target-selector";
+import {
+  scpPlatformOf,
+  scpPlatformToShellAndFlavor,
+  ScpTargetSelector,
+  type ScpPlatform,
+} from "./scp-target-selector";
 import { StringListEditor } from "./string-list-editor";
 
 export interface ScpBuilderProps {
@@ -23,11 +36,22 @@ export interface ScpBuilderProps {
   onPathFlavorChange: (next: PathFlavor) => void;
 }
 
-export function ScpBuilder({ canPick, onPickDirectory, initialShell, pathFlavor, onPathFlavorChange }: ScpBuilderProps) {
+export function ScpBuilder({
+  canPick,
+  onPickDirectory,
+  initialShell,
+  pathFlavor,
+  onPathFlavorChange,
+}: ScpBuilderProps) {
   const [draft, setDraft] = useState<ScpSpec>(() => ({
     ...createSpec({ id: "draft", shell: initialShell, pathFlavor }),
     sources: [{ kind: "local", path: "/home/me/report.pdf" }],
-    destination: { kind: "remote", host: "remote-server", user: "user", path: "/var/www/reports/" },
+    destination: {
+      kind: "remote",
+      host: "remote-server",
+      user: "user",
+      path: "/var/www/reports/",
+    },
   }));
   const [activePreset, setActivePreset] = useState<Preset<ScpSpec> | null>(null);
 
@@ -51,7 +75,8 @@ export function ScpBuilder({ canPick, onPickDirectory, initialShell, pathFlavor,
 
   const setSources = (sources: Endpoint[]) => setSpec((s) => ({ ...s, sources }));
   const addSource = () => setSources([...spec.sources, { kind: "local", path: "" }]);
-  const removeSource = (index: number) => setSources(spec.sources.filter((_, i) => i !== index));
+  const removeSource = (index: number) =>
+    setSources(spec.sources.filter((_, i) => i !== index));
   const updateSource = (index: number, next: Endpoint) =>
     setSources(spec.sources.map((e, i) => (i === index ? next : e)));
   const setDestination = (next: Endpoint) => setSpec((s) => ({ ...s, destination: next }));
@@ -69,7 +94,10 @@ export function ScpBuilder({ canPick, onPickDirectory, initialShell, pathFlavor,
               <p className="text-xs leading-relaxed">{describeSpec(spec)}</p>
             </Panel>
 
-            <Panel title="Sources" description="One or more files or directories to copy — scp's real source ... target.">
+            <Panel
+              title="Sources"
+              description="One or more files or directories to copy — scp's real source ... target."
+            >
               <div className="space-y-3">
                 {spec.sources.map((source, i) => (
                   <div key={i} className="flex items-start gap-2">
@@ -83,7 +111,12 @@ export function ScpBuilder({ canPick, onPickDirectory, initialShell, pathFlavor,
                       />
                     </div>
                     {spec.sources.length > 1 && (
-                      <Button size="sm" variant="ghost" onClick={() => removeSource(i)} aria-label="Remove source">
+                      <Button
+                        size="sm"
+                        variant="ghost"
+                        onClick={() => removeSource(i)}
+                        aria-label="Remove source"
+                      >
                         ✕
                       </Button>
                     )}
@@ -128,7 +161,10 @@ export function ScpBuilder({ canPick, onPickDirectory, initialShell, pathFlavor,
               </div>
             </Panel>
 
-            <Panel title="SSH options (-o)" description="Extra ssh_config-style options, passed straight through to ssh.">
+            <Panel
+              title="SSH options (-o)"
+              description="Extra ssh_config-style options, passed straight through to ssh."
+            >
               <StringListEditor
                 items={spec.sshOptions}
                 onChange={(sshOptions) => setSpec((s) => ({ ...s, sshOptions }))}
@@ -138,7 +174,10 @@ export function ScpBuilder({ canPick, onPickDirectory, initialShell, pathFlavor,
               />
             </Panel>
 
-            <Panel title="SFTP options (-X)" description="Options that control SFTP protocol behavior.">
+            <Panel
+              title="SFTP options (-X)"
+              description="Options that control SFTP protocol behavior."
+            >
               <StringListEditor
                 items={spec.sftpOptions}
                 onChange={(sftpOptions) => setSpec((s) => ({ ...s, sftpOptions }))}
@@ -200,11 +239,19 @@ interface EndpointEditorProps {
 }
 
 /** Local-vs-remote endpoint editor — shared by every source row and the destination panel. */
-function EndpointEditor({ endpoint, onChange, canPick, onPickDirectory, pathPlaceholder }: EndpointEditorProps) {
+function EndpointEditor({
+  endpoint,
+  onChange,
+  canPick,
+  onPickDirectory,
+  pathPlaceholder,
+}: EndpointEditorProps) {
   const setKind = (kind: Endpoint["kind"]) => {
     if (kind === endpoint.kind) return;
     onChange(
-      kind === "local" ? { kind: "local", path: endpoint.path } : { kind: "remote", host: "", user: "", path: endpoint.path },
+      kind === "local"
+        ? { kind: "local", path: endpoint.path }
+        : { kind: "remote", host: "", user: "", path: endpoint.path },
     );
   };
 

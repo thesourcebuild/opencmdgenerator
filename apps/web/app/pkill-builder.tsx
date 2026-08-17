@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { PkillSpec } from "@cmdgen/pkill";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/pkill";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/pkill";
 import { Panel } from "@cmdgen/ui";
 import { DiagnosticsPanel } from "./diagnostics-panel";
 import { FlagsForm } from "./flags-form";
@@ -29,7 +37,10 @@ export function PkillBuilder() {
               <p className="text-xs leading-relaxed">{describeSpec(spec)}</p>
             </Panel>
 
-            <Panel title="Pattern" description="Matched against the process name (or full command line, with --full).">
+            <Panel
+              title="Pattern"
+              description="Matched against the process name (or full command line, with --full)."
+            >
               <div>
                 <label className="mb-1 block text-xs font-medium">Pattern</label>
                 <input

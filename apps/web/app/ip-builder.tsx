@@ -40,7 +40,7 @@ export function IpBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="addr show"
-                addLabel="Add argument"
+                addLabel="Add object/action operands"
                 emptyHint="Add an object/action such as addr show."
               />
             </Panel>

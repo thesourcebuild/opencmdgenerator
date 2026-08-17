@@ -40,8 +40,8 @@ export function TcpdumpBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="port 53"
-                addLabel="Add argument"
-                emptyHint="No arguments added - command will run without operands."
+                addLabel="Add expression"
+                emptyHint="No expressions added yet."
               />
             </Panel>
             <Panel title="Flags">

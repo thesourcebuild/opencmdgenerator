@@ -40,8 +40,8 @@ export function FlatpakBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="install flathub org.gimp.GIMP"
-                addLabel="Add argument"
-                emptyHint="No arguments added - command will run without operands."
+                addLabel="Add action"
+                emptyHint="No actions added yet."
               />
             </Panel>
             <Panel title="Flags">

@@ -3,7 +3,16 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { PwdPlatform, PwdSpec } from "@cmdgen/pwd";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, flagTag, lint, setFlag } from "@cmdgen/pwd";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  flagTag,
+  lint,
+  setFlag,
+} from "@cmdgen/pwd";
 import { Panel } from "@cmdgen/ui";
 import { DiagnosticsPanel } from "./diagnostics-panel";
 import { FlagsForm } from "./flags-form";
@@ -18,14 +27,19 @@ export interface PwdBuilderProps {
 }
 
 export function PwdBuilder({ initialPlatform }: PwdBuilderProps) {
-  const [spec, setSpec] = useState<PwdSpec>(() => createSpec({ id: "draft", platform: initialPlatform }));
+  const [spec, setSpec] = useState<PwdSpec>(() =>
+    createSpec({ id: "draft", platform: initialPlatform }),
+  );
   const [activePreset, setActivePreset] = useState<Preset<PwdSpec> | null>(null);
 
   return (
     <div className="flex gap-4">
       <div className="min-w-0 flex-1 space-y-4">
         <div className="sticky top-0 z-10 bg-slate-50 pb-4 dark:bg-slate-950">
-          <PwdPreview spec={spec} onPlatformChange={(platform) => setSpec((s) => ({ ...s, platform }))} />
+          <PwdPreview
+            spec={spec}
+            onPlatformChange={(platform) => setSpec((s) => ({ ...s, platform }))}
+          />
         </div>
 
         <Panel title="Commands" collapsible defaultOpen>
@@ -34,7 +48,10 @@ export function PwdBuilder({ initialPlatform }: PwdBuilderProps) {
               <p className="text-xs leading-relaxed">{describeSpec(spec)}</p>
             </Panel>
 
-            <Panel title="Flags" description="POSIX only — Get-Location has no equivalent flags.">
+            <Panel
+              title="Flags"
+              description="POSIX only — Get-Location has no equivalent flags."
+            >
               <FlagsForm
                 catalogue={CATALOGUE}
                 groups={FLAG_GROUP_META}
@@ -57,7 +74,10 @@ export function PwdBuilder({ initialPlatform }: PwdBuilderProps) {
             label: "Options",
             content: (
               <>
-                <PwdTargetSelector value={spec.platform} onChange={(platform) => setSpec((s) => ({ ...s, platform }))} />
+                <PwdTargetSelector
+                  value={spec.platform}
+                  onChange={(platform) => setSpec((s) => ({ ...s, platform }))}
+                />
 
                 <Panel title="Examples">
                   <PresetsDropdown<PwdSpec>

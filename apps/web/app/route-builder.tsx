@@ -40,7 +40,9 @@ export function RouteBuilder() {
                   <label className="mb-1 block text-xs font-medium">Action</label>
                   <select
                     value={spec.action}
-                    onChange={(e) => setSpec((s) => ({ ...s, action: e.target.value as RouteSpec["action"] }))}
+                    onChange={(e) =>
+                      setSpec((s) => ({ ...s, action: e.target.value as RouteSpec["action"] }))
+                    }
                     className="h-9 w-full rounded-md border border-slate-300 px-2 font-mono text-xs dark:border-slate-700 dark:bg-slate-950"
                   >
                     {ACTIONS.map((action) => (
@@ -56,13 +58,17 @@ export function RouteBuilder() {
                       <label className="mb-1 block text-xs font-medium">Destination</label>
                       <input
                         value={spec.destination}
-                        onChange={(e) => setSpec((s) => ({ ...s, destination: e.target.value }))}
+                        onChange={(e) =>
+                          setSpec((s) => ({ ...s, destination: e.target.value }))
+                        }
                         placeholder="192.168.1.0/24"
                         className="h-9 w-full rounded-md border border-slate-300 px-2 font-mono text-xs dark:border-slate-700 dark:bg-slate-950"
                       />
                     </div>
                     <div>
-                      <label className="mb-1 block text-xs font-medium">Gateway (optional)</label>
+                      <label className="mb-1 block text-xs font-medium">
+                        Gateway (optional)
+                      </label>
                       <input
                         value={spec.gateway}
                         onChange={(e) => setSpec((s) => ({ ...s, gateway: e.target.value }))}

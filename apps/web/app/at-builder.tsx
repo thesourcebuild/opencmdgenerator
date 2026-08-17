@@ -36,7 +36,9 @@ export function AtBuilder() {
             <Panel title="Action">
               <select
                 value={spec.action}
-                onChange={(e) => setSpec((s) => ({ ...s, action: e.target.value as AtSpec["action"] }))}
+                onChange={(e) =>
+                  setSpec((s) => ({ ...s, action: e.target.value as AtSpec["action"] }))
+                }
                 className="h-9 w-full rounded-md border border-slate-300 px-2 font-mono text-xs dark:border-slate-700 dark:bg-slate-950"
               >
                 {ACTIONS.map((action) => (
@@ -48,7 +50,10 @@ export function AtBuilder() {
             </Panel>
 
             {spec.action === "schedule" && (
-              <Panel title="Time and job" description='Real at time spec, e.g. "now + 1 hour", "10:00", "teatime".'>
+              <Panel
+                title="Time and job"
+                description='Real at time spec, e.g. "now + 1 hour", "10:00", "teatime".'
+              >
                 <div className="space-y-3">
                   <div>
                     <label className="mb-1 block text-xs font-medium">Time</label>

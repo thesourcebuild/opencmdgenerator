@@ -40,8 +40,8 @@ export function AptCacheBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="search nginx"
-                addLabel="Add argument"
-                emptyHint="No arguments added - command will run without operands."
+                addLabel="Add apt-cache argument"
+                emptyHint="No apt-cache arguments added yet."
               />
             </Panel>
             <Panel title="Flags">

@@ -40,8 +40,8 @@ export function PidofBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="sshd"
-                addLabel="Add argument"
-                emptyHint="No arguments added - command will run without operands."
+                addLabel="Add program"
+                emptyHint="No programs added yet."
               />
             </Panel>
             <Panel title="Flags">

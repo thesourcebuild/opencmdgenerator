@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { LnPlatform, LnSpec, LnWinKind } from "@cmdgen/ln";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/ln";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/ln";
 import { Panel, cn } from "@cmdgen/ui";
 import { DiagnosticsPanel } from "./diagnostics-panel";
 import { FlagsForm } from "./flags-form";
@@ -28,7 +36,8 @@ const WIN_KIND_LABEL: Record<LnWinKind, string> = {
  * `linux`/`mac`, POSIX order, `winKind` ignored. `isWindows` (Linux/Mac/
  * Windows button state) stays wide; this stays narrow.
  */
-const usesWinNativeLinkSyntax = (p: LnPlatform) => p === "windows-cmd" || p === "windows-powershell";
+const usesWinNativeLinkSyntax = (p: LnPlatform) =>
+  p === "windows-cmd" || p === "windows-powershell";
 
 export interface LnBuilderProps {
   /** Owned by AppShell — same reasoning as `CdBuilderProps.platform`. */
@@ -65,7 +74,9 @@ export function LnBuilder({ platform, onPlatformChange }: LnBuilderProps) {
             <Panel title="Link">
               <div className="space-y-3">
                 <div>
-                  <label className="mb-1 block text-xs font-medium">Target (existing file/directory)</label>
+                  <label className="mb-1 block text-xs font-medium">
+                    Target (existing file/directory)
+                  </label>
                   <input
                     value={spec.target}
                     onChange={(e) => setSpec((s) => ({ ...s, target: e.target.value }))}
@@ -83,7 +94,9 @@ export function LnBuilder({ platform, onPlatformChange }: LnBuilderProps) {
                   />
                   {usesWinNativeLinkSyntax(spec.platform) && (
                     <p className="mt-1 text-[11px] text-slate-400">
-                      mklink and New-Item take the link name first, the target second — the opposite order from POSIX ln. This app renders whichever order each platform actually expects.
+                      mklink and New-Item take the link name first, the target second — the
+                      opposite order from POSIX ln. This app renders whichever order each
+                      platform actually expects.
                     </p>
                   )}
                 </div>
@@ -91,7 +104,10 @@ export function LnBuilder({ platform, onPlatformChange }: LnBuilderProps) {
             </Panel>
 
             {usesWinNativeLinkSyntax(spec.platform) && (
-              <Panel title="Link kind" description="mklink's /D, /H, /J — or New-Item's -ItemType.">
+              <Panel
+                title="Link kind"
+                description="mklink's /D, /H, /J — or New-Item's -ItemType."
+              >
                 <div className="flex flex-wrap gap-1">
                   {(Object.keys(WIN_KIND_LABEL) as LnWinKind[])
                     .filter((kind) => spec.platform === "windows-cmd" || kind !== "dir-symlink")

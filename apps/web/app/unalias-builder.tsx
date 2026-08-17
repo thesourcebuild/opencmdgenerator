@@ -40,7 +40,7 @@ export function UnaliasBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="ll"
-                addLabel="Add argument"
+                addLabel="Add alias names"
                 emptyHint="Add alias names, or use -a to remove all aliases."
               />
             </Panel>

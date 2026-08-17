@@ -40,7 +40,7 @@ export function DmesgBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder=""
-                addLabel="Add argument"
+                addLabel="Add extra operands"
                 emptyHint="dmesg usually takes no operands."
               />
             </Panel>

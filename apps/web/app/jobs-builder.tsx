@@ -40,7 +40,7 @@ export function JobsBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="%1"
-                addLabel="Add argument"
+                addLabel="Add job specs"
                 emptyHint="No job spec - jobs lists all jobs."
               />
             </Panel>

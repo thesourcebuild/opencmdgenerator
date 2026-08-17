@@ -40,7 +40,7 @@ export function UmaskBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="022"
-                addLabel="Add argument"
+                addLabel="Add mode"
                 emptyHint="No mode added - umask prints the current mask."
               />
             </Panel>

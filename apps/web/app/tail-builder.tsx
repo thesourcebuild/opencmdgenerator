@@ -3,7 +3,16 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { TailPlatform, TailSpec } from "@cmdgen/tail";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, flagTag, lint, setFlag } from "@cmdgen/tail";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  flagTag,
+  lint,
+  setFlag,
+} from "@cmdgen/tail";
 import { Panel } from "@cmdgen/ui";
 import { DiagnosticsPanel } from "./diagnostics-panel";
 import { FlagsForm } from "./flags-form";
@@ -19,14 +28,19 @@ export interface TailBuilderProps {
 }
 
 export function TailBuilder({ initialPlatform }: TailBuilderProps) {
-  const [spec, setSpec] = useState<TailSpec>(() => createSpec({ id: "draft", platform: initialPlatform }));
+  const [spec, setSpec] = useState<TailSpec>(() =>
+    createSpec({ id: "draft", platform: initialPlatform }),
+  );
   const [activePreset, setActivePreset] = useState<Preset<TailSpec> | null>(null);
 
   return (
     <div className="flex gap-4">
       <div className="min-w-0 flex-1 space-y-4">
         <div className="sticky top-0 z-10 bg-slate-50 pb-4 dark:bg-slate-950">
-          <TailPreview spec={spec} onPlatformChange={(platform) => setSpec((s) => ({ ...s, platform, flags: {} }))} />
+          <TailPreview
+            spec={spec}
+            onPlatformChange={(platform) => setSpec((s) => ({ ...s, platform, flags: {} }))}
+          />
         </div>
 
         <Panel title="Commands" collapsible defaultOpen>
@@ -68,7 +82,10 @@ export function TailBuilder({ initialPlatform }: TailBuilderProps) {
             label: "Options",
             content: (
               <>
-                <TailTargetSelector value={spec.platform} onChange={(platform) => setSpec((s) => ({ ...s, platform }))} />
+                <TailTargetSelector
+                  value={spec.platform}
+                  onChange={(platform) => setSpec((s) => ({ ...s, platform }))}
+                />
 
                 <Panel title="Examples">
                   <PresetsDropdown<TailSpec>

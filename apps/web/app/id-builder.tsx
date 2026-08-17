@@ -40,7 +40,7 @@ export function IdBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="alice"
-                addLabel="Add argument"
+                addLabel="Add user"
                 emptyHint="No user - id prints the current identity."
               />
             </Panel>

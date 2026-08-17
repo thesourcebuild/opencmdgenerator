@@ -38,7 +38,9 @@ export function UfwBuilder() {
                 <label className="mb-1 block text-xs font-medium">Mode</label>
                 <select
                   value={spec.mode}
-                  onChange={(e) => setSpec((s) => ({ ...s, mode: e.target.value as UfwSpec["mode"] }))}
+                  onChange={(e) =>
+                    setSpec((s) => ({ ...s, mode: e.target.value as UfwSpec["mode"] }))
+                  }
                   className="h-9 w-full rounded-md border border-slate-300 bg-white px-2 text-xs dark:border-slate-700 dark:bg-slate-950"
                 >
                   <option value="status">status</option>
@@ -70,7 +72,12 @@ export function UfwBuilder() {
                     <label className="mb-1 block text-xs font-medium">Protocol</label>
                     <select
                       value={spec.protocol}
-                      onChange={(e) => setSpec((s) => ({ ...s, protocol: e.target.value as UfwSpec["protocol"] }))}
+                      onChange={(e) =>
+                        setSpec((s) => ({
+                          ...s,
+                          protocol: e.target.value as UfwSpec["protocol"],
+                        }))
+                      }
                       className="h-9 w-full rounded-md border border-slate-300 bg-white px-2 text-xs dark:border-slate-700 dark:bg-slate-950"
                     >
                       <option value="any">any</option>

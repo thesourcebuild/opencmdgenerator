@@ -40,8 +40,8 @@ export function LshwBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="-class memory"
-                addLabel="Add argument"
-                emptyHint="No arguments added - command will run without operands."
+                addLabel="Add class/device"
+                emptyHint="No classes or devices added yet."
               />
             </Panel>
             <Panel title="Flags">

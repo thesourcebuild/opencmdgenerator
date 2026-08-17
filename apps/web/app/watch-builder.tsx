@@ -40,8 +40,8 @@ export function WatchBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="df -h"
-                addLabel="Add argument"
-                emptyHint="No arguments added - command will run without operands."
+                addLabel="Add watched command"
+                emptyHint="No watched commands added yet."
               />
             </Panel>
             <Panel title="Flags">

@@ -40,7 +40,7 @@ export function SsBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="state established"
-                addLabel="Add argument"
+                addLabel="Add filter expression"
                 emptyHint="No filter - ss shows a default socket list."
               />
             </Panel>

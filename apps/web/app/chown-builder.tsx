@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { ChownSpec } from "@cmdgen/chown";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/chown";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/chown";
 import { Panel } from "@cmdgen/ui";
 import { ChownPreview } from "./chown-preview";
 import { DiagnosticsPanel } from "./diagnostics-panel";
@@ -30,7 +38,10 @@ export function ChownBuilder() {
               <p className="text-xs leading-relaxed">{describeSpec(spec)}</p>
             </Panel>
 
-            <Panel title="Owner" description="OWNER, OWNER:GROUP, or :GROUP to change only the group.">
+            <Panel
+              title="Owner"
+              description="OWNER, OWNER:GROUP, or :GROUP to change only the group."
+            >
               <input
                 value={spec.owner}
                 onChange={(e) => setSpec((s) => ({ ...s, owner: e.target.value }))}

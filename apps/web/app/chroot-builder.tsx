@@ -40,8 +40,8 @@ export function ChrootBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="/mnt /bin/bash"
-                addLabel="Add argument"
-                emptyHint="No arguments added - command will run without operands."
+                addLabel="Add root/command"
+                emptyHint="No roots or command parts added yet."
               />
             </Panel>
             <Panel title="Flags">

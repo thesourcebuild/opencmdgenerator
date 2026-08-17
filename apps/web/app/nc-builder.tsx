@@ -40,8 +40,8 @@ export function NcBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="example.com 80"
-                addLabel="Add argument"
-                emptyHint="No arguments added - command will run without operands."
+                addLabel="Add host/port"
+                emptyHint="No hosts or ports added yet."
               />
             </Panel>
             <Panel title="Flags">

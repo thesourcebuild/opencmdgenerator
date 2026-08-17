@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { AliasPlatform, AliasSpec } from "@cmdgen/alias";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/alias";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/alias";
 import { Panel } from "@cmdgen/ui";
 import { AliasPreview } from "./alias-preview";
 import { AliasTargetSelector } from "./alias-target-selector";
@@ -64,7 +72,9 @@ export function AliasBuilder({ platform, onPlatformChange }: AliasBuilderProps) 
                     placeholder="ls -la"
                     className="h-9 w-full rounded-md border border-slate-300 px-2 font-mono text-xs dark:border-slate-700 dark:bg-slate-950"
                   />
-                  <p className="mt-1 text-[11px] text-slate-400">Leave blank on POSIX to just show what an existing alias expands to.</p>
+                  <p className="mt-1 text-[11px] text-slate-400">
+                    Leave blank on POSIX to just show what an existing alias expands to.
+                  </p>
                 </div>
               </div>
             </Panel>

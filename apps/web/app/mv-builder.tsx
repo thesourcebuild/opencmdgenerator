@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { MvPlatform, MvSpec } from "@cmdgen/mv";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/mv";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/mv";
 import { Panel } from "@cmdgen/ui";
 import { DiagnosticsPanel } from "./diagnostics-panel";
 import { FlagsForm } from "./flags-form";
@@ -56,7 +64,10 @@ export function MvBuilder({ platform, onPlatformChange }: MvBuilderProps) {
               />
             </Panel>
 
-            <Panel title="Destination" description="A directory when moving multiple sources, or a new name/location for one.">
+            <Panel
+              title="Destination"
+              description="A directory when moving multiple sources, or a new name/location for one."
+            >
               <input
                 value={spec.destination}
                 onChange={(e) => setSpec((s) => ({ ...s, destination: e.target.value }))}

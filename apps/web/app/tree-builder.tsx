@@ -40,7 +40,7 @@ export function TreeBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="."
-                addLabel="Add argument"
+                addLabel="Add directories"
                 emptyHint="No directory added - tree uses the current directory."
               />
             </Panel>

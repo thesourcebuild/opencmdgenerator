@@ -40,8 +40,8 @@ export function DisownBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="%1"
-                addLabel="Add argument"
-                emptyHint="No arguments added - command will run without operands."
+                addLabel="Add job"
+                emptyHint="No jobs added yet."
               />
             </Panel>
             <Panel title="Flags">

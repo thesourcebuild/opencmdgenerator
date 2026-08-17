@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { NslookupSpec } from "@cmdgen/nslookup";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/nslookup";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/nslookup";
 import { Panel } from "@cmdgen/ui";
 import { DiagnosticsPanel } from "./diagnostics-panel";
 import { FlagsForm } from "./flags-form";
@@ -32,7 +40,9 @@ export function NslookupBuilder() {
             <Panel title="Query">
               <div className="space-y-3">
                 <div>
-                  <label className="mb-1 block text-xs font-medium">Name (or address, for a reverse lookup)</label>
+                  <label className="mb-1 block text-xs font-medium">
+                    Name (or address, for a reverse lookup)
+                  </label>
                   <input
                     value={spec.lookupName}
                     onChange={(e) => setSpec((s) => ({ ...s, lookupName: e.target.value }))}

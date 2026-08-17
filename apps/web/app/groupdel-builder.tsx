@@ -40,8 +40,8 @@ export function GroupdelBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="developers"
-                addLabel="Add argument"
-                emptyHint="No arguments added - command will run without operands."
+                addLabel="Add group"
+                emptyHint="No groups added yet."
               />
             </Panel>
             <Panel title="Flags">

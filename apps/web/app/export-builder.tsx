@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { ExportPlatform, ExportSpec } from "@cmdgen/export";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/export";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/export";
 import { Panel } from "@cmdgen/ui";
 import { DiagnosticsPanel } from "./diagnostics-panel";
 import { ExportPreview } from "./export-preview";
@@ -64,7 +72,9 @@ export function ExportBuilder({ platform, onPlatformChange }: ExportBuilderProps
                     placeholder="https://api.example.com"
                     className="h-9 w-full rounded-md border border-slate-300 px-2 font-mono text-xs dark:border-slate-700 dark:bg-slate-950"
                   />
-                  <p className="mt-1 text-[11px] text-slate-400">Leave blank on POSIX to just mark an already-set variable for export.</p>
+                  <p className="mt-1 text-[11px] text-slate-400">
+                    Leave blank on POSIX to just mark an already-set variable for export.
+                  </p>
                 </div>
               </div>
             </Panel>

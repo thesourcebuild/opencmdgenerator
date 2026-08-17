@@ -29,7 +29,9 @@ export interface KillBuilderProps {
 }
 
 export function KillBuilder({ initialPlatform }: KillBuilderProps) {
-  const [spec, setSpec] = useState<KillSpec>(() => createSpec({ id: "draft", platform: initialPlatform }));
+  const [spec, setSpec] = useState<KillSpec>(() =>
+    createSpec({ id: "draft", platform: initialPlatform }),
+  );
   const [activePreset, setActivePreset] = useState<Preset<KillSpec> | null>(null);
   const isPowerShell = spec.platform === "windows-powershell";
 
@@ -37,7 +39,10 @@ export function KillBuilder({ initialPlatform }: KillBuilderProps) {
     <div className="flex gap-4">
       <div className="min-w-0 flex-1 space-y-4">
         <div className="sticky top-0 z-10 bg-slate-50 pb-4 dark:bg-slate-950">
-          <KillPreview spec={spec} onPlatformChange={(platform) => setSpec((s) => ({ ...s, platform }))} />
+          <KillPreview
+            spec={spec}
+            onPlatformChange={(platform) => setSpec((s) => ({ ...s, platform }))}
+          />
         </div>
 
         <Panel title="Commands" collapsible defaultOpen>
@@ -47,7 +52,10 @@ export function KillBuilder({ initialPlatform }: KillBuilderProps) {
             </Panel>
 
             {isPowerShell ? (
-              <Panel title="Options" description="Stop-Process has no signal concept — this is its entire flag surface.">
+              <Panel
+                title="Options"
+                description="Stop-Process has no signal concept — this is its entire flag surface."
+              >
                 <FlagsForm
                   catalogue={CATALOGUE}
                   groups={FLAG_GROUP_META}
@@ -58,7 +66,10 @@ export function KillBuilder({ initialPlatform }: KillBuilderProps) {
               </Panel>
             ) : (
               <>
-                <Panel title="Mode" description="kill's real second synopsis — list or convert signal names/numbers instead of sending one.">
+                <Panel
+                  title="Mode"
+                  description="kill's real second synopsis — list or convert signal names/numbers instead of sending one."
+                >
                   <div className="flex gap-1">
                     {(["signal", "list", "table"] as const).map((m) => (
                       <button
@@ -107,7 +118,9 @@ export function KillBuilder({ initialPlatform }: KillBuilderProps) {
                         />
 
                         <div>
-                          <p className="mb-1 text-[11px] font-medium text-slate-500">How to spell it — all three are equivalent.</p>
+                          <p className="mb-1 text-[11px] font-medium text-slate-500">
+                            How to spell it — all three are equivalent.
+                          </p>
                           <div className="flex flex-wrap gap-1">
                             {(
                               [
@@ -146,7 +159,10 @@ export function KillBuilder({ initialPlatform }: KillBuilderProps) {
                     </Panel>
                   </>
                 ) : (
-                  <Panel title="Signals" description="Leave empty to list every supported signal name.">
+                  <Panel
+                    title="Signals"
+                    description="Leave empty to list every supported signal name."
+                  >
                     <StringListEditor
                       items={spec.listSignals}
                       onChange={(listSignals) => setSpec((s) => ({ ...s, listSignals }))}
@@ -184,7 +200,10 @@ export function KillBuilder({ initialPlatform }: KillBuilderProps) {
             label: "Options",
             content: (
               <>
-                <KillTargetSelector value={spec.platform} onChange={(platform) => setSpec((s) => ({ ...s, platform }))} />
+                <KillTargetSelector
+                  value={spec.platform}
+                  onChange={(platform) => setSpec((s) => ({ ...s, platform }))}
+                />
 
                 <Panel title="Examples">
                   <PresetsDropdown<KillSpec>

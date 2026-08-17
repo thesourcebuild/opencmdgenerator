@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { FfmpegSpec, ShellDialect } from "@cmdgen/ffmpeg";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/ffmpeg";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/ffmpeg";
 import { Panel } from "@cmdgen/ui";
 import { DiagnosticsPanel } from "./diagnostics-panel";
 import { FfmpegPreview } from "./ffmpeg-preview";
@@ -19,7 +27,9 @@ export interface FfmpegBuilderProps {
 }
 
 export function FfmpegBuilder({ initialShell }: FfmpegBuilderProps) {
-  const [spec, setSpec] = useState<FfmpegSpec>(() => createSpec({ id: "draft", shell: initialShell }));
+  const [spec, setSpec] = useState<FfmpegSpec>(() =>
+    createSpec({ id: "draft", shell: initialShell }),
+  );
   const [activePreset, setActivePreset] = useState<Preset<FfmpegSpec> | null>(null);
   const onShellChange = (shell: FfmpegSpec["shell"]) => setSpec((s) => ({ ...s, shell }));
 
@@ -36,7 +46,10 @@ export function FfmpegBuilder({ initialShell }: FfmpegBuilderProps) {
               <p className="text-xs leading-relaxed">{describeSpec(spec)}</p>
             </Panel>
 
-            <Panel title="Input file(s) (-i)" description="Each becomes its own repeated -i, in this order — order is meaningful to ffmpeg.">
+            <Panel
+              title="Input file(s) (-i)"
+              description="Each becomes its own repeated -i, in this order — order is meaningful to ffmpeg."
+            >
               <StringListEditor
                 items={spec.inputFiles}
                 onChange={(inputFiles) => setSpec((s) => ({ ...s, inputFiles }))}
@@ -46,7 +59,10 @@ export function FfmpegBuilder({ initialShell }: FfmpegBuilderProps) {
               />
             </Panel>
 
-            <Panel title="Output file" description="Always the last argument — where ffmpeg writes the result.">
+            <Panel
+              title="Output file"
+              description="Always the last argument — where ffmpeg writes the result."
+            >
               <input
                 value={spec.outputFile}
                 onChange={(e) => setSpec((s) => ({ ...s, outputFile: e.target.value }))}
@@ -55,7 +71,10 @@ export function FfmpegBuilder({ initialShell }: FfmpegBuilderProps) {
               />
             </Panel>
 
-            <Panel title="Flags" description="A practical, common subset of ffmpeg's huge option surface — not exhaustive.">
+            <Panel
+              title="Flags"
+              description="A practical, common subset of ffmpeg's huge option surface — not exhaustive."
+            >
               <FlagsForm
                 catalogue={CATALOGUE}
                 groups={FLAG_GROUP_META}

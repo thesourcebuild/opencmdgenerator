@@ -29,7 +29,9 @@ export interface TracerouteBuilderProps {
 }
 
 export function TracerouteBuilder({ platform, onPlatformChange }: TracerouteBuilderProps) {
-  const [draft, setDraft] = useState<TracerouteSpec>(() => createSpec({ id: "draft", platform }));
+  const [draft, setDraft] = useState<TracerouteSpec>(() =>
+    createSpec({ id: "draft", platform }),
+  );
   const [activePreset, setActivePreset] = useState<Preset<TracerouteSpec> | null>(null);
 
   const spec: TracerouteSpec = { ...draft, platform };

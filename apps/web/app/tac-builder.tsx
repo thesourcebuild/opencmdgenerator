@@ -40,7 +40,7 @@ export function TacBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="log.txt"
-                addLabel="Add argument"
+                addLabel="Add file"
                 emptyHint="No files added - tac reads from stdin."
               />
             </Panel>

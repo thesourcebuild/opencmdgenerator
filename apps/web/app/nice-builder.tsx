@@ -40,7 +40,7 @@ export function NiceBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="make -j4"
-                addLabel="Add argument"
+                addLabel="Add command part"
                 emptyHint="No command - nice prints the current niceness where supported."
               />
             </Panel>

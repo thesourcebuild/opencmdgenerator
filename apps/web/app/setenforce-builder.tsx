@@ -37,7 +37,9 @@ export function SetenforceBuilder() {
                 <label className="mb-1 block text-xs font-medium">Mode</label>
                 <select
                   value={spec.mode}
-                  onChange={(e) => setSpec((s) => ({ ...s, mode: e.target.value as SetenforceSpec["mode"] }))}
+                  onChange={(e) =>
+                    setSpec((s) => ({ ...s, mode: e.target.value as SetenforceSpec["mode"] }))
+                  }
                   className="h-9 w-full rounded-md border border-slate-300 bg-white px-2 text-xs dark:border-slate-700 dark:bg-slate-950"
                 >
                   <option value="Enforcing">Enforcing</option>

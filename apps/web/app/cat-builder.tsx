@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { CatPlatform, CatSpec } from "@cmdgen/cat";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/cat";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/cat";
 import { Panel } from "@cmdgen/ui";
 import { CatPreview } from "./cat-preview";
 import { CatTargetSelector } from "./cat-target-selector";

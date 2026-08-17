@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { ShellDialect, SshSpec } from "@cmdgen/ssh";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/ssh";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/ssh";
 import { Panel } from "@cmdgen/ui";
 import { DiagnosticsPanel } from "./diagnostics-panel";
 import { FlagsForm } from "./flags-form";
@@ -18,7 +26,9 @@ export interface SshBuilderProps {
 }
 
 export function SshBuilder({ initialShell }: SshBuilderProps) {
-  const [spec, setSpec] = useState<SshSpec>(() => createSpec({ id: "draft", shell: initialShell }));
+  const [spec, setSpec] = useState<SshSpec>(() =>
+    createSpec({ id: "draft", shell: initialShell }),
+  );
   const [activePreset, setActivePreset] = useState<Preset<SshSpec> | null>(null);
   const onShellChange = (shell: SshSpec["shell"]) => setSpec((s) => ({ ...s, shell }));
 
@@ -74,7 +84,9 @@ export function SshBuilder({ initialShell }: SshBuilderProps) {
                   />
                 </div>
                 <div className="col-span-2">
-                  <label className="mb-1 block text-xs font-medium">Remote command (optional)</label>
+                  <label className="mb-1 block text-xs font-medium">
+                    Remote command (optional)
+                  </label>
                   <input
                     value={spec.remoteCommand}
                     onChange={(e) => setSpec((s) => ({ ...s, remoteCommand: e.target.value }))}

@@ -3,7 +3,15 @@
 import { useState } from "react";
 import type { Preset } from "@cmdgen/engine";
 import type { AptSpec } from "@cmdgen/apt";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, lint, setFlag } from "@cmdgen/apt";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  lint,
+  setFlag,
+} from "@cmdgen/apt";
 import { Panel } from "@cmdgen/ui";
 import { AptPreview } from "./apt-preview";
 import { DiagnosticsPanel } from "./diagnostics-panel";
@@ -35,7 +43,9 @@ export function AptBuilder() {
                 <label className="mb-1 block text-xs font-medium">Action</label>
                 <select
                   value={spec.action}
-                  onChange={(e) => setSpec((s) => ({ ...s, action: e.target.value as AptSpec["action"] }))}
+                  onChange={(e) =>
+                    setSpec((s) => ({ ...s, action: e.target.value as AptSpec["action"] }))
+                  }
                   className="h-9 w-full rounded-md border border-slate-300 bg-white px-2 text-xs dark:border-slate-700 dark:bg-slate-950"
                 >
                   <option value="install">install</option>

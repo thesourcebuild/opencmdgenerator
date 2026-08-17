@@ -40,8 +40,8 @@ export function SevenzBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="x archive.7z"
-                addLabel="Add argument"
-                emptyHint="No arguments added - command will run without operands."
+                addLabel="Add archive part"
+                emptyHint="No archive parts added yet."
               />
             </Panel>
             <Panel title="Flags">

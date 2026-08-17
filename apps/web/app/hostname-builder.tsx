@@ -40,7 +40,7 @@ export function HostnameBuilder() {
                 items={spec.args}
                 onChange={(args) => setSpec((s) => ({ ...s, args }))}
                 placeholder="web01"
-                addLabel="Add argument"
+                addLabel="Add hostname"
                 emptyHint="No hostname added - hostname prints the current name."
               />
             </Panel>

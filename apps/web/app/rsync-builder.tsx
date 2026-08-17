@@ -5,7 +5,15 @@ import type { Preset } from "@cmdgen/engine";
 import type { PathFlavor, RsyncSpec, ShellDialect } from "@cmdgen/rsync";
 // Zod-free subpath: the browser never validates, so it must not ship zod.
 import { setFlag } from "@cmdgen/rsync/pure";
-import { CATALOGUE, FLAG_GROUP_META, PRESETS, createSpec, describeSpec, explainTrailingSlash, lint } from "@cmdgen/rsync";
+import {
+  CATALOGUE,
+  FLAG_GROUP_META,
+  PRESETS,
+  createSpec,
+  describeSpec,
+  explainTrailingSlash,
+  lint,
+} from "@cmdgen/rsync";
 import { Button, Panel } from "@cmdgen/ui";
 import { CommandPreview } from "./command-preview";
 import { DiagnosticsPanel } from "./diagnostics-panel";
@@ -13,7 +21,12 @@ import { FlagsForm } from "./flags-form";
 import { PresetInfo } from "./preset-example";
 import { PresetsDropdown } from "./presets-dropdown";
 import { RightSidebar } from "./right-sidebar";
-import { rsyncPlatformOf, rsyncPlatformToShellAndFlavor, RsyncTargetSelector, type RsyncPlatform } from "./rsync-target-selector";
+import {
+  rsyncPlatformOf,
+  rsyncPlatformToShellAndFlavor,
+  RsyncTargetSelector,
+  type RsyncPlatform,
+} from "./rsync-target-selector";
 
 export interface RsyncBuilderProps {
   canPick: boolean;
@@ -24,7 +37,13 @@ export interface RsyncBuilderProps {
   onPathFlavorChange: (next: PathFlavor) => void;
 }
 
-export function RsyncBuilder({ canPick, onPickDirectory, initialShell, pathFlavor, onPathFlavorChange }: RsyncBuilderProps) {
+export function RsyncBuilder({
+  canPick,
+  onPickDirectory,
+  initialShell,
+  pathFlavor,
+  onPathFlavorChange,
+}: RsyncBuilderProps) {
   const [draft, setDraft] = useState<RsyncSpec>(() =>
     PRESETS[0]!.apply({
       ...createSpec({ id: "draft", shell: initialShell, pathFlavor }),
@@ -115,7 +134,10 @@ export function RsyncBuilder({ canPick, onPickDirectory, initialShell, pathFlavo
               </div>
             </Panel>
 
-            <Panel title="Flags" description="Driven entirely by the catalogue in @cmdgen/rsync.">
+            <Panel
+              title="Flags"
+              description="Driven entirely by the catalogue in @cmdgen/rsync."
+            >
               <FlagsForm
                 catalogue={CATALOGUE}
                 groups={FLAG_GROUP_META}
