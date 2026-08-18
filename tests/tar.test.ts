@@ -340,9 +340,38 @@ describe("lint — safety and correctness", () => {
 });
 
 describe("presets", () => {
-  it("'Create .tar.gz' is the classic form", () => {
-    const s = getPreset("create-gzip")!.apply(spec({ archive: "backup.tar.gz", files: ["src"] }));
+  it("'Create .tar.gz file (-f)' is the classic file-output form", () => {
+    const s = getPreset("create-gzip-file")!.apply(spec({ files: ["src"] }));
+    expect(s.archive).toBe("backup.tar.gz");
+    expect(codes(s)).not.toContain("TAR002");
     expect(line(s)).toBe("tar -czvf backup.tar.gz src");
+  });
+
+  it("'Create .tar.gz stream (stdout)' uses explicit -f -", () => {
+    const preset = getPreset("create-gzip")!;
+    const s = preset.apply(spec({ files: ["src"] }));
+
+    expect(preset.label).toContain("stdout");
+    expect(s.archive).toBe("-");
+    expect(codes(s)).not.toContain("TAR002");
+    expect(line(s)).toBe("tar -czvf - src");
+  });
+
+  it("'Create .tar.zst file (-f)' writes to an explicit archive", () => {
+    const s = getPreset("create-zstd-file")!.apply(spec({ files: ["src"] }));
+    expect(s.archive).toBe("backup.tar.zst");
+    expect(codes(s)).not.toContain("TAR002");
+    expect(line(s)).toBe("tar -c --zstd -vf backup.tar.zst src");
+  });
+
+  it("'Create .tar.zst stream (stdout)' uses explicit -f -", () => {
+    const preset = getPreset("create-zstd")!;
+    const s = preset.apply(spec({ files: ["src"] }));
+
+    expect(preset.label).toContain("stdout");
+    expect(s.archive).toBe("-");
+    expect(codes(s)).not.toContain("TAR002");
+    expect(line(s)).toBe("tar -c --zstd -vf - src");
   });
 
   it("'Extract safely' guards against clobbering and against tar bombs", () => {

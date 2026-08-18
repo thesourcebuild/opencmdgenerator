@@ -103,7 +103,11 @@ export function TarBuilder({ variant, onVariantChange, initialShell }: TarBuilde
 
             <Panel
               title="Archive"
-              description="The .tar file itself (-f). Leave empty to use standard input/output."
+              description={
+                isReading
+                  ? "The .tar file itself (-f). Leave empty to read from standard input."
+                  : "The .tar file itself (-f). Leave empty only when you intentionally stream archive data to standard output."
+              }
             >
               <div className="grid gap-3 sm:grid-cols-2">
                 <div>

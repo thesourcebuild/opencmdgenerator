@@ -45,22 +45,46 @@ function compressProgramPatch(spec: TarSpec, value: string): Record<string, stri
 
 export const PRESETS: readonly Preset<TarSpec>[] = [
   {
-    id: "create-gzip",
-    label: "Create .tar.gz",
-    summary: "The default choice: gzip-compressed, listing each file as it goes.",
+    id: "create-gzip-file",
+    label: "Create .tar.gz file (-f)",
+    summary: "Normal terminal use: writes backup.tar.gz explicitly with -f instead of streaming binary data to stdout.",
     apply: (spec) => ({
       ...spec,
       mode: "create",
+      archive: spec.archive || "backup.tar.gz",
       flags: { ...compressionPatch(spec, "gzip"), verbose: true },
     }),
   },
   {
-    id: "create-zstd",
-    label: "Create .tar.zst",
-    summary: "zstd — far faster than xz at a similar ratio. Needs a reasonably recent tar on both ends.",
+    id: "create-gzip",
+    label: "Create .tar.gz stream (stdout)",
+    summary: "For pipes/redirection: writes the gzip-compressed archive stream to stdout using explicit -f -.",
     apply: (spec) => ({
       ...spec,
       mode: "create",
+      archive: "-",
+      flags: { ...compressionPatch(spec, "gzip"), verbose: true },
+    }),
+  },
+  {
+    id: "create-zstd-file",
+    label: "Create .tar.zst file (-f)",
+    summary: "Normal terminal use with zstd compression: writes backup.tar.zst explicitly with -f.",
+    apply: (spec) => ({
+      ...spec,
+      mode: "create",
+      archive: spec.archive || "backup.tar.zst",
+      flags: { ...compressionPatch(spec, "zstd"), verbose: true },
+    }),
+  },
+  {
+    id: "create-zstd",
+    label: "Create .tar.zst stream (stdout)",
+    summary: "For pipes/redirection: writes the zstd-compressed archive stream to stdout using explicit -f -.",
+    apply: (spec) => ({
+      ...spec,
+      mode: "create",
+      archive: "-",
       flags: { ...compressionPatch(spec, "zstd"), verbose: true },
     }),
   },
