@@ -54,6 +54,11 @@ export function TarBuilder({ variant, onVariantChange, initialShell }: TarBuilde
   // flags exist), so it arrives as a prop and is mirrored into the spec
   // rather than duplicated as a second control here.
   const current: TarSpec = spec.variant === variant ? spec : { ...spec, variant };
+  const archiveHint = current.archive.trim()
+    ? current.archive.trim() === "-"
+      ? "Renders as -f - (pipe/redirection only)."
+      : `Renders as -f ${current.archive.trim()}.`
+    : "";
 
   const isReading = READ_MODES.includes(current.mode);
   const onShellChange = (shell: TarSpec["shell"]) => setSpec({ ...current, shell });
@@ -62,7 +67,11 @@ export function TarBuilder({ variant, onVariantChange, initialShell }: TarBuilde
     <div className="flex gap-4">
       <div className="min-w-0 flex-1 space-y-4">
         <div className="sticky top-0 z-10 bg-slate-50 pb-4 dark:bg-slate-950">
-          <TarPreview spec={current} onShellChange={onShellChange} />
+          <TarPreview
+            spec={current}
+            onShellChange={onShellChange}
+            commandExample={activePreset?.commandExample}
+          />
         </div>
 
         <Panel title="Commands" collapsible defaultOpen>
@@ -106,7 +115,7 @@ export function TarBuilder({ variant, onVariantChange, initialShell }: TarBuilde
               description={
                 isReading
                   ? "The .tar file itself (-f). Leave empty to read from standard input."
-                  : "The .tar file itself (-f). Leave empty only when you intentionally stream archive data to standard output."
+                  : "The .tar file itself (-f). Leave empty only when you intentionally stream archive data to a pipe or redirect it."
               }
             >
               <div className="grid gap-3 sm:grid-cols-2">
@@ -118,6 +127,11 @@ export function TarBuilder({ variant, onVariantChange, initialShell }: TarBuilde
                     placeholder="backup.tar.gz"
                     className="h-9 w-full rounded-md border border-slate-300 px-2 font-mono text-xs dark:border-slate-700 dark:bg-slate-950"
                   />
+                  {archiveHint ? (
+                    <p className="mt-1 text-[11px] text-slate-500 dark:text-slate-400">
+                      {archiveHint}
+                    </p>
+                  ) : null}
                 </div>
                 <div>
                   <label className="mb-1 block text-xs font-medium">

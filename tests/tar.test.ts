@@ -1,5 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { buildArgv, createSpec, getPreset, lint, renderOneLine, type TarSpec } from "@cmdgen/tar";
+import {
+  buildArgv,
+  createSpec,
+  getPreset,
+  lint,
+  renderOneLine,
+  type TarSpec,
+} from "@cmdgen/tar";
 
 /** Bundled short flags on, matching the app's default and every tar tutorial. */
 const line = (spec: TarSpec) =>
@@ -18,16 +25,39 @@ const bsd = (partial: Partial<TarSpec> = {}): TarSpec => spec({ variant: "bsd", 
 
 const codes = (s: TarSpec) => lint(s).diagnostics.map((d) => d.code);
 
+const createPresetIds = [
+  "create-gzip-file",
+  "create-gzip",
+  "create-zstd-file",
+  "create-zstd",
+  "create-xz-max",
+  "source-tarball",
+  "reproducible",
+  "incremental-full",
+] as const;
+
 describe("modes and the classic bundled form", () => {
   it("produces the idiomatic tar -czvf", () => {
     expect(
-      line(spec({ archive: "backup.tar.gz", files: ["src"], flags: { compressionGnu: "gzip", verbose: true } })),
+      line(
+        spec({
+          archive: "backup.tar.gz",
+          files: ["src"],
+          flags: { compressionGnu: "gzip", verbose: true },
+        }),
+      ),
     ).toBe("tar -czvf backup.tar.gz src");
   });
 
   it("renders the same flags unbundled when asked", () => {
     expect(
-      flat(spec({ archive: "backup.tar.gz", files: ["src"], flags: { compressionGnu: "gzip", verbose: true } })),
+      flat(
+        spec({
+          archive: "backup.tar.gz",
+          files: ["src"],
+          flags: { compressionGnu: "gzip", verbose: true },
+        }),
+      ),
     ).toBe("tar -c -z -v -f backup.tar.gz src");
   });
 
@@ -39,13 +69,21 @@ describe("modes and the classic bundled form", () => {
   it("uses the right token per mode", () => {
     expect(line(spec({ mode: "extract", archive: "a.tar" }))).toBe("tar -xf a.tar");
     expect(line(spec({ mode: "list", archive: "a.tar" }))).toBe("tar -tf a.tar");
-    expect(line(spec({ mode: "append", archive: "a.tar", files: ["x"] }))).toBe("tar -rf a.tar x");
-    expect(line(spec({ mode: "concatenate", archive: "a.tar", files: ["b.tar"] }))).toBe("tar -Af a.tar b.tar");
-    expect(line(spec({ mode: "delete", archive: "a.tar", files: ["x"] }))).toBe("tar --delete -f a.tar x");
+    expect(line(spec({ mode: "append", archive: "a.tar", files: ["x"] }))).toBe(
+      "tar -rf a.tar x",
+    );
+    expect(line(spec({ mode: "concatenate", archive: "a.tar", files: ["b.tar"] }))).toBe(
+      "tar -Af a.tar b.tar",
+    );
+    expect(line(spec({ mode: "delete", archive: "a.tar", files: ["x"] }))).toBe(
+      "tar --delete -f a.tar x",
+    );
   });
 
   it("places -C after the archive but before the files", () => {
-    expect(line(spec({ archive: "a.tar", changeDir: "/src", files: ["."] }))).toBe("tar -cf a.tar -C /src .");
+    expect(line(spec({ archive: "a.tar", changeDir: "/src", files: ["."] }))).toBe(
+      "tar -cf a.tar -C /src .",
+    );
   });
 
   it("renders each exclude as its own --exclude= token, before the files", () => {
@@ -59,7 +97,9 @@ describe("modes and the classic bundled form", () => {
   });
 
   it("quotes an archive path containing a space", () => {
-    expect(line(spec({ archive: "my backup.tar", files: ["x"] }))).toBe("tar -cf 'my backup.tar' x");
+    expect(line(spec({ archive: "my backup.tar", files: ["x"] }))).toBe(
+      "tar -cf 'my backup.tar' x",
+    );
   });
 
   it("quotes for PowerShell when that shell is selected", () => {
@@ -82,77 +122,101 @@ describe("modes and the classic bundled form", () => {
   });
 
   it("omits -f entirely when no archive is set (stdin/stdout)", () => {
-    expect(line(spec({ files: ["src"], flags: { compressionGnu: "gzip" } }))).toBe("tar -cz src");
+    expect(line(spec({ files: ["src"], flags: { compressionGnu: "gzip" } }))).toBe(
+      "tar -cz src",
+    );
   });
 });
 
 describe("compression", () => {
   it("renders each compressor's own token", () => {
-    expect(line(spec({ archive: "a.tar.bz2", files: ["x"], flags: { compressionGnu: "bzip2" } }))).toBe(
-      "tar -cjf a.tar.bz2 x",
-    );
-    expect(line(spec({ archive: "a.tar.xz", files: ["x"], flags: { compressionGnu: "xz" } }))).toBe(
-      "tar -cJf a.tar.xz x",
-    );
+    expect(
+      line(spec({ archive: "a.tar.bz2", files: ["x"], flags: { compressionGnu: "bzip2" } })),
+    ).toBe("tar -cjf a.tar.bz2 x");
+    expect(
+      line(spec({ archive: "a.tar.xz", files: ["x"], flags: { compressionGnu: "xz" } })),
+    ).toBe("tar -cJf a.tar.xz x");
     // --zstd is a long option, so it cannot bundle with the short flags.
-    expect(line(spec({ archive: "a.tar.zst", files: ["x"], flags: { compressionGnu: "zstd" } }))).toBe(
-      "tar -c --zstd -f a.tar.zst x",
-    );
+    expect(
+      line(spec({ archive: "a.tar.zst", files: ["x"], flags: { compressionGnu: "zstd" } })),
+    ).toBe("tar -c --zstd -f a.tar.zst x");
   });
 
   it("passes a compressor program through -I, keeping its argument its own token", () => {
     // -I bundles onto -c because an argument-taking short flag is allowed to be
     // last in a bundle; its value then breaks the run, as it must.
-    expect(line(spec({ archive: "a.tar.xz", files: ["x"], flags: { useCompressProgram: "xz -9e" } }))).toBe(
-      "tar -cI 'xz -9e' -f a.tar.xz x",
-    );
-    expect(flat(spec({ archive: "a.tar.xz", files: ["x"], flags: { useCompressProgram: "xz -9e" } }))).toBe(
-      "tar -c -I 'xz -9e' -f a.tar.xz x",
-    );
+    expect(
+      line(
+        spec({ archive: "a.tar.xz", files: ["x"], flags: { useCompressProgram: "xz -9e" } }),
+      ),
+    ).toBe("tar -cI 'xz -9e' -f a.tar.xz x");
+    expect(
+      flat(
+        spec({ archive: "a.tar.xz", files: ["x"], flags: { useCompressProgram: "xz -9e" } }),
+      ),
+    ).toBe("tar -c -I 'xz -9e' -f a.tar.xz x");
   });
 });
 
 describe("GNU vs bsdtar — the cross-platform core", () => {
   it("drops GNU-only flags when targeting bsdtar, rather than emitting something it would reject", () => {
-    const s = bsd({ mode: "extract", archive: "a.tar", changeDir: "/tmp/out", flags: { oneTopLevel: true, transform: "s,^,x/," } });
+    const s = bsd({
+      mode: "extract",
+      archive: "a.tar",
+      changeDir: "/tmp/out",
+      flags: { oneTopLevel: true, transform: "s,^,x/," },
+    });
     expect(line(s)).toBe("tar -xf a.tar -C /tmp/out");
   });
 
   it("TAR008 reports what was dropped, and its fix clears them", () => {
-    const s = bsd({ mode: "extract", archive: "a.tar", changeDir: "/tmp/out", flags: { oneTopLevel: true } });
+    const s = bsd({
+      mode: "extract",
+      archive: "a.tar",
+      changeDir: "/tmp/out",
+      flags: { oneTopLevel: true },
+    });
     expect(codes(s)).toContain("TAR008");
     const fix = lint(s).diagnostics.find((d) => d.code === "TAR008")!.fix!;
     expect(codes(fix.apply(s))).not.toContain("TAR008");
   });
 
   it("TAR008 stays quiet when every set flag exists in the selected variant", () => {
-    expect(codes(spec({ archive: "a.tar", files: ["x"], flags: { oneTopLevel: true } }))).not.toContain("TAR008");
+    expect(
+      codes(spec({ archive: "a.tar", files: ["x"], flags: { oneTopLevel: true } })),
+    ).not.toContain("TAR008");
   });
 
   it("keeps -n's two conflicting meanings apart: bsdtar no-recurse vs GNU seek", () => {
     // Same letter, opposite meanings — modeled as separate ids so neither leaks.
-    expect(line(bsd({ archive: "a.tar", files: ["dir"], flags: { noRecursionBsd: true } }))).toBe(
-      "tar -cf a.tar -n dir",
-    );
+    expect(
+      line(bsd({ archive: "a.tar", files: ["dir"], flags: { noRecursionBsd: true } })),
+    ).toBe("tar -cf a.tar -n dir");
     // GNU's --recursion/--no-recursion pair is one tri-state enum, so the form
     // cannot express both at once.
-    expect(line(spec({ archive: "a.tar", files: ["dir"], flags: { recursionMode: "no-recursion" } }))).toBe(
-      "tar -cf a.tar --no-recursion dir",
-    );
-    expect(line(spec({ archive: "a.tar", files: ["dir"], flags: { recursionMode: "recursion" } }))).toBe(
-      "tar -cf a.tar --recursion dir",
-    );
+    expect(
+      line(
+        spec({ archive: "a.tar", files: ["dir"], flags: { recursionMode: "no-recursion" } }),
+      ),
+    ).toBe("tar -cf a.tar --no-recursion dir");
+    expect(
+      line(spec({ archive: "a.tar", files: ["dir"], flags: { recursionMode: "recursion" } })),
+    ).toBe("tar -cf a.tar --recursion dir");
     // Setting bsdtar's -n while targeting GNU tar must not emit -n, because
     // there it would mean --seek instead of --norecurse.
-    expect(line(spec({ archive: "a.tar", files: ["dir"], flags: { noRecursionBsd: true } }))).toBe("tar -cf a.tar dir");
+    expect(
+      line(spec({ archive: "a.tar", files: ["dir"], flags: { noRecursionBsd: true } })),
+    ).toBe("tar -cf a.tar dir");
     // ...and GNU's -n (--seek) must not leak into a bsdtar command either.
-    expect(line(bsd({ archive: "a.tar", files: ["dir"], flags: { seekMode: "seek" } }))).toBe("tar -cf a.tar dir");
+    expect(line(bsd({ archive: "a.tar", files: ["dir"], flags: { seekMode: "seek" } }))).toBe(
+      "tar -cf a.tar dir",
+    );
   });
 
   it("keeps -s apart too: bsdtar substitution vs GNU --same-order", () => {
-    expect(line(bsd({ mode: "extract", archive: "a.tar", flags: { substituteBsd: "/old/new/" } }))).toBe(
-      "tar -xf a.tar -s /old/new/",
-    );
+    expect(
+      line(bsd({ mode: "extract", archive: "a.tar", flags: { substituteBsd: "/old/new/" } })),
+    ).toBe("tar -xf a.tar -s /old/new/");
     expect(line(spec({ mode: "extract", archive: "a.tar", flags: { sameOrder: true } }))).toBe(
       "tar -xf a.tar --same-order",
     );
@@ -166,7 +230,9 @@ describe("GNU vs bsdtar — the cross-platform core", () => {
       "tar -cf a.tar --format=shar x",
     );
     // GNU's v7 is not a bsdtar format, so it is dropped there.
-    expect(line(bsd({ archive: "a.tar", files: ["x"], flags: { formatGnu: "v7" } }))).toBe("tar -cf a.tar x");
+    expect(line(bsd({ archive: "a.tar", files: ["x"], flags: { formatGnu: "v7" } }))).toBe(
+      "tar -cf a.tar x",
+    );
   });
 
   it("an untouched format dropdown is not treated as a set flag", () => {
@@ -180,13 +246,19 @@ describe("GNU vs bsdtar — the cross-platform core", () => {
 describe("lint — safety and correctness", () => {
   it("TAR001 fires when creating with no inputs, unless -T supplies them", () => {
     expect(codes(spec({ archive: "a.tar" }))).toContain("TAR001");
-    expect(codes(spec({ archive: "a.tar", flags: { filesFrom: "list.txt" } }))).not.toContain("TAR001");
+    expect(codes(spec({ archive: "a.tar", flags: { filesFrom: "list.txt" } }))).not.toContain(
+      "TAR001",
+    );
     expect(codes(spec({ mode: "extract", archive: "a.tar" }))).not.toContain("TAR001");
   });
 
   it("TAR002 warns when no archive is set, and says which stream is used", () => {
-    expect(lint(spec({ files: ["x"] })).diagnostics.find((d) => d.code === "TAR002")!.message).toContain("output");
-    expect(lint(spec({ mode: "extract" })).diagnostics.find((d) => d.code === "TAR002")!.message).toContain("input");
+    expect(
+      lint(spec({ files: ["x"] })).diagnostics.find((d) => d.code === "TAR002")!.message,
+    ).toContain("output");
+    expect(
+      lint(spec({ mode: "extract" })).diagnostics.find((d) => d.code === "TAR002")!.message,
+    ).toContain("input");
   });
 
   it("TAR003 flags --remove-files as destructive", () => {
@@ -196,60 +268,102 @@ describe("lint — safety and correctness", () => {
   });
 
   it("TAR004 escalates -P to destructive on extract, but only warns on create", () => {
-    const extracting = lint(spec({ mode: "extract", archive: "a.tar", changeDir: "/tmp/o", flags: { absoluteNames: true } }));
+    const extracting = lint(
+      spec({
+        mode: "extract",
+        archive: "a.tar",
+        changeDir: "/tmp/o",
+        flags: { absoluteNames: true },
+      }),
+    );
     expect(extracting.diagnostics.find((d) => d.code === "TAR004")!.level).toBe("destructive");
 
-    const creating = lint(spec({ archive: "a.tar", files: ["x"], flags: { absoluteNames: true } }));
+    const creating = lint(
+      spec({ archive: "a.tar", files: ["x"], flags: { absoluteNames: true } }),
+    );
     expect(creating.diagnostics.find((d) => d.code === "TAR004")!.level).toBe("warning");
   });
 
   it("TAR005 warns about tar bombs, and either guard silences it", () => {
     expect(codes(spec({ mode: "extract", archive: "a.tar" }))).toContain("TAR005");
-    expect(codes(spec({ mode: "extract", archive: "a.tar", changeDir: "out" }))).not.toContain("TAR005");
-    expect(codes(spec({ mode: "extract", archive: "a.tar", flags: { oneTopLevel: true } }))).not.toContain("TAR005");
+    expect(codes(spec({ mode: "extract", archive: "a.tar", changeDir: "out" }))).not.toContain(
+      "TAR005",
+    );
+    expect(
+      codes(spec({ mode: "extract", archive: "a.tar", flags: { oneTopLevel: true } })),
+    ).not.toContain("TAR005");
   });
 
   it("TAR005's fix is GNU-only; bsdtar gets advice instead of a broken flag", () => {
-    const gnuFix = lint(spec({ mode: "extract", archive: "a.tar" })).diagnostics.find((d) => d.code === "TAR005")!.fix;
+    const gnuFix = lint(spec({ mode: "extract", archive: "a.tar" })).diagnostics.find(
+      (d) => d.code === "TAR005",
+    )!.fix;
     expect(gnuFix).toBeDefined();
 
-    const bsdDiag = lint(bsd({ mode: "extract", archive: "a.tar" })).diagnostics.find((d) => d.code === "TAR005")!;
+    const bsdDiag = lint(bsd({ mode: "extract", archive: "a.tar" })).diagnostics.find(
+      (d) => d.code === "TAR005",
+    )!;
     expect(bsdDiag.fix).toBeUndefined();
     expect(bsdDiag.detail).toContain("bsdtar has no --one-top-level");
   });
 
   it("TAR006 catches two compression methods at once", () => {
-    expect(codes(spec({ archive: "a.tgz", files: ["x"], flags: { compressionGnu: "gzip", autoCompress: true } }))).toContain(
-      "TAR006",
-    );
-    expect(codes(spec({ archive: "a.tgz", files: ["x"], flags: { compressionGnu: "gzip" } }))).not.toContain("TAR006");
+    expect(
+      codes(
+        spec({
+          archive: "a.tgz",
+          files: ["x"],
+          flags: { compressionGnu: "gzip", autoCompress: true },
+        }),
+      ),
+    ).toContain("TAR006");
+    expect(
+      codes(spec({ archive: "a.tgz", files: ["x"], flags: { compressionGnu: "gzip" } })),
+    ).not.toContain("TAR006");
   });
 
   it("TAR007 catches a compressor that contradicts the archive's name", () => {
-    expect(codes(spec({ archive: "a.tar.xz", files: ["x"], flags: { compressionGnu: "gzip" } }))).toContain("TAR007");
-    expect(codes(spec({ archive: "a.tar", files: ["x"], flags: { compressionGnu: "gzip" } }))).toContain("TAR007");
-    expect(codes(spec({ archive: "a.tar.gz", files: ["x"], flags: { compressionGnu: "gzip" } }))).not.toContain("TAR007");
-    expect(codes(spec({ archive: "a.tgz", files: ["x"], flags: { compressionGnu: "gzip" } }))).not.toContain("TAR007");
+    expect(
+      codes(spec({ archive: "a.tar.xz", files: ["x"], flags: { compressionGnu: "gzip" } })),
+    ).toContain("TAR007");
+    expect(
+      codes(spec({ archive: "a.tar", files: ["x"], flags: { compressionGnu: "gzip" } })),
+    ).toContain("TAR007");
+    expect(
+      codes(spec({ archive: "a.tar.gz", files: ["x"], flags: { compressionGnu: "gzip" } })),
+    ).not.toContain("TAR007");
+    expect(
+      codes(spec({ archive: "a.tgz", files: ["x"], flags: { compressionGnu: "gzip" } })),
+    ).not.toContain("TAR007");
   });
 
   it("TAR009 catches contradictory flags", () => {
     expect(
-      codes(spec({ mode: "extract", archive: "a.tar", changeDir: "o", flags: { keepOldFiles: true, overwrite: true } })),
+      codes(
+        spec({
+          mode: "extract",
+          archive: "a.tar",
+          changeDir: "o",
+          flags: { keepOldFiles: true, overwrite: true },
+        }),
+      ),
     ).toContain("TAR009");
   });
 
   it("TAR010 catches a flag whose prerequisite is missing", () => {
     const s = spec({ archive: "a.tar", files: ["x"], flags: { clampMtime: true } });
     expect(codes(s)).toContain("TAR010");
-    expect(codes(spec({ archive: "a.tar", files: ["x"], flags: { clampMtime: true, mtime: "@0" } }))).not.toContain(
-      "TAR010",
-    );
+    expect(
+      codes(spec({ archive: "a.tar", files: ["x"], flags: { clampMtime: true, mtime: "@0" } })),
+    ).not.toContain("TAR010");
   });
 
   it("TAR011 rejects delete mode on bsdtar and offers to switch implementation", () => {
     const s = bsd({ mode: "delete", archive: "a.tar", files: ["x"] });
     expect(codes(s)).toContain("TAR011");
-    const fixed = lint(s).diagnostics.find((d) => d.code === "TAR011")!.fix!.apply(s);
+    const fixed = lint(s)
+      .diagnostics.find((d) => d.code === "TAR011")!
+      .fix!.apply(s);
     expect(fixed.variant).toBe("gnu");
     expect(codes(fixed)).not.toContain("TAR011");
   });
@@ -260,7 +374,10 @@ describe("lint — safety and correctness", () => {
       expect(codes(bsd({ mode, archive: "a.tar", files: ["x"] })), mode).toContain("TAR011");
     }
     for (const mode of ["create", "append", "list", "update", "extract"] as const) {
-      expect(codes(bsd({ mode, archive: "a.tar", files: ["x"], changeDir: "o" })), mode).not.toContain("TAR011");
+      expect(
+        codes(bsd({ mode, archive: "a.tar", files: ["x"], changeDir: "o" })),
+        mode,
+      ).not.toContain("TAR011");
     }
   });
 
@@ -271,7 +388,9 @@ describe("lint — safety and correctness", () => {
     expect(codes(s)).toContain("TAR016");
     expect(codes(s)).not.toContain("TAR011"); // superseded by the more useful advice
 
-    const fixed = lint(s).diagnostics.find((d) => d.code === "TAR016")!.fix!.apply(s);
+    const fixed = lint(s)
+      .diagnostics.find((d) => d.code === "TAR016")!
+      .fix!.apply(s);
     expect(fixed.mode).toBe("create");
     expect(fixed.variant).toBe("bsd"); // stays on bsdtar — no implementation switch needed
     expect(line(fixed)).toBe("tar -cf dest.tar @a.tar @b.tar");
@@ -283,14 +402,18 @@ describe("lint — safety and correctness", () => {
     // the shell while still reaching bsdtar as literally @a.tar.
     const s = bsd({ shell: "powershell", archive: "dest.tar", files: ["@a.tar"] });
     expect(line(s)).toBe("tar -cf dest.tar '@a.tar'");
-    expect(line(bsd({ archive: "dest.tar", files: ["@a.tar"] }))).toBe("tar -cf dest.tar @a.tar");
+    expect(line(bsd({ archive: "dest.tar", files: ["@a.tar"] }))).toBe(
+      "tar -cf dest.tar @a.tar",
+    );
   });
 
   it("TAR002 states each implementation's real default for a missing -f", () => {
     // GNU tar reports -f- (stdin/stdout) in its own --show-defaults; bsdtar's
     // help says the default is the tape device \\.\tape0. Saying the wrong one
     // is worse than saying nothing.
-    const gnuDiag = lint(spec({ files: ["src"] })).diagnostics.find((d) => d.code === "TAR002")!;
+    const gnuDiag = lint(spec({ files: ["src"] })).diagnostics.find(
+      (d) => d.code === "TAR002",
+    )!;
     expect(gnuDiag.message).toContain("standard output");
     expect(gnuDiag.detail).toContain("-f-");
 
@@ -301,31 +424,62 @@ describe("lint — safety and correctness", () => {
   });
 
   it("TAR012 rejects in-place modes on a compressed archive", () => {
-    expect(codes(spec({ mode: "append", archive: "a.tar.gz", files: ["x"] }))).toContain("TAR012");
-    expect(codes(spec({ mode: "append", archive: "a.tar", files: ["x"], flags: { compressionGnu: "gzip" } }))).toContain(
+    expect(codes(spec({ mode: "append", archive: "a.tar.gz", files: ["x"] }))).toContain(
       "TAR012",
     );
-    expect(codes(spec({ mode: "append", archive: "a.tar", files: ["x"] }))).not.toContain("TAR012");
-    expect(codes(spec({ mode: "extract", archive: "a.tar.gz", changeDir: "o" }))).not.toContain("TAR012");
+    expect(
+      codes(
+        spec({
+          mode: "append",
+          archive: "a.tar",
+          files: ["x"],
+          flags: { compressionGnu: "gzip" },
+        }),
+      ),
+    ).toContain("TAR012");
+    expect(codes(spec({ mode: "append", archive: "a.tar", files: ["x"] }))).not.toContain(
+      "TAR012",
+    );
+    expect(codes(spec({ mode: "extract", archive: "a.tar.gz", changeDir: "o" }))).not.toContain(
+      "TAR012",
+    );
   });
 
   it("TAR013 notes that --strip-components does nothing while creating", () => {
-    expect(codes(spec({ archive: "a.tar", files: ["x"], flags: { stripComponents: 1 } }))).toContain("TAR013");
     expect(
-      codes(spec({ mode: "extract", archive: "a.tar", changeDir: "o", flags: { stripComponents: 1 } })),
+      codes(spec({ archive: "a.tar", files: ["x"], flags: { stripComponents: 1 } })),
+    ).toContain("TAR013");
+    expect(
+      codes(
+        spec({
+          mode: "extract",
+          archive: "a.tar",
+          changeDir: "o",
+          flags: { stripComponents: 1 },
+        }),
+      ),
     ).not.toContain("TAR013");
   });
 
   it("TAR014 catches -v mixing into -O's data stream", () => {
     expect(
-      codes(spec({ mode: "extract", archive: "a.tar", changeDir: "o", flags: { toStdout: true, verbose: true } })),
+      codes(
+        spec({
+          mode: "extract",
+          archive: "a.tar",
+          changeDir: "o",
+          flags: { toStdout: true, verbose: true },
+        }),
+      ),
     ).toContain("TAR014");
   });
 
   it("TAR015 catches GNU tar reading a drive letter as a remote host", () => {
     const s = spec({ archive: "C:\\backup.tar", files: ["x"] });
     expect(codes(s)).toContain("TAR015");
-    const fixed = lint(s).diagnostics.find((d) => d.code === "TAR015")!.fix!.apply(s);
+    const fixed = lint(s)
+      .diagnostics.find((d) => d.code === "TAR015")!
+      .fix!.apply(s);
     expect(codes(fixed)).not.toContain("TAR015");
     // bsdtar does not do remote-host parsing, so the same path is fine there.
     expect(codes(bsd({ archive: "C:\\backup.tar", files: ["x"] }))).not.toContain("TAR015");
@@ -333,13 +487,27 @@ describe("lint — safety and correctness", () => {
 
   it("a straightforward create has nothing to flag", () => {
     expect(
-      lint(spec({ archive: "backup.tar.gz", files: ["src"], flags: { compressionGnu: "gzip", verbose: true } }))
-        .diagnostics,
+      lint(
+        spec({
+          archive: "backup.tar.gz",
+          files: ["src"],
+          flags: { compressionGnu: "gzip", verbose: true },
+        }),
+      ).diagnostics,
     ).toEqual([]);
   });
 });
 
 describe("presets", () => {
+  it("all create presets seed a sample input when none is set", () => {
+    for (const id of createPresetIds) {
+      const preset = getPreset(id)!;
+      const s = preset.apply(spec());
+      expect(s.files.length, `${id} should seed files`).toBeGreaterThan(0);
+      expect(codes(s), `${id} should not warn about empty archives`).not.toContain("TAR001");
+    }
+  });
+
   it("'Create .tar.gz file (-f)' is the classic file-output form", () => {
     const s = getPreset("create-gzip-file")!.apply(spec({ files: ["src"] }));
     expect(s.archive).toBe("backup.tar.gz");
@@ -347,11 +515,12 @@ describe("presets", () => {
     expect(line(s)).toBe("tar -czvf backup.tar.gz src");
   });
 
-  it("'Create .tar.gz stream (stdout)' uses explicit -f -", () => {
+  it("'Create .tar.gz stream (pipe only)' uses explicit -f -", () => {
     const preset = getPreset("create-gzip")!;
     const s = preset.apply(spec({ files: ["src"] }));
 
-    expect(preset.label).toContain("stdout");
+    expect(preset.label).toContain("pipe only");
+    expect(preset.commandExample).toBe("tar -czvf - folder1 > backup.tar.gz");
     expect(s.archive).toBe("-");
     expect(codes(s)).not.toContain("TAR002");
     expect(line(s)).toBe("tar -czvf - src");
@@ -364,11 +533,12 @@ describe("presets", () => {
     expect(line(s)).toBe("tar -c --zstd -vf backup.tar.zst src");
   });
 
-  it("'Create .tar.zst stream (stdout)' uses explicit -f -", () => {
+  it("'Create .tar.zst stream (pipe only)' uses explicit -f -", () => {
     const preset = getPreset("create-zstd")!;
     const s = preset.apply(spec({ files: ["src"] }));
 
-    expect(preset.label).toContain("stdout");
+    expect(preset.label).toContain("pipe only");
+    expect(preset.commandExample).toBe("tar -c --zstd -vf - folder1 > backup.tar.zst");
     expect(s.archive).toBe("-");
     expect(codes(s)).not.toContain("TAR002");
     expect(line(s)).toBe("tar -c --zstd -vf - src");
@@ -402,7 +572,9 @@ describe("presets", () => {
   });
 
   it("'Extract, unwrapping one level' strips the top directory", () => {
-    const s = getPreset("extract-unwrap")!.apply(spec({ archive: "proj-1.2.3.tar.gz", changeDir: "out" }));
+    const s = getPreset("extract-unwrap")!.apply(
+      spec({ archive: "proj-1.2.3.tar.gz", changeDir: "out" }),
+    );
     expect(line(s)).toBe("tar -xvf proj-1.2.3.tar.gz -C out --strip-components=1");
   });
 

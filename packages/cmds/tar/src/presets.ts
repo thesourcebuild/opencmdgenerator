@@ -4,8 +4,11 @@ import { SPEC_VERSION } from "./pure";
 
 const isGnu = (spec: TarSpec) => spec.variant === "gnu";
 
+const defaultCreateFiles = (spec: TarSpec) => (spec.files.length > 0 ? spec.files : ["src"]);
+
 export function newId(): string {
-  if (typeof globalThis.crypto?.randomUUID === "function") return globalThis.crypto.randomUUID();
+  if (typeof globalThis.crypto?.randomUUID === "function")
+    return globalThis.crypto.randomUUID();
   return `id-${Date.now().toString(36)}-${(counter++).toString(36)}`;
 }
 let counter = 0;
@@ -47,44 +50,54 @@ export const PRESETS: readonly Preset<TarSpec>[] = [
   {
     id: "create-gzip-file",
     label: "Create .tar.gz file (-f)",
-    summary: "Normal terminal use: writes backup.tar.gz explicitly with -f instead of streaming binary data to stdout.",
+    summary:
+      "Normal terminal use: writes backup.tar.gz explicitly with -f instead of streaming binary data to stdout.",
     apply: (spec) => ({
       ...spec,
       mode: "create",
       archive: spec.archive || "backup.tar.gz",
+      files: defaultCreateFiles(spec),
       flags: { ...compressionPatch(spec, "gzip"), verbose: true },
     }),
   },
   {
     id: "create-gzip",
-    label: "Create .tar.gz stream (stdout)",
-    summary: "For pipes/redirection: writes the gzip-compressed archive stream to stdout using explicit -f -.",
+    label: "Create .tar.gz stream (pipe only)",
+    summary:
+      "For pipes/redirection only: writes the gzip-compressed archive stream to stdout using explicit -f -.",
+    commandExample: "tar -czvf - folder1 > backup.tar.gz",
     apply: (spec) => ({
       ...spec,
       mode: "create",
       archive: "-",
+      files: defaultCreateFiles(spec),
       flags: { ...compressionPatch(spec, "gzip"), verbose: true },
     }),
   },
   {
     id: "create-zstd-file",
     label: "Create .tar.zst file (-f)",
-    summary: "Normal terminal use with zstd compression: writes backup.tar.zst explicitly with -f.",
+    summary:
+      "Normal terminal use with zstd compression: writes backup.tar.zst explicitly with -f.",
     apply: (spec) => ({
       ...spec,
       mode: "create",
       archive: spec.archive || "backup.tar.zst",
+      files: defaultCreateFiles(spec),
       flags: { ...compressionPatch(spec, "zstd"), verbose: true },
     }),
   },
   {
     id: "create-zstd",
-    label: "Create .tar.zst stream (stdout)",
-    summary: "For pipes/redirection: writes the zstd-compressed archive stream to stdout using explicit -f -.",
+    label: "Create .tar.zst stream (pipe only)",
+    summary:
+      "For pipes/redirection only: writes the zstd-compressed archive stream to stdout using explicit -f -.",
+    commandExample: "tar -c --zstd -vf - folder1 > backup.tar.zst",
     apply: (spec) => ({
       ...spec,
       mode: "create",
       archive: "-",
+      files: defaultCreateFiles(spec),
       flags: { ...compressionPatch(spec, "zstd"), verbose: true },
     }),
   },
@@ -95,6 +108,7 @@ export const PRESETS: readonly Preset<TarSpec>[] = [
     apply: (spec) => ({
       ...spec,
       mode: "create",
+      files: defaultCreateFiles(spec),
       flags: { ...compressProgramPatch(spec, "xz -9e"), verbose: true },
     }),
   },
@@ -105,6 +119,7 @@ export const PRESETS: readonly Preset<TarSpec>[] = [
     apply: (spec) => ({
       ...spec,
       mode: "create",
+      files: defaultCreateFiles(spec),
       flags: {
         ...compressionPatch(spec, "gzip"),
         verbose: true,
@@ -124,6 +139,7 @@ export const PRESETS: readonly Preset<TarSpec>[] = [
         ? {
             ...spec,
             mode: "create",
+            files: defaultCreateFiles(spec),
             flags: {
               ...compressionPatch(spec, "gzip"),
               sortOrder: "name",
@@ -151,7 +167,11 @@ export const PRESETS: readonly Preset<TarSpec>[] = [
     apply: (spec) => ({
       ...spec,
       mode: "extract",
-      flags: { verbose: true, keepOldFiles: true, ...(isGnu(spec) ? { oneTopLevel: true } : {}) },
+      flags: {
+        verbose: true,
+        keepOldFiles: true,
+        ...(isGnu(spec) ? { oneTopLevel: true } : {}),
+      },
     }),
   },
   {
@@ -159,18 +179,24 @@ export const PRESETS: readonly Preset<TarSpec>[] = [
     label: "Extract, unwrapping one level",
     summary:
       "For the usual project-1.2.3/... layout: drops the leading directory so its contents land where you are.",
-    apply: (spec) => ({ ...spec, mode: "extract", flags: { verbose: true, stripComponents: 1 } }),
+    apply: (spec) => ({
+      ...spec,
+      mode: "extract",
+      flags: { verbose: true, stripComponents: 1 },
+    }),
   },
   {
     id: "incremental-full",
     label: "Incremental backup (level 0)",
-    summary: "Starts a GNU incremental chain, writing a fresh snapshot file. Keep the snapshot — later levels need it.",
+    summary:
+      "Starts a GNU incremental chain, writing a fresh snapshot file. Keep the snapshot — later levels need it.",
     isApplicable: isGnu,
     apply: (spec) =>
       isGnu(spec)
         ? {
             ...spec,
             mode: "create",
+            files: defaultCreateFiles(spec),
             flags: {
               ...compressionPatch(spec, "gzip"),
               verbose: true,
