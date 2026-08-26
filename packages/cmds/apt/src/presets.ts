@@ -38,9 +38,21 @@ export const PRESETS: readonly Preset<AptSpec>[] = [
   {
     id: "install-a-package",
     label: "Install a package",
+    summary: "Installs a package.",
+    commandExample: "apt install nginx",
+    apply: (spec) => ({ ...spec, action: "install", packages: ["nginx"], flags: {} }),
+  },
+  {
+    id: "install-a-package-unattended",
+    label: "Install a package (unattended)",
     summary: "-y — installs a package non-interactively, answering yes to all prompts.",
     commandExample: "apt install -y nginx",
-    apply: (spec) => ({ ...spec, action: "install", packages: ["nginx"], flags: { assumeYes: true } }),
+    apply: (spec) => ({
+      ...spec,
+      action: "install",
+      packages: ["nginx"],
+      flags: { assumeYes: true },
+    }),
   },
   {
     id: "remove-and-purge",

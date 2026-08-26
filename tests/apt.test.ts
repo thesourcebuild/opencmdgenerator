@@ -112,8 +112,12 @@ describe("presets", () => {
     expect(line(getPreset("update-package-list")!.apply(spec()))).toBe("apt update");
   });
 
-  it("'Install a package' is apt install -y nginx", () => {
-    expect(line(getPreset("install-a-package")!.apply(spec()))).toBe("apt install -y nginx");
+  it("'Install a package' is apt install nginx", () => {
+    expect(line(getPreset("install-a-package")!.apply(spec()))).toBe("apt install nginx");
+  });
+
+  it("'Install a package (unattended)' is apt install -y nginx", () => {
+    expect(line(getPreset("install-a-package-unattended")!.apply(spec()))).toBe("apt install -y nginx");
   });
 
   it("'Remove a package and its config' is apt remove --purge nginx", () => {
