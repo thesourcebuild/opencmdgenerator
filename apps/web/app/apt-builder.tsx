@@ -49,11 +49,17 @@ export function AptBuilder() {
                   className="h-9 w-full rounded-md border border-slate-300 bg-white px-2 text-xs dark:border-slate-700 dark:bg-slate-950"
                 >
                   <option value="install">install</option>
+                  <option value="reinstall">reinstall</option>
                   <option value="remove">remove</option>
+                  <option value="autoremove">autoremove</option>
                   <option value="update">update</option>
                   <option value="upgrade">upgrade</option>
+                  <option value="full-upgrade">full-upgrade</option>
                   <option value="search">search</option>
                   <option value="list">list</option>
+                  <option value="show">show</option>
+                  <option value="edit-sources">edit-sources</option>
+                  <option value="satisfy">satisfy</option>
                 </select>
               </div>
             </Panel>
@@ -64,7 +70,7 @@ export function AptBuilder() {
                 onChange={(packages) => setSpec((s) => ({ ...s, packages }))}
                 placeholder="nginx"
                 addLabel="Add package"
-                emptyHint="No packages added — install, remove, and search need at least one package name (update, upgrade, and list do not)."
+                emptyHint="No packages added — install, reinstall, remove, search, show, and satisfy need at least one package name or dependency string (update, upgrade, full-upgrade, autoremove, list, and edit-sources do not)."
               />
             </Panel>
 

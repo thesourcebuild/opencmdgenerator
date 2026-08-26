@@ -2,8 +2,15 @@ import type { LintRule } from "@cmdgen/contracts/diagnostic";
 import type { AptSpec } from "../spec";
 import { flagBool } from "../pure";
 
-/** Actions real apt accepts one or more package names for. */
-const PACKAGE_ACTIONS = new Set<AptSpec["action"]>(["install", "remove", "search"]);
+/** Actions real apt accepts package names or inputs for. */
+const PACKAGE_ACTIONS = new Set<AptSpec["action"]>([
+  "install",
+  "reinstall",
+  "remove",
+  "search",
+  "show",
+  "satisfy",
+]);
 
 const noPackages: LintRule<AptSpec> = {
   code: "APT001",

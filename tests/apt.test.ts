@@ -21,6 +21,18 @@ describe("action, packages, and flags", () => {
     expect(line(spec({ action: "upgrade", packages: ["nginx"] }))).toBe("apt upgrade");
   });
 
+  it("renders full-upgrade with no packages, even if packages has entries", () => {
+    expect(line(spec({ action: "full-upgrade", packages: ["nginx"] }))).toBe("apt full-upgrade");
+  });
+
+  it("renders autoremove with no packages, even if packages has entries", () => {
+    expect(line(spec({ action: "autoremove", packages: ["nginx"] }))).toBe("apt autoremove");
+  });
+
+  it("renders edit-sources with no packages, even if packages has entries", () => {
+    expect(line(spec({ action: "edit-sources", packages: ["nginx"] }))).toBe("apt edit-sources");
+  });
+
   it("renders list with no packages, even if packages has entries", () => {
     expect(line(spec({ action: "list", packages: ["nginx"] }))).toBe("apt list");
   });
@@ -29,12 +41,24 @@ describe("action, packages, and flags", () => {
     expect(line(spec({ action: "install", packages: ["nginx"] }))).toBe("apt install nginx");
   });
 
+  it("renders reinstall with a single package", () => {
+    expect(line(spec({ action: "reinstall", packages: ["nginx"] }))).toBe("apt reinstall nginx");
+  });
+
   it("renders remove with a single package", () => {
     expect(line(spec({ action: "remove", packages: ["nginx"] }))).toBe("apt remove nginx");
   });
 
   it("renders search with a single package", () => {
     expect(line(spec({ action: "search", packages: ["nginx"] }))).toBe("apt search nginx");
+  });
+
+  it("renders show with a single package", () => {
+    expect(line(spec({ action: "show", packages: ["nginx"] }))).toBe("apt show nginx");
+  });
+
+  it("renders satisfy with a dependency string", () => {
+    expect(line(spec({ action: "satisfy", packages: ["nginx (>= 1.18)"] }))).toBe("apt satisfy 'nginx (>= 1.18)'");
   });
 
   it("renders install with multiple packages, in order", () => {

@@ -6,7 +6,20 @@ import { SPEC_VERSION } from "./pure";
 export { ShellDialect, SPEC_VERSION };
 
 /** Pushed as a single bare leading token (e.g. `apt install`, `apt update`) — never a `-flag`. Same shape as `@cmdgen/cal`'s/`@cmdgen/ifconfig`'s bare spec-level fields. */
-export const AptAction = z.enum(["install", "remove", "update", "upgrade", "search", "list"]);
+export const AptAction = z.enum([
+  "install",
+  "reinstall",
+  "remove",
+  "autoremove",
+  "update",
+  "upgrade",
+  "full-upgrade",
+  "search",
+  "list",
+  "show",
+  "edit-sources",
+  "satisfy",
+]);
 export type AptAction = z.infer<typeof AptAction>;
 
 export const AptSpec = z.object({

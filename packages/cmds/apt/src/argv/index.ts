@@ -4,8 +4,15 @@ import { CATALOGUE } from "../catalogue/flags";
 
 export type { Arg, Argv };
 
-/** Actions real apt accepts one or more package names for. */
-const PACKAGE_ACTIONS = new Set<AptSpec["action"]>(["install", "remove", "search"]);
+/** Actions real apt accepts package names or inputs for. */
+const PACKAGE_ACTIONS = new Set<AptSpec["action"]>([
+  "install",
+  "reinstall",
+  "remove",
+  "search",
+  "show",
+  "satisfy",
+]);
 
 /** Flag ids that are actually switched on, for lint rules and the UI. */
 export function enabledFlagIds(spec: AptSpec): string[] {
@@ -15,10 +22,9 @@ export function enabledFlagIds(spec: AptSpec): string[] {
 /**
  * Build the apt invocation: the action as a single bare leading token (not a
  * `-flag` — same shape as `@cmdgen/cal`'s bare month/year), then catalogue
- * flags, then — only for install/remove/search — every non-empty package
- * name. update/upgrade/list never get package names pushed, even if the
- * field has entries: real apt would error or ignore them, so the simplest
- * and safest behavior here is to never push them for those three actions.
+ * flags, then — only for package actions — every non-empty package/input.
+ * Other actions never get package names pushed, even if the field has entries:
+ * real apt would error or ignore them.
  */
 export function buildArgv(spec: AptSpec): Argv {
   const args: Arg[] = [{ text: spec.action, role: "value" }];
