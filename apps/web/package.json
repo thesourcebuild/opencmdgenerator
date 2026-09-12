@@ -1,6 +1,6 @@
 {
   "name": "@cmdgen/web",
-  "version": "0.1.9",
+  "version": "0.1.18",
   "license": "GPL-3.0-only",
   "private": true,
   "scripts": {

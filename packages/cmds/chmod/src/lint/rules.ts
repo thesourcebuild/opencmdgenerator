@@ -8,6 +8,7 @@ import { flagBool, flagEnum, flagString, setFlag } from "../pure";
 const noFiles: LintRule<ChmodSpec> = {
   code: "CHMOD001",
   check(spec) {
+    if (spec.targetMode === "find") return [];
     if (spec.files.some((f) => f.trim() !== "")) return [];
     return [
       {
@@ -29,7 +30,8 @@ const noModeSource: LintRule<ChmodSpec> = {
         code: "CHMOD002",
         level: "error",
         message: "Nothing to change permissions to.",
-        detail: "Give a mode (e.g. 644, a+x) or --reference an existing file — chmod needs one or the other.",
+        detail:
+          "Give a mode (e.g. 644, a+x) or --reference an existing file — chmod needs one or the other.",
         field: "mode",
       },
     ];
@@ -109,17 +111,22 @@ const preserveRootWithoutRecursive: LintRule<ChmodSpec> = {
 const contradictoryDereference: LintRule<ChmodSpec> = {
   code: "CHMOD007",
   check(spec) {
-    return conflictingPairs(CATALOGUE, enabledFlagIds(spec)).map(([a, b]): Diagnostic<ChmodSpec> => {
-      const defA = CATALOGUE.getFlag(a);
-      const defB = CATALOGUE.getFlag(b);
-      return {
-        code: "CHMOD007",
-        level: "error",
-        message: `${defA ? flagLabel(defA) : a} and ${defB ? flagLabel(defB) : b} contradict each other.`,
-        flagIds: [a, b],
-        fix: { label: `Remove ${defB ? flagLabel(defB) : b}`, apply: (s) => setFlag(s, b, undefined) },
-      };
-    });
+    return conflictingPairs(CATALOGUE, enabledFlagIds(spec)).map(
+      ([a, b]): Diagnostic<ChmodSpec> => {
+        const defA = CATALOGUE.getFlag(a);
+        const defB = CATALOGUE.getFlag(b);
+        return {
+          code: "CHMOD007",
+          level: "error",
+          message: `${defA ? flagLabel(defA) : a} and ${defB ? flagLabel(defB) : b} contradict each other.`,
+          flagIds: [a, b],
+          fix: {
+            label: `Remove ${defB ? flagLabel(defB) : b}`,
+            apply: (s) => setFlag(s, b, undefined),
+          },
+        };
+      },
+    );
   },
 };
 

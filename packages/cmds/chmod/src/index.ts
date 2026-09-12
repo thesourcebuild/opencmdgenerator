@@ -9,7 +9,10 @@ export * from "./catalogue/flags";
 // build
 export * from "./argv";
 
-// render (generic — owned by @cmdgen/engine, re-exported here by name for convenience)
+// render
+export { renderTokens, renderOneLine, renderMultiLine, type RenderedToken } from "./render";
+
+// generic render helpers — owned by @cmdgen/engine, re-exported here by name for convenience
 export {
   quotePosix,
   quotePowerShell,
@@ -17,12 +20,8 @@ export {
   quoteFor,
   quoteAttached,
   needsQuoting,
-  renderTokens,
-  renderOneLine,
-  renderMultiLine,
   continuationFor,
   type RenderOptions,
-  type RenderedToken,
 } from "@cmdgen/engine";
 
 // lint

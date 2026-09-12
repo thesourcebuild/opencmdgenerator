@@ -29,7 +29,23 @@ describe("mode and files", () => {
   });
 
   it("renders multiple files after the mode", () => {
-    expect(line(spec({ mode: "644", files: ["a.txt", "b.txt", "c.txt"] }))).toBe("chmod 644 a.txt b.txt c.txt");
+    expect(line(spec({ mode: "644", files: ["a.txt", "b.txt", "c.txt"] }))).toBe(
+      "chmod 644 a.txt b.txt c.txt",
+    );
+  });
+
+  it("renders find -exec chmod for matching shell scripts recursively", () => {
+    expect(
+      line(
+        spec({
+          targetMode: "find",
+          findRoot: "/path/to/scripts",
+          findName: "*.sh",
+          modeAuthoring: "symbolic",
+          mode: "+x",
+        }),
+      ),
+    ).toBe("find /path/to/scripts -type f -name '*.sh' -exec chmod +x {} \\;");
   });
 
   it("skips a blank mode entirely", () => {
@@ -45,25 +61,45 @@ describe("mode and files", () => {
 
 describe("flags", () => {
   it("renders -c, -v, -f", () => {
-    expect(line(spec({ mode: "644", files: ["a"], flags: { changes: true } }))).toBe("chmod -c 644 a");
-    expect(line(spec({ mode: "644", files: ["a"], flags: { verbose: true } }))).toBe("chmod -v 644 a");
-    expect(line(spec({ mode: "644", files: ["a"], flags: { silent: true } }))).toBe("chmod -f 644 a");
+    expect(line(spec({ mode: "644", files: ["a"], flags: { changes: true } }))).toBe(
+      "chmod -c 644 a",
+    );
+    expect(line(spec({ mode: "644", files: ["a"], flags: { verbose: true } }))).toBe(
+      "chmod -v 644 a",
+    );
+    expect(line(spec({ mode: "644", files: ["a"], flags: { silent: true } }))).toBe(
+      "chmod -f 644 a",
+    );
   });
 
   it("renders --dereference and -h", () => {
-    expect(line(spec({ mode: "644", files: ["a"], flags: { dereference: true } }))).toBe("chmod --dereference 644 a");
-    expect(line(spec({ mode: "644", files: ["a"], flags: { noDereference: true } }))).toBe("chmod -h 644 a");
+    expect(line(spec({ mode: "644", files: ["a"], flags: { dereference: true } }))).toBe(
+      "chmod --dereference 644 a",
+    );
+    expect(line(spec({ mode: "644", files: ["a"], flags: { noDereference: true } }))).toBe(
+      "chmod -h 644 a",
+    );
   });
 
   it("renders --preserve-root and -R", () => {
-    expect(line(spec({ mode: "644", files: ["a"], flags: { preserveRoot: true } }))).toBe("chmod --preserve-root 644 a");
-    expect(line(spec({ mode: "644", files: ["a"], flags: { recursive: true } }))).toBe("chmod -R 644 a");
+    expect(line(spec({ mode: "644", files: ["a"], flags: { preserveRoot: true } }))).toBe(
+      "chmod --preserve-root 644 a",
+    );
+    expect(line(spec({ mode: "644", files: ["a"], flags: { recursive: true } }))).toBe(
+      "chmod -R 644 a",
+    );
   });
 
   it("renders -H/-L/-P as a mutually exclusive enum", () => {
-    expect(line(spec({ mode: "644", files: ["a"], flags: { traversalMode: "H" } }))).toBe("chmod -H 644 a");
-    expect(line(spec({ mode: "644", files: ["a"], flags: { traversalMode: "L" } }))).toBe("chmod -L 644 a");
-    expect(line(spec({ mode: "644", files: ["a"], flags: { traversalMode: "P" } }))).toBe("chmod -P 644 a");
+    expect(line(spec({ mode: "644", files: ["a"], flags: { traversalMode: "H" } }))).toBe(
+      "chmod -H 644 a",
+    );
+    expect(line(spec({ mode: "644", files: ["a"], flags: { traversalMode: "L" } }))).toBe(
+      "chmod -L 644 a",
+    );
+    expect(line(spec({ mode: "644", files: ["a"], flags: { traversalMode: "P" } }))).toBe(
+      "chmod -P 644 a",
+    );
   });
 
   it("renders --reference=RFILE as one attached token", () => {
@@ -75,12 +111,24 @@ describe("flags", () => {
 describe("lint", () => {
   it("CHMOD001 fires when there are no files", () => {
     expect(lint(spec({ mode: "644" })).diagnostics.map((d) => d.code)).toContain("CHMOD001");
-    expect(lint(spec({ mode: "644", files: ["a"] })).diagnostics.map((d) => d.code)).not.toContain("CHMOD001");
+    expect(
+      lint(spec({ mode: "644", files: ["a"] })).diagnostics.map((d) => d.code),
+    ).not.toContain("CHMOD001");
+  });
+
+  it("CHMOD001 does not require listed files for find target mode", () => {
+    expect(
+      lint(
+        spec({ targetMode: "find", findRoot: "/tmp/scripts", findName: "*.sh", mode: "+x" }),
+      ).diagnostics.map((d) => d.code),
+    ).not.toContain("CHMOD001");
   });
 
   it("CHMOD002 fires when neither mode nor --reference is given", () => {
     expect(lint(spec({ files: ["a"] })).diagnostics.map((d) => d.code)).toContain("CHMOD002");
-    expect(lint(spec({ files: ["a"], mode: "644" })).diagnostics.map((d) => d.code)).not.toContain("CHMOD002");
+    expect(
+      lint(spec({ files: ["a"], mode: "644" })).diagnostics.map((d) => d.code),
+    ).not.toContain("CHMOD002");
     expect(
       lint(spec({ files: ["a"], flags: { reference: "b" } })).diagnostics.map((d) => d.code),
     ).not.toContain("CHMOD002");
@@ -96,41 +144,45 @@ describe("lint", () => {
 
   it("CHMOD004 warns about --dereference or -L combined with --recursive", () => {
     expect(
-      lint(spec({ files: ["a"], mode: "644", flags: { recursive: true, dereference: true } })).diagnostics.map(
-        (d) => d.code,
-      ),
+      lint(
+        spec({ files: ["a"], mode: "644", flags: { recursive: true, dereference: true } }),
+      ).diagnostics.map((d) => d.code),
     ).toContain("CHMOD004");
     expect(
-      lint(spec({ files: ["a"], mode: "644", flags: { recursive: true, traversalMode: "L" } })).diagnostics.map(
-        (d) => d.code,
-      ),
+      lint(
+        spec({ files: ["a"], mode: "644", flags: { recursive: true, traversalMode: "L" } }),
+      ).diagnostics.map((d) => d.code),
     ).toContain("CHMOD004");
     expect(
-      lint(spec({ files: ["a"], mode: "644", flags: { recursive: true, traversalMode: "H" } })).diagnostics.map(
-        (d) => d.code,
-      ),
+      lint(
+        spec({ files: ["a"], mode: "644", flags: { recursive: true, traversalMode: "H" } }),
+      ).diagnostics.map((d) => d.code),
     ).not.toContain("CHMOD004");
   });
 
   it("CHMOD005 notes -H/-L/-P only matter with --recursive", () => {
     expect(
-      lint(spec({ files: ["a"], mode: "644", flags: { traversalMode: "H" } })).diagnostics.map((d) => d.code),
-    ).toContain("CHMOD005");
-    expect(
-      lint(spec({ files: ["a"], mode: "644", flags: { traversalMode: "H", recursive: true } })).diagnostics.map(
+      lint(spec({ files: ["a"], mode: "644", flags: { traversalMode: "H" } })).diagnostics.map(
         (d) => d.code,
       ),
+    ).toContain("CHMOD005");
+    expect(
+      lint(
+        spec({ files: ["a"], mode: "644", flags: { traversalMode: "H", recursive: true } }),
+      ).diagnostics.map((d) => d.code),
     ).not.toContain("CHMOD005");
   });
 
   it("CHMOD006 notes --preserve-root has no effect without --recursive", () => {
     expect(
-      lint(spec({ files: ["a"], mode: "644", flags: { preserveRoot: true } })).diagnostics.map((d) => d.code),
-    ).toContain("CHMOD006");
-    expect(
-      lint(spec({ files: ["a"], mode: "644", flags: { preserveRoot: true, recursive: true } })).diagnostics.map(
+      lint(spec({ files: ["a"], mode: "644", flags: { preserveRoot: true } })).diagnostics.map(
         (d) => d.code,
       ),
+    ).toContain("CHMOD006");
+    expect(
+      lint(
+        spec({ files: ["a"], mode: "644", flags: { preserveRoot: true, recursive: true } }),
+      ).diagnostics.map((d) => d.code),
     ).not.toContain("CHMOD006");
   });
 
@@ -151,6 +203,15 @@ describe("presets", () => {
   it("'Make executable' matches its own commandExample", () => {
     const preset = getPreset("make-executable")!;
     expect(line(preset.apply(spec()))).toBe(preset.commandExample);
+  });
+
+  it("'Make .sh files executable recursively' matches its own commandExample", () => {
+    const preset = getPreset("make-shell-scripts-executable")!;
+    const applied = preset.apply(spec());
+
+    expect(applied.targetMode).toBe("find");
+    expect(applied.files).toEqual([]);
+    expect(line(applied)).toBe(preset.commandExample);
   });
 
   it("'Secure private file' matches its own commandExample", () => {
@@ -189,7 +250,9 @@ describe("presets", () => {
 
 describe("describeSpec", () => {
   it("describes a plain mode change", () => {
-    expect(describeSpec(spec({ mode: "644", files: ["a.txt"] }))).toBe("Change the permissions of a.txt to 644.");
+    expect(describeSpec(spec({ mode: "644", files: ["a.txt"] }))).toBe(
+      "Change the permissions of a.txt to 644.",
+    );
   });
 
   it("describes copying permissions via --reference", () => {
@@ -199,9 +262,26 @@ describe("describeSpec", () => {
   });
 
   it("mentions recursion and traversal mode", () => {
-    const text = describeSpec(spec({ mode: "644", files: ["dir"], flags: { recursive: true, traversalMode: "H" } }));
+    const text = describeSpec(
+      spec({ mode: "644", files: ["dir"], flags: { recursive: true, traversalMode: "H" } }),
+    );
     expect(text).toMatch(/recursively/);
     expect(text).toMatch(/traversing symlinks per -H/);
+  });
+
+  it("describes find target mode", () => {
+    expect(
+      describeSpec(
+        spec({
+          targetMode: "find",
+          findRoot: "/path/to/scripts",
+          findName: "*.sh",
+          mode: "+x",
+        }),
+      ),
+    ).toBe(
+      "Find regular files under /path/to/scripts matching *.sh and change the permissions to +x for each match.",
+    );
   });
 });
 

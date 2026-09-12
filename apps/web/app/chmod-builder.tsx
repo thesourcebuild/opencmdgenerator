@@ -46,15 +46,63 @@ export function ChmodBuilder() {
               onAuthoringChange={(modeAuthoring) => setSpec((s) => ({ ...s, modeAuthoring }))}
             />
 
-            <Panel title="Files">
-              <StringListEditor
-                items={spec.files}
-                onChange={(files) => setSpec((s) => ({ ...s, files }))}
-                placeholder="file.txt"
-                addLabel="Add path"
-                emptyHint="No files added yet."
-              />
+            <Panel title="Target">
+              <div>
+                <label className="mb-1 block text-xs font-medium">Target mode</label>
+                <select
+                  value={spec.targetMode}
+                  onChange={(e) =>
+                    setSpec((s) => ({
+                      ...s,
+                      targetMode: e.target.value as ChmodSpec["targetMode"],
+                    }))
+                  }
+                  className="h-9 w-full rounded-md border border-slate-300 bg-white px-2 text-xs dark:border-slate-700 dark:bg-slate-950"
+                >
+                  <option value="paths">Listed paths</option>
+                  <option value="find">Find matching files recursively</option>
+                </select>
+                <p className="mt-1 text-[11px] text-slate-500 dark:text-slate-400">
+                  Use find mode for cases like making every .sh file executable without applying
+                  +x to directories.
+                </p>
+              </div>
             </Panel>
+
+            {spec.targetMode === "find" ? (
+              <Panel title="Find filter">
+                <div className="grid gap-3 sm:grid-cols-2">
+                  <div>
+                    <label className="mb-1 block text-xs font-medium">Search root</label>
+                    <input
+                      value={spec.findRoot}
+                      onChange={(e) => setSpec((s) => ({ ...s, findRoot: e.target.value }))}
+                      placeholder="/path/to/scripts"
+                      className="h-9 w-full rounded-md border border-slate-300 px-2 font-mono text-xs dark:border-slate-700 dark:bg-slate-950"
+                    />
+                  </div>
+                  <div>
+                    <label className="mb-1 block text-xs font-medium">Name pattern</label>
+                    <input
+                      value={spec.findName}
+                      onChange={(e) => setSpec((s) => ({ ...s, findName: e.target.value }))}
+                      placeholder="*.sh"
+                      className="h-9 w-full rounded-md border border-slate-300 px-2 font-mono text-xs dark:border-slate-700 dark:bg-slate-950"
+                    />
+                  </div>
+                </div>
+              </Panel>
+            ) : (
+              <Panel title="Files">
+                <StringListEditor
+                  items={spec.files}
+                  onChange={(files) => setSpec((s) => ({ ...s, files }))}
+                  placeholder="file.txt"
+                  addLabel="Add path"
+                  emptyHint="No files added yet."
+                />
+              </Panel>
+            )}
 
             <Panel title="Flags">
               <FlagsForm

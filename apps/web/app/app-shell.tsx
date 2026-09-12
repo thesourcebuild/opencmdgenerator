@@ -1105,7 +1105,7 @@ export function AppShell() {
   const [env, setEnv] = useState<PlatformEnvironment | undefined>(undefined);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
-  const appVersion = process.env.NEXT_PUBLIC_APP_VERSION ?? env?.appVersion ?? "dev";
+  const appVersion = env?.appVersion ?? process.env.NEXT_PUBLIC_APP_VERSION ?? "dev";
 
   // The "which build am I targeting" choice lives here, not inside each
   // builder — the left sidebar needs to show and control it too.

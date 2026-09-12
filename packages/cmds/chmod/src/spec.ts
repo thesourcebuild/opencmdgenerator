@@ -9,12 +9,19 @@ export { ShellDialect, SPEC_VERSION };
 export const ModeAuthoring = z.enum(["octal", "symbolic"]);
 export type ModeAuthoring = z.infer<typeof ModeAuthoring>;
 
+/** Direct chmod on listed paths, or a find wrapper that applies chmod to matching files. */
+export const ChmodTargetMode = z.enum(["paths", "find"]);
+export type ChmodTargetMode = z.infer<typeof ChmodTargetMode>;
+
 export const ChmodSpec = z.object({
   specVersion: z.literal(SPEC_VERSION).default(SPEC_VERSION),
   id: z.string(),
   name: z.string().default(""),
 
+  targetMode: ChmodTargetMode.default("paths"),
   files: z.array(z.string()).default([]),
+  findRoot: z.string().default("."),
+  findName: z.string().default("*.sh"),
 
   modeAuthoring: ModeAuthoring.default("octal"),
   /** The actual mode text rendered verbatim — "644", "a+x", "u=rwx,go=rx", "+110", ... Empty means "no mode given" (only --reference may supply one instead). */
